@@ -1,0 +1,20 @@
+<div class="overflow-hidden rounded-lg border border-border">
+  <div class="flex items-center gap-1 border-b border-border bg-muted/40 px-3 py-2">
+    <button click.trigger="setTab('preview')" type="button"
+            class="rounded-md px-3 py-1 text-sm transition-colors ${tab === 'preview' ? 'bg-background font-medium shadow-sm' : 'text-muted-foreground hover:text-foreground'}">
+      Preview
+    </button>
+    <button click.trigger="setTab('code')" type="button"
+            class="rounded-md px-3 py-1 text-sm transition-colors ${tab === 'code' ? 'bg-background font-medium shadow-sm' : 'text-muted-foreground hover:text-foreground'}">
+      Code
+    </button>
+  </div>
+
+  <div show.bind="tab === 'preview'" class="flex min-h-[240px] items-center justify-center p-10">
+    <au-slot></au-slot>
+  </div>
+
+  <div show.bind="tab === 'code'" class="max-h-[400px] overflow-auto bg-muted/40 p-4">
+    <pre class="text-xs leading-relaxed"><code>${code}</code></pre>
+  </div>
+</div>

@@ -3,9 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/registry/*": ["registry/*"],
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["src", "registry", "scripts", "vite.config.ts"],
   "files": ["src/resource.d.ts"]
 }

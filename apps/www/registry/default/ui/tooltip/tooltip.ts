@@ -1,19 +1,25 @@
 /**
  * ui-tooltip — root compound element.
  *
- * Spikes exercised:
- *   A  Creates and manages a Zag tooltip machine via ZagMachineAdapter
- *   C  Registers itself as the compound context so trigger/content can resolve it
+ * Owns the Zag tooltip machine and registers itself as compound context so
+ * trigger/content resolve it via DOM traversal. Supports controlled and
+ * uncontrolled open state per the shadcn idiom:
+ *   <ui-tooltip open.two-way="isOpen">      (controlled)
+ *   <ui-tooltip open-change.trigger="...">  (event-style)
  */
-import { customElement, INode, resolve } from 'aurelia'
+import { customElement, bindable, INode, resolve } from 'aurelia'
 import { machine as tooltipMachine, connect } from '@zag-js/tooltip'
 import type { Service as TooltipService } from '@zag-js/tooltip'
-import { normalizeProps } from '@zag-js/vanilla'
-import { ZagMachineAdapter, createContext } from '@shadcn-aurelia/primitives'
+import {
+  ZagMachineAdapter,
+  normalizeProps,
+  createContext,
+  createId,
+  createControlledSync,
+  type ControlledSync,
+} from '@shadcn-aurelia/primitives'
 
 export const tooltipContext = createContext<UiTooltip>()
-
-let idCounter = 0
 
 type TooltipApi = ReturnType<typeof connect>
 type Listener = () => void
@@ -21,8 +27,12 @@ type Listener = () => void
 // Inline template: no .html file → no convention $au.ts double-define.
 @customElement({ name: 'ui-tooltip', template: '<au-slot></au-slot>' })
 export class UiTooltip {
+  /** Controlled open state (two-way). Leave unbound for uncontrolled use. */
+  @bindable() open?: boolean
+
   private readonly host: HTMLElement = resolve(INode) as HTMLElement
   private readonly adapter = new ZagMachineAdapter()
+  private openSync: ControlledSync<boolean> | null = null
 
   api: TooltipApi | null = null
   private listeners = new Set<Listener>()
@@ -30,7 +40,16 @@ export class UiTooltip {
 
   binding(): void {
     tooltipContext.set(this.host, this)
-    this.adapter.init(tooltipMachine, { id: `tooltip-${++idCounter}` })
+    this.adapter.init(tooltipMachine, {
+      id: createId('tooltip'),
+      defaultOpen: this.open ?? false,
+    })
+    this.openSync = createControlledSync<boolean>({
+      host: this.host,
+      eventName: 'open-change',
+      setMachineValue: (open) => this.api?.setOpen(open),
+      setBindable: (open) => (this.open = open),
+    })
   }
 
   attached(): void {
@@ -43,9 +62,14 @@ export class UiTooltip {
       const open = this.api.open
       if (open !== prevOpen) {
         prevOpen = open
+        this.openSync?.fromMachine(open)
         this.listeners.forEach((l) => l())
       }
     })
+  }
+
+  openChanged(value: boolean | undefined): void {
+    this.openSync?.fromBindable(value)
   }
 
   detaching(): void {

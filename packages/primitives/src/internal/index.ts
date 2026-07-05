@@ -1,2 +1,7 @@
-export { createContext } from './context'
+export { createContext, type Context } from './context'
 export { UiPortalAttribute } from './portal'
+export { createId } from './id-generation'
+export { resolveDirection, type Direction } from './direction'
+export { Presence, waitForExitAnimations } from './presence'
+export { trapFocus, type FocusTrapOptions } from './focus-trap'
+export { createDismissableLayer, type DismissableLayerOptions } from './dismissable-layer'

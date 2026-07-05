@@ -1,0 +1,63 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcn-aurelia",
+  "homepage": "https://shadcn-aurelia.dev",
+  "items": [
+    {
+      "name": "cn",
+      "type": "registry:lib",
+      "title": "cn",
+      "description": "Class-name composition: clsx + tailwind-merge.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/default/lib/cn.ts",
+          "type": "registry:lib",
+          "target": "lib/cn.ts"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A popup that displays information related to an element when it receives keyboard focus or the mouse hovers over it.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives",
+        "@zag-js/tooltip",
+        "@zag-js/vanilla"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tooltip/tooltip.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/tooltip/tooltip-trigger.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/tooltip/tooltip-content.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/tooltip/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-demo",
+      "type": "registry:example",
+      "title": "Tooltip Demo",
+      "description": "Default tooltip example.",
+      "registryDependencies": ["tooltip"],
+      "files": [
+        {
+          "path": "registry/default/examples/tooltip-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    }
+  ]
+}

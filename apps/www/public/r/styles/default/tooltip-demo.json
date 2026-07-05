@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-demo",
+  "type": "registry:example",
+  "title": "Tooltip Demo",
+  "description": "Default tooltip example.",
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-demo.ts",
+      "type": "registry:example",
+      "content": "/**\n * tooltip-demo — the default tooltip example rendered on the docs page.\n */\nimport { customElement } from 'aurelia'\nimport { UiTooltip, UiTooltipTrigger, UiTooltipContent } from '@/registry/default/ui/tooltip'\n\nconst TEMPLATE = `\n<ui-tooltip>\n  <ui-tooltip-trigger>\n    <button class=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring\">\n      Hover\n    </button>\n  </ui-tooltip-trigger>\n  <ui-tooltip-content>\n    Add to library\n  </ui-tooltip-content>\n</ui-tooltip>\n`\n\n@customElement({\n  name: 'tooltip-demo',\n  template: TEMPLATE,\n  dependencies: [UiTooltip, UiTooltipTrigger, UiTooltipContent],\n})\nexport class TooltipDemo {}\n"
+    }
+  ]
+}

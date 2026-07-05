@@ -10,9 +10,10 @@ export default defineConfig({
     nodePolyfills(),
   ],
   resolve: {
-    alias: {
-      '@': '/src',
-    },
+    alias: [
+      { find: /^@\/registry\//, replacement: '/registry/' },
+      { find: '@', replacement: '/src' },
+    ],
   },
   server: {
     port: 3000,

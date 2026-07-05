@@ -1,0 +1,95 @@
+/*
+ * @shadcn-aurelia/tw-preset — shared Tailwind v4 theme layer.
+ *
+ * Usage (after `@import "tailwindcss"` and a registry style's CSS variables):
+ *   @import "@shadcn-aurelia/tw-preset";
+ *
+ * Provides:
+ *   1. class-based dark mode (`.dark`), matching shadcn v4
+ *   2. @theme inline mapping: shadcn CSS variables → Tailwind color/radius tokens
+ *   3. base layer (border color, body colors) identical to shadcn
+ *   4. tw-animate-css equivalents driven by Zag/Radix data-state attributes
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* tw-animate-css equivalents for Zag/Radix data-state attributes */
+@layer utilities {
+  [data-state="open"] {
+    animation:
+      fade-in 150ms ease-out,
+      zoom-in-95 150ms ease-out;
+  }
+  [data-state="closed"] {
+    animation:
+      fade-out 100ms ease-in,
+      zoom-out-95 100ms ease-in;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  @keyframes zoom-in-95 {
+    from { transform: scale(0.95); }
+    to   { transform: scale(1); }
+  }
+  @keyframes zoom-out-95 {
+    from { transform: scale(1); }
+    to   { transform: scale(0.95); }
+  }
+}

@@ -13,7 +13,7 @@ importers:
         version: 0.5.2
       '@changesets/cli':
         specifier: ^2.27.0
-        version: 2.31.0
+        version: 2.31.0(@types/node@26.1.0)
       eslint:
         specifier: ^9.26.0
         version: 9.39.4(jiti@2.7.0)
@@ -35,9 +35,15 @@ importers:
 
   apps/www:
     dependencies:
+      '@aurelia/router':
+        specifier: 2.0.0-rc.1
+        version: 2.0.0-rc.1
       '@shadcn-aurelia/primitives':
         specifier: workspace:*
         version: link:../../packages/primitives
+      '@shadcn-aurelia/tw-preset':
+        specifier: workspace:*
+        version: link:../../packages/tw-preset
       '@zag-js/tooltip':
         specifier: ^1.42.0
         version: 1.42.0
@@ -56,25 +62,34 @@ importers:
     devDependencies:
       '@aurelia/vite-plugin':
         specifier: 2.0.0-rc.1
-        version: 2.0.0-rc.1(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 2.0.0-rc.1(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)
       '@tailwindcss/vite':
         specifier: ^4.1.10
-        version: 4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.3.2(vite@7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0))
+      '@types/node':
+        specifier: ^26.1.0
+        version: 26.1.0
       tailwindcss:
         specifier: ^4.1.10
         version: 4.3.2
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
+      tsx:
+        specifier: ^4.19.2
+        version: 4.23.0
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
       vite:
         specifier: ^7.3.1
-        version: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+        version: 7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)
       vite-plugin-node-polyfills:
         specifier: ^0.25.0
-        version: 0.25.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 0.25.0(vite@7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0))
+      zod:
+        specifier: ^3.24.1
+        version: 3.25.76
 
   packages/primitives:
     dependencies:
@@ -97,6 +112,8 @@ importers:
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+
+  packages/tw-preset: {}
 
 packages:
 
@@ -126,6 +143,14 @@ packages:
 
   '@aurelia/plugin-conventions@2.0.0-rc.1':
     resolution: {integrity: sha512-PMz07vLDB8aWGGK51HjQHghKj2iGpMqBOZnEXkNuO17Q4QVWosBIP43+fWZIIqsIi+0Xp7O2rVNO6dNIlCjAkw==}
+    engines: {node: '>=20.16.0'}
+
+  '@aurelia/route-recognizer@2.0.0-rc.1':
+    resolution: {integrity: sha512-xoAMxqWd8f8mawrKo1AxIDb9ljXKcd7GMfQhGfLvjgHOjlVMBSMAfFE0LxwEphFBbGTRfJJ2/U4feyESJkh2fg==}
+    engines: {node: '>=20.16.0'}
+
+  '@aurelia/router@2.0.0-rc.1':
+    resolution: {integrity: sha512-UVunEslhos5NHGth0sZyD0eNe1rpeHmpj4NfaHv/tCBq0A8EqLgGOIqlwwj1aDm3c9nek/UXeozoM7jrRxZikQ==}
     engines: {node: '>=20.16.0'}
 
   '@aurelia/runtime-html@2.0.0-rc.1':
@@ -763,6 +788,9 @@ packages:
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
+
+  '@types/node@26.1.0':
+    resolution: {integrity: sha512-O0A1G3xPGy4w7AgQdAQYUlQ+BKk2Oovw8eRpofyp5KdBZULnbe+WqaOVNrm705SHphCiG4XHsACrSmPu1f+Kgw==}
 
   '@typescript-eslint/eslint-plugin@8.62.1':
     resolution: {integrity: sha512-4EQM77WgVNxj7OkL/5b/D/xZsw00G577+UriYTC7JF5opcF3T2AuoeY7ueLaZgSVjSgCS6yOAJB5bRGLPSJUzA==}
@@ -1993,6 +2021,11 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
+  tsx@4.23.0:
+    resolution: {integrity: sha512-eUdUIaCr963q2h5u3+QwvYp0+eqPvn+egeqZUm0hwERCqqx1E3kK5ehbGCvqSE5MQAULr67ww0cA3jKc3YkM1w==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   tty-browserify@0.0.1:
     resolution: {integrity: sha512-C3TaO7K81YvjCgQH9Q1S3R3P3BtN3RIM8n+OvX4il1K1zgE8ZhI0op7kClgkxtutIE8hQrcrHBXvIheqKUUCxw==}
 
@@ -2019,6 +2052,9 @@ packages:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
 
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
@@ -2112,6 +2148,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
 snapshots:
 
   '@aurelia/expression-parser@2.0.0-rc.1':
@@ -2149,6 +2188,20 @@ snapshots:
       parse5: 7.3.0
       typescript: 5.9.3
 
+  '@aurelia/route-recognizer@2.0.0-rc.1':
+    dependencies:
+      '@aurelia/kernel': 2.0.0-rc.1
+
+  '@aurelia/router@2.0.0-rc.1':
+    dependencies:
+      '@aurelia/kernel': 2.0.0-rc.1
+      '@aurelia/metadata': 2.0.0-rc.1
+      '@aurelia/platform': 2.0.0-rc.1
+      '@aurelia/platform-browser': 2.0.0-rc.1
+      '@aurelia/route-recognizer': 2.0.0-rc.1
+      '@aurelia/runtime': 2.0.0-rc.1
+      '@aurelia/runtime-html': 2.0.0-rc.1
+
   '@aurelia/runtime-html@2.0.0-rc.1':
     dependencies:
       '@aurelia/expression-parser': 2.0.0-rc.1
@@ -2172,7 +2225,7 @@ snapshots:
       '@aurelia/kernel': 2.0.0-rc.1
       '@aurelia/metadata': 2.0.0-rc.1
 
-  '@aurelia/vite-plugin@2.0.0-rc.1(jiti@2.7.0)(lightningcss@1.32.0)':
+  '@aurelia/vite-plugin@2.0.0-rc.1(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)':
     dependencies:
       '@aurelia/kernel': 2.0.0-rc.1
       '@aurelia/metadata': 2.0.0-rc.1
@@ -2181,7 +2234,7 @@ snapshots:
       '@aurelia/runtime': 2.0.0-rc.1
       '@rollup/pluginutils': 5.0.2
       loader-utils: 2.0.4
-      vite: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+      vite: 7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -2235,7 +2288,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@changesets/cli@2.31.0':
+  '@changesets/cli@2.31.0(@types/node@26.1.0)':
     dependencies:
       '@changesets/apply-release-plan': 7.1.1
       '@changesets/assemble-release-plan': 6.0.10
@@ -2251,7 +2304,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.3
+      '@inquirer/external-editor': 1.0.3(@types/node@26.1.0)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       enquirer: 2.4.1
@@ -2507,10 +2560,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@inquirer/external-editor@1.0.3':
+  '@inquirer/external-editor@1.0.3(@types/node@26.1.0)':
     dependencies:
       chardet: 2.2.0
       iconv-lite: 0.7.3
+    optionalDependencies:
+      '@types/node': 26.1.0
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -2707,12 +2762,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.3.2
       '@tailwindcss/oxide-win32-x64-msvc': 4.3.2
 
-  '@tailwindcss/vite@4.3.2(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0))':
+  '@tailwindcss/vite@4.3.2(vite@7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0))':
     dependencies:
       '@tailwindcss/node': 4.3.2
       '@tailwindcss/oxide': 4.3.2
       tailwindcss: 4.3.2
-      vite: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+      vite: 7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)
 
   '@turbo/darwin-64@2.10.3':
     optional: true
@@ -2737,6 +2792,10 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/node@12.20.55': {}
+
+  '@types/node@26.1.0':
+    dependencies:
+      undici-types: 8.3.0
 
   '@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3))(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3)':
     dependencies:
@@ -4113,6 +4172,12 @@ snapshots:
 
   tslib@2.8.1: {}
 
+  tsx@4.23.0:
+    dependencies:
+      esbuild: 0.28.1
+    optionalDependencies:
+      fsevents: 2.3.3
+
   tty-browserify@0.0.1: {}
 
   turbo@2.10.3:
@@ -4147,6 +4212,8 @@ snapshots:
 
   typescript@5.9.3: {}
 
+  undici-types@8.3.0: {}
+
   universalify@0.1.2: {}
 
   uri-js@4.4.1:
@@ -4168,15 +4235,15 @@ snapshots:
       is-typed-array: 1.1.15
       which-typed-array: 1.1.22
 
-  vite-plugin-node-polyfills@0.25.0(vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0)):
+  vite-plugin-node-polyfills@0.25.0(vite@7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)):
     dependencies:
       '@rollup/plugin-inject': 5.0.5
       node-stdlib-browser: 1.3.1
-      vite: 7.3.6(jiti@2.7.0)(lightningcss@1.32.0)
+      vite: 7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0)
     transitivePeerDependencies:
       - rollup
 
-  vite@7.3.6(jiti@2.7.0)(lightningcss@1.32.0):
+  vite@7.3.6(@types/node@26.1.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.0):
     dependencies:
       esbuild: 0.28.1
       fdir: 6.5.0(picomatch@4.0.5)
@@ -4185,9 +4252,11 @@ snapshots:
       rollup: 4.62.2
       tinyglobby: 0.2.17
     optionalDependencies:
+      '@types/node': 26.1.0
       fsevents: 2.3.3
       jiti: 2.7.0
       lightningcss: 1.32.0
+      tsx: 4.23.0
 
   vm-browserify@1.1.2: {}
 
@@ -4217,3 +4286,5 @@ snapshots:
   xtend@4.0.2: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.25.76: {}

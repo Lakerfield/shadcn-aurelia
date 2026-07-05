@@ -1,11 +1,18 @@
 import Aurelia from 'aurelia'
+import { RouterConfiguration } from '@aurelia/router'
 import { AppRoot } from './app-root'
-import { UiTooltip } from './components/ui/tooltip/tooltip'
-import { UiTooltipTrigger } from './components/ui/tooltip/tooltip-trigger'
-import { UiTooltipContent } from './components/ui/tooltip/tooltip-content'
 import './styles/globals.css'
 
+// Apply the persisted theme before first paint to avoid a light-mode flash
+const storedTheme = localStorage.getItem('theme')
+if (
+  storedTheme === 'dark' ||
+  (storedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)
+) {
+  document.documentElement.classList.add('dark')
+}
+
 Aurelia
-  .register(UiTooltip, UiTooltipTrigger, UiTooltipContent)
+  .register(RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false }))
   .app(AppRoot)
   .start()
