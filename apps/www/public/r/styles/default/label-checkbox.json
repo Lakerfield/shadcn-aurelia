@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-checkbox",
+  "type": "registry:example",
+  "title": "Label Checkbox",
+  "description": "Example: label-checkbox.",
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/label-checkbox.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiLabel } from '@/registry/default/ui/label'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-2\">\n  <input type=\"checkbox\" id=\"label-demo-terms\" class=\"size-4 accent-primary\">\n  <ui-label for=\"label-demo-terms\">Accept terms and conditions</ui-label>\n</div>\n`\n\n@customElement({ name: 'label-checkbox', template: TEMPLATE, dependencies: [UiLabel] })\nexport class LabelCheckbox {}\n"
+    }
+  ]
+}

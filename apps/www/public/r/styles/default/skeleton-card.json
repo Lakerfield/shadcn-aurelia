@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-card",
+  "type": "registry:example",
+  "title": "Skeleton Card",
+  "description": "Example: skeleton-card.",
+  "registryDependencies": [
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/skeleton-card.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSkeleton } from '@/registry/default/ui/skeleton'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-sm flex-col gap-3\">\n  <ui-skeleton class=\"h-[125px] w-full rounded-xl\"></ui-skeleton>\n  <div class=\"space-y-2\">\n    <ui-skeleton class=\"h-4 w-full\"></ui-skeleton>\n    <ui-skeleton class=\"h-4 w-4/5\"></ui-skeleton>\n  </div>\n</div>\n`\n\n@customElement({ name: 'skeleton-card', template: TEMPLATE, dependencies: [UiSkeleton] })\nexport class SkeletonCard {}\n"
+    }
+  ]
+}

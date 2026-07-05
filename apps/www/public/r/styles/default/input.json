@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "type": "registry:ui",
+  "title": "Input",
+  "description": "Displays a form input field.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/input/input.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-input — styled native <input> (convention B).\n *   <ui-input id=\"email\" type=\"email\" placeholder=\"Email\" value.two-way=\"email\">\n */\nimport { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\nconst TEMPLATE = `\n<input class.bind=\"classes\" type.bind=\"type\" value.bind=\"value\"\n       placeholder.bind=\"placeholder || null\" disabled.bind=\"disabled\"\n       readonly.bind=\"readonly\" required.bind=\"required\"\n       id.bind=\"id || null\" name.bind=\"name || null\"\n       autocomplete.bind=\"autocomplete || null\"\n       aria-invalid.bind=\"invalid || null\"\n       data-slot=\"input\">\n`\n\n@customElement({ name: 'ui-input', template: TEMPLATE })\nexport class UiInput {\n  @bindable() type = 'text'\n  @bindable({ mode: BindingMode.twoWay }) value = ''\n  @bindable() placeholder = ''\n  @bindable() disabled = false\n  @bindable() readonly = false\n  @bindable() required = false\n  @bindable() invalid = false\n  @bindable() id = ''\n  @bindable() name = ''\n  @bindable() autocomplete = ''\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(\n      'file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',\n      this.authorClasses,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/input/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiInput } from './input'\n"
+    }
+  ]
+}

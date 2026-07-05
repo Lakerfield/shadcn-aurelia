@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-demo",
+  "type": "registry:example",
+  "title": "Typography Demo",
+  "description": "Example: typography-demo.",
+  "files": [
+    {
+      "path": "registry/default/examples/typography-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\n\n// Typography is a class recipe, not a component — copy the classes you need.\nconst TEMPLATE = `\n<div class=\"max-w-2xl\">\n  <h1 class=\"scroll-m-20 text-4xl font-extrabold tracking-tight text-balance\">\n    Taxing laughter: the joke tax chronicles\n  </h1>\n  <p class=\"text-muted-foreground text-xl leading-7 [&:not(:first-child)]:mt-6\">\n    Once upon a time, in a far-off land, there was a very lazy king who spent\n    all day lounging on his throne.\n  </p>\n  <h2 class=\"mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0\">\n    The king's plan\n  </h2>\n  <p class=\"leading-7 [&:not(:first-child)]:mt-6\">\n    The king thought long and hard, and finally came up with\n    <a href=\"#\" class=\"text-primary font-medium underline underline-offset-4\">a brilliant plan</a>:\n    he would tax the jokes in the kingdom.\n  </p>\n  <blockquote class=\"mt-6 border-l-2 pl-6 italic\">\n    \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair\n    that they should pay for the privilege.\"\n  </blockquote>\n  <h3 class=\"mt-8 scroll-m-20 text-2xl font-semibold tracking-tight\">The joke tax</h3>\n  <ul class=\"my-6 ml-6 list-disc [&>li]:mt-2\">\n    <li>1st level of puns: 5 gold coins</li>\n    <li>2nd level of jokes: 10 gold coins</li>\n    <li>3rd level of one-liners: 20 gold coins</li>\n  </ul>\n  <p class=\"text-muted-foreground text-sm leading-7\">\n    The people of the kingdom, feeling uneasy, gathered to discuss the tax.\n  </p>\n</div>\n`\n\n@customElement({ name: 'typography-demo', template: TEMPLATE })\nexport class TypographyDemo {}\n"
+    }
+  ]
+}

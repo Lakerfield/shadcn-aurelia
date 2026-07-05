@@ -1,0 +1,15 @@
+<import from="../../../components/component-preview"></import>
+
+<article class="space-y-8" if.bind="doc">
+  <header class="space-y-2">
+    <h1 class="text-3xl font-bold tracking-tight">${doc.title}</h1>
+    <p class="text-muted-foreground">${doc.description}</p>
+  </header>
+
+  <section repeat.for="ex of doc.examples" class="space-y-3">
+    <h2 if.bind="doc.examples.length > 1" class="text-xl font-semibold tracking-tight">${ex.title}</h2>
+    <component-preview code.bind="ex.source">
+      <au-compose component.bind="ex.component"></au-compose>
+    </component-preview>
+  </section>
+</article>

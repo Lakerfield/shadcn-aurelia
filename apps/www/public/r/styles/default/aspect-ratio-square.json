@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-square",
+  "type": "registry:example",
+  "title": "Aspect Ratio Square",
+  "description": "Example: aspect-ratio-square.",
+  "registryDependencies": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/aspect-ratio-square.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiAspectRatio } from '@/registry/default/ui/aspect-ratio'\n\nconst TEMPLATE = `\n<div class=\"grid w-full max-w-sm grid-cols-2 gap-4\">\n  <ui-aspect-ratio ratio=\"1\" class=\"bg-muted flex items-center justify-center rounded-lg\">\n    <span class=\"text-foreground text-sm\">1 : 1</span>\n  </ui-aspect-ratio>\n  <ui-aspect-ratio ratio=\"4/3\" class=\"bg-muted flex items-center justify-center rounded-lg\">\n    <span class=\"text-foreground text-sm\">4 : 3</span>\n  </ui-aspect-ratio>\n</div>\n`\n\n@customElement({ name: 'aspect-ratio-square', template: TEMPLATE, dependencies: [UiAspectRatio] })\nexport class AspectRatioSquare {}\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-demo",
+  "type": "registry:example",
+  "title": "Badge Demo",
+  "description": "Example: badge-demo.",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/badge-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiBadge } from '@/registry/default/ui/badge'\n\nconst TEMPLATE = `\n<div class=\"flex flex-wrap items-center gap-2\">\n  <ui-badge>Badge</ui-badge>\n  <ui-badge variant=\"secondary\">Secondary</ui-badge>\n  <ui-badge variant=\"destructive\">Destructive</ui-badge>\n  <ui-badge variant=\"outline\">Outline</ui-badge>\n</div>\n`\n\n@customElement({ name: 'badge-demo', template: TEMPLATE, dependencies: [UiBadge] })\nexport class BadgeDemo {}\n"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "type": "registry:ui",
+  "title": "Button Group",
+  "description": "Groups related buttons and controls with collapsed borders.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/button-group/button-group.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-button-group — host-styled (convention A) group that collapses the inner\n * borders/radii of adjacent controls.\n *\n * Child selectors target both raw elements and the [data-slot] control one\n * level down, because convention-B components (ui-button, ui-input) render\n * their control inside a display:contents host.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const buttonGroupVariants = cva(\n  'flex w-fit items-stretch [&>*]:focus-visible:z-10 [&>*]:focus-visible:relative has-[>[data-slot=button-group]]:gap-2',\n  {\n    variants: {\n      orientation: {\n        horizontal:\n          '[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none [&>:not(:first-child)>[data-slot]]:rounded-l-none [&>:not(:first-child)>[data-slot]]:border-l-0 [&>:not(:last-child)>[data-slot]]:rounded-r-none',\n        vertical:\n          'flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none [&>:not(:first-child)>[data-slot]]:rounded-t-none [&>:not(:first-child)>[data-slot]]:border-t-0 [&>:not(:last-child)>[data-slot]]:rounded-b-none',\n      },\n    },\n    defaultVariants: { orientation: 'horizontal' },\n  },\n)\n\nexport type ButtonGroupVariants = VariantProps<typeof buttonGroupVariants>\n\n@customElement({ name: 'ui-button-group', template: '<au-slot></au-slot>' })\nexport class UiButtonGroup {\n  @bindable() orientation: ButtonGroupVariants['orientation'] = 'horizontal'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'button-group')\n    this.host.setAttribute('role', 'group')\n    this.applyClasses()\n  }\n\n  orientationChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.setAttribute('data-orientation', this.orientation ?? 'horizontal')\n    this.host.className = cn(\n      buttonGroupVariants({ orientation: this.orientation }),\n      this.authorClasses,\n    )\n  }\n}\n\n@customElement({ name: 'ui-button-group-text', template: '<au-slot></au-slot>' })\nexport class UiButtonGroupText {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'button-group-text')\n    this.host.className = cn(\n      \"bg-muted flex items-center gap-2 rounded-md border px-4 text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\",\n      author,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/button-group/index.ts",
+      "type": "registry:ui",
+      "content": "export {\n  UiButtonGroup,\n  UiButtonGroupText,\n  buttonGroupVariants,\n  type ButtonGroupVariants,\n} from './button-group'\n"
+    }
+  ]
+}

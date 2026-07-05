@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-inline",
+  "type": "registry:example",
+  "title": "Kbd Inline",
+  "description": "Example: kbd-inline.",
+  "registryDependencies": [
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-inline.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiKbd, UiKbdGroup } from '@/registry/default/ui/kbd'\n\nconst TEMPLATE = `\n<p class=\"text-muted-foreground max-w-sm text-sm\">\n  Press\n  <ui-kbd-group>\n    <ui-kbd>Ctrl</ui-kbd><ui-kbd>B</ui-kbd>\n  </ui-kbd-group>\n  to toggle the sidebar, or <ui-kbd>/</ui-kbd> to focus search.\n</p>\n`\n\n@customElement({ name: 'kbd-inline', template: TEMPLATE, dependencies: [UiKbd, UiKbdGroup] })\nexport class KbdInline {}\n"
+    }
+  ]
+}

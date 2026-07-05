@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-form",
+  "type": "registry:example",
+  "title": "Input Form",
+  "description": "Example: input-form.",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-form.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiInput } from '@/registry/default/ui/input'\nimport { UiLabel } from '@/registry/default/ui/label'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<form class=\"grid w-full max-w-sm gap-4\" submit.trigger:prevent=\"submit()\">\n  <div class=\"grid gap-2\">\n    <ui-label for=\"input-form-name\">Name</ui-label>\n    <ui-input id=\"input-form-name\" value.two-way=\"name\" placeholder=\"Ada Lovelace\" required.bind=\"true\"></ui-input>\n  </div>\n  <div class=\"grid gap-2\">\n    <ui-label for=\"input-form-picture\">Picture</ui-label>\n    <ui-input id=\"input-form-picture\" type=\"file\"></ui-input>\n  </div>\n  <div class=\"grid gap-2\">\n    <ui-label for=\"input-form-disabled\">Disabled</ui-label>\n    <ui-input id=\"input-form-disabled\" disabled.bind=\"true\" placeholder=\"Disabled\"></ui-input>\n  </div>\n  <ui-button type=\"submit\">Submit\\${name ? ' — ' + name : ''}</ui-button>\n</form>\n`\n\n@customElement({ name: 'input-form', template: TEMPLATE, dependencies: [UiInput, UiLabel, UiButton] })\nexport class InputForm {\n  name = ''\n\n  submit(): void {\n    // demo only\n  }\n}\n"
+    }
+  ]
+}

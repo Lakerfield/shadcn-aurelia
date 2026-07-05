@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select",
+  "type": "registry:ui",
+  "title": "Native Select",
+  "description": "A styled native select element (custom attribute).",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/native-select/native-select.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-native-select — custom ATTRIBUTE on a real <select>.\n *\n * A custom element can't project <option> children (the HTML parser drops\n * unknown tags inside <select>), so the part is an attribute on the native\n * element — markup stays valid and fully accessible:\n *\n *   <select ui-native-select value.bind=\"fruit\">\n *     <option>Apple</option>\n *   </select>\n */\nimport { customAttribute, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n// chevron-down, embedded so appearance-none keeps an affordance\nconst CHEVRON =\n  \"url(\\\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\\\")\"\n\n@customAttribute('ui-native-select')\nexport class UiNativeSelectAttribute {\n  private readonly el: HTMLSelectElement = resolve(INode) as HTMLSelectElement\n\n  bound(): void {\n    const author = this.el.getAttribute('class') ?? ''\n    this.el.setAttribute('data-slot', 'native-select')\n    this.el.className = cn(\n      'border-input dark:bg-input/30 dark:hover:bg-input/50 h-9 w-fit min-w-0 appearance-none rounded-md border bg-transparent py-1 pr-8 pl-3 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',\n      author,\n    )\n    this.el.style.backgroundImage = CHEVRON\n    this.el.style.backgroundRepeat = 'no-repeat'\n    this.el.style.backgroundPosition = 'right 0.5rem center'\n    this.el.style.backgroundSize = '1rem'\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/native-select/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiNativeSelectAttribute } from './native-select'\n"
+    }
+  ]
+}

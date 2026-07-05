@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-nested",
+  "type": "registry:example",
+  "title": "Button Group Nested",
+  "description": "Example: button-group-nested.",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-nested.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiButtonGroup, UiButtonGroupText } from '@/registry/default/ui/button-group'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-start gap-4\">\n  <ui-button-group>\n    <ui-button-group-text>https://</ui-button-group-text>\n    <ui-button variant=\"outline\">example.com</ui-button>\n    <ui-button variant=\"outline\" size=\"icon\" label=\"Copy URL\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n           stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"></rect>\n        <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"></path>\n      </svg>\n    </ui-button>\n  </ui-button-group>\n  <ui-button-group orientation=\"vertical\" class=\"h-fit\">\n    <ui-button variant=\"outline\" size=\"sm\">Top</ui-button>\n    <ui-button variant=\"outline\" size=\"sm\">Middle</ui-button>\n    <ui-button variant=\"outline\" size=\"sm\">Bottom</ui-button>\n  </ui-button-group>\n</div>\n`\n\n@customElement({\n  name: 'button-group-nested',\n  template: TEMPLATE,\n  dependencies: [UiButtonGroup, UiButtonGroupText, UiButton],\n})\nexport class ButtonGroupNested {}\n"
+    }
+  ]
+}

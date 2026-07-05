@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-demo",
+  "type": "registry:example",
+  "title": "Alert Demo",
+  "description": "Example: alert-demo.",
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiAlert, UiAlertTitle, UiAlertDescription } from '@/registry/default/ui/alert'\n\nconst TEMPLATE = `\n<ui-alert class=\"max-w-md\">\n  <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n       stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M20 6 9 17l-5-5\"></path>\n  </svg>\n  <ui-alert-title>Success! Your changes have been saved</ui-alert-title>\n  <ui-alert-description>This is an alert with icon, title and description.</ui-alert-description>\n</ui-alert>\n`\n\n@customElement({ name: 'alert-demo', template: TEMPLATE, dependencies: [UiAlert, UiAlertTitle, UiAlertDescription] })\nexport class AlertDemo {}\n"
+    }
+  ]
+}

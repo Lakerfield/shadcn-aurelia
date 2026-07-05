@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-demo",
+  "type": "registry:example",
+  "title": "Button Group Demo",
+  "description": "Example: button-group-demo.",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiButtonGroup } from '@/registry/default/ui/button-group'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-button-group>\n  <ui-button variant=\"outline\">Archive</ui-button>\n  <ui-button variant=\"outline\">Report</ui-button>\n  <ui-button variant=\"outline\">Snooze</ui-button>\n</ui-button-group>\n`\n\n@customElement({ name: 'button-group-demo', template: TEMPLATE, dependencies: [UiButtonGroup, UiButton] })\nexport class ButtonGroupDemo {}\n"
+    }
+  ]
+}

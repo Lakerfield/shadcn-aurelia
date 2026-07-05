@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group",
+  "type": "registry:ui",
+  "title": "Input Group",
+  "description": "Composes an input with icons, buttons or keyboard hints.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/input-group/input-group.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-input-group — bordered container composing a control with addons.\n *\n * The control is a raw native element carrying the ui-input-group-input\n * attribute (unstyled variant of ui-input), so :focus-visible on it can drive\n * the group border via has-[] selectors:\n *\n *   <ui-input-group>\n *     <ui-input-group-addon><svg …></ui-input-group-addon>\n *     <input ui-input-group-input placeholder=\"Search…\">\n *   </ui-input-group>\n */\nimport { customElement, customAttribute, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const inputGroupAddonVariants = cva(\n  \"text-muted-foreground flex h-auto items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&>svg:not([class*='size-'])]:size-4 [&>kbd]:rounded-[calc(var(--radius)-5px)]\",\n  {\n    variants: {\n      align: {\n        'inline-start': 'order-first pl-3',\n        'inline-end': 'order-last pr-3',\n        'block-start': 'order-first w-full justify-start px-3 pt-3',\n        'block-end': 'order-last w-full justify-start px-3 pb-3',\n      },\n    },\n    defaultVariants: { align: 'inline-start' },\n  },\n)\n\nexport type InputGroupAddonVariants = VariantProps<typeof inputGroupAddonVariants>\n\n@customElement({ name: 'ui-input-group', template: '<au-slot></au-slot>' })\nexport class UiInputGroup {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'input-group')\n    this.host.setAttribute('role', 'group')\n    this.host.className = cn(\n      'group/input-group border-input dark:bg-input/30 relative flex w-full items-center rounded-md border shadow-xs transition-[color,box-shadow] outline-none h-9 min-w-0 has-[>textarea]:h-auto has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot=input-group-control]:focus-visible]:ring-[3px] has-[[data-slot=input-group-control][aria-invalid=true]]:ring-destructive/20 dark:has-[[data-slot=input-group-control][aria-invalid=true]]:ring-destructive/40 has-[[data-slot=input-group-control][aria-invalid=true]]:border-destructive',\n      author,\n    )\n  }\n}\n\n@customElement({ name: 'ui-input-group-addon', template: '<au-slot></au-slot>' })\nexport class UiInputGroupAddon {\n  @bindable() align: InputGroupAddonVariants['align'] = 'inline-start'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'input-group-addon')\n    this.applyClasses()\n  }\n\n  alignChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.className = cn(inputGroupAddonVariants({ align: this.align }), this.authorClasses)\n  }\n}\n\n/** Unstyled control inside a group — attribute on a raw <input>/<textarea>. */\n@customAttribute('ui-input-group-input')\nexport class UiInputGroupInputAttribute {\n  private readonly el: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.el.getAttribute('class') ?? ''\n    this.el.setAttribute('data-slot', 'input-group-control')\n    this.el.className = cn(\n      'placeholder:text-muted-foreground h-full w-full flex-1 rounded-none border-0 bg-transparent px-3 py-1 text-base shadow-none outline-none focus-visible:ring-0 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-transparent',\n      author,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/input-group/index.ts",
+      "type": "registry:ui",
+      "content": "export {\n  UiInputGroup,\n  UiInputGroupAddon,\n  UiInputGroupInputAttribute,\n  inputGroupAddonVariants,\n  type InputGroupAddonVariants,\n} from './input-group'\n"
+    }
+  ]
+}

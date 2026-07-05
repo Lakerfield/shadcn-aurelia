@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-semantic",
+  "type": "registry:example",
+  "title": "Separator Semantic",
+  "description": "Example: separator-semantic.",
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/separator-semantic.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSeparator } from '@/registry/default/ui/separator'\n\nconst TEMPLATE = `\n<div class=\"w-full max-w-xs text-sm\">\n  <p>Section one — announcements.</p>\n  <ui-separator decorative.bind=\"false\" class=\"my-4\"></ui-separator>\n  <p>Section two — unrelated content, so the separator is semantic (role=\"separator\").</p>\n</div>\n`\n\n@customElement({ name: 'separator-semantic', template: TEMPLATE, dependencies: [UiSeparator] })\nexport class SeparatorSemantic {}\n"
+    }
+  ]
+}

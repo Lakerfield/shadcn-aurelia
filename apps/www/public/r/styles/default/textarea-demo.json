@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-demo",
+  "type": "registry:example",
+  "title": "Textarea Demo",
+  "description": "Example: textarea-demo.",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/textarea-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiTextarea } from '@/registry/default/ui/textarea'\n\nconst TEMPLATE = `\n<ui-textarea placeholder=\"Type your message here.\" class=\"max-w-sm\"></ui-textarea>\n`\n\n@customElement({ name: 'textarea-demo', template: TEMPLATE, dependencies: [UiTextarea] })\nexport class TextareaDemo {}\n"
+    }
+  ]
+}

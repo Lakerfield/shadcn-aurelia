@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-variants",
+  "type": "registry:example",
+  "title": "Button Variants",
+  "description": "Example: button-variants.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-variants.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex flex-wrap items-center gap-2\">\n  <ui-button>Default</ui-button>\n  <ui-button variant=\"secondary\">Secondary</ui-button>\n  <ui-button variant=\"destructive\">Destructive</ui-button>\n  <ui-button variant=\"outline\">Outline</ui-button>\n  <ui-button variant=\"ghost\">Ghost</ui-button>\n  <ui-button variant=\"link\">Link</ui-button>\n  <ui-button size=\"sm\" variant=\"outline\">Small</ui-button>\n  <ui-button size=\"lg\" variant=\"outline\">Large</ui-button>\n  <ui-button size=\"icon\" variant=\"outline\" label=\"Settings\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n         stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <path d=\"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z\"></path>\n      <circle cx=\"12\" cy=\"12\" r=\"3\"></circle>\n    </svg>\n  </ui-button>\n  <ui-button disabled.bind=\"true\">Disabled</ui-button>\n  <ui-button class=\"w-full\">Full width (author class)</ui-button>\n</div>\n`\n\n@customElement({ name: 'button-variants', template: TEMPLATE, dependencies: [UiButton] })\nexport class ButtonVariantsExample {}\n"
+    }
+  ]
+}

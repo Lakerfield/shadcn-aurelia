@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-demo",
+  "type": "registry:example",
+  "title": "Card Demo",
+  "description": "Example: card-demo.",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCard,\n  UiCardHeader,\n  UiCardTitle,\n  UiCardDescription,\n  UiCardAction,\n  UiCardContent,\n  UiCardFooter,\n} from '@/registry/default/ui/card'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-card class=\"w-full max-w-sm\">\n  <ui-card-header>\n    <ui-card-title>Meeting notes</ui-card-title>\n    <ui-card-description>Transcript from the design sync.</ui-card-description>\n    <ui-card-action>\n      <ui-button variant=\"ghost\" size=\"sm\">Share</ui-button>\n    </ui-card-action>\n  </ui-card-header>\n  <ui-card-content>\n    <p class=\"text-sm\">\n      Reviewed the component authoring conventions and agreed to ship the\n      static batch before the interactive primitives.\n    </p>\n  </ui-card-content>\n  <ui-card-footer class=\"gap-2\">\n    <ui-button>Approve</ui-button>\n    <ui-button variant=\"outline\">Comment</ui-button>\n  </ui-card-footer>\n</ui-card>\n`\n\n@customElement({\n  name: 'card-demo',\n  template: TEMPLATE,\n  dependencies: [UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter, UiButton],\n})\nexport class CardDemo {}\n"
+    }
+  ]
+}

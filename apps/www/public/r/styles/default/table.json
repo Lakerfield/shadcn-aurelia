@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "type": "registry:ui",
+  "title": "Table",
+  "description": "A responsive table (attributes on native table elements).",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/table/table.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-table — custom ATTRIBUTES on real table elements.\n *\n * Custom elements inside <table> would be foster-parented out by the HTML\n * parser and break the table content model, so every part is an attribute on\n * its native element — the DOM stays a valid, fully accessible table:\n *\n *   <table ui-table>\n *     <thead ui-table-header><tr ui-table-row><th ui-table-head>…\n *\n * `ui-table` additionally wraps its <table> in an overflow container div.\n */\nimport { customAttribute, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customAttribute('ui-table')\nexport class UiTableAttribute {\n  private readonly el: HTMLTableElement = resolve(INode) as HTMLTableElement\n  private container: HTMLDivElement | null = null\n\n  bound(): void {\n    const author = this.el.getAttribute('class') ?? ''\n    this.el.setAttribute('data-slot', 'table')\n    this.el.className = cn('w-full caption-bottom text-sm', author)\n  }\n\n  attached(): void {\n    this.container = document.createElement('div')\n    this.container.dataset.slot = 'table-container'\n    this.container.className = 'relative w-full overflow-x-auto'\n    this.el.parentNode?.insertBefore(this.container, this.el)\n    this.container.appendChild(this.el)\n  }\n\n  detaching(): void {\n    if (this.container?.parentNode) {\n      this.container.parentNode.insertBefore(this.el, this.container)\n      this.container.remove()\n    }\n    this.container = null\n  }\n}\n\nfunction defineTablePart(name: string, slot: string, classes: string) {\n  @customAttribute(name)\n  class TablePart {\n    readonly el: HTMLElement = resolve(INode) as HTMLElement\n\n    bound(): void {\n      const author = this.el.getAttribute('class') ?? ''\n      this.el.setAttribute('data-slot', slot)\n      this.el.className = cn(classes, author)\n    }\n  }\n  return TablePart\n}\n\nexport const UiTableHeaderAttribute = defineTablePart('ui-table-header', 'table-header', '[&_tr]:border-b')\n\nexport const UiTableBodyAttribute = defineTablePart(\n  'ui-table-body',\n  'table-body',\n  '[&_tr:last-child]:border-0',\n)\n\nexport const UiTableFooterAttribute = defineTablePart(\n  'ui-table-footer',\n  'table-footer',\n  'bg-muted/50 border-t font-medium [&>tr]:last:border-b-0',\n)\n\nexport const UiTableRowAttribute = defineTablePart(\n  'ui-table-row',\n  'table-row',\n  'hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors',\n)\n\nexport const UiTableHeadAttribute = defineTablePart(\n  'ui-table-head',\n  'table-head',\n  'text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',\n)\n\nexport const UiTableCellAttribute = defineTablePart(\n  'ui-table-cell',\n  'table-cell',\n  'p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',\n)\n\nexport const UiTableCaptionAttribute = defineTablePart(\n  'ui-table-caption',\n  'table-caption',\n  'text-muted-foreground mt-4 text-sm',\n)\n"
+    },
+    {
+      "path": "registry/default/ui/table/index.ts",
+      "type": "registry:ui",
+      "content": "export {\n  UiTableAttribute,\n  UiTableHeaderAttribute,\n  UiTableBodyAttribute,\n  UiTableFooterAttribute,\n  UiTableRowAttribute,\n  UiTableHeadAttribute,\n  UiTableCellAttribute,\n  UiTableCaptionAttribute,\n} from './table'\n"
+    }
+  ]
+}

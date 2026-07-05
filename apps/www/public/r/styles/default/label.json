@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "type": "registry:ui",
+  "title": "Label",
+  "description": "Renders an accessible label associated with a control.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/label/label.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-label — styled native <label> (convention B).\n * `for` is aliased to htmlFor so the native label/control association works:\n *   <ui-label for=\"email\">Email</ui-label>\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\nconst TEMPLATE = `\n<label class.bind=\"classes\" for.bind=\"htmlFor || null\" data-slot=\"label\">\n  <au-slot></au-slot>\n</label>\n`\n\n@customElement({ name: 'ui-label', template: TEMPLATE })\nexport class UiLabel {\n  @bindable({ attribute: 'for' }) htmlFor = ''\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(\n      'flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50',\n      this.authorClasses,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/label/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiLabel } from './label'\n"
+    }
+  ]
+}

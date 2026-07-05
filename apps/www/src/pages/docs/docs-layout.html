@@ -4,10 +4,10 @@
       <div>
         <p class="mb-2 font-semibold">Components</p>
         <ul class="space-y-1">
-          <li>
-            <a load="components/tooltip"
+          <li repeat.for="c of components">
+            <a load="components/${c.name}"
                class="block cursor-pointer rounded-md px-2 py-1 text-muted-foreground transition-colors hover:text-foreground [&.active]:bg-accent [&.active]:font-medium [&.active]:text-accent-foreground">
-              Tooltip
+              ${c.title}
             </a>
           </li>
         </ul>

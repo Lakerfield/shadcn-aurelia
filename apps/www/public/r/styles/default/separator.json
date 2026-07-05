@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "type": "registry:ui",
+  "title": "Separator",
+  "description": "Visually or semantically separates content.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/separator/separator.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-separator — host-styled (convention A) with WAI-ARIA separator semantics:\n * decorative separators get role=\"none\"; semantic ones role=\"separator\" with\n * aria-orientation when vertical.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-separator', template: '' })\nexport class UiSeparator {\n  @bindable() orientation: 'horizontal' | 'vertical' = 'horizontal'\n  @bindable() decorative = true\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'separator')\n    this.apply()\n  }\n\n  orientationChanged(): void {\n    this.apply()\n  }\n\n  decorativeChanged(): void {\n    this.apply()\n  }\n\n  private apply(): void {\n    this.host.setAttribute('data-orientation', this.orientation)\n    if (this.decorative) {\n      this.host.setAttribute('role', 'none')\n      this.host.removeAttribute('aria-orientation')\n    } else {\n      this.host.setAttribute('role', 'separator')\n      if (this.orientation === 'vertical') this.host.setAttribute('aria-orientation', 'vertical')\n      else this.host.removeAttribute('aria-orientation')\n    }\n    this.host.className = cn(\n      'block bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px',\n      this.authorClasses,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/separator/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiSeparator } from './separator'\n"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty",
+  "type": "registry:ui",
+  "title": "Empty",
+  "description": "Displays an empty state.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/empty/empty.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-empty — empty-state family (convention A, host-styled).\n * Parts: ui-empty, ui-empty-header, ui-empty-media, ui-empty-title,\n * ui-empty-description, ui-empty-content.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const emptyMediaVariants = cva(\n  'flex shrink-0 items-center justify-center mb-2 [&_svg]:pointer-events-none [&_svg]:shrink-0',\n  {\n    variants: {\n      variant: {\n        default: 'bg-transparent',\n        icon: \"bg-muted text-foreground flex size-10 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-6\",\n      },\n    },\n    defaultVariants: { variant: 'default' },\n  },\n)\n\nexport type EmptyMediaVariants = VariantProps<typeof emptyMediaVariants>\n\n@customElement({ name: 'ui-empty-media', template: '<au-slot></au-slot>' })\nexport class UiEmptyMedia {\n  @bindable() variant: EmptyMediaVariants['variant'] = 'default'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'empty-media')\n    this.applyClasses()\n  }\n\n  variantChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.className = cn(emptyMediaVariants({ variant: this.variant }), this.authorClasses)\n  }\n}\n\nfunction defineHostPart(name: string, slot: string, classes: string) {\n  @customElement({ name, template: '<au-slot></au-slot>' })\n  class HostPart {\n    readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n    bound(): void {\n      const author = this.host.getAttribute('class') ?? ''\n      this.host.setAttribute('data-slot', slot)\n      this.host.className = cn(classes, author)\n    }\n  }\n  return HostPart\n}\n\nexport const UiEmpty = defineHostPart(\n  'ui-empty',\n  'empty',\n  'flex min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-lg border-dashed p-6 text-center text-balance md:p-12',\n)\n\nexport const UiEmptyHeader = defineHostPart(\n  'ui-empty-header',\n  'empty-header',\n  'flex max-w-sm flex-col items-center gap-2 text-center',\n)\n\nexport const UiEmptyTitle = defineHostPart('ui-empty-title', 'empty-title', 'block text-lg font-medium tracking-tight')\n\nexport const UiEmptyDescription = defineHostPart(\n  'ui-empty-description',\n  'empty-description',\n  'text-muted-foreground block [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4',\n)\n\nexport const UiEmptyContent = defineHostPart(\n  'ui-empty-content',\n  'empty-content',\n  'flex w-full max-w-sm min-w-0 flex-col items-center gap-4 text-sm text-balance',\n)\n"
+    },
+    {
+      "path": "registry/default/ui/empty/index.ts",
+      "type": "registry:ui",
+      "content": "export {\n  UiEmpty,\n  UiEmptyHeader,\n  UiEmptyMedia,\n  UiEmptyTitle,\n  UiEmptyDescription,\n  UiEmptyContent,\n  emptyMediaVariants,\n  type EmptyMediaVariants,\n} from './empty'\n"
+    }
+  ]
+}

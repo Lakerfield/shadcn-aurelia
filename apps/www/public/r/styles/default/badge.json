@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:ui",
+  "title": "Badge",
+  "description": "Displays a badge or a component that looks like a badge.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/badge/badge.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-badge — host-styled element (convention A): the host itself receives the\n * merged classes; author classes on the host are preserved via cn().\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const badgeVariants = cva(\n  'inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden',\n  {\n    variants: {\n      variant: {\n        default: 'border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90',\n        secondary:\n          'border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90',\n        destructive:\n          'border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',\n        outline: 'text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground',\n      },\n    },\n    defaultVariants: { variant: 'default' },\n  },\n)\n\nexport type BadgeVariants = VariantProps<typeof badgeVariants>\n\n@customElement({ name: 'ui-badge', template: '<au-slot></au-slot>' })\nexport class UiBadge {\n  @bindable() variant: BadgeVariants['variant'] = 'default'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'badge')\n    this.applyClasses()\n  }\n\n  variantChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.className = cn(badgeVariants({ variant: this.variant }), this.authorClasses)\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/badge/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiBadge, badgeVariants, type BadgeVariants } from './badge'\n"
+    }
+  ]
+}

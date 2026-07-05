@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-demo",
+  "type": "registry:example",
+  "title": "Table Demo",
+  "description": "Example: table-demo.",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/table-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiTableAttribute,\n  UiTableHeaderAttribute,\n  UiTableBodyAttribute,\n  UiTableRowAttribute,\n  UiTableHeadAttribute,\n  UiTableCellAttribute,\n  UiTableCaptionAttribute,\n} from '@/registry/default/ui/table'\n\nconst TEMPLATE = `\n<table ui-table class=\"max-w-lg\">\n  <caption ui-table-caption>A list of your recent invoices.</caption>\n  <thead ui-table-header>\n    <tr ui-table-row>\n      <th ui-table-head class=\"w-[100px]\">Invoice</th>\n      <th ui-table-head>Status</th>\n      <th ui-table-head>Method</th>\n      <th ui-table-head class=\"text-right\">Amount</th>\n    </tr>\n  </thead>\n  <tbody ui-table-body>\n    <tr ui-table-row repeat.for=\"inv of invoices\">\n      <td ui-table-cell class=\"font-medium\">\\${inv.id}</td>\n      <td ui-table-cell>\\${inv.status}</td>\n      <td ui-table-cell>\\${inv.method}</td>\n      <td ui-table-cell class=\"text-right\">\\${inv.amount}</td>\n    </tr>\n  </tbody>\n</table>\n`\n\n@customElement({\n  name: 'table-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiTableAttribute,\n    UiTableHeaderAttribute,\n    UiTableBodyAttribute,\n    UiTableRowAttribute,\n    UiTableHeadAttribute,\n    UiTableCellAttribute,\n    UiTableCaptionAttribute,\n  ],\n})\nexport class TableDemo {\n  invoices = [\n    { id: 'INV001', status: 'Paid', method: 'Credit card', amount: '$250.00' },\n    { id: 'INV002', status: 'Pending', method: 'PayPal', amount: '$150.00' },\n    { id: 'INV003', status: 'Unpaid', method: 'Bank transfer', amount: '$350.00' },\n    { id: 'INV004', status: 'Paid', method: 'Credit card', amount: '$450.00' },\n  ]\n}\n"
+    }
+  ]
+}

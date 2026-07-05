@@ -1,17 +1,14 @@
+<import from="@/registry/default/ui/badge"></import>
+
 <section class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-24 text-center">
+  <ui-badge variant="secondary">Phase 2 — 21 static components</ui-badge>
   <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">shadcn-aurelia</h1>
   <p class="max-w-xl text-lg text-muted-foreground">
     Beautifully designed components for Aurelia 2. Accessible. Customizable. Open Source.
     Copy-paste via CLI &amp; registry — your components, your code.
   </p>
   <div class="flex items-center gap-3">
-    <a load="route: docs; context.bind: null"
-       class="inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
-      Get Started
-    </a>
-    <a load="route: docs/components/tooltip; context.bind: null"
-       class="inline-flex h-10 cursor-pointer items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
-      Components
-    </a>
+    <a load="route: docs; context.bind: null" class="cursor-pointer ${primaryCta}">Get Started</a>
+    <a load="route: docs; context.bind: null" class="cursor-pointer ${secondaryCta}">Components</a>
   </div>
 </section>

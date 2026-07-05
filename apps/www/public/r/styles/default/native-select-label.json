@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-label",
+  "type": "registry:example",
+  "title": "Native Select Label",
+  "description": "Example: native-select-label.",
+  "registryDependencies": [
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/native-select-label.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiNativeSelectAttribute } from '@/registry/default/ui/native-select'\nimport { UiLabel } from '@/registry/default/ui/label'\n\nconst TEMPLATE = `\n<div class=\"grid w-full max-w-xs gap-2\">\n  <ui-label for=\"native-select-tz\">Timezone</ui-label>\n  <select ui-native-select id=\"native-select-tz\" class=\"w-full\" value.bind=\"timezone\">\n    <optgroup label=\"Europe\">\n      <option value=\"cet\">Central European Time</option>\n      <option value=\"gmt\">Greenwich Mean Time</option>\n    </optgroup>\n    <optgroup label=\"America\">\n      <option value=\"est\">Eastern Standard Time</option>\n      <option value=\"pst\">Pacific Standard Time</option>\n    </optgroup>\n  </select>\n  <p class=\"text-muted-foreground text-sm\">Selected: \\${timezone}</p>\n</div>\n`\n\n@customElement({\n  name: 'native-select-label',\n  template: TEMPLATE,\n  dependencies: [UiNativeSelectAttribute, UiLabel],\n})\nexport class NativeSelectLabel {\n  timezone = 'cet'\n}\n"
+    }
+  ]
+}

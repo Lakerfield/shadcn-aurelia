@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-kbd",
+  "type": "registry:example",
+  "title": "Input Group Kbd",
+  "description": "Example: input-group-kbd.",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-kbd.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiInputGroup,\n  UiInputGroupAddon,\n  UiInputGroupInputAttribute,\n} from '@/registry/default/ui/input-group'\nimport { UiKbd } from '@/registry/default/ui/kbd'\n\nconst TEMPLATE = `\n<ui-input-group class=\"max-w-sm\">\n  <input ui-input-group-input placeholder=\"Type to search…\" aria-label=\"Search\">\n  <ui-input-group-addon align=\"inline-end\">\n    <ui-kbd>⌘K</ui-kbd>\n  </ui-input-group-addon>\n</ui-input-group>\n`\n\n@customElement({\n  name: 'input-group-kbd',\n  template: TEMPLATE,\n  dependencies: [UiInputGroup, UiInputGroupAddon, UiInputGroupInputAttribute, UiKbd],\n})\nexport class InputGroupKbd {}\n"
+    }
+  ]
+}

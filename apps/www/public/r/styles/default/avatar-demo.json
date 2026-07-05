@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-demo",
+  "type": "registry:example",
+  "title": "Avatar Demo",
+  "description": "Example: avatar-demo.",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@/registry/default/ui/avatar'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-3\">\n  <ui-avatar>\n    <ui-avatar-image src=\"https://github.com/shadcn.png\" alt=\"@shadcn\"></ui-avatar-image>\n    <ui-avatar-fallback>CN</ui-avatar-fallback>\n  </ui-avatar>\n  <ui-avatar class=\"size-10 rounded-lg\">\n    <ui-avatar-image src=\"https://github.com/aurelia.png\" alt=\"@aurelia\"></ui-avatar-image>\n    <ui-avatar-fallback class=\"rounded-lg\">AU</ui-avatar-fallback>\n  </ui-avatar>\n</div>\n`\n\n@customElement({\n  name: 'avatar-demo',\n  template: TEMPLATE,\n  dependencies: [UiAvatar, UiAvatarImage, UiAvatarFallback],\n})\nexport class AvatarDemo {}\n"
+    }
+  ]
+}

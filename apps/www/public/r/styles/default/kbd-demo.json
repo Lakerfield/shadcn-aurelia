@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-demo",
+  "type": "registry:example",
+  "title": "Kbd Demo",
+  "description": "Example: kbd-demo.",
+  "registryDependencies": [
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiKbd, UiKbdGroup } from '@/registry/default/ui/kbd'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-4 text-sm\">\n  <ui-kbd-group>\n    <ui-kbd>⌘</ui-kbd>\n    <ui-kbd>K</ui-kbd>\n  </ui-kbd-group>\n  <ui-kbd>Esc</ui-kbd>\n  <ui-kbd>Enter</ui-kbd>\n</div>\n`\n\n@customElement({ name: 'kbd-demo', template: TEMPLATE, dependencies: [UiKbd, UiKbdGroup] })\nexport class KbdDemo {}\n"
+    }
+  ]
+}

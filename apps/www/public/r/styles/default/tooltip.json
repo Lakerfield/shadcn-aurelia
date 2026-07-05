@@ -3,11 +3,14 @@
   "name": "tooltip",
   "type": "registry:ui",
   "title": "Tooltip",
-  "description": "A popup that displays information related to an element when it receives keyboard focus or the mouse hovers over it.",
+  "description": "A popup that displays information related to an element on hover or focus.",
   "dependencies": [
     "@shadcn-aurelia/primitives",
     "@zag-js/tooltip",
     "@zag-js/vanilla"
+  ],
+  "registryDependencies": [
+    "cn"
   ],
   "files": [
     {

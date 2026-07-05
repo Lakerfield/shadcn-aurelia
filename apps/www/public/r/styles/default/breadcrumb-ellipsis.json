@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-ellipsis",
+  "type": "registry:example",
+  "title": "Breadcrumb Ellipsis",
+  "description": "Example: breadcrumb-ellipsis.",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/breadcrumb-ellipsis.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiBreadcrumbAttribute,\n  UiBreadcrumbListAttribute,\n  UiBreadcrumbItemAttribute,\n  UiBreadcrumbLinkAttribute,\n  UiBreadcrumbPageAttribute,\n  UiBreadcrumbSeparatorAttribute,\n  UiBreadcrumbEllipsisAttribute,\n} from '@/registry/default/ui/breadcrumb'\n\nconst TEMPLATE = `\n<nav ui-breadcrumb aria-label=\"breadcrumb with ellipsis\">\n  <ol ui-breadcrumb-list>\n    <li ui-breadcrumb-item><a ui-breadcrumb-link href=\"#\">Home</a></li>\n    <li ui-breadcrumb-separator></li>\n    <li ui-breadcrumb-item><span ui-breadcrumb-ellipsis></span></li>\n    <li ui-breadcrumb-separator></li>\n    <li ui-breadcrumb-item><a ui-breadcrumb-link href=\"#\">Docs</a></li>\n    <li ui-breadcrumb-separator></li>\n    <li ui-breadcrumb-item><span ui-breadcrumb-page>Breadcrumb</span></li>\n  </ol>\n</nav>\n`\n\n@customElement({\n  name: 'breadcrumb-ellipsis',\n  template: TEMPLATE,\n  dependencies: [\n    UiBreadcrumbAttribute,\n    UiBreadcrumbListAttribute,\n    UiBreadcrumbItemAttribute,\n    UiBreadcrumbLinkAttribute,\n    UiBreadcrumbPageAttribute,\n    UiBreadcrumbSeparatorAttribute,\n    UiBreadcrumbEllipsisAttribute,\n  ],\n})\nexport class BreadcrumbEllipsis {}\n"
+    }
+  ]
+}

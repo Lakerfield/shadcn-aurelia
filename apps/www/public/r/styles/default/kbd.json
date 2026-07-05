@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "type": "registry:ui",
+  "title": "Kbd",
+  "description": "Displays keyboard keys and shortcuts.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/kbd/kbd.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-kbd / ui-kbd-group — host-styled (convention A) keyboard-key indicators.\n */\nimport { customElement, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-kbd', template: '<au-slot></au-slot>' })\nexport class UiKbd {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'kbd')\n    this.host.className = cn(\n      \"bg-muted text-foreground pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm px-1 font-sans text-xs font-medium select-none [&_svg:not([class*='size-'])]:size-3 [&_svg]:shrink-0\",\n      author,\n    )\n  }\n}\n\n@customElement({ name: 'ui-kbd-group', template: '<au-slot></au-slot>' })\nexport class UiKbdGroup {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'kbd-group')\n    this.host.className = cn('inline-flex items-center gap-1', author)\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/kbd/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiKbd, UiKbdGroup } from './kbd'\n"
+    }
+  ]
+}

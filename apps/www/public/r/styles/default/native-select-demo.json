@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-demo",
+  "type": "registry:example",
+  "title": "Native Select Demo",
+  "description": "Example: native-select-demo.",
+  "registryDependencies": [
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/native-select-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiNativeSelectAttribute } from '@/registry/default/ui/native-select'\n\nconst TEMPLATE = `\n<select ui-native-select aria-label=\"Select a fruit\">\n  <option value=\"\">Select a fruit</option>\n  <option value=\"apple\">Apple</option>\n  <option value=\"banana\">Banana</option>\n  <option value=\"cherry\">Cherry</option>\n</select>\n`\n\n@customElement({ name: 'native-select-demo', template: TEMPLATE, dependencies: [UiNativeSelectAttribute] })\nexport class NativeSelectDemo {}\n"
+    }
+  ]
+}

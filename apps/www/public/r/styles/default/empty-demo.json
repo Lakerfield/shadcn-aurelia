@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-demo",
+  "type": "registry:example",
+  "title": "Empty Demo",
+  "description": "Example: empty-demo.",
+  "registryDependencies": [
+    "empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/empty-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiEmpty,\n  UiEmptyHeader,\n  UiEmptyMedia,\n  UiEmptyTitle,\n  UiEmptyDescription,\n  UiEmptyContent,\n} from '@/registry/default/ui/empty'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-empty class=\"w-full max-w-md border\">\n  <ui-empty-header>\n    <ui-empty-media variant=\"icon\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n           stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <path d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"></path>\n      </svg>\n    </ui-empty-media>\n    <ui-empty-title>No projects yet</ui-empty-title>\n    <ui-empty-description>\n      Get started by creating your first project.\n    </ui-empty-description>\n  </ui-empty-header>\n  <ui-empty-content>\n    <ui-button size=\"sm\">Create project</ui-button>\n  </ui-empty-content>\n</ui-empty>\n`\n\n@customElement({\n  name: 'empty-demo',\n  template: TEMPLATE,\n  dependencies: [UiEmpty, UiEmptyHeader, UiEmptyMedia, UiEmptyTitle, UiEmptyDescription, UiEmptyContent, UiButton],\n})\nexport class EmptyDemo {}\n"
+    }
+  ]
+}

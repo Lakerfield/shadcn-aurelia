@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-demo",
+  "type": "registry:example",
+  "title": "Input Group Demo",
+  "description": "Example: input-group-demo.",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiInputGroup,\n  UiInputGroupAddon,\n  UiInputGroupInputAttribute,\n} from '@/registry/default/ui/input-group'\n\nconst TEMPLATE = `\n<ui-input-group class=\"max-w-sm\">\n  <ui-input-group-addon>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n         stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <circle cx=\"11\" cy=\"11\" r=\"8\"></circle>\n      <path d=\"m21 21-4.3-4.3\"></path>\n    </svg>\n  </ui-input-group-addon>\n  <input ui-input-group-input type=\"search\" placeholder=\"Search…\" aria-label=\"Search\">\n</ui-input-group>\n`\n\n@customElement({\n  name: 'input-group-demo',\n  template: TEMPLATE,\n  dependencies: [UiInputGroup, UiInputGroupAddon, UiInputGroupInputAttribute],\n})\nexport class InputGroupDemo {}\n"
+    }
+  ]
+}

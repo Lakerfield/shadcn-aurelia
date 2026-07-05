@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-custom",
+  "type": "registry:example",
+  "title": "Badge Custom",
+  "description": "Example: badge-custom.",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/badge-custom.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiBadge } from '@/registry/default/ui/badge'\n\nconst TEMPLATE = `\n<div class=\"flex flex-wrap items-center gap-2\">\n  <ui-badge class=\"bg-blue-600 text-white\">Custom color</ui-badge>\n  <ui-badge variant=\"outline\" class=\"rounded-full\">Pill</ui-badge>\n  <ui-badge variant=\"secondary\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n         stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <path d=\"M20 6 9 17l-5-5\"></path>\n    </svg>\n    Verified\n  </ui-badge>\n</div>\n`\n\n@customElement({ name: 'badge-custom', template: TEMPLATE, dependencies: [UiBadge] })\nexport class BadgeCustom {}\n"
+    }
+  ]
+}

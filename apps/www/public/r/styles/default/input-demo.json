@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-demo",
+  "type": "registry:example",
+  "title": "Input Demo",
+  "description": "Example: input-demo.",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiInput } from '@/registry/default/ui/input'\n\nconst TEMPLATE = `\n<ui-input type=\"email\" placeholder=\"Email\" class=\"max-w-sm\"></ui-input>\n`\n\n@customElement({ name: 'input-demo', template: TEMPLATE, dependencies: [UiInput] })\nexport class InputDemo {}\n"
+    }
+  ]
+}

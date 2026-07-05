@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-button",
+  "type": "registry:example",
+  "title": "Spinner Button",
+  "description": "Example: spinner-button.",
+  "registryDependencies": [
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/spinner-button.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSpinner } from '@/registry/default/ui/spinner'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-button disabled.bind=\"true\">\n  <ui-spinner></ui-spinner>\n  Saving…\n</ui-button>\n`\n\n@customElement({ name: 'spinner-button', template: TEMPLATE, dependencies: [UiSpinner, UiButton] })\nexport class SpinnerButton {}\n"
+    }
+  ]
+}

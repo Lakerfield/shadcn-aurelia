@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-footer",
+  "type": "registry:example",
+  "title": "Table Footer",
+  "description": "Example: table-footer.",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/table-footer.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiTableAttribute,\n  UiTableHeaderAttribute,\n  UiTableBodyAttribute,\n  UiTableFooterAttribute,\n  UiTableRowAttribute,\n  UiTableHeadAttribute,\n  UiTableCellAttribute,\n} from '@/registry/default/ui/table'\n\nconst TEMPLATE = `\n<table ui-table class=\"max-w-md\">\n  <thead ui-table-header>\n    <tr ui-table-row>\n      <th ui-table-head>Item</th>\n      <th ui-table-head class=\"text-right\">Total</th>\n    </tr>\n  </thead>\n  <tbody ui-table-body>\n    <tr ui-table-row>\n      <td ui-table-cell>Subscription</td>\n      <td ui-table-cell class=\"text-right\">$29.00</td>\n    </tr>\n    <tr ui-table-row>\n      <td ui-table-cell>Support add-on</td>\n      <td ui-table-cell class=\"text-right\">$9.00</td>\n    </tr>\n  </tbody>\n  <tfoot ui-table-footer>\n    <tr ui-table-row>\n      <td ui-table-cell>Total</td>\n      <td ui-table-cell class=\"text-right\">$38.00</td>\n    </tr>\n  </tfoot>\n</table>\n`\n\n@customElement({\n  name: 'table-footer-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiTableAttribute,\n    UiTableHeaderAttribute,\n    UiTableBodyAttribute,\n    UiTableFooterAttribute,\n    UiTableRowAttribute,\n    UiTableHeadAttribute,\n    UiTableCellAttribute,\n  ],\n})\nexport class TableFooterDemo {}\n"
+    }
+  ]
+}

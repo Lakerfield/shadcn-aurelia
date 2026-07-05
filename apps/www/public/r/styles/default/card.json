@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "type": "registry:ui",
+  "title": "Card",
+  "description": "Displays a card with header, content, and footer.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/card/card.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-card — multi-part host-styled elements (convention A).\n * Parts: ui-card, ui-card-header, ui-card-title, ui-card-description,\n * ui-card-action, ui-card-content, ui-card-footer.\n */\nimport { customElement, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\nfunction defineHostPart(name: string, slot: string, classes: string) {\n  @customElement({ name, template: '<au-slot></au-slot>' })\n  class HostPart {\n    readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n    bound(): void {\n      const author = this.host.getAttribute('class') ?? ''\n      this.host.setAttribute('data-slot', slot)\n      this.host.className = cn(classes, author)\n    }\n  }\n  return HostPart\n}\n\nexport const UiCard = defineHostPart(\n  'ui-card',\n  'card',\n  'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',\n)\n\nexport const UiCardHeader = defineHostPart(\n  'ui-card-header',\n  'card-header',\n  '@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6',\n)\n\nexport const UiCardTitle = defineHostPart('ui-card-title', 'card-title', 'block leading-none font-semibold')\n\nexport const UiCardDescription = defineHostPart(\n  'ui-card-description',\n  'card-description',\n  'block text-muted-foreground text-sm',\n)\n\nexport const UiCardAction = defineHostPart(\n  'ui-card-action',\n  'card-action',\n  'col-start-2 row-span-2 row-start-1 self-start justify-self-end',\n)\n\nexport const UiCardContent = defineHostPart('ui-card-content', 'card-content', 'block px-6')\n\nexport const UiCardFooter = defineHostPart(\n  'ui-card-footer',\n  'card-footer',\n  'flex items-center px-6 [.border-t]:pt-6',\n)\n"
+    },
+    {
+      "path": "registry/default/ui/card/index.ts",
+      "type": "registry:ui",
+      "content": "export {\n  UiCard,\n  UiCardHeader,\n  UiCardTitle,\n  UiCardDescription,\n  UiCardAction,\n  UiCardContent,\n  UiCardFooter,\n} from './card'\n"
+    }
+  ]
+}

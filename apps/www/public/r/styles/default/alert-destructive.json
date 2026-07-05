@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-destructive",
+  "type": "registry:example",
+  "title": "Alert Destructive",
+  "description": "Example: alert-destructive.",
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-destructive.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiAlert, UiAlertTitle, UiAlertDescription } from '@/registry/default/ui/alert'\n\nconst TEMPLATE = `\n<ui-alert variant=\"destructive\" class=\"max-w-md\">\n  <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n       stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <circle cx=\"12\" cy=\"12\" r=\"10\"></circle>\n    <line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line>\n    <line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line>\n  </svg>\n  <ui-alert-title>Unable to process your payment.</ui-alert-title>\n  <ui-alert-description>\n    <p>Please verify your billing information and try again.</p>\n  </ui-alert-description>\n</ui-alert>\n`\n\n@customElement({\n  name: 'alert-destructive',\n  template: TEMPLATE,\n  dependencies: [UiAlert, UiAlertTitle, UiAlertDescription],\n})\nexport class AlertDestructive {}\n"
+    }
+  ]
+}

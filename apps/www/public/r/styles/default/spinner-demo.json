@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-demo",
+  "type": "registry:example",
+  "title": "Spinner Demo",
+  "description": "Example: spinner-demo.",
+  "registryDependencies": [
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/spinner-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSpinner } from '@/registry/default/ui/spinner'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-4\">\n  <ui-spinner></ui-spinner>\n  <ui-spinner class=\"size-6\"></ui-spinner>\n  <ui-spinner class=\"size-8 text-muted-foreground\"></ui-spinner>\n</div>\n`\n\n@customElement({ name: 'spinner-demo', template: TEMPLATE, dependencies: [UiSpinner] })\nexport class SpinnerDemo {}\n"
+    }
+  ]
+}

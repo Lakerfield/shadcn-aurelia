@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-label",
+  "type": "registry:example",
+  "title": "Textarea Label",
+  "description": "Example: textarea-label.",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/textarea-label.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiTextarea } from '@/registry/default/ui/textarea'\nimport { UiLabel } from '@/registry/default/ui/label'\n\nconst TEMPLATE = `\n<div class=\"grid w-full max-w-sm gap-2\">\n  <ui-label for=\"textarea-message\">Your message</ui-label>\n  <ui-textarea id=\"textarea-message\" placeholder=\"Type your message here.\" rows=\"5\"></ui-textarea>\n  <p class=\"text-muted-foreground text-sm\">Your message will be copied to the support team.</p>\n</div>\n`\n\n@customElement({ name: 'textarea-label', template: TEMPLATE, dependencies: [UiTextarea, UiLabel] })\nexport class TextareaLabel {}\n"
+    }
+  ]
+}

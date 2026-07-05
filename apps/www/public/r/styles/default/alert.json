@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Displays a callout for user attention.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/alert/alert.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-alert — multi-part host-styled elements (convention A).\n * Parts: ui-alert (role=\"alert\"), ui-alert-title, ui-alert-description.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const alertVariants = cva(\n  'relative w-full rounded-lg border px-4 py-3 text-sm grid has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-0.5 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current',\n  {\n    variants: {\n      variant: {\n        default: 'bg-card text-card-foreground',\n        destructive:\n          'text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive',\n      },\n    },\n    defaultVariants: { variant: 'default' },\n  },\n)\n\nexport type AlertVariants = VariantProps<typeof alertVariants>\n\n@customElement({ name: 'ui-alert', template: '<au-slot></au-slot>' })\nexport class UiAlert {\n  @bindable() variant: AlertVariants['variant'] = 'default'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'alert')\n    this.host.setAttribute('role', 'alert')\n    this.applyClasses()\n  }\n\n  variantChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.className = cn(alertVariants({ variant: this.variant }), this.authorClasses)\n  }\n}\n\n@customElement({ name: 'ui-alert-title', template: '<au-slot></au-slot>' })\nexport class UiAlertTitle {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'alert-title')\n    this.host.className = cn('col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight', author)\n  }\n}\n\n@customElement({ name: 'ui-alert-description', template: '<au-slot></au-slot>' })\nexport class UiAlertDescription {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'alert-description')\n    this.host.className = cn(\n      'text-muted-foreground col-start-2 grid justify-items-start gap-1 text-sm [&_p]:leading-relaxed',\n      author,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/alert/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiAlert, UiAlertTitle, UiAlertDescription, alertVariants, type AlertVariants } from './alert'\n"
+    }
+  ]
+}

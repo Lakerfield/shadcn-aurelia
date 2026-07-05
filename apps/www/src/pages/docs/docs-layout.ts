@@ -1,13 +1,16 @@
 import { route } from '@aurelia/router'
+import { componentDocs } from '../../lib/component-docs'
 
 @route({
   routes: [
-    { path: '', redirectTo: 'components/tooltip' },
+    { path: '', redirectTo: 'components/button' },
     {
-      path: 'components/tooltip',
-      component: import('./components/tooltip-page'),
-      title: 'Tooltip',
+      path: 'components/:name',
+      component: import('./components/component-page'),
+      title: 'Components',
     },
   ],
 })
-export class DocsLayout {}
+export class DocsLayout {
+  readonly components = componentDocs
+}

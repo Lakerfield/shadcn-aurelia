@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "type": "registry:ui",
+  "title": "Avatar",
+  "description": "An image element with a fallback for representing the user.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/avatar/avatar.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-avatar — image with load-state-driven fallback.\n *\n * The image part tracks load/error on its <img> and reflects the status as\n * `data-status` on the avatar root; visibility is pure CSS via Tailwind\n * group-data selectors — no cross-component wiring needed.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-avatar', template: '<au-slot></au-slot>' })\nexport class UiAvatar {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'avatar')\n    this.host.setAttribute('data-status', 'loading')\n    this.host.className = cn('group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full', author)\n  }\n}\n\nconst IMAGE_TEMPLATE = `\n<img ref=\"imgEl\" class.bind=\"classes\" src.bind=\"src\" alt.bind=\"alt\"\n     load.trigger=\"onLoad()\" error.trigger=\"onError()\" data-slot=\"avatar-image\">\n`\n\n@customElement({ name: 'ui-avatar-image', template: IMAGE_TEMPLATE })\nexport class UiAvatarImage {\n  @bindable() src = ''\n  @bindable() alt = ''\n\n  imgEl!: HTMLImageElement\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  attached(): void {\n    // cached images may already be complete before listeners attach\n    if (this.imgEl.complete && this.imgEl.naturalWidth > 0) this.onLoad()\n  }\n\n  get classes(): string {\n    return cn(\n      'aspect-square size-full group-data-[status=error]/avatar:hidden group-data-[status=loading]/avatar:hidden',\n      this.authorClasses,\n    )\n  }\n\n  onLoad(): void {\n    this.setStatus('loaded')\n  }\n\n  onError(): void {\n    this.setStatus('error')\n  }\n\n  private setStatus(status: string): void {\n    this.host.closest('[data-slot=\"avatar\"]')?.setAttribute('data-status', status)\n  }\n}\n\n@customElement({ name: 'ui-avatar-fallback', template: '<au-slot></au-slot>' })\nexport class UiAvatarFallback {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'avatar-fallback')\n    this.host.className = cn(\n      'bg-muted flex size-full items-center justify-center rounded-full text-sm group-data-[status=loaded]/avatar:hidden',\n      author,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/avatar/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiAvatar, UiAvatarImage, UiAvatarFallback } from './avatar'\n"
+    }
+  ]
+}

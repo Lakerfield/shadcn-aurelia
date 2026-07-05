@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:ui",
+  "title": "Skeleton",
+  "description": "Use to show a placeholder while content is loading.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/skeleton/skeleton.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-skeleton — host-styled (convention A) loading placeholder.\n */\nimport { customElement, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-skeleton', template: '<au-slot></au-slot>' })\nexport class UiSkeleton {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'skeleton')\n    this.host.className = cn('block bg-accent animate-pulse rounded-md', author)\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/skeleton/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiSkeleton } from './skeleton'\n"
+    }
+  ]
+}

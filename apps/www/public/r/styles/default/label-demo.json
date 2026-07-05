@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-demo",
+  "type": "registry:example",
+  "title": "Label Demo",
+  "description": "Example: label-demo.",
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/label-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiLabel } from '@/registry/default/ui/label'\nimport { UiInput } from '@/registry/default/ui/input'\n\nconst TEMPLATE = `\n<div class=\"grid w-full max-w-sm gap-2\">\n  <ui-label for=\"label-demo-email\">Email address</ui-label>\n  <ui-input id=\"label-demo-email\" type=\"email\" placeholder=\"you@example.com\"></ui-input>\n</div>\n`\n\n@customElement({ name: 'label-demo', template: TEMPLATE, dependencies: [UiLabel, UiInput] })\nexport class LabelDemo {}\n"
+    }
+  ]
+}

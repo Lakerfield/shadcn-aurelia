@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:ui",
+  "title": "Textarea",
+  "description": "Displays a form textarea.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/textarea/textarea.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-textarea — styled native <textarea> (convention B).\n */\nimport { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\nconst TEMPLATE = `\n<textarea class.bind=\"classes\" value.bind=\"value\"\n          placeholder.bind=\"placeholder || null\" disabled.bind=\"disabled\"\n          readonly.bind=\"readonly\" required.bind=\"required\"\n          id.bind=\"id || null\" name.bind=\"name || null\" rows.bind=\"rows || null\"\n          aria-invalid.bind=\"invalid || null\"\n          data-slot=\"textarea\"></textarea>\n`\n\n@customElement({ name: 'ui-textarea', template: TEMPLATE })\nexport class UiTextarea {\n  @bindable({ mode: BindingMode.twoWay }) value = ''\n  @bindable() placeholder = ''\n  @bindable() disabled = false\n  @bindable() readonly = false\n  @bindable() required = false\n  @bindable() invalid = false\n  @bindable() id = ''\n  @bindable() name = ''\n  @bindable() rows = 0\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(\n      'border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',\n      this.authorClasses,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/textarea/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiTextarea } from './textarea'\n"
+    }
+  ]
+}

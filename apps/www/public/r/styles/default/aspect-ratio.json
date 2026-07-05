@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "type": "registry:ui",
+  "title": "Aspect Ratio",
+  "description": "Displays content within a desired ratio.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/aspect-ratio/aspect-ratio.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-aspect-ratio — host-styled (convention A) container constraining children\n * to a ratio via the CSS aspect-ratio property.\n *\n *   <ui-aspect-ratio ratio=\"16/9\" class=\"bg-muted rounded-lg\">\n *     <img class=\"h-full w-full rounded-lg object-cover\" … />\n *   </ui-aspect-ratio>\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-aspect-ratio', template: '<au-slot></au-slot>' })\nexport class UiAspectRatio {\n  /** CSS aspect-ratio value: \"16/9\", \"1\", \"4/3\", … */\n  @bindable() ratio = '1'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'aspect-ratio')\n    this.host.className = cn('relative block w-full overflow-hidden', author)\n    this.apply()\n  }\n\n  ratioChanged(): void {\n    this.apply()\n  }\n\n  private apply(): void {\n    this.host.style.aspectRatio = this.ratio\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/aspect-ratio/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiAspectRatio } from './aspect-ratio'\n"
+    }
+  ]
+}

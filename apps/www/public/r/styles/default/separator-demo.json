@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-demo",
+  "type": "registry:example",
+  "title": "Separator Demo",
+  "description": "Example: separator-demo.",
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/separator-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSeparator } from '@/registry/default/ui/separator'\n\nconst TEMPLATE = `\n<div class=\"w-full max-w-xs\">\n  <div class=\"space-y-1\">\n    <p class=\"text-sm leading-none font-medium\">shadcn-aurelia</p>\n    <p class=\"text-muted-foreground text-sm\">The component library for Aurelia 2.</p>\n  </div>\n  <ui-separator class=\"my-4\"></ui-separator>\n  <div class=\"flex h-5 items-center space-x-4 text-sm\">\n    <div>Blog</div>\n    <ui-separator orientation=\"vertical\"></ui-separator>\n    <div>Docs</div>\n    <ui-separator orientation=\"vertical\"></ui-separator>\n    <div>Source</div>\n  </div>\n</div>\n`\n\n@customElement({ name: 'separator-demo', template: TEMPLATE, dependencies: [UiSeparator] })\nexport class SeparatorDemo {}\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-plain",
+  "type": "registry:example",
+  "title": "Empty Plain",
+  "description": "Example: empty-plain.",
+  "registryDependencies": [
+    "empty"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/empty-plain.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiEmpty, UiEmptyHeader, UiEmptyTitle, UiEmptyDescription } from '@/registry/default/ui/empty'\n\nconst TEMPLATE = `\n<ui-empty class=\"w-full max-w-md\">\n  <ui-empty-header>\n    <ui-empty-title>404 — Not found</ui-empty-title>\n    <ui-empty-description>\n      The page you are looking for does not exist. <a href=\"#\">Go back home</a>\n    </ui-empty-description>\n  </ui-empty-header>\n</ui-empty>\n`\n\n@customElement({\n  name: 'empty-plain',\n  template: TEMPLATE,\n  dependencies: [UiEmpty, UiEmptyHeader, UiEmptyTitle, UiEmptyDescription],\n})\nexport class EmptyPlain {}\n"
+    }
+  ]
+}

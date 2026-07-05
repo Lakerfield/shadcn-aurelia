@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-simple",
+  "type": "registry:example",
+  "title": "Card Simple",
+  "description": "Example: card-simple.",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-simple.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardContent } from '@/registry/default/ui/card'\n\nconst TEMPLATE = `\n<ui-card class=\"w-full max-w-sm\">\n  <ui-card-header>\n    <ui-card-title>Total revenue</ui-card-title>\n    <ui-card-description>Last 30 days</ui-card-description>\n  </ui-card-header>\n  <ui-card-content>\n    <p class=\"text-3xl font-semibold tracking-tight\">€12.480</p>\n  </ui-card-content>\n</ui-card>\n`\n\n@customElement({\n  name: 'card-simple',\n  template: TEMPLATE,\n  dependencies: [UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardContent],\n})\nexport class CardSimple {}\n"
+    }
+  ]
+}
