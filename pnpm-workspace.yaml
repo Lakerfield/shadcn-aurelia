@@ -1,0 +1,9 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "templates/*"
+  - "!**/node_modules/**"
+  - "!**/dist/**"
+  - "!**/test/**"
+  - "!**/fixtures/**"
+  - "!**/temp/**"

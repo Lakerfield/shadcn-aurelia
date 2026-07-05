@@ -1,0 +1,28 @@
+<div class="flex min-h-screen flex-col items-center justify-center gap-8 p-8">
+  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight">shadcn-aurelia</h1>
+  <p class="text-muted-foreground text-lg">Phase 0 — Spike demo</p>
+
+  <div class="flex items-center gap-4">
+    <!-- Spike A+B+C+D: Tooltip via Zag machine, spread-props, DOM context, portal -->
+    <ui-tooltip>
+      <ui-tooltip-trigger>
+        <button class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+          Hover for tooltip
+        </button>
+      </ui-tooltip-trigger>
+      <ui-tooltip-content>
+        Powered by Zag · spread-props · DI context · portal
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </div>
+
+  <div class="mt-8 grid max-w-lg gap-3 rounded-lg border border-border p-6 text-sm">
+    <p class="font-medium">Phase 0 spike checklist</p>
+    <ul class="list-inside list-disc space-y-1 text-muted-foreground">
+      <li>Spike A — Zag tooltip machine wired to Aurelia lifecycle</li>
+      <li>Spike B — spread-props applies Zag prop bag to DOM element</li>
+      <li>Spike C — DI context: trigger/content resolve root via DOM traversal</li>
+      <li>Spike D — content portaled to &lt;body&gt;, CSS vars still apply</li>
+    </ul>
+  </div>
+</div>
