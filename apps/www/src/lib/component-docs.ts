@@ -213,6 +213,23 @@ import selectDemoSource from '@/registry/default/examples/select-demo.ts?raw'
 import { SelectScrollable } from '@/registry/default/examples/select-scrollable'
 import selectScrollableSource from '@/registry/default/examples/select-scrollable.ts?raw'
 
+import { AttachmentDemo } from '@/registry/default/examples/attachment-demo'
+import attachmentDemoSource from '@/registry/default/examples/attachment-demo.ts?raw'
+import { AttachmentGroup } from '@/registry/default/examples/attachment-group'
+import attachmentGroupSource from '@/registry/default/examples/attachment-group.ts?raw'
+import { BubbleDemo } from '@/registry/default/examples/bubble-demo'
+import bubbleDemoSource from '@/registry/default/examples/bubble-demo.ts?raw'
+import { BubbleReactions } from '@/registry/default/examples/bubble-reactions'
+import bubbleReactionsSource from '@/registry/default/examples/bubble-reactions.ts?raw'
+import { MarkerDemo } from '@/registry/default/examples/marker-demo'
+import markerDemoSource from '@/registry/default/examples/marker-demo.ts?raw'
+import { MessageDemo } from '@/registry/default/examples/message-demo'
+import messageDemoSource from '@/registry/default/examples/message-demo.ts?raw'
+import { MessageScrollerDemo } from '@/registry/default/examples/message-scroller-demo'
+import messageScrollerDemoSource from '@/registry/default/examples/message-scroller-demo.ts?raw'
+import { ChatDemo } from '@/registry/default/examples/chat-demo'
+import chatDemoSource from '@/registry/default/examples/chat-demo.ts?raw'
+
 export interface ComponentExample {
   title: string
   component: unknown
@@ -264,6 +281,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'attachment',
+    title: 'Attachment',
+    description: 'File and upload chips for chat input and messages.',
+    examples: [
+      { title: 'States & sizes', component: AttachmentDemo, source: attachmentDemoSource },
+      { title: 'Group', component: AttachmentGroup, source: attachmentGroupSource },
+    ],
+  },
+  {
     name: 'avatar',
     title: 'Avatar',
     description: 'An image element with a fallback for representing the user.',
@@ -288,6 +314,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { title: 'Default', component: BreadcrumbDemo, source: breadcrumbDemoSource },
       { title: 'Ellipsis', component: BreadcrumbEllipsis, source: breadcrumbEllipsisSource },
+    ],
+  },
+  {
+    name: 'bubble',
+    title: 'Bubble',
+    description: 'Chat bubbles with variants, alignment and reactions.',
+    examples: [
+      { title: 'Variants', component: BubbleDemo, source: bubbleDemoSource },
+      { title: 'Reactions & interactive', component: BubbleReactions, source: bubbleReactionsSource },
     ],
   },
   {
@@ -499,10 +534,31 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'marker',
+    title: 'Marker',
+    description: 'Inline timeline or day markers between chat messages.',
+    examples: [{ title: 'Variants', component: MarkerDemo, source: markerDemoSource }],
+  },
+  {
     name: 'menubar',
     title: 'Menubar',
     description: 'A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.',
     examples: [{ title: 'Default', component: MenubarDemo, source: menubarDemoSource }],
+  },
+  {
+    name: 'message',
+    title: 'Message',
+    description: 'A chat message row: avatar plus content column with header and footer.',
+    examples: [{ title: 'Default', component: MessageDemo, source: messageDemoSource }],
+  },
+  {
+    name: 'message-scroller',
+    title: 'Message Scroller',
+    description: 'Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.',
+    examples: [
+      { title: 'Default', component: MessageScrollerDemo, source: messageScrollerDemoSource },
+      { title: 'Chat', component: ChatDemo, source: chatDemoSource },
+    ],
   },
   {
     name: 'native-select',

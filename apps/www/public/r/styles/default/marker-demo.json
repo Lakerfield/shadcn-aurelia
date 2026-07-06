@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker-demo",
+  "type": "registry:example",
+  "title": "Marker Demo",
+  "description": "Example: marker-demo.",
+  "registryDependencies": [
+    "marker"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/marker-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiMarker, UiMarkerIcon, UiMarkerContent } from '@/registry/default/ui/marker'\n\nconst CALENDAR_ICON = `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 2v4\"></path><path d=\"M16 2v4\"></path><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"></rect><path d=\"M3 10h18\"></path></svg>`\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-md flex-col gap-8\">\n  <ui-marker>\n    <ui-marker-icon>${CALENDAR_ICON}</ui-marker-icon>\n    <ui-marker-content>Today at 9:41 AM</ui-marker-content>\n  </ui-marker>\n  <ui-marker variant=\"separator\">\n    <ui-marker-content>Yesterday</ui-marker-content>\n  </ui-marker>\n  <ui-marker variant=\"border\">\n    <ui-marker-content>New messages since <a href=\"#\">last visit</a></ui-marker-content>\n  </ui-marker>\n</div>\n`\n\n@customElement({\n  name: 'marker-demo',\n  template: TEMPLATE,\n  dependencies: [UiMarker, UiMarkerIcon, UiMarkerContent],\n})\nexport class MarkerDemo {}\n"
+    }
+  ]
+}

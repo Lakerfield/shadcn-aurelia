@@ -12,6 +12,15 @@ export {
   type TableEngineOptions,
 } from './table-engine'
 export {
+  createMessageScrollerEngine,
+  MessageScrollerEngine,
+  type MessageScrollerOptions,
+  type MessageScrollerScrollable,
+  type MessageScrollerScrollOptions,
+  type MessageScrollerScrollAlign,
+  type MessageScrollerDefaultScrollPosition,
+} from './message-scroller-engine'
+export {
   createChartEngine,
   type ChartEngine,
   type ChartConfiguration,

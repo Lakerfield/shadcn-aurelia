@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message-demo",
+  "type": "registry:example",
+  "title": "Message Demo",
+  "description": "Example: message-demo.",
+  "registryDependencies": [
+    "message",
+    "bubble",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/message-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiMessage,\n  UiMessageAvatar,\n  UiMessageContent,\n  UiMessageHeader,\n  UiMessageFooter,\n} from '@/registry/default/ui/message'\nimport { UiBubble, UiBubbleContent } from '@/registry/default/ui/bubble'\nimport { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@/registry/default/ui/avatar'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-md flex-col gap-6\">\n  <ui-message>\n    <ui-message-avatar>\n      <ui-avatar class=\"size-8\">\n        <ui-avatar-image src=\"https://github.com/shadcn.png\" alt=\"@shadcn\"></ui-avatar-image>\n        <ui-avatar-fallback>CN</ui-avatar-fallback>\n      </ui-avatar>\n    </ui-message-avatar>\n    <ui-message-content>\n      <ui-message-header>shadcn · 9:41 AM</ui-message-header>\n      <ui-bubble variant=\"secondary\">\n        <ui-bubble-content>Hey! Did you see the new chat components?</ui-bubble-content>\n      </ui-bubble>\n      <ui-bubble variant=\"secondary\">\n        <ui-bubble-content>They compose with message rows, bubbles and markers.</ui-bubble-content>\n      </ui-bubble>\n      <ui-message-footer>Delivered</ui-message-footer>\n    </ui-message-content>\n  </ui-message>\n\n  <ui-message align=\"end\">\n    <ui-message-content>\n      <ui-bubble align=\"end\">\n        <ui-bubble-content>Just tried them — the alignment flips with a single attribute.</ui-bubble-content>\n      </ui-bubble>\n      <ui-message-footer>Read · 9:42 AM</ui-message-footer>\n    </ui-message-content>\n  </ui-message>\n</div>\n`\n\n@customElement({\n  name: 'message-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiMessage,\n    UiMessageAvatar,\n    UiMessageContent,\n    UiMessageHeader,\n    UiMessageFooter,\n    UiBubble,\n    UiBubbleContent,\n    UiAvatar,\n    UiAvatarImage,\n    UiAvatarFallback,\n  ],\n})\nexport class MessageDemo {}\n"
+    }
+  ]
+}

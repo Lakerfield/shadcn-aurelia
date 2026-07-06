@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message-scroller-demo",
+  "type": "registry:example",
+  "title": "Message Scroller Demo",
+  "description": "Example: message-scroller-demo.",
+  "registryDependencies": [
+    "message-scroller",
+    "bubble",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/message-scroller-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiMessageScrollerProvider,\n  UiMessageScroller,\n  UiMessageScrollerViewport,\n  UiMessageScrollerContent,\n  UiMessageScrollerItem,\n  UiMessageScrollerButton,\n} from '@/registry/default/ui/message-scroller'\nimport { UiBubble, UiBubbleContent } from '@/registry/default/ui/bubble'\nimport { UiButton } from '@/registry/default/ui/button'\n\ninterface DemoMessage {\n  id: string\n  align: 'start' | 'end'\n  text: string\n}\n\nconst TEMPLATE = `\n<div class=\"flex h-96 w-full max-w-md flex-col gap-3\">\n  <ui-message-scroller-provider auto-scroll.bind=\"true\" component.ref=\"scroller\">\n    <ui-message-scroller class=\"rounded-lg border\">\n      <ui-message-scroller-viewport>\n        <ui-message-scroller-content class=\"gap-3 p-4\">\n          <ui-message-scroller-item repeat.for=\"m of messages\" message-id.bind=\"m.id\">\n            <ui-bubble variant.bind=\"m.align === 'end' ? 'default' : 'secondary'\" align.bind=\"m.align\" class=\"max-w-[85%]\">\n              <ui-bubble-content>\\${m.text}</ui-bubble-content>\n            </ui-bubble>\n          </ui-message-scroller-item>\n        </ui-message-scroller-content>\n      </ui-message-scroller-viewport>\n      <ui-message-scroller-button></ui-message-scroller-button>\n    </ui-message-scroller>\n  </ui-message-scroller-provider>\n  <div class=\"flex gap-2\">\n    <ui-button size=\"sm\" click.trigger=\"append()\">Append message</ui-button>\n    <ui-button size=\"sm\" variant=\"outline\" click.trigger=\"prepend()\">Prepend older</ui-button>\n  </div>\n</div>\n`\n\n@customElement({\n  name: 'message-scroller-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiMessageScrollerProvider,\n    UiMessageScroller,\n    UiMessageScrollerViewport,\n    UiMessageScrollerContent,\n    UiMessageScrollerItem,\n    UiMessageScrollerButton,\n    UiBubble,\n    UiBubbleContent,\n    UiButton,\n  ],\n})\nexport class MessageScrollerDemo {\n  scroller?: UiMessageScrollerProvider\n\n  private appendCount = 0\n  private prependCount = 0\n\n  messages: DemoMessage[] = Array.from({ length: 14 }, (_, i) => ({\n    id: `m${i + 1}`,\n    align: i % 3 === 2 ? 'end' : 'start',\n    text:\n      i % 3 === 2\n        ? `Got it — message ${i + 1}.`\n        : `This is message ${i + 1} in the transcript. Scroll up and the follow-bottom releases; the button brings you back.`,\n  }))\n\n  append(): void {\n    this.appendCount++\n    this.messages = [\n      ...this.messages,\n      {\n        id: `a${this.appendCount}`,\n        align: this.appendCount % 2 === 0 ? 'end' : 'start',\n        text: `Appended message ${this.appendCount} — while you are at the bottom the viewport follows.`,\n      },\n    ]\n  }\n\n  prepend(): void {\n    this.prependCount++\n    this.messages = [\n      {\n        id: `p${this.prependCount}`,\n        align: 'start',\n        text: `Older message ${this.prependCount} — prepends keep your reading position.`,\n      },\n      ...this.messages,\n    ]\n  }\n}\n"
+    }
+  ]
+}

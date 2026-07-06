@@ -2879,6 +2879,245 @@
           "target": "components/blocks/settings-01/settings-01.ts"
         }
       ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Inline timeline or day markers between chat messages.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/marker/marker.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/marker/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "A chat message row: avatar plus content column with header and footer.",
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/message/message.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/message/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Chat bubbles with variants, alignment and reactions.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/bubble/bubble.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/bubble/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "File and upload chips for chat input and messages.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/attachment/attachment.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/attachment/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "button",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/message-scroller/message-scroller.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/message-scroller/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker-demo",
+      "type": "registry:example",
+      "title": "Marker Demo",
+      "description": "Example: marker-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/marker-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "marker"
+      ]
+    },
+    {
+      "name": "bubble-demo",
+      "type": "registry:example",
+      "title": "Bubble Demo",
+      "description": "Example: bubble-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/bubble-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "bubble"
+      ]
+    },
+    {
+      "name": "bubble-reactions",
+      "type": "registry:example",
+      "title": "Bubble Reactions",
+      "description": "Example: bubble-reactions.",
+      "files": [
+        {
+          "path": "registry/default/examples/bubble-reactions.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "bubble"
+      ]
+    },
+    {
+      "name": "message-demo",
+      "type": "registry:example",
+      "title": "Message Demo",
+      "description": "Example: message-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/message-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "message",
+        "bubble",
+        "avatar"
+      ]
+    },
+    {
+      "name": "attachment-demo",
+      "type": "registry:example",
+      "title": "Attachment Demo",
+      "description": "Example: attachment-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/attachment-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "attachment"
+      ]
+    },
+    {
+      "name": "attachment-group",
+      "type": "registry:example",
+      "title": "Attachment Group",
+      "description": "Example: attachment-group.",
+      "files": [
+        {
+          "path": "registry/default/examples/attachment-group.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "attachment"
+      ]
+    },
+    {
+      "name": "message-scroller-demo",
+      "type": "registry:example",
+      "title": "Message Scroller Demo",
+      "description": "Example: message-scroller-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/message-scroller-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "message-scroller",
+        "bubble",
+        "button"
+      ]
+    },
+    {
+      "name": "chat-demo",
+      "type": "registry:example",
+      "title": "Chat Demo",
+      "description": "Example: chat-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/chat-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "message-scroller",
+        "message",
+        "bubble",
+        "marker",
+        "attachment",
+        "avatar",
+        "button"
+      ]
     }
   ]
 }

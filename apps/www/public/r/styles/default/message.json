@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message",
+  "type": "registry:ui",
+  "title": "Message",
+  "description": "A chat message row: avatar plus content column with header and footer.",
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/message/message.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-message — a chat message row: avatar + content column with header/footer.\n * Host-styled elements (convention A). `align=\"end\"` flips the row for the\n * active user's side; bubbles inside follow via group data-attributes.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-message-group', template: '<au-slot></au-slot>' })\nexport class UiMessageGroup {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'message-group')\n    this.host.className = cn('flex min-w-0 flex-col gap-2', author)\n  }\n}\n\n@customElement({ name: 'ui-message', template: '<au-slot></au-slot>' })\nexport class UiMessage {\n  @bindable() align: 'start' | 'end' = 'start'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'message')\n    this.applyClasses()\n  }\n\n  alignChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.setAttribute('data-align', this.align)\n    this.host.className = cn(\n      'group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse',\n      this.authorClasses,\n    )\n  }\n}\n\n@customElement({ name: 'ui-message-avatar', template: '<au-slot></au-slot>' })\nexport class UiMessageAvatar {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'message-avatar')\n    this.host.className = cn(\n      'flex w-fit min-w-8 shrink-0 items-center justify-center self-end overflow-hidden rounded-full bg-muted group-has-data-[slot=message-footer]/message:-translate-y-8',\n      author,\n    )\n  }\n}\n\n@customElement({ name: 'ui-message-content', template: '<au-slot></au-slot>' })\nexport class UiMessageContent {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'message-content')\n    this.host.className = cn(\n      'flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end',\n      author,\n    )\n  }\n}\n\n@customElement({ name: 'ui-message-header', template: '<au-slot></au-slot>' })\nexport class UiMessageHeader {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'message-header')\n    this.host.className = cn(\n      'flex max-w-full min-w-0 items-center px-3 text-xs font-medium text-muted-foreground group-has-data-[variant=ghost]/message:px-0',\n      author,\n    )\n  }\n}\n\n@customElement({ name: 'ui-message-footer', template: '<au-slot></au-slot>' })\nexport class UiMessageFooter {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'message-footer')\n    this.host.className = cn(\n      'flex max-w-full min-w-0 items-center px-3 text-xs font-medium text-muted-foreground group-has-data-[variant=ghost]/message:px-0 group-data-[align=end]/message:justify-end',\n      author,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/message/index.ts",
+      "type": "registry:ui",
+      "content": "export {\n  UiMessageGroup,\n  UiMessage,\n  UiMessageAvatar,\n  UiMessageContent,\n  UiMessageHeader,\n  UiMessageFooter,\n} from './message'\n"
+    }
+  ]
+}

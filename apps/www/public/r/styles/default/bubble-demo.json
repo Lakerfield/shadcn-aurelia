@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bubble-demo",
+  "type": "registry:example",
+  "title": "Bubble Demo",
+  "description": "Example: bubble-demo.",
+  "registryDependencies": [
+    "bubble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/bubble-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiBubble, UiBubbleContent, UiBubbleGroup } from '@/registry/default/ui/bubble'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-md flex-col gap-4\">\n  <ui-bubble>\n    <ui-bubble-content>Default bubbles use the primary color for the active user side of a chat.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble variant=\"secondary\">\n    <ui-bubble-content>Secondary bubbles are the standard neutral surface for assistant content.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble variant=\"muted\">\n    <ui-bubble-content>Muted bubbles lower the emphasis for quiet system notes.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble variant=\"tinted\" align=\"end\">\n    <ui-bubble-content>Tinted bubbles use a softer primary tint when primary fill is too strong.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble variant=\"outline\">\n    <ui-bubble-content>Outline bubbles frame message content with a border.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble variant=\"destructive\">\n    <ui-bubble-content>Destructive bubbles flag errors or failed actions in a conversation.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble variant=\"ghost\">\n    <ui-bubble-content>Ghost bubbles work for assistant text that should not be framed and can take the full width of the container.</ui-bubble-content>\n  </ui-bubble>\n  <ui-bubble-group>\n    <ui-bubble align=\"end\"><ui-bubble-content>Grouped bubbles…</ui-bubble-content></ui-bubble>\n    <ui-bubble align=\"end\"><ui-bubble-content>…stack with a tight gap.</ui-bubble-content></ui-bubble>\n  </ui-bubble-group>\n</div>\n`\n\n@customElement({\n  name: 'bubble-demo',\n  template: TEMPLATE,\n  dependencies: [UiBubble, UiBubbleContent, UiBubbleGroup],\n})\nexport class BubbleDemo {}\n"
+    }
+  ]
+}

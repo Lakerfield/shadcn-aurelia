@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bubble-reactions",
+  "type": "registry:example",
+  "title": "Bubble Reactions",
+  "description": "Example: bubble-reactions.",
+  "registryDependencies": [
+    "bubble"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/bubble-reactions.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiBubble,\n  UiBubbleContent,\n  UiBubbleContentAttribute,\n  UiBubbleReactions,\n} from '@/registry/default/ui/bubble'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-md flex-col gap-8\">\n  <ui-bubble variant=\"secondary\">\n    <ui-bubble-content>Reactions attach to a corner of the bubble.</ui-bubble-content>\n    <ui-bubble-reactions>👍 ❤️</ui-bubble-reactions>\n  </ui-bubble>\n  <ui-bubble align=\"end\">\n    <ui-bubble-content>They flip sides with side and align.</ui-bubble-content>\n    <ui-bubble-reactions side=\"top\" align=\"start\">🎉</ui-bubble-reactions>\n  </ui-bubble>\n  <ui-bubble variant=\"outline\">\n    <button ui-bubble-content type=\"button\" click.trigger=\"count = count + 1\">\n      Interactive bubbles are native buttons or links — click me (\\${count})\n    </button>\n  </ui-bubble>\n</div>\n`\n\n@customElement({\n  name: 'bubble-reactions',\n  template: TEMPLATE,\n  dependencies: [UiBubble, UiBubbleContent, UiBubbleContentAttribute, UiBubbleReactions],\n})\nexport class BubbleReactions {\n  count = 0\n}\n"
+    }
+  ]
+}

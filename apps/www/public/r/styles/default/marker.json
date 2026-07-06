@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker",
+  "type": "registry:ui",
+  "title": "Marker",
+  "description": "Inline timeline or day markers between chat messages.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/marker/marker.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-marker — inline timeline/day markers between chat messages.\n * Host-styled elements (convention A): ui-marker, ui-marker-icon, ui-marker-content.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const markerVariants = cva(\n  \"group/marker relative flex min-h-4 w-full items-center gap-2 text-left text-sm text-muted-foreground [&_svg:not([class*='size-'])]:size-4 [a]:underline [a]:underline-offset-3 [a]:hover:text-foreground\",\n  {\n    variants: {\n      variant: {\n        default: '',\n        separator:\n          'before:mr-1 before:h-px before:min-w-0 before:flex-1 before:bg-border after:ml-1 after:h-px after:min-w-0 after:flex-1 after:bg-border',\n        border: 'border-b border-border pb-2',\n      },\n    },\n  },\n)\n\nexport type MarkerVariants = VariantProps<typeof markerVariants>\n\n@customElement({ name: 'ui-marker', template: '<au-slot></au-slot>' })\nexport class UiMarker {\n  @bindable() variant: MarkerVariants['variant'] = 'default'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'marker')\n    this.applyClasses()\n  }\n\n  variantChanged(): void {\n    this.applyClasses()\n  }\n\n  private applyClasses(): void {\n    this.host.setAttribute('data-variant', this.variant ?? 'default')\n    this.host.className = cn(markerVariants({ variant: this.variant }), this.authorClasses)\n  }\n}\n\n@customElement({ name: 'ui-marker-icon', template: '<au-slot></au-slot>' })\nexport class UiMarkerIcon {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'marker-icon')\n    this.host.setAttribute('aria-hidden', 'true')\n    this.host.className = cn(\"size-4 shrink-0 [&_svg:not([class*='size-'])]:size-4\", author)\n  }\n}\n\n@customElement({ name: 'ui-marker-content', template: '<au-slot></au-slot>' })\nexport class UiMarkerContent {\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'marker-content')\n    this.host.className = cn(\n      'min-w-0 wrap-break-word group-data-[variant=separator]/marker:flex-none group-data-[variant=separator]/marker:text-center *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground',\n      author,\n    )\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/marker/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiMarker, UiMarkerIcon, UiMarkerContent, markerVariants, type MarkerVariants } from './marker'\n"
+    }
+  ]
+}

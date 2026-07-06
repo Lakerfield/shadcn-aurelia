@@ -141,5 +141,14 @@ export class Accessibility {
       pattern: 'composite',
       bindings: [{ keys: 'Ctrl/Cmd + B', action: 'Toggle the sidebar' }],
     },
+    {
+      component: 'Message Scroller',
+      pattern: 'scroll region (role=region + role=log)',
+      bindings: [
+        { keys: 'Tab', action: 'Focus the transcript viewport, then the scroll button when visible' },
+        { keys: 'Arrow keys / PageUp / PageDown / Home / End', action: 'Scroll the focused viewport (releases follow-bottom)' },
+        { keys: 'Enter / Space', action: 'On the scroll button: jump to the newest (or first) message' },
+      ],
+    },
   ]
 }

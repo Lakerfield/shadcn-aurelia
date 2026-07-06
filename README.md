@@ -35,8 +35,9 @@ your project — you own the code and change whatever you want. Interactive beha
 
 ## What's inside
 
-- **55+ components** ported from the shadcn/ui v4 inventory — from `button` to `combobox`,
-  `data-table`, `date-picker`, `sidebar`, `sonner` and `chart`.
+- **60+ components** ported from the shadcn/ui v4 inventory — from `button` to `combobox`,
+  `data-table`, `date-picker`, `sidebar`, `sonner`, `chart` and the chat suite
+  (`message-scroller`, `bubble`, `attachment`, …).
 - **Blocks** — ready-made sections (login, dashboard shell, settings) built from the components.
 - **CLI** — `init`, `add` (transitive dependencies, import-alias and element-prefix rewriting),
   `diff`, and `build` for self-hosted registries.

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "attachment-group",
+  "type": "registry:example",
+  "title": "Attachment Group",
+  "description": "Example: attachment-group.",
+  "registryDependencies": [
+    "attachment"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/attachment-group.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiAttachment,\n  UiAttachmentGroup,\n  UiAttachmentMedia,\n  UiAttachmentContent,\n  UiAttachmentTitle,\n  UiAttachmentDescription,\n  UiAttachmentTriggerAttribute,\n} from '@/registry/default/ui/attachment'\n\nconst FILE_ICON = `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"></path><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"></path></svg>`\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-md flex-col gap-4\">\n  <ui-attachment-group>\n    <ui-attachment repeat.for=\"file of files\" orientation=\"vertical\">\n      <ui-attachment-media>${FILE_ICON}</ui-attachment-media>\n      <ui-attachment-content>\n        <ui-attachment-title>\\${file.name}</ui-attachment-title>\n        <ui-attachment-description>\\${file.size}</ui-attachment-description>\n      </ui-attachment-content>\n      <button ui-attachment-trigger aria-label.bind=\"'Open ' + file.name\" click.trigger=\"open(file)\"></button>\n    </ui-attachment>\n  </ui-attachment-group>\n  <p class=\"text-muted-foreground text-sm\" role=\"status\">\\${opened ? 'Opened: ' + opened : 'The group scrolls horizontally with snap points and edge fades.'}</p>\n</div>\n`\n\n@customElement({\n  name: 'attachment-group',\n  template: TEMPLATE,\n  dependencies: [\n    UiAttachment,\n    UiAttachmentGroup,\n    UiAttachmentMedia,\n    UiAttachmentContent,\n    UiAttachmentTitle,\n    UiAttachmentDescription,\n    UiAttachmentTriggerAttribute,\n  ],\n})\nexport class AttachmentGroup {\n  files = [\n    { name: 'design-spec.pdf', size: '1.2 MB' },\n    { name: 'user-research.docx', size: '860 KB' },\n    { name: 'roadmap.xlsx', size: '540 KB' },\n    { name: 'assets.zip', size: '12.8 MB' },\n    { name: 'changelog.md', size: '24 KB' },\n    { name: 'metrics.csv', size: '310 KB' },\n  ]\n\n  opened = ''\n\n  open(file: { name: string }): void {\n    this.opened = file.name\n  }\n}\n"
+    }
+  ]
+}
