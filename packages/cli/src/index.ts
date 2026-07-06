@@ -8,7 +8,7 @@ import { runAdd } from './commands/add.js'
 import { runDiff } from './commands/diff.js'
 import { runBuild } from './commands/build.js'
 
-const DEFAULT_REGISTRY = 'https://shadcn-aurelia.dev/r'
+const DEFAULT_REGISTRY = 'https://shadcn-aurelia.com/r'
 
 const program = new Command()
   .name('shadcn-aurelia')

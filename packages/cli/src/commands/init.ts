@@ -44,7 +44,7 @@ export const runInit = async (options: InitOptions): Promise<void> => {
   }
 
   const config: ComponentsConfig = {
-    $schema: 'https://shadcn-aurelia.dev/schema.json',
+    $schema: 'https://shadcn-aurelia.com/schema.json',
     style: options.style,
     prefix: options.prefix,
     tailwind: { css, baseColor: options.baseColor },

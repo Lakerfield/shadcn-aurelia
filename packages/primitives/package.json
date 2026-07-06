@@ -52,5 +52,17 @@
   },
   "peerDependencies": {
     "aurelia": "2.0.0-rc.1"
-  }
+  },
+  "homepage": "https://shadcn-aurelia.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakerfield/shadcn-aurelia.git",
+    "directory": "packages/primitives"
+  },
+  "bugs": {
+    "url": "https://github.com/lakerfield/shadcn-aurelia/issues"
+  },
+  "files": [
+    "dist"
+  ]
 }

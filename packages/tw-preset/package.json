@@ -11,5 +11,14 @@
   },
   "files": [
     "theme.css"
-  ]
+  ],
+  "homepage": "https://shadcn-aurelia.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakerfield/shadcn-aurelia.git",
+    "directory": "packages/tw-preset"
+  },
+  "bugs": {
+    "url": "https://github.com/lakerfield/shadcn-aurelia/issues"
+  }
 }

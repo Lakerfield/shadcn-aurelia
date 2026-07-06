@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "shadcn-aurelia",
-  "homepage": "https://shadcn-aurelia.dev",
+  "homepage": "https://shadcn-aurelia.com",
   "items": [
     {
       "name": "cn",

@@ -26,5 +26,14 @@
     "@types/node": "^26.1.0",
     "typescript": "^5.7.2",
     "tslib": "^2.8.1"
+  },
+  "homepage": "https://shadcn-aurelia.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakerfield/shadcn-aurelia.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/lakerfield/shadcn-aurelia/issues"
   }
 }
