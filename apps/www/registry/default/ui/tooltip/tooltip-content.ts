@@ -1,19 +1,15 @@
 /**
- * ui-tooltip-content — overlay panel.
- *
- * Anatomy (matches Zag/shadcn): host is portaled to <body>; inside it a
- * positioner div receives Zag's floating-ui positioning styles and the content
- * div receives role/data-state/aria props plus the shadcn tooltip classes.
+ * ui-tooltip-content — overlay panel, portaled to <body>; positioner receives
+ * Zag's floating-ui styles, content gets role/data-state plus shadcn classes.
  */
 import { customElement, INode, resolve } from 'aurelia'
-import { applySpreadProps } from '@shadcn-aurelia/primitives'
+import { bindPart } from '@shadcn-aurelia/primitives'
+import { cn } from '@/registry/default/lib/cn'
 import { tooltipContext } from './tooltip'
-import type { UiTooltip } from './tooltip'
 
 const CONTENT_TEMPLATE = `
 <div ref="positionerEl" data-slot="tooltip-positioner">
-  <div ref="contentEl" data-slot="tooltip-content"
-       class="z-50 w-fit rounded-md bg-primary px-3 py-1.5 text-xs text-balance text-primary-foreground">
+  <div ref="contentEl" data-slot="tooltip-content" class.bind="classes">
     <au-slot></au-slot>
   </div>
 </div>
@@ -21,51 +17,40 @@ const CONTENT_TEMPLATE = `
 
 @customElement({ name: 'ui-tooltip-content', template: CONTENT_TEMPLATE })
 export class UiTooltipContent {
-  private readonly host: HTMLElement = resolve(INode) as HTMLElement
-  private controller: UiTooltip | null = null
-  private cleanupPositioner: (() => void) | null = null
-  private cleanupContent: (() => void) | null = null
-  private unsubscribeController: (() => void) | null = null
-
   positionerEl!: HTMLDivElement
   contentEl!: HTMLDivElement
 
+  private readonly host: HTMLElement = resolve(INode) as HTMLElement
+  private disposers: Array<() => void> = []
+  private authorClasses = ''
+
+  bound(): void {
+    this.authorClasses = this.host.getAttribute('class') ?? ''
+  }
+
+  get classes(): string {
+    return cn(
+      'z-50 w-fit rounded-md bg-primary px-3 py-1.5 text-xs text-balance text-primary-foreground',
+      this.authorClasses,
+    )
+  }
+
   attached(): void {
-    // Resolve context BEFORE the portal moves the element out of the tree
-    this.controller = tooltipContext.get(this.host) ?? null
-
-    // Portal to body so overflow/z-index ancestors can't clip the overlay
+    // resolve context BEFORE the portal moves the element out of the tree
+    const tooltip = tooltipContext.get(this.host)
     document.body.appendChild(this.host)
-
-    if (!this.controller) {
+    if (!tooltip) {
       console.warn('[ui-tooltip-content] No parent <ui-tooltip> found in DOM')
       return
     }
-
-    this.update()
-    this.unsubscribeController = this.controller.subscribe(() => this.update())
+    this.disposers = [
+      bindPart(tooltip, this.positionerEl, (api) => api.getPositionerProps()),
+      bindPart(tooltip, this.contentEl, (api) => api.getContentProps()),
+    ]
   }
 
   detaching(): void {
-    this.unsubscribeController?.()
-    this.unsubscribeController = null
-    this.cleanupPositioner?.()
-    this.cleanupPositioner = null
-    this.cleanupContent?.()
-    this.cleanupContent = null
-  }
-
-  private update(): void {
-    this.cleanupPositioner?.()
-    this.cleanupContent?.()
-    const api = this.controller?.api
-    const positionerProps = api?.getPositionerProps()
-    const contentProps = api?.getContentProps()
-    this.cleanupPositioner = positionerProps
-      ? applySpreadProps(this.positionerEl, positionerProps as Record<string, unknown>)
-      : null
-    this.cleanupContent = contentProps
-      ? applySpreadProps(this.contentEl, contentProps as Record<string, unknown>)
-      : null
+    this.disposers.forEach((d) => d())
+    this.disposers = []
   }
 }

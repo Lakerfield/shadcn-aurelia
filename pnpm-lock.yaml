@@ -111,7 +111,16 @@ importers:
       '@zag-js/core':
         specifier: ^1.42.0
         version: 1.42.0
+      '@zag-js/dialog':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/hover-card':
+        specifier: ^1.42.0
+        version: 1.42.0
       '@zag-js/pin-input':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/popover':
         specifier: ^1.42.0
         version: 1.42.0
       '@zag-js/progress':
@@ -893,6 +902,9 @@ packages:
   '@zag-js/anatomy@1.42.0':
     resolution: {integrity: sha512-F6kRAPxgBZRZmuV5SLywcrGNSclKcAcPAAgSrEdr2Z2dzFgQngbvS4dmdQyGau/vtQ42OlCI48Ri4t0hZxXkMw==}
 
+  '@zag-js/aria-hidden@1.42.0':
+    resolution: {integrity: sha512-ao1RyEbHbglJtLLR4sJLPiD3hWF1CacuN5eqvODh/7HcntWULrkUHo8DIdzYgFL9GUHDyDmpaechMX5wL3kdPg==}
+
   '@zag-js/checkbox@1.42.0':
     resolution: {integrity: sha512-Pn4IHtJFGLUorynWiOUN79qvYofbvIB8xM6ZwRR7gi8TjRdYPL8rVc5ASlNxus9slsvHGevRtKl5dLbT2DONNg==}
 
@@ -902,14 +914,32 @@ packages:
   '@zag-js/core@1.42.0':
     resolution: {integrity: sha512-jE/sbpZvbD+/etbawzhL/L2lP1pPefed5d919je+K5h9b6GAK3lUThleaDUCww3bT53B1L7O5gtqBapW37N1ug==}
 
+  '@zag-js/dialog@1.42.0':
+    resolution: {integrity: sha512-2KpLQASTjr2JUR0XvqsMueVo+AAPeanD9ShFCY/YKv2qp6WRHo1Ig/tRj6pInsSBiHFo7QXyAD4SDax6C0zDcw==}
+
+  '@zag-js/dismissable@1.42.0':
+    resolution: {integrity: sha512-Cx/FAQ2MuQy3kecdmswrFk94Zie1ieBa1Pnt/2ECI5FR914EJd3DwY9Krsmlrq4Z15Wm+pVtfLXgakDewVgsiQ==}
+
   '@zag-js/dom-query@1.42.0':
     resolution: {integrity: sha512-JgCNfp7F+YNFNb7Xmt6rXQr3N3V9Mp+pFRvZ8j5BTC3/G8ZYj/enrgOcuVwPlXPBGtA7ysvjig2x1c0Uou/6kg==}
+
+  '@zag-js/focus-trap@1.42.0':
+    resolution: {integrity: sha512-47O/OpLUm9o8CZd3ez0ntAOUKZEQ1zFj7e86fpYuQ+fNtBlpYMFHQxMRftPkiU5Ysjrz5x8RYV8A8uJ9cboNig==}
 
   '@zag-js/focus-visible@1.42.0':
     resolution: {integrity: sha512-zT1Fk+8m6x6hzoD5fOIEV4JQIX33pwkBzANqwruQwaSqkOYtI2FmsG71YHnzKvrBppG2okPrRHEMyZEgfshIcQ==}
 
+  '@zag-js/hover-card@1.42.0':
+    resolution: {integrity: sha512-jEQjuHZOHdgAmNbiQStrJYT7pjI5RXo9NmfX5RqihFlF+NKTPxEUJ2ydbjf4+s225TgjxgP77QVEMo1hfE9eKQ==}
+
+  '@zag-js/interact-outside@1.42.0':
+    resolution: {integrity: sha512-CNNT1OtASacXEst8NMWDGmDwkOQgVQ0Ahc2SpPjSBZoVpxQIfhZ9FoeqcggDX7Nvze7kl6/OwA7pPi5TGQTVZQ==}
+
   '@zag-js/pin-input@1.42.0':
     resolution: {integrity: sha512-DvIh+ir//QRvjLdgRRkBLggUnewwfPRNx++iiL7gJ1D9bEulr1yXFTiqFK7hxtEv6BrXCbT9vlrPzrdS0r0pHg==}
+
+  '@zag-js/popover@1.42.0':
+    resolution: {integrity: sha512-4knrgFDeYlKqjyRfYPEUfpIRjsTvg4zY/C0i3sbdxNEWiOW30DzW+/8Igabb00bOabrtRuIHBejm0Jorgn5JIQ==}
 
   '@zag-js/popper@1.42.0':
     resolution: {integrity: sha512-hQvXzLen/hXCItww5tJT6+VLxnee8CpsX0FabIiHub/fKIB6OeHmS/lk+RnIII57bljdjLSus/KnT8Xlmj6tRw==}
@@ -919,6 +949,9 @@ packages:
 
   '@zag-js/radio-group@1.42.0':
     resolution: {integrity: sha512-VtoN9/d3HCe/oumjdwKzv/KilF2aLzbt1IYpejXF7Cwat8xmqnCoxiA2PLjE9NfD97ZM7grng1YGcjqrWOWvuQ==}
+
+  '@zag-js/remove-scroll@1.42.0':
+    resolution: {integrity: sha512-RP1SzQuVDk+np5knkEz/mRasLHZUbO6f3xgq4M2u4SQhpOe34uJybd+14f4ElBntAJQWVeMhohpW4n0pNUW6WQ==}
 
   '@zag-js/slider@1.42.0':
     resolution: {integrity: sha512-bHTNGxM2H2oag5IbsfsV/OJegz4ic1Zs89Mvm+ryVzqOc0upJl0xMC/D/K8wnRJ8OPubNnldA+R4W8o+/4IU8w==}
@@ -2971,6 +3004,10 @@ snapshots:
 
   '@zag-js/anatomy@1.42.0': {}
 
+  '@zag-js/aria-hidden@1.42.0':
+    dependencies:
+      '@zag-js/dom-query': 1.42.0
+
   '@zag-js/checkbox@1.42.0':
     dependencies:
       '@zag-js/anatomy': 1.42.0
@@ -2993,19 +3030,69 @@ snapshots:
       '@zag-js/dom-query': 1.42.0
       '@zag-js/utils': 1.42.0
 
+  '@zag-js/dialog@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/aria-hidden': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dismissable': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/focus-trap': 1.42.0
+      '@zag-js/remove-scroll': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/dismissable@1.42.0':
+    dependencies:
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/interact-outside': 1.42.0
+      '@zag-js/utils': 1.42.0
+
   '@zag-js/dom-query@1.42.0':
     dependencies:
       '@zag-js/types': 1.42.0
 
+  '@zag-js/focus-trap@1.42.0':
+    dependencies:
+      '@zag-js/dom-query': 1.42.0
+
   '@zag-js/focus-visible@1.42.0':
     dependencies:
       '@zag-js/dom-query': 1.42.0
+
+  '@zag-js/hover-card@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dismissable': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/popper': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/interact-outside@1.42.0':
+    dependencies:
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/utils': 1.42.0
 
   '@zag-js/pin-input@1.42.0':
     dependencies:
       '@zag-js/anatomy': 1.42.0
       '@zag-js/core': 1.42.0
       '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/popover@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/aria-hidden': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dismissable': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/focus-trap': 1.42.0
+      '@zag-js/popper': 1.42.0
+      '@zag-js/remove-scroll': 1.42.0
       '@zag-js/types': 1.42.0
       '@zag-js/utils': 1.42.0
 
@@ -3031,6 +3118,10 @@ snapshots:
       '@zag-js/focus-visible': 1.42.0
       '@zag-js/types': 1.42.0
       '@zag-js/utils': 1.42.0
+
+  '@zag-js/remove-scroll@1.42.0':
+    dependencies:
+      '@zag-js/dom-query': 1.42.0
 
   '@zag-js/slider@1.42.0':
     dependencies:

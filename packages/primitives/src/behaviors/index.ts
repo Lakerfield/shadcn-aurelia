@@ -5,6 +5,10 @@
 import * as accordion from '@zag-js/accordion'
 import * as checkbox from '@zag-js/checkbox'
 import * as collapsible from '@zag-js/collapsible'
+import * as dialog from '@zag-js/dialog'
+import * as hoverCard from '@zag-js/hover-card'
+import * as popover from '@zag-js/popover'
+import * as tooltip from '@zag-js/tooltip'
 import * as pinInput from '@zag-js/pin-input'
 import * as progress from '@zag-js/progress'
 import * as radioGroup from '@zag-js/radio-group'
@@ -21,6 +25,22 @@ export const createAccordionBehavior = (): ZagBehavior<AccordionApi> =>
 export type CheckboxApi = ReturnType<typeof checkbox.connect>
 export const createCheckboxBehavior = (): ZagBehavior<CheckboxApi> =>
   new ZagBehavior<CheckboxApi>(checkbox.machine, checkbox.connect)
+
+export type DialogApi = ReturnType<typeof dialog.connect>
+export const createDialogBehavior = (): ZagBehavior<DialogApi> =>
+  new ZagBehavior<DialogApi>(dialog.machine, dialog.connect)
+
+export type HoverCardApi = ReturnType<typeof hoverCard.connect>
+export const createHoverCardBehavior = (): ZagBehavior<HoverCardApi> =>
+  new ZagBehavior<HoverCardApi>(hoverCard.machine, hoverCard.connect)
+
+export type PopoverApi = ReturnType<typeof popover.connect>
+export const createPopoverBehavior = (): ZagBehavior<PopoverApi> =>
+  new ZagBehavior<PopoverApi>(popover.machine, popover.connect)
+
+export type TooltipApi = ReturnType<typeof tooltip.connect>
+export const createTooltipBehavior = (): ZagBehavior<TooltipApi> =>
+  new ZagBehavior<TooltipApi>(tooltip.machine, tooltip.connect)
 
 export type CollapsibleApi = ReturnType<typeof collapsible.connect>
 export const createCollapsibleBehavior = (): ZagBehavior<CollapsibleApi> =>

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-controlled",
+  "type": "registry:example",
+  "title": "Dialog Controlled",
+  "description": "Example: dialog-controlled.",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiDialog,\n  UiDialogTrigger,\n  UiDialogContent,\n  UiDialogHeader,\n  UiDialogTitle,\n  UiDialogDescription,\n} from '@/registry/default/ui/dialog'\nimport { UiButton, buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-center gap-3\">\n  <ui-dialog open.two-way=\"isOpen\">\n    <ui-dialog-trigger class=\"\\${triggerClasses}\">Open dialog</ui-dialog-trigger>\n    <ui-dialog-content>\n      <ui-dialog-header>\n        <ui-dialog-title>Controlled dialog</ui-dialog-title>\n        <ui-dialog-description>State is two-way bound; Esc or the X closes it.</ui-dialog-description>\n      </ui-dialog-header>\n    </ui-dialog-content>\n  </ui-dialog>\n  <ui-button variant=\"ghost\" size=\"sm\" click.trigger=\"isOpen = !isOpen\">\n    Toggle from outside (open: \\${isOpen})\n  </ui-button>\n</div>\n`\n\n@customElement({\n  name: 'dialog-controlled',\n  template: TEMPLATE,\n  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogTitle, UiDialogDescription, UiButton],\n})\nexport class DialogControlled {\n  isOpen = false\n  triggerClasses = buttonVariants({ variant: 'outline' })\n}\n"
+    }
+  ]
+}

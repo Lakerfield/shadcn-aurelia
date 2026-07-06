@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-sides",
+  "type": "registry:example",
+  "title": "Sheet Sides",
+  "description": "Example: sheet-sides.",
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sheet-sides.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle } from '@/registry/default/ui/dialog'\nimport { UiSheetContent } from '@/registry/default/ui/sheet'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex flex-wrap items-center gap-2\">\n  <ui-dialog repeat.for=\"side of sides\">\n    <ui-dialog-trigger class=\"\\${triggerClasses}\">\\${side}</ui-dialog-trigger>\n    <ui-sheet-content side.bind=\"side\">\n      <ui-dialog-header>\n        <ui-dialog-title>Sheet from \\${side}</ui-dialog-title>\n      </ui-dialog-header>\n    </ui-sheet-content>\n  </ui-dialog>\n</div>\n`\n\n@customElement({\n  name: 'sheet-sides',\n  template: TEMPLATE,\n  dependencies: [UiDialog, UiDialogTrigger, UiSheetContent, UiDialogHeader, UiDialogTitle],\n})\nexport class SheetSides {\n  sides = ['left', 'right', 'top', 'bottom']\n  triggerClasses = buttonVariants({ variant: 'outline', size: 'sm' })\n}\n"
+    }
+  ]
+}

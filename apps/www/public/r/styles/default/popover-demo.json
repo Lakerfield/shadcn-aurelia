@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-demo",
+  "type": "registry:example",
+  "title": "Popover Demo",
+  "description": "Example: popover-demo.",
+  "registryDependencies": [
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiPopover, UiPopoverTrigger, UiPopoverContent } from '@/registry/default/ui/popover'\nimport { buttonVariants } from '@/registry/default/ui/button'\nimport { UiInput } from '@/registry/default/ui/input'\nimport { UiLabel } from '@/registry/default/ui/label'\n\nconst TEMPLATE = `\n<ui-popover>\n  <ui-popover-trigger class=\"\\${triggerClasses}\">Open popover</ui-popover-trigger>\n  <ui-popover-content>\n    <div class=\"grid gap-4\">\n      <div class=\"space-y-1\">\n        <p class=\"leading-none font-medium\">Dimensions</p>\n        <p class=\"text-muted-foreground text-sm\">Set the dimensions for the layer.</p>\n      </div>\n      <div class=\"grid grid-cols-2 items-center gap-2\">\n        <ui-label for=\"popover-demo-width\">Width</ui-label>\n        <ui-input id=\"popover-demo-width\" value=\"100%\" class=\"h-8\"></ui-input>\n      </div>\n    </div>\n  </ui-popover-content>\n</ui-popover>\n`\n\n@customElement({\n  name: 'popover-demo',\n  template: TEMPLATE,\n  dependencies: [UiPopover, UiPopoverTrigger, UiPopoverContent, UiInput, UiLabel],\n})\nexport class PopoverDemo {\n  triggerClasses = buttonVariants({ variant: 'outline' })\n}\n"
+    }
+  ]
+}

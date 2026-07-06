@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet",
+  "type": "registry:ui",
+  "title": "Sheet",
+  "description": "Side-anchored dialog panel.",
+  "dependencies": [
+    "@shadcn-aurelia/primitives",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn",
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/sheet/sheet.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-sheet-content — side-anchored dialog panel. Compose with the dialog root:\n *\n *   <ui-dialog>\n *     <ui-dialog-trigger>Open</ui-dialog-trigger>\n *     <ui-sheet-content side=\"right\">…</ui-sheet-content>\n *   </ui-dialog>\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { bindPart } from '@shadcn-aurelia/primitives'\nimport { cn } from '@/registry/default/lib/cn'\nimport { dialogContext } from '@/registry/default/ui/dialog'\n\nexport const sheetVariants = cva(\n  'bg-background fixed z-50 flex flex-col gap-4 border shadow-lg outline-none',\n  {\n    variants: {\n      side: {\n        right: 'inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm',\n        left: 'inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm',\n        top: 'inset-x-0 top-0 h-auto border-b',\n        bottom: 'inset-x-0 bottom-0 h-auto border-t',\n      },\n    },\n    defaultVariants: { side: 'right' },\n  },\n)\n\nexport type SheetVariants = VariantProps<typeof sheetVariants>\n\nconst TEMPLATE = `\n<div ref=\"backdropEl\" data-slot=\"sheet-overlay\" class=\"fixed inset-0 z-50 bg-black/50\"></div>\n<div ref=\"positionerEl\" data-slot=\"sheet-positioner\" class=\"fixed inset-0 z-50\">\n  <div ref=\"contentEl\" data-slot=\"sheet-content\" class.bind=\"classes\">\n    <au-slot></au-slot>\n    <button ref=\"closeEl\" type=\"button\" data-slot=\"sheet-close\"\n            class=\"ring-offset-background focus:ring-ring absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n           stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path>\n      </svg>\n      <span class=\"sr-only\">Close</span>\n    </button>\n  </div>\n</div>\n`\n\n@customElement({ name: 'ui-sheet-content', template: TEMPLATE })\nexport class UiSheetContent {\n  @bindable() side: SheetVariants['side'] = 'right'\n\n  backdropEl!: HTMLDivElement\n  positionerEl!: HTMLDivElement\n  contentEl!: HTMLDivElement\n  closeEl!: HTMLButtonElement\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private disposers: Array<() => void> = []\n  private authorClasses = ''\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(sheetVariants({ side: this.side }), 'p-6', this.authorClasses)\n  }\n\n  attached(): void {\n    const dialog = dialogContext.get(this.host)\n    document.body.appendChild(this.host)\n    if (!dialog) {\n      console.warn('[ui-sheet-content] No parent <ui-dialog> found')\n      return\n    }\n    this.disposers = [\n      bindPart(dialog, this.backdropEl, (api) => api.getBackdropProps()),\n      bindPart(dialog, this.positionerEl, (api) => api.getPositionerProps()),\n      bindPart(dialog, this.contentEl, (api) => api.getContentProps()),\n      bindPart(dialog, this.closeEl, (api) => api.getCloseTriggerProps()),\n    ]\n  }\n\n  detaching(): void {\n    this.disposers.forEach((d) => d())\n    this.disposers = []\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/sheet/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiSheetContent, sheetVariants, type SheetVariants } from './sheet'\n"
+    }
+  ]
+}

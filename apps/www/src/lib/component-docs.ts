@@ -136,6 +136,27 @@ import toggleGroupDemoSource from '@/registry/default/examples/toggle-group-demo
 import { ToggleGroupSingle } from '@/registry/default/examples/toggle-group-single'
 import toggleGroupSingleSource from '@/registry/default/examples/toggle-group-single.ts?raw'
 
+import { DialogDemo } from '@/registry/default/examples/dialog-demo'
+import dialogDemoSource from '@/registry/default/examples/dialog-demo.ts?raw'
+import { DialogControlled } from '@/registry/default/examples/dialog-controlled'
+import dialogControlledSource from '@/registry/default/examples/dialog-controlled.ts?raw'
+import { AlertDialogDemo } from '@/registry/default/examples/alert-dialog-demo'
+import alertDialogDemoSource from '@/registry/default/examples/alert-dialog-demo.ts?raw'
+import { AlertDialogDestructive } from '@/registry/default/examples/alert-dialog-destructive'
+import alertDialogDestructiveSource from '@/registry/default/examples/alert-dialog-destructive.ts?raw'
+import { SheetDemo } from '@/registry/default/examples/sheet-demo'
+import sheetDemoSource from '@/registry/default/examples/sheet-demo.ts?raw'
+import { SheetSides } from '@/registry/default/examples/sheet-sides'
+import sheetSidesSource from '@/registry/default/examples/sheet-sides.ts?raw'
+import { PopoverDemo } from '@/registry/default/examples/popover-demo'
+import popoverDemoSource from '@/registry/default/examples/popover-demo.ts?raw'
+import { PopoverControlled } from '@/registry/default/examples/popover-controlled'
+import popoverControlledSource from '@/registry/default/examples/popover-controlled.ts?raw'
+import { HoverCardDemo } from '@/registry/default/examples/hover-card-demo'
+import hoverCardDemoSource from '@/registry/default/examples/hover-card-demo.ts?raw'
+import { TooltipControlled } from '@/registry/default/examples/tooltip-controlled'
+import tooltipControlledSource from '@/registry/default/examples/tooltip-controlled.ts?raw'
+
 export interface ComponentExample {
   title: string
   component: unknown
@@ -166,6 +187,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { title: 'Default', component: AlertDemo, source: alertDemoSource },
       { title: 'Destructive', component: AlertDestructive, source: alertDestructiveSource },
+    ],
+  },
+  {
+    name: 'alert-dialog',
+    title: 'Alert Dialog',
+    description: 'A modal dialog that interrupts the user with important content and expects a response.',
+    examples: [
+      { title: 'Default', component: AlertDialogDemo, source: alertDialogDemoSource },
+      { title: 'Destructive', component: AlertDialogDestructive, source: alertDialogDestructiveSource },
     ],
   },
   {
@@ -250,6 +280,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'dialog',
+    title: 'Dialog',
+    description: 'A window overlaid on the primary content, rendering the content underneath inert.',
+    examples: [
+      { title: 'Default', component: DialogDemo, source: dialogDemoSource },
+      { title: 'Controlled', component: DialogControlled, source: dialogControlledSource },
+    ],
+  },
+  {
     name: 'empty',
     title: 'Empty',
     description: 'Displays an empty state with optional media, title, description and actions.',
@@ -257,6 +296,12 @@ export const componentDocs: ComponentDoc[] = [
       { title: 'Default', component: EmptyDemo, source: emptyDemoSource },
       { title: 'Plain', component: EmptyPlain, source: emptyPlainSource },
     ],
+  },
+  {
+    name: 'hover-card',
+    title: 'Hover Card',
+    description: 'For sighted users to preview content available behind a link.',
+    examples: [{ title: 'Default', component: HoverCardDemo, source: hoverCardDemoSource }],
   },
   {
     name: 'input',
@@ -331,6 +376,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'popover',
+    title: 'Popover',
+    description: 'Displays rich content in a portal, triggered by a button.',
+    examples: [
+      { title: 'Default', component: PopoverDemo, source: popoverDemoSource },
+      { title: 'Controlled', component: PopoverControlled, source: popoverControlledSource },
+    ],
+  },
+  {
     name: 'progress',
     title: 'Progress',
     description: 'Displays an indicator showing the completion progress of a task.',
@@ -355,6 +409,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { title: 'Default', component: SeparatorDemo, source: separatorDemoSource },
       { title: 'Semantic', component: SeparatorSemantic, source: separatorSemanticSource },
+    ],
+  },
+  {
+    name: 'sheet',
+    title: 'Sheet',
+    description: 'Extends the dialog to display content that complements the main content of the screen.',
+    examples: [
+      { title: 'Default', component: SheetDemo, source: sheetDemoSource },
+      { title: 'Sides', component: SheetSides, source: sheetSidesSource },
     ],
   },
   {
@@ -443,7 +506,10 @@ export const componentDocs: ComponentDoc[] = [
     title: 'Tooltip',
     description:
       'A popup that displays information related to an element when it receives keyboard focus or the mouse hovers over it.',
-    examples: [{ title: 'Default', component: TooltipDemo, source: tooltipDemoSource }],
+    examples: [
+      { title: 'Default', component: TooltipDemo, source: tooltipDemoSource },
+      { title: 'Controlled', component: TooltipControlled, source: tooltipControlledSource },
+    ],
   },
   {
     name: 'typography',

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-demo",
+  "type": "registry:example",
+  "title": "Alert Dialog Demo",
+  "description": "Example: alert-dialog-demo.",
+  "registryDependencies": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-dialog-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiDialog,\n  UiDialogTrigger,\n  UiDialogContent,\n  UiDialogHeader,\n  UiDialogFooter,\n  UiDialogTitle,\n  UiDialogDescription,\n} from '@/registry/default/ui/dialog'\nimport { UiAlertDialogAction, UiAlertDialogCancel } from '@/registry/default/ui/alert-dialog'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-dialog role=\"alertdialog\">\n  <ui-dialog-trigger class=\"\\${triggerClasses}\">Delete account</ui-dialog-trigger>\n  <ui-dialog-content show-close.bind=\"false\">\n    <ui-dialog-header>\n      <ui-dialog-title>Are you absolutely sure?</ui-dialog-title>\n      <ui-dialog-description>\n        This action cannot be undone. This will permanently delete your account.\n      </ui-dialog-description>\n    </ui-dialog-header>\n    <ui-dialog-footer>\n      <ui-alert-dialog-cancel>Cancel</ui-alert-dialog-cancel>\n      <ui-alert-dialog-action>Continue</ui-alert-dialog-action>\n    </ui-dialog-footer>\n  </ui-dialog-content>\n</ui-dialog>\n`\n\n@customElement({\n  name: 'alert-dialog-demo',\n  template: TEMPLATE,\n  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogFooter, UiDialogTitle, UiDialogDescription, UiAlertDialogAction, UiAlertDialogCancel],\n})\nexport class AlertDialogDemo {\n  triggerClasses = buttonVariants({ variant: 'outline' })\n}\n"
+    }
+  ]
+}

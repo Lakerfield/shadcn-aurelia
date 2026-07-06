@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card-demo",
+  "type": "registry:example",
+  "title": "Hover Card Demo",
+  "description": "Example: hover-card-demo.",
+  "registryDependencies": [
+    "hover-card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/hover-card-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiHoverCard, UiHoverCardTrigger, UiHoverCardContent } from '@/registry/default/ui/hover-card'\nimport { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@/registry/default/ui/avatar'\n\nconst TEMPLATE = `\n<ui-hover-card>\n  <ui-hover-card-trigger>\n    <a href=\"https://github.com/aurelia\" class=\"text-primary font-medium underline underline-offset-4\">@aurelia</a>\n  </ui-hover-card-trigger>\n  <ui-hover-card-content>\n    <div class=\"flex gap-4\">\n      <ui-avatar>\n        <ui-avatar-image src=\"https://github.com/aurelia.png\" alt=\"@aurelia\"></ui-avatar-image>\n        <ui-avatar-fallback>AU</ui-avatar-fallback>\n      </ui-avatar>\n      <div class=\"space-y-1\">\n        <p class=\"text-sm font-semibold\">@aurelia</p>\n        <p class=\"text-sm\">The Aurelia JavaScript framework — created and maintained by the core team.</p>\n      </div>\n    </div>\n  </ui-hover-card-content>\n</ui-hover-card>\n`\n\n@customElement({\n  name: 'hover-card-demo',\n  template: TEMPLATE,\n  dependencies: [UiHoverCard, UiHoverCardTrigger, UiHoverCardContent, UiAvatar, UiAvatarImage, UiAvatarFallback],\n})\nexport class HoverCardDemo {}\n"
+    }
+  ]
+}

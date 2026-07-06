@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-demo",
+  "type": "registry:example",
+  "title": "Dialog Demo",
+  "description": "Example: dialog-demo.",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiDialog,\n  UiDialogTrigger,\n  UiDialogContent,\n  UiDialogHeader,\n  UiDialogFooter,\n  UiDialogTitle,\n  UiDialogDescription,\n} from '@/registry/default/ui/dialog'\nimport { UiButton, buttonVariants } from '@/registry/default/ui/button'\nimport { UiInput } from '@/registry/default/ui/input'\nimport { UiLabel } from '@/registry/default/ui/label'\n\nconst TEMPLATE = `\n<ui-dialog>\n  <ui-dialog-trigger class=\"\\${triggerClasses}\">Edit profile</ui-dialog-trigger>\n  <ui-dialog-content>\n    <ui-dialog-header>\n      <ui-dialog-title>Edit profile</ui-dialog-title>\n      <ui-dialog-description>\n        Make changes to your profile here. Click save when you're done.\n      </ui-dialog-description>\n    </ui-dialog-header>\n    <div class=\"grid gap-4\">\n      <div class=\"grid gap-2\">\n        <ui-label for=\"dialog-demo-name\">Name</ui-label>\n        <ui-input id=\"dialog-demo-name\" value.two-way=\"name\"></ui-input>\n      </div>\n    </div>\n    <ui-dialog-footer>\n      <ui-button>Save changes</ui-button>\n    </ui-dialog-footer>\n  </ui-dialog-content>\n</ui-dialog>\n`\n\n@customElement({\n  name: 'dialog-demo',\n  template: TEMPLATE,\n  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogFooter, UiDialogTitle, UiDialogDescription, UiButton, UiInput, UiLabel],\n})\nexport class DialogDemo {\n  name = 'Ada Lovelace'\n  triggerClasses = buttonVariants({ variant: 'outline' })\n}\n"
+    }
+  ]
+}

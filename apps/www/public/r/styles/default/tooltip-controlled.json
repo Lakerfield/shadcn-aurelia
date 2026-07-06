@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-controlled",
+  "type": "registry:example",
+  "title": "Tooltip Controlled",
+  "description": "Example: tooltip-controlled.",
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiTooltip, UiTooltipTrigger, UiTooltipContent } from '@/registry/default/ui/tooltip'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-3\">\n  <ui-tooltip open.two-way=\"isOpen\">\n    <ui-tooltip-trigger>\n      <ui-button variant=\"outline\">Hover or toggle</ui-button>\n    </ui-tooltip-trigger>\n    <ui-tooltip-content>Two-way bound tooltip</ui-tooltip-content>\n  </ui-tooltip>\n  <ui-button variant=\"ghost\" size=\"sm\" click.trigger=\"isOpen = !isOpen\">Toggle (\\${isOpen})</ui-button>\n</div>\n`\n\n@customElement({\n  name: 'tooltip-controlled',\n  template: TEMPLATE,\n  dependencies: [UiTooltip, UiTooltipTrigger, UiTooltipContent, UiButton],\n})\nexport class TooltipControlled {\n  isOpen = false\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-controlled",
+  "type": "registry:example",
+  "title": "Popover Controlled",
+  "description": "Example: popover-controlled.",
+  "registryDependencies": [
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiPopover, UiPopoverTrigger, UiPopoverContent } from '@/registry/default/ui/popover'\nimport { UiButton, buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-3\">\n  <ui-popover open.two-way=\"isOpen\">\n    <ui-popover-trigger class=\"\\${triggerClasses}\">Popover (\\${isOpen ? 'open' : 'closed'})</ui-popover-trigger>\n    <ui-popover-content class=\"w-56\">\n      <p class=\"text-sm\">Dismiss with Esc or by clicking outside.</p>\n    </ui-popover-content>\n  </ui-popover>\n  <ui-button variant=\"ghost\" size=\"sm\" click.trigger=\"isOpen = !isOpen\">Toggle</ui-button>\n</div>\n`\n\n@customElement({\n  name: 'popover-controlled',\n  template: TEMPLATE,\n  dependencies: [UiPopover, UiPopoverTrigger, UiPopoverContent, UiButton],\n})\nexport class PopoverControlled {\n  isOpen = false\n  triggerClasses = buttonVariants({ variant: 'outline' })\n}\n"
+    }
+  ]
+}

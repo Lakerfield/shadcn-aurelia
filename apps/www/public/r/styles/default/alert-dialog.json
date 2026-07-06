@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "title": "Alert Dialog",
+  "description": "A modal dialog that expects a response.",
+  "dependencies": [
+    "@shadcn-aurelia/primitives"
+  ],
+  "registryDependencies": [
+    "cn",
+    "button",
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/alert-dialog/alert-dialog.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-alert-dialog-* — action/cancel buttons for an alert dialog. Compose with\n * the dialog root in alertdialog mode (no outside-press dismissal, no X):\n *\n *   <ui-dialog role=\"alertdialog\">\n *     <ui-dialog-trigger>…</ui-dialog-trigger>\n *     <ui-dialog-content show-close.bind=\"false\">\n *       …\n *       <ui-dialog-footer>\n *         <ui-alert-dialog-cancel>Cancel</ui-alert-dialog-cancel>\n *         <ui-alert-dialog-action click.trigger=\"confirm()\">Continue</ui-alert-dialog-action>\n *       </ui-dialog-footer>\n *     </ui-dialog-content>\n *   </ui-dialog>\n */\nimport { customElement, INode, resolve } from 'aurelia'\nimport { bindPart } from '@shadcn-aurelia/primitives'\nimport { cn } from '@/registry/default/lib/cn'\nimport { buttonVariants } from '@/registry/default/ui/button'\nimport { dialogContext } from '@/registry/default/ui/dialog'\n\nconst ACTION_TEMPLATE = `\n<button ref=\"btn\" type=\"button\" class.bind=\"classes\" data-slot=\"alert-dialog-action\"\n        click.trigger=\"close()\">\n  <au-slot></au-slot>\n</button>\n`\n\n@customElement({ name: 'ui-alert-dialog-action', template: ACTION_TEMPLATE })\nexport class UiAlertDialogAction {\n  btn!: HTMLButtonElement\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(buttonVariants(), this.authorClasses)\n  }\n\n  close(): void {\n    dialogContext.get(this.host)?.api?.setOpen(false)\n  }\n}\n\nconst CANCEL_TEMPLATE = `\n<button ref=\"btn\" type=\"button\" class.bind=\"classes\" data-slot=\"alert-dialog-cancel\">\n  <au-slot></au-slot>\n</button>\n`\n\n@customElement({ name: 'ui-alert-dialog-cancel', template: CANCEL_TEMPLATE })\nexport class UiAlertDialogCancel {\n  btn!: HTMLButtonElement\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private dispose: (() => void) | null = null\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(buttonVariants({ variant: 'outline' }), this.authorClasses)\n  }\n\n  attached(): void {\n    const dialog = dialogContext.get(this.host)\n    if (dialog) this.dispose = bindPart(dialog, this.btn, (api) => api.getCloseTriggerProps())\n  }\n\n  detaching(): void {\n    this.dispose?.()\n    this.dispose = null\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/alert-dialog/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiAlertDialogAction, UiAlertDialogCancel } from './alert-dialog'\n"
+    }
+  ]
+}

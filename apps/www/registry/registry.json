@@ -65,6 +65,30 @@
       ]
     },
     {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal dialog that expects a response.",
+      "files": [
+        {
+          "path": "registry/default/ui/alert-dialog/alert-dialog.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/alert-dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn",
+        "button",
+        "dialog"
+      ]
+    },
+    {
       "name": "aspect-ratio",
       "type": "registry:ui",
       "title": "Aspect Ratio",
@@ -251,6 +275,28 @@
       ]
     },
     {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal window overlaid on the primary content.",
+      "files": [
+        {
+          "path": "registry/default/ui/dialog/dialog.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ]
+    },
+    {
       "name": "empty",
       "type": "registry:ui",
       "title": "Empty",
@@ -267,6 +313,28 @@
       ],
       "dependencies": [
         "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Preview content available behind a link.",
+      "files": [
+        {
+          "path": "registry/default/ui/hover-card/hover-card.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/hover-card/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
       ],
       "registryDependencies": [
         "cn"
@@ -435,6 +503,28 @@
       ]
     },
     {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Rich content in a portal, triggered by a button.",
+      "files": [
+        {
+          "path": "registry/default/ui/popover/popover.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/popover/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ]
+    },
+    {
       "name": "progress",
       "type": "registry:ui",
       "title": "Progress",
@@ -495,6 +585,30 @@
       ],
       "registryDependencies": [
         "cn"
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Side-anchored dialog panel.",
+      "files": [
+        {
+          "path": "registry/default/ui/sheet/sheet.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/sheet/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn",
+        "dialog"
       ]
     },
     {
@@ -708,9 +822,7 @@
         }
       ],
       "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "@zag-js/tooltip",
-        "@zag-js/vanilla"
+        "@shadcn-aurelia/primitives"
       ],
       "registryDependencies": [
         "cn"
@@ -774,6 +886,36 @@
       ],
       "registryDependencies": [
         "alert"
+      ]
+    },
+    {
+      "name": "alert-dialog-demo",
+      "type": "registry:example",
+      "title": "Alert Dialog Demo",
+      "description": "Example: alert-dialog-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/alert-dialog-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-destructive",
+      "type": "registry:example",
+      "title": "Alert Dialog Destructive",
+      "description": "Example: alert-dialog-destructive.",
+      "files": [
+        {
+          "path": "registry/default/examples/alert-dialog-destructive.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
       ]
     },
     {
@@ -1047,6 +1189,36 @@
       ]
     },
     {
+      "name": "dialog-controlled",
+      "type": "registry:example",
+      "title": "Dialog Controlled",
+      "description": "Example: dialog-controlled.",
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-controlled.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "dialog"
+      ]
+    },
+    {
+      "name": "dialog-demo",
+      "type": "registry:example",
+      "title": "Dialog Demo",
+      "description": "Example: dialog-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "dialog"
+      ]
+    },
+    {
       "name": "empty-demo",
       "type": "registry:example",
       "title": "Empty Demo",
@@ -1074,6 +1246,21 @@
       ],
       "registryDependencies": [
         "empty"
+      ]
+    },
+    {
+      "name": "hover-card-demo",
+      "type": "registry:example",
+      "title": "Hover Card Demo",
+      "description": "Example: hover-card-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/hover-card-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "hover-card"
       ]
     },
     {
@@ -1317,6 +1504,36 @@
       ]
     },
     {
+      "name": "popover-controlled",
+      "type": "registry:example",
+      "title": "Popover Controlled",
+      "description": "Example: popover-controlled.",
+      "files": [
+        {
+          "path": "registry/default/examples/popover-controlled.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "popover"
+      ]
+    },
+    {
+      "name": "popover-demo",
+      "type": "registry:example",
+      "title": "Popover Demo",
+      "description": "Example: popover-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/popover-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "popover"
+      ]
+    },
+    {
       "name": "progress-demo",
       "type": "registry:example",
       "title": "Progress Demo",
@@ -1404,6 +1621,36 @@
       ],
       "registryDependencies": [
         "separator"
+      ]
+    },
+    {
+      "name": "sheet-demo",
+      "type": "registry:example",
+      "title": "Sheet Demo",
+      "description": "Example: sheet-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/sheet-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "sheet"
+      ]
+    },
+    {
+      "name": "sheet-sides",
+      "type": "registry:example",
+      "title": "Sheet Sides",
+      "description": "Example: sheet-sides.",
+      "files": [
+        {
+          "path": "registry/default/examples/sheet-sides.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "sheet"
       ]
     },
     {
@@ -1674,6 +1921,21 @@
       ],
       "registryDependencies": [
         "toggle"
+      ]
+    },
+    {
+      "name": "tooltip-controlled",
+      "type": "registry:example",
+      "title": "Tooltip Controlled",
+      "description": "Example: tooltip-controlled.",
+      "files": [
+        {
+          "path": "registry/default/examples/tooltip-controlled.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "tooltip"
       ]
     },
     {
