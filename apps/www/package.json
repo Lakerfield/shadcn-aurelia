@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@aurelia/router": "2.0.0-rc.1",
+    "@aurelia/validation": "2.0.0-rc.1",
+    "@aurelia/validation-html": "2.0.0-rc.1",
     "@shadcn-aurelia/primitives": "workspace:*",
     "@shadcn-aurelia/tw-preset": "workspace:*",
     "@zag-js/tooltip": "^1.42.0",

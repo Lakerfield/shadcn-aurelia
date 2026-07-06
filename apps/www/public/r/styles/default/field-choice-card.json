@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-choice-card",
+  "type": "registry:example",
+  "title": "Field Choice Card",
+  "description": "Example: field-choice-card.",
+  "registryDependencies": [
+    "field",
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-choice-card.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiField,\n  UiFieldLabel,\n  UiFieldTitle,\n  UiFieldDescription,\n  UiFieldContent,\n  UiFieldGroup,\n} from '@/registry/default/ui/field'\nimport { UiCheckbox } from '@/registry/default/ui/checkbox'\n\nconst TEMPLATE = `\n<ui-field-group class=\"w-full max-w-md\">\n  <ui-field-label>\n    <ui-field orientation=\"horizontal\">\n      <ui-checkbox checked.bind=\"touchId\"></ui-checkbox>\n      <ui-field-content>\n        <ui-field-title>Enable Touch ID</ui-field-title>\n        <ui-field-description>Use your fingerprint to unlock the app quickly.</ui-field-description>\n      </ui-field-content>\n    </ui-field>\n  </ui-field-label>\n  <ui-field-label>\n    <ui-field orientation=\"horizontal\">\n      <ui-checkbox checked.bind=\"cloudBackup\"></ui-checkbox>\n      <ui-field-content>\n        <ui-field-title>Enable cloud backup</ui-field-title>\n        <ui-field-description>Your data is encrypted and stored securely.</ui-field-description>\n      </ui-field-content>\n    </ui-field>\n  </ui-field-label>\n</ui-field-group>\n`\n\n@customElement({\n  name: 'field-choice-card',\n  template: TEMPLATE,\n  dependencies: [\n    UiField,\n    UiFieldLabel,\n    UiFieldTitle,\n    UiFieldDescription,\n    UiFieldContent,\n    UiFieldGroup,\n    UiCheckbox,\n  ],\n})\nexport class FieldChoiceCard {\n  touchId = true\n  cloudBackup = false\n}\n"
+    }
+  ]
+}

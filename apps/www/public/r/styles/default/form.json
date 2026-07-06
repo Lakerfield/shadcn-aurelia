@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "type": "registry:ui",
+  "title": "Form",
+  "description": "Form validation with @aurelia/validation wired into the field anatomy.",
+  "dependencies": [
+    "@aurelia/validation",
+    "@aurelia/validation-html"
+  ],
+  "registryDependencies": [
+    "cn",
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/form/form.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-form — connects @aurelia/validation to the ui-field anatomy.\n *\n *   export class ProfileForm {\n *     private rules = resolve(IValidationRules)\n *     controller = resolve(newInstanceForScope(IValidationController))\n *     model = { username: '' }\n *     binding() { this.rules.on(this.model).ensure('username').required() }\n *   }\n *\n *   <ui-form controller.bind=\"controller\" valid-submit.trigger=\"save()\">\n *     <ui-field name=\"username\">\n *       <ui-field-label>Username</ui-field-label>\n *       <ui-input value.bind=\"model.username & validate\"></ui-input>\n *       <ui-field-error></ui-field-error>\n *     </ui-field>\n *     <ui-button type=\"submit\">Submit</ui-button>\n *   </ui-form>\n *\n * The host renders a native <form novalidate>; submitting validates through\n * the bound controller and dispatches a bubbling `valid-submit` CustomEvent\n * when everything passes. Validation results flow to matching\n * `<ui-field name=\"…\">` descendants (data-invalid, aria-invalid,\n * aria-describedby and ui-field-error messages).\n *\n * Requires `ValidationHtmlConfiguration` registered in main.ts for the\n * `& validate` binding behavior.\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport type {\n  IValidationController,\n  ValidationEvent,\n  ValidationResultsSubscriber,\n} from '@aurelia/validation-html'\nimport type { ValidationResult } from '@aurelia/validation'\nimport { fieldValidationContext, type FieldValidationSource } from '@/registry/default/ui/field'\nimport { cn } from '@/registry/default/lib/cn'\n\nconst TEMPLATE = `\n<form ref=\"formEl\" novalidate data-slot=\"form\" class.bind=\"classes\"\n      submit.trigger=\"onSubmit($event)\">\n  <au-slot></au-slot>\n</form>\n`\n\ntype ErrorListener = (errors: string[]) => void\n\n@customElement({ name: 'ui-form', template: TEMPLATE })\nexport class UiForm implements FieldValidationSource, ValidationResultsSubscriber {\n  @bindable() controller: IValidationController | null = null\n\n  formEl!: HTMLFormElement\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private results: ValidationResult[] = []\n  private readonly listeners = new Map<string, Set<ErrorListener>>()\n  private subscribedTo: IValidationController | null = null\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  binding(): void {\n    fieldValidationContext.set(this.host, this)\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n    this.subscribe()\n  }\n\n  get classes(): string {\n    return cn(this.authorClasses)\n  }\n\n  controllerChanged(): void {\n    this.subscribe()\n  }\n\n  private subscribe(): void {\n    if (this.subscribedTo === this.controller) return\n    this.subscribedTo?.removeSubscriber(this)\n    this.results = []\n    this.subscribedTo = this.controller\n    this.controller?.addSubscriber(this)\n  }\n\n  handleValidationEvent(event: ValidationEvent): void {\n    for (const { result } of event.removedResults) {\n      const i = this.results.indexOf(result)\n      if (i !== -1) this.results.splice(i, 1)\n    }\n    for (const { result } of event.addedResults) {\n      if (!result.valid) this.results.push(result)\n    }\n    for (const [name, set] of this.listeners) {\n      const errors = this.errorsFor(name)\n      set.forEach((l) => l(errors))\n    }\n  }\n\n  private errorsFor(name: string): string[] {\n    return this.results\n      .filter((r) => String(r.propertyName ?? '') === name && r.message)\n      .map((r) => r.message as string)\n  }\n\n  subscribeErrors(name: string, listener: ErrorListener): () => void {\n    let set = this.listeners.get(name)\n    if (!set) this.listeners.set(name, (set = new Set()))\n    set.add(listener)\n    listener(this.errorsFor(name))\n    return () => set.delete(listener)\n  }\n\n  onSubmit(e: Event): boolean {\n    e.preventDefault()\n    void this.submit()\n    return false\n  }\n\n  /** Validate (when a controller is bound) and emit `valid-submit` on success. */\n  async submit(): Promise<boolean> {\n    if (this.controller) {\n      const result = await this.controller.validate()\n      if (!result.valid) return false\n    }\n    this.host.dispatchEvent(new CustomEvent('valid-submit', { bubbles: true }))\n    return true\n  }\n\n  /** Clear all validation results (e.g. after a successful save). */\n  reset(): void {\n    this.controller?.reset()\n    this.formEl.reset()\n  }\n\n  detaching(): void {\n    this.subscribedTo?.removeSubscriber(this)\n    this.subscribedTo = null\n    this.listeners.clear()\n    fieldValidationContext.delete(this.host)\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/form/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiForm } from './form'\n"
+    }
+  ]
+}

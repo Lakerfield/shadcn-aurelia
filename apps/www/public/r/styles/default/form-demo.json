@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-demo",
+  "type": "registry:example",
+  "title": "Form Demo",
+  "description": "Example: form-demo.",
+  "registryDependencies": [
+    "form",
+    "field",
+    "input",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/form-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement, resolve, newInstanceForScope } from 'aurelia'\nimport { IValidationRules } from '@aurelia/validation'\nimport { IValidationController } from '@aurelia/validation-html'\nimport { UiForm } from '@/registry/default/ui/form'\nimport {\n  UiField,\n  UiFieldLabel,\n  UiFieldDescription,\n  UiFieldError,\n  UiFieldGroup,\n} from '@/registry/default/ui/field'\nimport { UiInput } from '@/registry/default/ui/input'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-form controller.bind=\"controller\" valid-submit.trigger=\"save()\" class=\"w-full max-w-sm\">\n  <ui-field-group>\n    <ui-field name=\"username\">\n      <ui-field-label>Username</ui-field-label>\n      <ui-input value.bind=\"model.username & validate\" placeholder=\"shadcn\"></ui-input>\n      <ui-field-description>This is your public display name.</ui-field-description>\n      <ui-field-error></ui-field-error>\n    </ui-field>\n    <ui-field name=\"email\">\n      <ui-field-label>Email</ui-field-label>\n      <ui-input type=\"email\" value.bind=\"model.email & validate\" placeholder=\"m@example.com\"></ui-input>\n      <ui-field-error></ui-field-error>\n    </ui-field>\n    <ui-field>\n      <ui-button type=\"submit\">Submit</ui-button>\n    </ui-field>\n    <p if.bind=\"saved\" role=\"status\" class=\"text-sm text-muted-foreground\">\n      Profile saved for \\${model.username}.\n    </p>\n  </ui-field-group>\n</ui-form>\n`\n\n@customElement({\n  name: 'form-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiForm,\n    UiField,\n    UiFieldLabel,\n    UiFieldDescription,\n    UiFieldError,\n    UiFieldGroup,\n    UiInput,\n    UiButton,\n  ],\n})\nexport class FormDemo {\n  private readonly rules = resolve(IValidationRules)\n  readonly controller = resolve(newInstanceForScope(IValidationController))\n\n  model = { username: '', email: '' }\n  saved = false\n\n  binding(): void {\n    this.rules\n      .on(this.model)\n      .ensure('username')\n      .required()\n      .withMessage('Username is required.')\n      .minLength(3)\n      .withMessage('Username must be at least 3 characters.')\n      .ensure('email')\n      .required()\n      .withMessage('Email is required.')\n      .email()\n      .withMessage('Enter a valid email address.')\n  }\n\n  save(): void {\n    this.saved = true\n  }\n\n  unbinding(): void {\n    this.rules.off(this.model)\n  }\n}\n"
+    }
+  ]
+}

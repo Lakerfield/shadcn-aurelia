@@ -276,6 +276,28 @@
       ]
     },
     {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Themeable charts on chart.js, wired to the shadcn chart color variables.",
+      "files": [
+        {
+          "path": "registry/default/ui/chart/chart.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/chart/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
@@ -495,6 +517,54 @@
       ],
       "registryDependencies": [
         "cn"
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Accessible form field anatomy: label, control, description and error wiring.",
+      "files": [
+        {
+          "path": "registry/default/ui/field/field.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/field/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn",
+        "separator"
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form validation with @aurelia/validation wired into the field anatomy.",
+      "files": [
+        {
+          "path": "registry/default/ui/form/form.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/form/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@aurelia/validation",
+        "@aurelia/validation-html"
+      ],
+      "registryDependencies": [
+        "cn",
+        "field"
       ]
     },
     {
@@ -793,6 +863,28 @@
       ]
     },
     {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Accessible resizable panel groups and layouts with keyboard support.",
+      "files": [
+        {
+          "path": "registry/default/ui/resizable/resizable.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/resizable/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ]
+    },
+    {
       "name": "scroll-area",
       "type": "registry:ui",
       "title": "Scroll Area",
@@ -877,6 +969,35 @@
       "registryDependencies": [
         "cn",
         "dialog"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A composable, themeable and customizable application sidebar.",
+      "files": [
+        {
+          "path": "registry/default/ui/sidebar/sidebar.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/sidebar/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "@shadcn-aurelia/primitives",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn",
+        "button",
+        "input",
+        "separator",
+        "skeleton",
+        "sheet",
+        "tooltip"
       ]
     },
     {
@@ -1466,6 +1587,36 @@
       ]
     },
     {
+      "name": "chart-demo",
+      "type": "registry:example",
+      "title": "Chart Demo",
+      "description": "Example: chart-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/chart-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
+      "name": "chart-line",
+      "type": "registry:example",
+      "title": "Chart Line",
+      "description": "Example: chart-line.",
+      "files": [
+        {
+          "path": "registry/default/examples/chart-line.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
       "name": "checkbox-controlled",
       "type": "registry:example",
       "title": "Checkbox Controlled",
@@ -1568,6 +1719,25 @@
       ],
       "registryDependencies": [
         "context-menu",
+        "dropdown-menu"
+      ]
+    },
+    {
+      "name": "data-table-demo",
+      "type": "registry:example",
+      "title": "Data Table Demo",
+      "description": "Example: data-table-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/data-table-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "table",
+        "input",
+        "button",
+        "checkbox",
         "dropdown-menu"
       ]
     },
@@ -1711,6 +1881,58 @@
       ],
       "registryDependencies": [
         "empty"
+      ]
+    },
+    {
+      "name": "field-choice-card",
+      "type": "registry:example",
+      "title": "Field Choice Card",
+      "description": "Example: field-choice-card.",
+      "files": [
+        {
+          "path": "registry/default/examples/field-choice-card.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "field",
+        "checkbox"
+      ]
+    },
+    {
+      "name": "field-demo",
+      "type": "registry:example",
+      "title": "Field Demo",
+      "description": "Example: field-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/field-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "field",
+        "input",
+        "textarea",
+        "switch"
+      ]
+    },
+    {
+      "name": "form-demo",
+      "type": "registry:example",
+      "title": "Form Demo",
+      "description": "Example: form-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/form-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "form",
+        "field",
+        "input",
+        "button"
       ]
     },
     {
@@ -2090,6 +2312,36 @@
       ]
     },
     {
+      "name": "resizable-demo",
+      "type": "registry:example",
+      "title": "Resizable Demo",
+      "description": "Example: resizable-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/resizable-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "resizable"
+      ]
+    },
+    {
+      "name": "resizable-handle-demo",
+      "type": "registry:example",
+      "title": "Resizable Handle Demo",
+      "description": "Example: resizable-handle-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/resizable-handle-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "resizable"
+      ]
+    },
+    {
       "name": "scroll-area-demo",
       "type": "registry:example",
       "title": "Scroll Area Demo",
@@ -2208,6 +2460,36 @@
       ],
       "registryDependencies": [
         "sheet"
+      ]
+    },
+    {
+      "name": "sidebar-demo",
+      "type": "registry:example",
+      "title": "Sidebar Demo",
+      "description": "Example: sidebar-demo.",
+      "files": [
+        {
+          "path": "registry/default/examples/sidebar-demo.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "sidebar"
+      ]
+    },
+    {
+      "name": "sidebar-icon",
+      "type": "registry:example",
+      "title": "Sidebar Icon",
+      "description": "Example: sidebar-icon.",
+      "files": [
+        {
+          "path": "registry/default/examples/sidebar-icon.ts",
+          "type": "registry:example"
+        }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {

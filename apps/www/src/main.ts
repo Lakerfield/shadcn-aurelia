@@ -1,5 +1,6 @@
 import Aurelia from 'aurelia'
 import { RouterConfiguration } from '@aurelia/router'
+import { ValidationHtmlConfiguration } from '@aurelia/validation-html'
 import { AppRoot } from './app-root'
 import './styles/globals.css'
 
@@ -13,6 +14,9 @@ if (
 }
 
 Aurelia
-  .register(RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false }))
+  .register(
+    RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false }),
+    ValidationHtmlConfiguration,
+  )
   .app(AppRoot)
   .start()

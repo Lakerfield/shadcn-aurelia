@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-demo",
+  "type": "registry:example",
+  "title": "Chart Demo",
+  "description": "Example: chart-demo.",
+  "registryDependencies": [
+    "chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/chart-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiChartContainer, type ChartConfig } from '@/registry/default/ui/chart'\nimport type { ChartData } from '@shadcn-aurelia/primitives'\n\nconst TEMPLATE = `\n<ui-chart-container type=\"bar\" config.bind=\"chartConfig\" data.bind=\"chartData\"\n                    label=\"Desktop and mobile visitors for the first half of the year\"\n                    class=\"min-h-[200px] w-full max-w-lg\">\n</ui-chart-container>\n`\n\n@customElement({ name: 'chart-demo', template: TEMPLATE, dependencies: [UiChartContainer] })\nexport class ChartDemo {\n  chartConfig: ChartConfig = {\n    desktop: { label: 'Desktop', color: 'var(--chart-1)' },\n    mobile: { label: 'Mobile', color: 'var(--chart-2)' },\n  }\n\n  chartData: ChartData = {\n    labels: ['January', 'February', 'March', 'April', 'May', 'June'],\n    datasets: [\n      {\n        label: 'Desktop',\n        data: [186, 305, 237, 73, 209, 214],\n        backgroundColor: 'var(--color-desktop)',\n        borderRadius: 4,\n      },\n      {\n        label: 'Mobile',\n        data: [80, 200, 120, 190, 130, 140],\n        backgroundColor: 'var(--color-mobile)',\n        borderRadius: 4,\n      },\n    ],\n  }\n}\n"
+    }
+  ]
+}

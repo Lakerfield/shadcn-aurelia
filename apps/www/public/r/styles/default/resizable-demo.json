@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-demo",
+  "type": "registry:example",
+  "title": "Resizable Demo",
+  "description": "Example: resizable-demo.",
+  "registryDependencies": [
+    "resizable"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/resizable-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiResizablePanelGroup,\n  UiResizablePanel,\n  UiResizableHandle,\n} from '@/registry/default/ui/resizable'\n\nconst TEMPLATE = `\n<ui-resizable-panel-group direction=\"horizontal\" class=\"h-[200px] max-w-md rounded-lg border md:min-w-[450px]\">\n  <ui-resizable-panel default-size=\"50\">\n    <div class=\"flex h-full items-center justify-center p-6\">\n      <span class=\"font-semibold\">One</span>\n    </div>\n  </ui-resizable-panel>\n  <ui-resizable-handle></ui-resizable-handle>\n  <ui-resizable-panel default-size=\"50\">\n    <ui-resizable-panel-group direction=\"vertical\">\n      <ui-resizable-panel default-size=\"25\">\n        <div class=\"flex h-full items-center justify-center p-6\">\n          <span class=\"font-semibold\">Two</span>\n        </div>\n      </ui-resizable-panel>\n      <ui-resizable-handle></ui-resizable-handle>\n      <ui-resizable-panel default-size=\"75\">\n        <div class=\"flex h-full items-center justify-center p-6\">\n          <span class=\"font-semibold\">Three</span>\n        </div>\n      </ui-resizable-panel>\n    </ui-resizable-panel-group>\n  </ui-resizable-panel>\n</ui-resizable-panel-group>\n`\n\n@customElement({\n  name: 'resizable-demo',\n  template: TEMPLATE,\n  dependencies: [UiResizablePanelGroup, UiResizablePanel, UiResizableHandle],\n})\nexport class ResizableDemo {}\n"
+    }
+  ]
+}

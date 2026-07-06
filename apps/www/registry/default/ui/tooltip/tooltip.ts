@@ -19,6 +19,8 @@ export const tooltipContext = createContext<UiTooltip>()
 @customElement({ name: 'ui-tooltip', template: '<au-slot></au-slot>' })
 export class UiTooltip implements BehaviorSource<TooltipApi> {
   @bindable({ mode: BindingMode.twoWay }) open = false
+  /** Zag positioning placement, e.g. top / right / bottom-start. */
+  @bindable() placement = 'top'
 
   private readonly host: HTMLElement = resolve(INode) as HTMLElement
   private readonly behavior = createTooltipBehavior()
@@ -44,6 +46,7 @@ export class UiTooltip implements BehaviorSource<TooltipApi> {
       dir: resolveDirection(this.host),
       id: createId('tooltip'),
       defaultOpen: this.open,
+      positioning: { placement: this.placement },
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),
     })
   }

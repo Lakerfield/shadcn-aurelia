@@ -38,6 +38,12 @@ import { EmptyDemo } from '@/registry/default/examples/empty-demo'
 import emptyDemoSource from '@/registry/default/examples/empty-demo.ts?raw'
 import { EmptyPlain } from '@/registry/default/examples/empty-plain'
 import emptyPlainSource from '@/registry/default/examples/empty-plain.ts?raw'
+import { FieldDemo } from '@/registry/default/examples/field-demo'
+import fieldDemoSource from '@/registry/default/examples/field-demo.ts?raw'
+import { FieldChoiceCard } from '@/registry/default/examples/field-choice-card'
+import fieldChoiceCardSource from '@/registry/default/examples/field-choice-card.ts?raw'
+import { FormDemo } from '@/registry/default/examples/form-demo'
+import formDemoSource from '@/registry/default/examples/form-demo.ts?raw'
 import { InputDemo } from '@/registry/default/examples/input-demo'
 import inputDemoSource from '@/registry/default/examples/input-demo.ts?raw'
 import { InputForm } from '@/registry/default/examples/input-form'
@@ -66,6 +72,10 @@ import { SeparatorDemo } from '@/registry/default/examples/separator-demo'
 import separatorDemoSource from '@/registry/default/examples/separator-demo.ts?raw'
 import { SeparatorSemantic } from '@/registry/default/examples/separator-semantic'
 import separatorSemanticSource from '@/registry/default/examples/separator-semantic.ts?raw'
+import { SidebarDemo } from '@/registry/default/examples/sidebar-demo'
+import sidebarDemoSource from '@/registry/default/examples/sidebar-demo.ts?raw'
+import { SidebarIcon } from '@/registry/default/examples/sidebar-icon'
+import sidebarIconSource from '@/registry/default/examples/sidebar-icon.ts?raw'
 import { SkeletonDemo } from '@/registry/default/examples/skeleton-demo'
 import skeletonDemoSource from '@/registry/default/examples/skeleton-demo.ts?raw'
 import { SkeletonCard } from '@/registry/default/examples/skeleton-card'
@@ -91,6 +101,10 @@ import { AccordionDemo } from '@/registry/default/examples/accordion-demo'
 import accordionDemoSource from '@/registry/default/examples/accordion-demo.ts?raw'
 import { AccordionMultiple } from '@/registry/default/examples/accordion-multiple'
 import accordionMultipleSource from '@/registry/default/examples/accordion-multiple.ts?raw'
+import { ChartDemo } from '@/registry/default/examples/chart-demo'
+import chartDemoSource from '@/registry/default/examples/chart-demo.ts?raw'
+import { ChartLine } from '@/registry/default/examples/chart-line'
+import chartLineSource from '@/registry/default/examples/chart-line.ts?raw'
 import { CheckboxDemo } from '@/registry/default/examples/checkbox-demo'
 import checkboxDemoSource from '@/registry/default/examples/checkbox-demo.ts?raw'
 import { CheckboxControlled } from '@/registry/default/examples/checkbox-controlled'
@@ -172,6 +186,10 @@ import { CommandDemo } from '@/registry/default/examples/command-demo'
 import commandDemoSource from '@/registry/default/examples/command-demo.ts?raw'
 import { NavigationMenuDemo } from '@/registry/default/examples/navigation-menu-demo'
 import navigationMenuDemoSource from '@/registry/default/examples/navigation-menu-demo.ts?raw'
+import { ResizableDemo } from '@/registry/default/examples/resizable-demo'
+import resizableDemoSource from '@/registry/default/examples/resizable-demo.ts?raw'
+import { ResizableHandleDemo } from '@/registry/default/examples/resizable-handle-demo'
+import resizableHandleDemoSource from '@/registry/default/examples/resizable-handle-demo.ts?raw'
 import { ScrollAreaDemo } from '@/registry/default/examples/scroll-area-demo'
 import scrollAreaDemoSource from '@/registry/default/examples/scroll-area-demo.ts?raw'
 import { ScrollAreaHorizontal } from '@/registry/default/examples/scroll-area-horizontal'
@@ -180,6 +198,8 @@ import { DirectionDemo } from '@/registry/default/examples/direction-demo'
 import directionDemoSource from '@/registry/default/examples/direction-demo.ts?raw'
 import { CalendarDemo } from '@/registry/default/examples/calendar-demo'
 import calendarDemoSource from '@/registry/default/examples/calendar-demo.ts?raw'
+import { DataTableDemo } from '@/registry/default/examples/data-table-demo'
+import dataTableDemoSource from '@/registry/default/examples/data-table-demo.ts?raw'
 import { DatePickerDemo } from '@/registry/default/examples/date-picker-demo'
 import datePickerDemoSource from '@/registry/default/examples/date-picker-demo.ts?raw'
 import { CarouselDemo } from '@/registry/default/examples/carousel-demo'
@@ -313,6 +333,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'chart',
+    title: 'Chart',
+    description: 'Themeable charts on chart.js, wired to the shadcn chart color variables.',
+    examples: [
+      { title: 'Bar', component: ChartDemo, source: chartDemoSource },
+      { title: 'Line', component: ChartLine, source: chartLineSource },
+    ],
+  },
+  {
     name: 'checkbox',
     title: 'Checkbox',
     description: 'A control that allows the user to toggle between checked and not checked.',
@@ -347,6 +376,12 @@ export const componentDocs: ComponentDoc[] = [
     title: 'Context Menu',
     description: 'Displays a menu located at the pointer, triggered by a right click or a long press.',
     examples: [{ title: 'Default', component: ContextMenuDemo, source: contextMenuDemoSource }],
+  },
+  {
+    name: 'data-table',
+    title: 'Data Table',
+    description: 'Powerful table with sorting, filtering, selection and pagination on @tanstack/table-core.',
+    examples: [{ title: 'Default', component: DataTableDemo, source: dataTableDemoSource }],
   },
   {
     name: 'date-picker',
@@ -387,6 +422,21 @@ export const componentDocs: ComponentDoc[] = [
       { title: 'Default', component: EmptyDemo, source: emptyDemoSource },
       { title: 'Plain', component: EmptyPlain, source: emptyPlainSource },
     ],
+  },
+  {
+    name: 'field',
+    title: 'Field',
+    description: 'Accessible form field anatomy: label, control, description and error wiring.',
+    examples: [
+      { title: 'Default', component: FieldDemo, source: fieldDemoSource },
+      { title: 'Choice Card', component: FieldChoiceCard, source: fieldChoiceCardSource },
+    ],
+  },
+  {
+    name: 'form',
+    title: 'Form',
+    description: 'Form validation with @aurelia/validation wired into the field anatomy.',
+    examples: [{ title: 'Default', component: FormDemo, source: formDemoSource }],
   },
   {
     name: 'hover-card',
@@ -506,6 +556,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'resizable',
+    title: 'Resizable',
+    description: 'Accessible resizable panel groups and layouts with keyboard support.',
+    examples: [
+      { title: 'Default', component: ResizableDemo, source: resizableDemoSource },
+      { title: 'With Handle', component: ResizableHandleDemo, source: resizableHandleDemoSource },
+    ],
+  },
+  {
     name: 'scroll-area',
     title: 'Scroll Area',
     description: 'Augments native scroll functionality with custom, themeable scrollbars.',
@@ -539,6 +598,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { title: 'Default', component: SheetDemo, source: sheetDemoSource },
       { title: 'Sides', component: SheetSides, source: sheetSidesSource },
+    ],
+  },
+  {
+    name: 'sidebar',
+    title: 'Sidebar',
+    description: 'A composable, themeable and customizable application sidebar.',
+    examples: [
+      { title: 'Default', component: SidebarDemo, source: sidebarDemoSource },
+      { title: 'Icon', component: SidebarIcon, source: sidebarIconSource },
     ],
   },
   {

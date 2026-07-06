@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-line",
+  "type": "registry:example",
+  "title": "Chart Line",
+  "description": "Example: chart-line.",
+  "registryDependencies": [
+    "chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/chart-line.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiChartContainer, type ChartConfig } from '@/registry/default/ui/chart'\nimport type { ChartData } from '@shadcn-aurelia/primitives'\n\nconst TEMPLATE = `\n<ui-chart-container type=\"line\" config.bind=\"chartConfig\" data.bind=\"chartData\"\n                    label=\"Monthly revenue trend\" class=\"min-h-[200px] w-full max-w-lg\">\n</ui-chart-container>\n`\n\n@customElement({ name: 'chart-line', template: TEMPLATE, dependencies: [UiChartContainer] })\nexport class ChartLine {\n  chartConfig: ChartConfig = {\n    revenue: { label: 'Revenue', color: 'var(--chart-1)' },\n  }\n\n  chartData: ChartData = {\n    labels: ['January', 'February', 'March', 'April', 'May', 'June'],\n    datasets: [\n      {\n        label: 'Revenue',\n        data: [420, 380, 510, 460, 590, 640],\n        borderColor: 'var(--color-revenue)',\n        backgroundColor: 'var(--color-revenue)',\n        tension: 0.4,\n        pointRadius: 3,\n      },\n    ],\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-demo",
+  "type": "registry:example",
+  "title": "Field Demo",
+  "description": "Example: field-demo.",
+  "registryDependencies": [
+    "field",
+    "input",
+    "textarea",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/field-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiField,\n  UiFieldLabel,\n  UiFieldDescription,\n  UiFieldContent,\n  UiFieldGroup,\n  UiFieldSet,\n  UiFieldLegend,\n  UiFieldSeparator,\n} from '@/registry/default/ui/field'\nimport { UiInput } from '@/registry/default/ui/input'\nimport { UiTextarea } from '@/registry/default/ui/textarea'\nimport { UiSwitch } from '@/registry/default/ui/switch'\n\nconst TEMPLATE = `\n<div class=\"w-full max-w-md\">\n  <ui-field-set>\n    <ui-field-legend>Profile</ui-field-legend>\n    <ui-field-description>This appears on invoices and receipts.</ui-field-description>\n    <ui-field-group>\n      <ui-field>\n        <ui-field-label>Name</ui-field-label>\n        <ui-input placeholder=\"Evil Rabbit\" value.bind=\"name\"></ui-input>\n        <ui-field-description>Your full name as it appears on your card.</ui-field-description>\n      </ui-field>\n      <ui-field>\n        <ui-field-label>Message</ui-field-label>\n        <ui-textarea placeholder=\"Leave us a message…\" value.bind=\"message\"></ui-textarea>\n        <ui-field-description>Max 200 characters.</ui-field-description>\n      </ui-field>\n      <ui-field-separator>Preferences</ui-field-separator>\n      <ui-field orientation=\"horizontal\">\n        <ui-field-content>\n          <ui-field-label>Email notifications</ui-field-label>\n          <ui-field-description>Receive an email when something happens.</ui-field-description>\n        </ui-field-content>\n        <ui-switch checked.bind=\"notifications\"></ui-switch>\n      </ui-field>\n    </ui-field-group>\n  </ui-field-set>\n</div>\n`\n\n@customElement({\n  name: 'field-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiField,\n    UiFieldLabel,\n    UiFieldDescription,\n    UiFieldContent,\n    UiFieldGroup,\n    UiFieldSet,\n    UiFieldLegend,\n    UiFieldSeparator,\n    UiInput,\n    UiTextarea,\n    UiSwitch,\n  ],\n})\nexport class FieldDemo {\n  name = ''\n  message = ''\n  notifications = true\n}\n"
+    }
+  ]
+}
