@@ -1,0 +1,78 @@
+<article class="guide-prose max-w-3xl pb-16">
+  <h1>Theming</h1>
+  <p class="text-muted-foreground">CSS variables drive every color, radius and animation — identical to shadcn/ui.</p>
+
+  <p>
+    <code>init</code> writes a <code>shadcn-aurelia.css</code> next to your Tailwind stylesheet. It has
+    three parts: the color variables (light values on <code>:root</code>, dark values on
+    <code>.dark</code>), an <code>@theme inline</code> block that maps those variables to Tailwind
+    utilities (<code>bg-background</code>, <code>text-muted-foreground</code>, …), and a base layer
+    with focus/border defaults plus the <code>data-state</code> animations.
+  </p>
+
+  <h2>The variable contract</h2>
+  <p>
+    Colors come in <code>background</code>/<code>foreground</code> pairs, in
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch" external target="_blank" rel="noreferrer">oklch</a>:
+  </p>
+  <pre><code>:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  /* … card, popover, chart-1…5, sidebar-* */
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  /* … */
+}</code></pre>
+  <table>
+    <thead><tr><th>Variable</th><th>Used for</th></tr></thead>
+    <tbody>
+      <tr><td><code>--background</code> / <code>--foreground</code></td><td>page background and default text</td></tr>
+      <tr><td><code>--card</code>, <code>--popover</code></td><td>surface colors (+ matching <code>-foreground</code>)</td></tr>
+      <tr><td><code>--primary</code>, <code>--secondary</code>, <code>--accent</code>, <code>--muted</code></td><td>component variants (+ <code>-foreground</code>)</td></tr>
+      <tr><td><code>--destructive</code></td><td>errors and destructive actions</td></tr>
+      <tr><td><code>--border</code>, <code>--input</code>, <code>--ring</code></td><td>borders, form control borders, focus rings</td></tr>
+      <tr><td><code>--chart-1</code> … <code>--chart-5</code></td><td>chart series palette</td></tr>
+      <tr><td><code>--sidebar-*</code></td><td>the sidebar component's own surface scale</td></tr>
+      <tr><td><code>--radius</code></td><td>base radius; <code>rounded-sm/md/lg/xl</code> derive from it</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Customizing</h2>
+  <p>
+    Because the file is copied into your project, theming is just editing CSS. Change
+    <code>--primary</code>, tweak <code>--radius</code>, or paste a whole palette from the
+    <a href="https://ui.shadcn.com/themes" external target="_blank" rel="noreferrer">shadcn/ui theme
+    generator</a> — the variable names are identical, so upstream themes work as-is.
+  </p>
+  <p>Adding your own semantic color follows the same pattern:</p>
+  <pre><code>:root { --warning: oklch(0.84 0.16 84); --warning-foreground: oklch(0.28 0.07 46); }
+.dark { --warning: oklch(0.41 0.11 46); --warning-foreground: oklch(0.99 0.02 95); }
+
+@theme inline {
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+}</code></pre>
+  <p>…which makes <code>bg-warning</code> and <code>text-warning-foreground</code> available everywhere.</p>
+
+  <h2>Charts</h2>
+  <p>
+    The chart container resolves <code>var(…)</code> references to concrete colors before handing
+    them to the canvas, and re-renders when the <code>dark</code> class on
+    <code>&lt;html&gt;</code> changes — so chart colors follow your theme automatically. See
+    <a load="../components/chart">Chart</a>.
+  </p>
+</article>

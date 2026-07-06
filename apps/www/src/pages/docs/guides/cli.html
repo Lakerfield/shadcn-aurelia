@@ -1,0 +1,77 @@
+<article class="guide-prose max-w-3xl pb-16">
+  <h1>CLI</h1>
+  <p class="text-muted-foreground">Reference for the <code>shadcn-aurelia</code> command line interface.</p>
+
+  <h2>init</h2>
+  <p>
+    Configures an existing Aurelia 2 + Vite + Tailwind v4 project: runs preflight checks, writes
+    <a load="../components-json"><code>components.json</code></a>, downloads the theme stylesheet as
+    <code>shadcn-aurelia.css</code> next to your Tailwind entry css, and adds the
+    <code>@import</code> for it.
+  </p>
+  <pre><code>npx shadcn-aurelia init [options]</code></pre>
+  <table>
+    <thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>-c, --cwd &lt;path&gt;</code></td><td><code>.</code></td><td>working directory</td></tr>
+      <tr><td><code>-r, --registry &lt;url|dir&gt;</code></td><td><code>https://shadcn-aurelia.com/r</code></td><td>registry base — an http(s) URL or a local directory</td></tr>
+      <tr><td><code>-s, --style &lt;name&gt;</code></td><td><code>default</code></td><td>registry style</td></tr>
+      <tr><td><code>-p, --prefix &lt;prefix&gt;</code></td><td><code>ui</code></td><td>custom element prefix (<code>&lt;ui-button&gt;</code> → <code>&lt;acme-button&gt;</code>)</td></tr>
+      <tr><td><code>-b, --base-color &lt;color&gt;</code></td><td><code>zinc</code></td><td>base color palette</td></tr>
+      <tr><td><code>--css &lt;path&gt;</code></td><td>auto-detected</td><td>stylesheet containing <code>@import "tailwindcss"</code></td></tr>
+      <tr><td><code>-f, --force</code></td><td><code>false</code></td><td>overwrite an existing <code>components.json</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>add</h2>
+  <p>
+    Adds components to your project. Resolves transitive registry dependencies (adding
+    <code>dialog</code> pulls in <code>cn</code>, and <code>sheet</code> pulls in
+    <code>dialog</code>), rewrites import aliases and the element prefix to match your
+    <code>components.json</code>, and installs missing npm dependencies with your detected package
+    manager (pnpm, npm, yarn or bun — detection walks up parent directories, so workspaces work).
+  </p>
+  <pre><code>npx shadcn-aurelia add button dialog form [options]</code></pre>
+  <table>
+    <thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>-c, --cwd &lt;path&gt;</code></td><td><code>.</code></td><td>working directory</td></tr>
+      <tr><td><code>-o, --overwrite</code></td><td><code>false</code></td><td>overwrite existing files (default: skip files that already exist)</td></tr>
+      <tr><td><code>--no-install</code></td><td>—</td><td>skip npm dependency installation</td></tr>
+    </tbody>
+  </table>
+
+  <h2>diff</h2>
+  <p>
+    Compares your local copies against the registry (after applying the same alias/prefix
+    transforms) and prints a unified diff per changed file — useful to review upstream changes
+    before re-adding with <code>--overwrite</code>, or to see what you customized.
+  </p>
+  <pre><code>npx shadcn-aurelia diff            # all installed components
+npx shadcn-aurelia diff button     # just one</code></pre>
+
+  <h2>build</h2>
+  <p>
+    For registry authors: validates a <code>registry.json</code> manifest and emits the JSON
+    artifacts (<code>index.json</code> + one file per item) that <code>init</code>/<code>add</code>
+    consume. Point <code>--registry</code> of another project at the output directory to test
+    locally.
+  </p>
+  <pre><code>npx shadcn-aurelia build [options]</code></pre>
+  <table>
+    <thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>-c, --cwd &lt;path&gt;</code></td><td><code>.</code></td><td>source root the manifest's file paths resolve against</td></tr>
+      <tr><td><code>-r, --registry-file &lt;path&gt;</code></td><td><code>registry.json</code></td><td>registry manifest</td></tr>
+      <tr><td><code>-o, --output &lt;dir&gt;</code></td><td><code>public/r</code></td><td>output directory</td></tr>
+      <tr><td><code>-s, --style &lt;name&gt;</code></td><td><code>default</code></td><td>style name for the output layout</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Using a different registry</h2>
+  <p>
+    The registry URL is stored in <code>components.json</code> at <code>init</code> time. Point it
+    at a self-hosted registry (any static file server) or a local directory during development:
+  </p>
+  <pre><code>npx shadcn-aurelia init --registry ../my-registry/public/r</code></pre>
+</article>

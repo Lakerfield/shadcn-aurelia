@@ -1,0 +1,93 @@
+<article class="guide-prose max-w-3xl pb-16">
+  <h1>Installation</h1>
+  <p class="text-muted-foreground">How to set up shadcn-aurelia in an Aurelia 2 project.</p>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li><strong>Aurelia 2</strong> (RC or later) with TypeScript.</li>
+    <li><strong>Vite 7</strong> with <code>@aurelia/vite-plugin</code>. Vite 8 currently breaks Aurelia's TC39 decorators (its Oxc transform strips types but leaves decorators raw) — stay on Vite 7 until that is resolved.</li>
+    <li><strong>Tailwind CSS v4</strong> via <code>@tailwindcss/vite</code>, with <code>@import "tailwindcss"</code> in your stylesheet.</li>
+    <li>A <code>@</code> path alias pointing at <code>src/</code> (in both <code>tsconfig.json</code> and Vite).</li>
+  </ul>
+
+  <h2>Option 1 — start from the template</h2>
+  <p>
+    The repository ships a pre-configured starter at
+    <a href="https://github.com/lakerfield/shadcn-aurelia/tree/main/templates/aurelia-vite" external target="_blank" rel="noreferrer">templates/aurelia-vite</a>:
+    Aurelia 2 + Vite 7 + Tailwind v4 + the <code>@</code> alias, ready for <code>init</code>.
+  </p>
+  <pre><code>npx degit lakerfield/shadcn-aurelia/templates/aurelia-vite my-app
+cd my-app
+npm install</code></pre>
+
+  <h2>Option 2 — add to an existing app</h2>
+
+  <h3>1. Tailwind CSS v4</h3>
+  <p>If you don't have Tailwind yet:</p>
+  <pre><code>npm install tailwindcss @tailwindcss/vite</code></pre>
+  <p>Add the plugin to <code>vite.config.ts</code> and create a stylesheet imported from <code>main.ts</code>:</p>
+  <pre><code>// vite.config.ts
+import { defineConfig } from 'vite'
+import aurelia from '@aurelia/vite-plugin'
+import tailwindcss from '@tailwindcss/vite'
+import { fileURLToPath } from 'node:url'
+
+export default defineConfig({
+  plugins: [aurelia({ useDev: true }), tailwindcss()],
+  resolve: {
+    alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+  },
+})</code></pre>
+  <pre><code>/* src/styles/globals.css */
+@import "tailwindcss";</code></pre>
+
+  <h3>2. Path alias</h3>
+  <pre><code>// tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] }
+  }
+}</code></pre>
+
+  <h3>3. Run init</h3>
+  <pre><code>npx shadcn-aurelia init</code></pre>
+  <p>
+    <code>init</code> verifies the prerequisites above, writes a
+    <a load="../components-json"><code>components.json</code></a>, downloads the theme stylesheet
+    (CSS variables + base layer + animations) as <code>shadcn-aurelia.css</code> next to your
+    Tailwind entry stylesheet, and imports it there.
+  </p>
+
+  <h3>4. Add components</h3>
+  <pre><code>npx shadcn-aurelia add button
+npx shadcn-aurelia add dialog form data-table-adapter</code></pre>
+  <p>
+    Files land under your configured aliases (<code>@/components/ui/button/…</code> by default),
+    with npm dependencies (like <code>@shadcn-aurelia/primitives</code>) installed automatically.
+    Then import and use:
+  </p>
+  <pre><code>&lt;import from="@/components/ui/button"&gt;&lt;/import&gt;
+
+&lt;ui-button variant="outline"&gt;Click me&lt;/ui-button&gt;</code></pre>
+
+  <h2>Webpack</h2>
+  <p>
+    The components themselves are bundler-agnostic TypeScript + Aurelia conventions, and work under
+    Webpack with <code>@aurelia/webpack-loader</code>. You will need Tailwind v4 via PostCSS
+    (<code>@tailwindcss/postcss</code>) and a <code>@</code> alias in your Webpack config. The CLI's
+    preflight currently checks for Vite; use <code>--force</code>-free manual setup by copying
+    <code>components.json</code> and the theme CSS from a Vite project, or run the CLI in a sibling
+    Vite app and copy the output. First-class Webpack preflights are planned.
+  </p>
+
+  <h2>Monorepos</h2>
+  <p>
+    Run the CLI from the app package (the directory containing that app's
+    <code>package.json</code>); pass <code>--cwd</code> if invoking from the workspace root. Package
+    manager detection walks up parent directories, so pnpm/yarn/bun workspaces with a root lockfile
+    install dependencies into the right place. Components are copied per app — if you want a shared
+    UI package instead, point the <code>aliases</code> in <code>components.json</code> at your shared
+    package's paths.
+  </p>
+</article>

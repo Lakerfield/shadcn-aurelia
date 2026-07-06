@@ -1,0 +1,68 @@
+<article class="guide-prose max-w-3xl pb-16">
+  <h1>components.json</h1>
+  <p class="text-muted-foreground">Project configuration for the CLI, written by <code>init</code>.</p>
+
+  <pre><code>{
+  "$schema": "https://shadcn-aurelia.com/schema.json",
+  "style": "default",
+  "prefix": "ui",
+  "tailwind": {
+    "css": "src/styles/globals.css",
+    "baseColor": "zinc"
+  },
+  "aliases": {
+    "components": "@/components",
+    "ui": "@/components/ui",
+    "lib": "@/lib"
+  },
+  "registry": "https://shadcn-aurelia.com/r"
+}</code></pre>
+
+  <h2>style</h2>
+  <p>
+    The registry style to pull components from. Currently <code>default</code> is the only style; a
+    <code>new-york</code> port may follow upstream later.
+  </p>
+
+  <h2>prefix</h2>
+  <p>
+    The custom element prefix. Registry sources use <code>ui</code>
+    (<code>&lt;ui-button&gt;</code>); the CLI rewrites tags <em>and</em> the element name strings in
+    TypeScript when you pick something else, so <code>prefix: "acme"</code> gives you
+    <code>&lt;acme-button&gt;</code> throughout. Pick it once at <code>init</code> — changing it
+    later means re-adding components (your prefix is applied at copy time, not at runtime).
+  </p>
+
+  <h2>tailwind.css</h2>
+  <p>
+    Path to the stylesheet containing <code>@import "tailwindcss"</code>. The theme file
+    (<code>shadcn-aurelia.css</code>) is written next to it and imported from it.
+  </p>
+
+  <h2>tailwind.baseColor</h2>
+  <p>The base gray palette for the theme variables (<code>zinc</code> by default).</p>
+
+  <h2>aliases</h2>
+  <p>
+    Where <code>add</code> writes files and how imports are rewritten. Registry sources import from
+    <code>@/registry/default/ui/…</code>; those become your <code>ui</code> alias. Items of type
+    <code>lib</code> (like <code>cn</code>) go to the <code>lib</code> alias. The aliases must be
+    resolvable in your project — <code>init</code> checks that <code>@/*</code> maps to
+    <code>src/*</code> in <code>tsconfig.json</code> and Vite.
+  </p>
+  <table>
+    <thead><tr><th>Alias</th><th>Default</th><th>Receives</th></tr></thead>
+    <tbody>
+      <tr><td><code>ui</code></td><td><code>@/components/ui</code></td><td>component folders (<code>button/</code>, <code>dialog/</code>, …)</td></tr>
+      <tr><td><code>lib</code></td><td><code>@/lib</code></td><td>utilities (<code>cn.ts</code>, shared types)</td></tr>
+      <tr><td><code>components</code></td><td><code>@/components</code></td><td>non-ui components (blocks reference this)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>registry</h2>
+  <p>
+    Base URL (or local directory) the CLI fetches from. Items resolve as
+    <code>&lt;registry&gt;/styles/&lt;style&gt;/&lt;name&gt;.json</code>, the index as
+    <code>&lt;registry&gt;/index.json</code>.
+  </p>
+</article>

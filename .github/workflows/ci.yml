@@ -55,7 +55,7 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       - run: node packages/cli/dist/index.js init --registry "$GITHUB_WORKSPACE/apps/www/public/r"
         working-directory: templates/e2e-app
-      - run: node ../../packages/cli/dist/index.js add button dialog form data-table-demo
+      - run: node ../../packages/cli/dist/index.js add button dialog form data-table-demo login-01
         working-directory: templates/e2e-app
       - run: pnpm build
         working-directory: templates/e2e-app

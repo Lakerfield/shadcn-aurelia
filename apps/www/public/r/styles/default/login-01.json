@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-01",
+  "type": "registry:block",
+  "title": "Login",
+  "description": "A simple login form in a card: email, password, social login and sign-up link.",
+  "registryDependencies": [
+    "card",
+    "field",
+    "input",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/login-01/login-01.ts",
+      "type": "registry:block",
+      "target": "components/blocks/login-01/login-01.ts",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCard,\n  UiCardHeader,\n  UiCardTitle,\n  UiCardDescription,\n  UiCardContent,\n  UiCardFooter,\n} from '@/registry/default/ui/card'\nimport { UiField, UiFieldGroup, UiFieldLabel } from '@/registry/default/ui/field'\nimport { UiInput } from '@/registry/default/ui/input'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-sm flex-col gap-6\">\n  <ui-card>\n    <ui-card-header>\n      <ui-card-title>Login to your account</ui-card-title>\n      <ui-card-description>Enter your email below to login to your account</ui-card-description>\n    </ui-card-header>\n    <ui-card-content>\n      <form novalidate submit.trigger=\"login()\">\n        <ui-field-group>\n          <ui-field>\n            <ui-field-label>Email</ui-field-label>\n            <ui-input type=\"email\" value.bind=\"email\" placeholder=\"m@example.com\" required></ui-input>\n          </ui-field>\n          <ui-field>\n            <div class=\"flex items-center\">\n              <ui-field-label>Password</ui-field-label>\n              <a href=\"#\" class=\"ml-auto inline-block text-sm underline-offset-4 hover:underline\">\n                Forgot your password?\n              </a>\n            </div>\n            <ui-input type=\"password\" value.bind=\"password\" required></ui-input>\n          </ui-field>\n          <ui-field>\n            <ui-button type=\"submit\" class=\"w-full\">Login</ui-button>\n            <ui-button variant=\"outline\" class=\"w-full\">Login with Google</ui-button>\n          </ui-field>\n        </ui-field-group>\n      </form>\n    </ui-card-content>\n    <ui-card-footer class=\"justify-center text-sm\">\n      Don't have an account?&nbsp;<a href=\"#\" class=\"underline underline-offset-4\">Sign up</a>\n    </ui-card-footer>\n  </ui-card>\n</div>\n`\n\n@customElement({\n  name: 'login-form',\n  template: TEMPLATE,\n  dependencies: [\n    UiCard,\n    UiCardHeader,\n    UiCardTitle,\n    UiCardDescription,\n    UiCardContent,\n    UiCardFooter,\n    UiField,\n    UiFieldGroup,\n    UiFieldLabel,\n    UiInput,\n    UiButton,\n  ],\n})\nexport class LoginForm {\n  email = ''\n  password = ''\n\n  login(): void {\n    // Wire up your authentication here.\n  }\n}\n"
+    }
+  ]
+}

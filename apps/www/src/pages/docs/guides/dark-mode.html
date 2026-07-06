@@ -1,0 +1,52 @@
+<article class="guide-prose max-w-3xl pb-16">
+  <h1>Dark Mode</h1>
+  <p class="text-muted-foreground">Class-based dark mode, toggled on the <code>&lt;html&gt;</code> element.</p>
+
+  <p>
+    The theme stylesheet defines a custom variant so that Tailwind's <code>dark:</code> utilities —
+    and the <code>.dark { … }</code> variable overrides — activate whenever an ancestor has the
+    <code>dark</code> class:
+  </p>
+  <pre><code>@custom-variant dark (&amp;:is(.dark *));</code></pre>
+  <p>
+    That means dark mode is a single class on <code>document.documentElement</code>. No component
+    needs to know about it; every color routes through the CSS variables.
+  </p>
+
+  <h2>A theme toggle</h2>
+  <p>A minimal toggle component that persists the choice:</p>
+  <pre><code>// theme-toggle.ts
+export class ThemeToggle {
+  isDark = document.documentElement.classList.contains('dark')
+
+  toggle(): void {
+    this.isDark = !this.isDark
+    document.documentElement.classList.toggle('dark', this.isDark)
+    localStorage.setItem('theme', this.isDark ? 'dark' : 'light')
+  }
+}</code></pre>
+  <pre><code>&lt;!-- theme-toggle.html --&gt;
+&lt;button click.trigger="toggle()" aria-label="Toggle theme"&gt;
+  \${isDark ? '🌙' : '☀️'}
+&lt;/button&gt;</code></pre>
+
+  <h2>Avoiding the flash</h2>
+  <p>
+    Apply the saved (or OS-preferred) theme <em>before</em> Aurelia boots, with an inline script in
+    <code>index.html</code>'s <code>&lt;head&gt;</code>:
+  </p>
+  <pre><code>&lt;script&gt;
+  const t = localStorage.getItem('theme')
+  if (t === 'dark' || (!t &amp;&amp; matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  }
+&lt;/script&gt;</code></pre>
+
+  <h2>Portalled content</h2>
+  <p>
+    Overlays (dialogs, menus, tooltips) render under <code>document.body</code>. Because the
+    variables live on <code>:root</code> and the variant matches <em>any</em> <code>.dark</code>
+    ancestor including <code>&lt;html&gt;</code>, portalled content themes correctly with no extra
+    wiring.
+  </p>
+</article>

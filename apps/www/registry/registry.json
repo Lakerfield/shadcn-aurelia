@@ -2819,6 +2819,66 @@
           "type": "registry:example"
         }
       ]
+    },
+    {
+      "name": "login-01",
+      "type": "registry:block",
+      "title": "Login",
+      "description": "A simple login form in a card: email, password, social login and sign-up link.",
+      "registryDependencies": [
+        "card",
+        "field",
+        "input",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/login-01/login-01.ts",
+          "type": "registry:block",
+          "target": "components/blocks/login-01/login-01.ts"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-01",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "A dashboard shell: sidebar with navigation, breadcrumb header, stat cards and a chart.",
+      "registryDependencies": [
+        "sidebar",
+        "breadcrumb",
+        "card",
+        "separator",
+        "badge",
+        "chart"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/dashboard-01/dashboard-01.ts",
+          "type": "registry:block",
+          "target": "components/blocks/dashboard-01/dashboard-01.ts"
+        }
+      ]
+    },
+    {
+      "name": "settings-01",
+      "type": "registry:block",
+      "title": "Settings",
+      "description": "A settings page: profile fields, a timezone select and notification switches.",
+      "registryDependencies": [
+        "field",
+        "input",
+        "button",
+        "switch",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/settings-01/settings-01.ts",
+          "type": "registry:block",
+          "target": "components/blocks/settings-01/settings-01.ts"
+        }
+      ]
     }
   ]
 }
