@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-demo",
+  "type": "registry:example",
+  "title": "Dropdown Menu Demo",
+  "description": "Example: dropdown-menu-demo.",
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dropdown-menu-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiDropdownMenu,\n  UiDropdownMenuTrigger,\n  UiDropdownMenuContent,\n  UiDropdownMenuItem,\n  UiDropdownMenuGroup,\n  UiDropdownMenuLabel,\n  UiDropdownMenuSeparator,\n  UiDropdownMenuShortcut,\n  UiDropdownMenuSub,\n  UiDropdownMenuSubTrigger,\n  UiDropdownMenuSubContent,\n} from '@/registry/default/ui/dropdown-menu'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-dropdown-menu placement=\"bottom-start\">\n  <ui-dropdown-menu-trigger class=\"\\${triggerClasses}\">Open</ui-dropdown-menu-trigger>\n  <ui-dropdown-menu-content class=\"w-56\">\n    <ui-dropdown-menu-label>My Account</ui-dropdown-menu-label>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-group>\n      <ui-dropdown-menu-item click.trigger=\"log('profile')\">\n        Profile\n        <ui-dropdown-menu-shortcut>⇧⌘P</ui-dropdown-menu-shortcut>\n      </ui-dropdown-menu-item>\n      <ui-dropdown-menu-item click.trigger=\"log('billing')\">\n        Billing\n        <ui-dropdown-menu-shortcut>⌘B</ui-dropdown-menu-shortcut>\n      </ui-dropdown-menu-item>\n      <ui-dropdown-menu-item click.trigger=\"log('settings')\">\n        Settings\n        <ui-dropdown-menu-shortcut>⌘S</ui-dropdown-menu-shortcut>\n      </ui-dropdown-menu-item>\n    </ui-dropdown-menu-group>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-group>\n      <ui-dropdown-menu-item>Team</ui-dropdown-menu-item>\n      <ui-dropdown-menu-sub>\n        <ui-dropdown-menu-sub-trigger>Invite users</ui-dropdown-menu-sub-trigger>\n        <ui-dropdown-menu-sub-content>\n          <ui-dropdown-menu-item click.trigger=\"log('email')\">Email</ui-dropdown-menu-item>\n          <ui-dropdown-menu-item click.trigger=\"log('message')\">Message</ui-dropdown-menu-item>\n          <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n          <ui-dropdown-menu-item click.trigger=\"log('more')\">More…</ui-dropdown-menu-item>\n        </ui-dropdown-menu-sub-content>\n      </ui-dropdown-menu-sub>\n    </ui-dropdown-menu-group>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-item disabled.bind=\"true\">API (soon)</ui-dropdown-menu-item>\n    <ui-dropdown-menu-item variant=\"destructive\" click.trigger=\"log('logout')\">\n      Log out\n      <ui-dropdown-menu-shortcut>⇧⌘Q</ui-dropdown-menu-shortcut>\n    </ui-dropdown-menu-item>\n  </ui-dropdown-menu-content>\n</ui-dropdown-menu>\n`\n\n@customElement({\n  name: 'dropdown-menu-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiDropdownMenu,\n    UiDropdownMenuTrigger,\n    UiDropdownMenuContent,\n    UiDropdownMenuItem,\n    UiDropdownMenuGroup,\n    UiDropdownMenuLabel,\n    UiDropdownMenuSeparator,\n    UiDropdownMenuShortcut,\n    UiDropdownMenuSub,\n    UiDropdownMenuSubTrigger,\n    UiDropdownMenuSubContent,\n  ],\n})\nexport class DropdownMenuDemo {\n  triggerClasses = buttonVariants({ variant: 'outline' })\n\n  log(action: string): void {\n    console.log('[dropdown-menu-demo]', action)\n  }\n}\n"
+    }
+  ]
+}

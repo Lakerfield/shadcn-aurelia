@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-demo",
+  "type": "registry:example",
+  "title": "Navigation Menu Demo",
+  "description": "Example: navigation-menu-demo.",
+  "registryDependencies": [
+    "navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/navigation-menu-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiNavigationMenu,\n  UiNavigationMenuList,\n  UiNavigationMenuItem,\n  UiNavigationMenuTrigger,\n  UiNavigationMenuContent,\n  UiNavigationMenuLink,\n  navigationMenuTriggerStyle,\n} from '@/registry/default/ui/navigation-menu'\n\nconst TEMPLATE = `\n<ui-navigation-menu>\n  <ui-navigation-menu-list>\n    <ui-navigation-menu-item>\n      <ui-navigation-menu-trigger>Getting started</ui-navigation-menu-trigger>\n      <ui-navigation-menu-content>\n        <div class=\"grid w-[400px] gap-1 md:w-[500px] md:grid-cols-2\">\n          <ui-navigation-menu-link href=\"#introduction\">\n            <div class=\"font-medium\">Introduction</div>\n            <div class=\"text-muted-foreground text-sm\">Copy-paste components built for Aurelia 2.</div>\n          </ui-navigation-menu-link>\n          <ui-navigation-menu-link href=\"#installation\">\n            <div class=\"font-medium\">Installation</div>\n            <div class=\"text-muted-foreground text-sm\">How to install dependencies and structure your app.</div>\n          </ui-navigation-menu-link>\n          <ui-navigation-menu-link href=\"#typography\">\n            <div class=\"font-medium\">Typography</div>\n            <div class=\"text-muted-foreground text-sm\">Styles for headings, paragraphs, lists…</div>\n          </ui-navigation-menu-link>\n        </div>\n      </ui-navigation-menu-content>\n    </ui-navigation-menu-item>\n    <ui-navigation-menu-item>\n      <ui-navigation-menu-trigger>Components</ui-navigation-menu-trigger>\n      <ui-navigation-menu-content>\n        <div class=\"grid w-[300px] gap-1\">\n          <ui-navigation-menu-link href=\"#dialog\">\n            <div class=\"font-medium\">Dialog</div>\n            <div class=\"text-muted-foreground text-sm\">A modal window overlaid on the page.</div>\n          </ui-navigation-menu-link>\n          <ui-navigation-menu-link href=\"#dropdown-menu\">\n            <div class=\"font-medium\">Dropdown Menu</div>\n            <div class=\"text-muted-foreground text-sm\">Displays a menu of actions.</div>\n          </ui-navigation-menu-link>\n        </div>\n      </ui-navigation-menu-content>\n    </ui-navigation-menu-item>\n    <ui-navigation-menu-item>\n      <a href=\"#docs\" class=\"\\${plainLinkClasses}\">Documentation</a>\n    </ui-navigation-menu-item>\n  </ui-navigation-menu-list>\n</ui-navigation-menu>\n`\n\n@customElement({\n  name: 'navigation-menu-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiNavigationMenu,\n    UiNavigationMenuList,\n    UiNavigationMenuItem,\n    UiNavigationMenuTrigger,\n    UiNavigationMenuContent,\n    UiNavigationMenuLink,\n  ],\n})\nexport class NavigationMenuDemo {\n  plainLinkClasses = navigationMenuTriggerStyle()\n}\n"
+    }
+  ]
+}

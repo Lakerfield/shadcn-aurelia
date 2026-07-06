@@ -30,6 +30,11 @@ export class ZagMachineAdapter {
     this.vm.start()
   }
 
+  /** Update machine props after start — e.g. a filtered collection while typing. */
+  updateProps(props: Record<string, unknown>): void {
+    this.vm?.updateProps(props)
+  }
+
   stop(): void {
     this.unsubFromVm?.()
     this.unsubFromVm = null

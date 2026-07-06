@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-scrollable",
+  "type": "registry:example",
+  "title": "Select Scrollable",
+  "description": "Example: select-scrollable.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-scrollable.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiSelect,\n  UiSelectTrigger,\n  UiSelectContent,\n  UiSelectItem,\n  UiSelectGroup,\n  UiSelectLabel,\n  UiSelectSeparator,\n} from '@/registry/default/ui/select'\n\nconst TEMPLATE = `\n<ui-select value.two-way=\"timezone\" placeholder=\"Select a timezone\">\n  <ui-select-trigger class=\"w-[280px]\"></ui-select-trigger>\n  <ui-select-content class=\"max-h-64\">\n    <ui-select-group>\n      <ui-select-label>North America</ui-select-label>\n      <ui-select-item repeat.for=\"tz of northAmerica\" value.bind=\"tz.value\" label.bind=\"tz.label\">\\${tz.label}</ui-select-item>\n    </ui-select-group>\n    <ui-select-separator></ui-select-separator>\n    <ui-select-group>\n      <ui-select-label>Europe & Africa</ui-select-label>\n      <ui-select-item repeat.for=\"tz of europe\" value.bind=\"tz.value\" label.bind=\"tz.label\">\\${tz.label}</ui-select-item>\n    </ui-select-group>\n  </ui-select-content>\n</ui-select>\n`\n\n@customElement({\n  name: 'select-scrollable',\n  template: TEMPLATE,\n  dependencies: [\n    UiSelect,\n    UiSelectTrigger,\n    UiSelectContent,\n    UiSelectItem,\n    UiSelectGroup,\n    UiSelectLabel,\n    UiSelectSeparator,\n  ],\n})\nexport class SelectScrollable {\n  timezone = ''\n  northAmerica = [\n    { value: 'est', label: 'Eastern Standard Time (EST)' },\n    { value: 'cst', label: 'Central Standard Time (CST)' },\n    { value: 'mst', label: 'Mountain Standard Time (MST)' },\n    { value: 'pst', label: 'Pacific Standard Time (PST)' },\n    { value: 'akst', label: 'Alaska Standard Time (AKST)' },\n  ]\n  europe = [\n    { value: 'gmt', label: 'Greenwich Mean Time (GMT)' },\n    { value: 'cet', label: 'Central European Time (CET)' },\n    { value: 'eet', label: 'Eastern European Time (EET)' },\n    { value: 'west', label: 'Western European Summer Time (WEST)' },\n  ]\n}\n"
+    }
+  ]
+}

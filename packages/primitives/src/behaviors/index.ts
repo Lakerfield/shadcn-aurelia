@@ -2,12 +2,17 @@
  * Behavior facades — one factory per interactive behavior. Engine v1 is Zag;
  * Phase 7 swaps these for native implementations behind the same signatures.
  */
+import type { CollectionItem, CollectionOptions, ListCollection } from '@zag-js/collection'
 import * as accordion from '@zag-js/accordion'
 import * as checkbox from '@zag-js/checkbox'
 import * as collapsible from '@zag-js/collapsible'
+import * as combobox from '@zag-js/combobox'
 import * as dialog from '@zag-js/dialog'
 import * as hoverCard from '@zag-js/hover-card'
+import * as menu from '@zag-js/menu'
+import * as navigationMenu from '@zag-js/navigation-menu'
 import * as popover from '@zag-js/popover'
+import * as select from '@zag-js/select'
 import * as tooltip from '@zag-js/tooltip'
 import * as pinInput from '@zag-js/pin-input'
 import * as progress from '@zag-js/progress'
@@ -73,3 +78,29 @@ export const createTabsBehavior = (): ZagBehavior<TabsApi> =>
 export type ToggleGroupApi = ReturnType<typeof toggleGroup.connect>
 export const createToggleGroupBehavior = (): ZagBehavior<ToggleGroupApi> =>
   new ZagBehavior<ToggleGroupApi>(toggleGroup.machine, toggleGroup.connect)
+
+export type MenuApi = ReturnType<typeof menu.connect>
+export const createMenuBehavior = (): ZagBehavior<MenuApi> =>
+  new ZagBehavior<MenuApi>(menu.machine, menu.connect)
+
+export type SelectApi = ReturnType<typeof select.connect>
+export const createSelectBehavior = (): ZagBehavior<SelectApi> =>
+  new ZagBehavior<SelectApi>(select.machine, select.connect)
+
+export type ComboboxApi = ReturnType<typeof combobox.connect>
+export const createComboboxBehavior = (): ZagBehavior<ComboboxApi> =>
+  new ZagBehavior<ComboboxApi>(combobox.machine, combobox.connect)
+
+export type NavigationMenuApi = ReturnType<typeof navigationMenu.connect>
+export const createNavigationMenuBehavior = (): ZagBehavior<NavigationMenuApi> =>
+  new ZagBehavior<NavigationMenuApi>(navigationMenu.machine, navigationMenu.connect)
+
+/**
+ * List collection for select/combobox — wraps Zag's collection so registry
+ * code never imports `@zag-js/*` directly.
+ */
+export type { CollectionItem, CollectionOptions } from '@zag-js/collection'
+export type { ListCollection } from '@zag-js/collection'
+export const createListCollection = <T extends CollectionItem>(
+  options: CollectionOptions<T>,
+): ListCollection<T> => select.collection(options)

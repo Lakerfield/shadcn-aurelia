@@ -274,6 +274,73 @@
       ]
     },
     {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Autocomplete input with a filtered suggestion list.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/combobox/combobox.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/combobox/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "cmdk-style command palette with filtering and keyboard navigation.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/command/command.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/command/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Menu at the pointer, triggered by right click or long press.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/context-menu/context-menu.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/context-menu/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -291,6 +358,28 @@
         },
         {
           "path": "registry/default/ui/dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Menu of actions triggered by a button, with checkbox/radio items and submenus.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/dropdown-menu/dropdown-menu.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/dropdown-menu/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -463,6 +552,29 @@
       ]
     },
     {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Desktop-style persistent menu bar with hover-switching menus.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/menubar/menubar.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/menubar/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "native-select",
       "type": "registry:ui",
       "title": "Native Select",
@@ -477,6 +589,28 @@
         },
         {
           "path": "registry/default/ui/native-select/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Collection of links for navigating websites, with expandable panels.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/navigation-menu/navigation-menu.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/navigation-menu/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -563,6 +697,28 @@
         },
         {
           "path": "registry/default/ui/radio-group/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "List of options for the user to pick from, triggered by a button.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/select/select.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/select/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -1188,6 +1344,52 @@
       ]
     },
     {
+      "name": "combobox-demo",
+      "type": "registry:example",
+      "title": "Combobox Demo",
+      "description": "Example: combobox-demo.",
+      "registryDependencies": [
+        "combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "command-demo",
+      "type": "registry:example",
+      "title": "Command Demo",
+      "description": "Example: command-demo.",
+      "registryDependencies": [
+        "command"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/command-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-demo",
+      "type": "registry:example",
+      "title": "Context Menu Demo",
+      "description": "Example: context-menu-demo.",
+      "registryDependencies": [
+        "context-menu",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "dialog-controlled",
       "type": "registry:example",
       "title": "Dialog Controlled",
@@ -1213,6 +1415,54 @@
       "files": [
         {
           "path": "registry/default/examples/dialog-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-checkboxes",
+      "type": "registry:example",
+      "title": "Dropdown Menu Checkboxes",
+      "description": "Example: dropdown-menu-checkboxes.",
+      "registryDependencies": [
+        "dropdown-menu",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dropdown-menu-checkboxes.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-demo",
+      "type": "registry:example",
+      "title": "Dropdown Menu Demo",
+      "description": "Example: dropdown-menu-demo.",
+      "registryDependencies": [
+        "dropdown-menu",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dropdown-menu-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-radio-group",
+      "type": "registry:example",
+      "title": "Dropdown Menu Radio Group",
+      "description": "Example: dropdown-menu-radio-group.",
+      "registryDependencies": [
+        "dropdown-menu",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/dropdown-menu-radio-group.ts",
           "type": "registry:example"
         }
       ]
@@ -1443,6 +1693,22 @@
       ]
     },
     {
+      "name": "menubar-demo",
+      "type": "registry:example",
+      "title": "Menubar Demo",
+      "description": "Example: menubar-demo.",
+      "registryDependencies": [
+        "menubar",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/menubar-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "native-select-demo",
       "type": "registry:example",
       "title": "Native Select Demo",
@@ -1468,6 +1734,21 @@
       "files": [
         {
           "path": "registry/default/examples/native-select-label.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-demo",
+      "type": "registry:example",
+      "title": "Navigation Menu Demo",
+      "description": "Example: navigation-menu-demo.",
+      "registryDependencies": [
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/navigation-menu-demo.ts",
           "type": "registry:example"
         }
       ]
@@ -1588,6 +1869,36 @@
       "files": [
         {
           "path": "registry/default/examples/radio-group-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-demo",
+      "type": "registry:example",
+      "title": "Select Demo",
+      "description": "Example: select-demo.",
+      "registryDependencies": [
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-scrollable",
+      "type": "registry:example",
+      "title": "Select Scrollable",
+      "description": "Example: select-scrollable.",
+      "registryDependencies": [
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/select-scrollable.ts",
           "type": "registry:example"
         }
       ]

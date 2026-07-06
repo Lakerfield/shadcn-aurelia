@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-demo",
+  "type": "registry:example",
+  "title": "Context Menu Demo",
+  "description": "Example: context-menu-demo.",
+  "registryDependencies": [
+    "context-menu",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiContextMenu,\n  UiContextMenuTrigger,\n  UiContextMenuContent,\n} from '@/registry/default/ui/context-menu'\nimport {\n  UiDropdownMenuItem,\n  UiDropdownMenuCheckboxItem,\n  UiDropdownMenuRadioGroup,\n  UiDropdownMenuRadioItem,\n  UiDropdownMenuLabel,\n  UiDropdownMenuSeparator,\n  UiDropdownMenuShortcut,\n} from '@/registry/default/ui/dropdown-menu'\n\nconst TEMPLATE = `\n<ui-context-menu>\n  <ui-context-menu-trigger\n    class=\"flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm select-none\">\n    Right click here\n  </ui-context-menu-trigger>\n  <ui-context-menu-content class=\"w-52\">\n    <ui-dropdown-menu-item inset.bind=\"true\">\n      Back\n      <ui-dropdown-menu-shortcut>⌘[</ui-dropdown-menu-shortcut>\n    </ui-dropdown-menu-item>\n    <ui-dropdown-menu-item inset.bind=\"true\" disabled.bind=\"true\">\n      Forward\n      <ui-dropdown-menu-shortcut>⌘]</ui-dropdown-menu-shortcut>\n    </ui-dropdown-menu-item>\n    <ui-dropdown-menu-item inset.bind=\"true\">\n      Reload\n      <ui-dropdown-menu-shortcut>⌘R</ui-dropdown-menu-shortcut>\n    </ui-dropdown-menu-item>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-checkbox-item checked.two-way=\"showBookmarks\">Show Bookmarks</ui-dropdown-menu-checkbox-item>\n    <ui-dropdown-menu-checkbox-item checked.two-way=\"showFullUrls\">Show Full URLs</ui-dropdown-menu-checkbox-item>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-radio-group value.two-way=\"person\">\n      <ui-dropdown-menu-label inset.bind=\"true\">People</ui-dropdown-menu-label>\n      <ui-dropdown-menu-radio-item value=\"pedro\">Pedro Duarte</ui-dropdown-menu-radio-item>\n      <ui-dropdown-menu-radio-item value=\"colm\">Colm Tuite</ui-dropdown-menu-radio-item>\n    </ui-dropdown-menu-radio-group>\n  </ui-context-menu-content>\n</ui-context-menu>\n`\n\n@customElement({\n  name: 'context-menu-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiContextMenu,\n    UiContextMenuTrigger,\n    UiContextMenuContent,\n    UiDropdownMenuItem,\n    UiDropdownMenuCheckboxItem,\n    UiDropdownMenuRadioGroup,\n    UiDropdownMenuRadioItem,\n    UiDropdownMenuLabel,\n    UiDropdownMenuSeparator,\n    UiDropdownMenuShortcut,\n  ],\n})\nexport class ContextMenuDemo {\n  showBookmarks = true\n  showFullUrls = false\n  person = 'pedro'\n}\n"
+    }
+  ]
+}

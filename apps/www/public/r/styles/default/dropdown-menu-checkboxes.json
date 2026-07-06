@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-checkboxes",
+  "type": "registry:example",
+  "title": "Dropdown Menu Checkboxes",
+  "description": "Example: dropdown-menu-checkboxes.",
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dropdown-menu-checkboxes.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiDropdownMenu,\n  UiDropdownMenuTrigger,\n  UiDropdownMenuContent,\n  UiDropdownMenuCheckboxItem,\n  UiDropdownMenuLabel,\n  UiDropdownMenuSeparator,\n} from '@/registry/default/ui/dropdown-menu'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-dropdown-menu>\n  <ui-dropdown-menu-trigger class=\"\\${triggerClasses}\">Open</ui-dropdown-menu-trigger>\n  <ui-dropdown-menu-content class=\"w-56\">\n    <ui-dropdown-menu-label>Appearance</ui-dropdown-menu-label>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-checkbox-item checked.two-way=\"statusBar\">Status Bar</ui-dropdown-menu-checkbox-item>\n    <ui-dropdown-menu-checkbox-item checked.two-way=\"activityBar\" disabled.bind=\"true\">Activity Bar</ui-dropdown-menu-checkbox-item>\n    <ui-dropdown-menu-checkbox-item checked.two-way=\"panel\">Panel</ui-dropdown-menu-checkbox-item>\n  </ui-dropdown-menu-content>\n</ui-dropdown-menu>\n<p class=\"text-muted-foreground mt-4 text-sm\">\n  Status bar: \\${statusBar} · Activity bar: \\${activityBar} · Panel: \\${panel}\n</p>\n`\n\n@customElement({\n  name: 'dropdown-menu-checkboxes',\n  template: TEMPLATE,\n  dependencies: [\n    UiDropdownMenu,\n    UiDropdownMenuTrigger,\n    UiDropdownMenuContent,\n    UiDropdownMenuCheckboxItem,\n    UiDropdownMenuLabel,\n    UiDropdownMenuSeparator,\n  ],\n})\nexport class DropdownMenuCheckboxes {\n  triggerClasses = buttonVariants({ variant: 'outline' })\n  statusBar = true\n  activityBar = false\n  panel = false\n}\n"
+    }
+  ]
+}

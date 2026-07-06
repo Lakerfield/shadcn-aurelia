@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-demo",
+  "type": "registry:example",
+  "title": "Command Demo",
+  "description": "Example: command-demo.",
+  "registryDependencies": [
+    "command"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/command-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCommand,\n  UiCommandInput,\n  UiCommandList,\n  UiCommandEmpty,\n  UiCommandGroup,\n  UiCommandItem,\n  UiCommandSeparator,\n  UiCommandShortcut,\n} from '@/registry/default/ui/command'\n\nconst TEMPLATE = `\n<div class=\"w-full max-w-[450px]\">\n  <ui-command class=\"rounded-lg border shadow-md\">\n    <ui-command-input placeholder=\"Type a command or search…\"></ui-command-input>\n    <ui-command-list>\n      <ui-command-empty>No results found.</ui-command-empty>\n      <ui-command-group heading=\"Suggestions\">\n        <ui-command-item value=\"calendar\" select.trigger=\"run('calendar')\">Calendar</ui-command-item>\n        <ui-command-item value=\"search-emoji\" select.trigger=\"run('emoji')\">Search Emoji</ui-command-item>\n        <ui-command-item value=\"calculator\" disabled.bind=\"true\">Calculator</ui-command-item>\n      </ui-command-group>\n      <ui-command-separator></ui-command-separator>\n      <ui-command-group heading=\"Settings\">\n        <ui-command-item value=\"profile\" select.trigger=\"run('profile')\">\n          Profile\n          <ui-command-shortcut>⌘P</ui-command-shortcut>\n        </ui-command-item>\n        <ui-command-item value=\"billing\" select.trigger=\"run('billing')\">\n          Billing\n          <ui-command-shortcut>⌘B</ui-command-shortcut>\n        </ui-command-item>\n        <ui-command-item value=\"settings\" select.trigger=\"run('settings')\">\n          Settings\n          <ui-command-shortcut>⌘S</ui-command-shortcut>\n        </ui-command-item>\n      </ui-command-group>\n    </ui-command-list>\n  </ui-command>\n  <p class=\"text-muted-foreground mt-4 text-sm\">Last action: \\${lastAction || '—'}</p>\n</div>\n`\n\n@customElement({\n  name: 'command-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiCommand,\n    UiCommandInput,\n    UiCommandList,\n    UiCommandEmpty,\n    UiCommandGroup,\n    UiCommandItem,\n    UiCommandSeparator,\n    UiCommandShortcut,\n  ],\n})\nexport class CommandDemo {\n  lastAction = ''\n\n  run(action: string): void {\n    this.lastAction = action\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-demo",
+  "type": "registry:example",
+  "title": "Combobox Demo",
+  "description": "Example: combobox-demo.",
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCombobox,\n  UiComboboxControl,\n  UiComboboxContent,\n  UiComboboxItem,\n} from '@/registry/default/ui/combobox'\n\nconst TEMPLATE = `\n<ui-combobox value.two-way=\"framework\" placeholder=\"Search framework…\">\n  <ui-combobox-control class=\"w-[220px]\"></ui-combobox-control>\n  <ui-combobox-content>\n    <ui-combobox-item repeat.for=\"fw of frameworks\" value.bind=\"fw.value\" label.bind=\"fw.label\">\\${fw.label}</ui-combobox-item>\n  </ui-combobox-content>\n</ui-combobox>\n<p class=\"text-muted-foreground mt-4 text-sm\">Selected: \\${framework || '—'}</p>\n`\n\n@customElement({\n  name: 'combobox-demo',\n  template: TEMPLATE,\n  dependencies: [UiCombobox, UiComboboxControl, UiComboboxContent, UiComboboxItem],\n})\nexport class ComboboxDemo {\n  framework = ''\n  frameworks = [\n    { value: 'aurelia', label: 'Aurelia' },\n    { value: 'next.js', label: 'Next.js' },\n    { value: 'sveltekit', label: 'SvelteKit' },\n    { value: 'nuxt.js', label: 'Nuxt.js' },\n    { value: 'remix', label: 'Remix' },\n    { value: 'astro', label: 'Astro' },\n  ]\n}\n"
+    }
+  ]
+}

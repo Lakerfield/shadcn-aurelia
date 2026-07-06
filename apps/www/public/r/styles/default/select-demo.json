@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-demo",
+  "type": "registry:example",
+  "title": "Select Demo",
+  "description": "Example: select-demo.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiSelect,\n  UiSelectTrigger,\n  UiSelectContent,\n  UiSelectItem,\n  UiSelectGroup,\n  UiSelectLabel,\n} from '@/registry/default/ui/select'\n\nconst TEMPLATE = `\n<ui-select value.two-way=\"fruit\" placeholder=\"Select a fruit\">\n  <ui-select-trigger class=\"w-[180px]\"></ui-select-trigger>\n  <ui-select-content>\n    <ui-select-group>\n      <ui-select-label>Fruits</ui-select-label>\n      <ui-select-item value=\"apple\">Apple</ui-select-item>\n      <ui-select-item value=\"banana\">Banana</ui-select-item>\n      <ui-select-item value=\"blueberry\">Blueberry</ui-select-item>\n      <ui-select-item value=\"grapes\" disabled.bind=\"true\">Grapes</ui-select-item>\n      <ui-select-item value=\"pineapple\">Pineapple</ui-select-item>\n    </ui-select-group>\n  </ui-select-content>\n</ui-select>\n<p class=\"text-muted-foreground mt-4 text-sm\">Selected: \\${fruit || '—'}</p>\n`\n\n@customElement({\n  name: 'select-demo',\n  template: TEMPLATE,\n  dependencies: [UiSelect, UiSelectTrigger, UiSelectContent, UiSelectItem, UiSelectGroup, UiSelectLabel],\n})\nexport class SelectDemo {\n  fruit = ''\n}\n"
+    }
+  ]
+}

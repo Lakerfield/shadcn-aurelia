@@ -156,6 +156,26 @@ import { HoverCardDemo } from '@/registry/default/examples/hover-card-demo'
 import hoverCardDemoSource from '@/registry/default/examples/hover-card-demo.ts?raw'
 import { TooltipControlled } from '@/registry/default/examples/tooltip-controlled'
 import tooltipControlledSource from '@/registry/default/examples/tooltip-controlled.ts?raw'
+import { DropdownMenuDemo } from '@/registry/default/examples/dropdown-menu-demo'
+import dropdownMenuDemoSource from '@/registry/default/examples/dropdown-menu-demo.ts?raw'
+import { DropdownMenuCheckboxes } from '@/registry/default/examples/dropdown-menu-checkboxes'
+import dropdownMenuCheckboxesSource from '@/registry/default/examples/dropdown-menu-checkboxes.ts?raw'
+import { DropdownMenuRadioGroupDemo } from '@/registry/default/examples/dropdown-menu-radio-group'
+import dropdownMenuRadioGroupSource from '@/registry/default/examples/dropdown-menu-radio-group.ts?raw'
+import { ContextMenuDemo } from '@/registry/default/examples/context-menu-demo'
+import contextMenuDemoSource from '@/registry/default/examples/context-menu-demo.ts?raw'
+import { MenubarDemo } from '@/registry/default/examples/menubar-demo'
+import menubarDemoSource from '@/registry/default/examples/menubar-demo.ts?raw'
+import { ComboboxDemo } from '@/registry/default/examples/combobox-demo'
+import comboboxDemoSource from '@/registry/default/examples/combobox-demo.ts?raw'
+import { CommandDemo } from '@/registry/default/examples/command-demo'
+import commandDemoSource from '@/registry/default/examples/command-demo.ts?raw'
+import { NavigationMenuDemo } from '@/registry/default/examples/navigation-menu-demo'
+import navigationMenuDemoSource from '@/registry/default/examples/navigation-menu-demo.ts?raw'
+import { SelectDemo } from '@/registry/default/examples/select-demo'
+import selectDemoSource from '@/registry/default/examples/select-demo.ts?raw'
+import { SelectScrollable } from '@/registry/default/examples/select-scrollable'
+import selectScrollableSource from '@/registry/default/examples/select-scrollable.ts?raw'
 
 export interface ComponentExample {
   title: string
@@ -280,12 +300,40 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'combobox',
+    title: 'Combobox',
+    description: 'Autocomplete input and command palette with a list of suggestions.',
+    examples: [{ title: 'Default', component: ComboboxDemo, source: comboboxDemoSource }],
+  },
+  {
+    name: 'command',
+    title: 'Command',
+    description: 'Fast, composable command menu for searching and running actions.',
+    examples: [{ title: 'Default', component: CommandDemo, source: commandDemoSource }],
+  },
+  {
+    name: 'context-menu',
+    title: 'Context Menu',
+    description: 'Displays a menu located at the pointer, triggered by a right click or a long press.',
+    examples: [{ title: 'Default', component: ContextMenuDemo, source: contextMenuDemoSource }],
+  },
+  {
     name: 'dialog',
     title: 'Dialog',
     description: 'A window overlaid on the primary content, rendering the content underneath inert.',
     examples: [
       { title: 'Default', component: DialogDemo, source: dialogDemoSource },
       { title: 'Controlled', component: DialogControlled, source: dialogControlledSource },
+    ],
+  },
+  {
+    name: 'dropdown-menu',
+    title: 'Dropdown Menu',
+    description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
+    examples: [
+      { title: 'Default', component: DropdownMenuDemo, source: dropdownMenuDemoSource },
+      { title: 'Checkboxes', component: DropdownMenuCheckboxes, source: dropdownMenuCheckboxesSource },
+      { title: 'Radio Group', component: DropdownMenuRadioGroupDemo, source: dropdownMenuRadioGroupSource },
     ],
   },
   {
@@ -358,6 +406,12 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'menubar',
+    title: 'Menubar',
+    description: 'A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.',
+    examples: [{ title: 'Default', component: MenubarDemo, source: menubarDemoSource }],
+  },
+  {
     name: 'native-select',
     title: 'Native Select',
     description: 'A styled native <select> element — as a custom attribute, so options stay native.',
@@ -365,6 +419,12 @@ export const componentDocs: ComponentDoc[] = [
       { title: 'Default', component: NativeSelectDemo, source: nativeSelectDemoSource },
       { title: 'With label', component: NativeSelectLabel, source: nativeSelectLabelSource },
     ],
+  },
+  {
+    name: 'navigation-menu',
+    title: 'Navigation Menu',
+    description: 'A collection of links for navigating websites, with expandable panels.',
+    examples: [{ title: 'Default', component: NavigationMenuDemo, source: navigationMenuDemoSource }],
   },
   {
     name: 'pagination',
@@ -400,6 +460,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { title: 'Default', component: RadioGroupDemo, source: radioGroupDemoSource },
       { title: 'Controlled', component: RadioGroupControlled, source: radioGroupControlledSource },
+    ],
+  },
+  {
+    name: 'select',
+    title: 'Select',
+    description: 'Displays a list of options for the user to pick from — triggered by a button.',
+    examples: [
+      { title: 'Default', component: SelectDemo, source: selectDemoSource },
+      { title: 'Scrollable Groups', component: SelectScrollable, source: selectScrollableSource },
     ],
   },
   {

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-radio-group",
+  "type": "registry:example",
+  "title": "Dropdown Menu Radio Group",
+  "description": "Example: dropdown-menu-radio-group.",
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dropdown-menu-radio-group.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiDropdownMenu,\n  UiDropdownMenuTrigger,\n  UiDropdownMenuContent,\n  UiDropdownMenuRadioGroup,\n  UiDropdownMenuRadioItem,\n  UiDropdownMenuLabel,\n  UiDropdownMenuSeparator,\n} from '@/registry/default/ui/dropdown-menu'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-dropdown-menu>\n  <ui-dropdown-menu-trigger class=\"\\${triggerClasses}\">Open</ui-dropdown-menu-trigger>\n  <ui-dropdown-menu-content class=\"w-56\">\n    <ui-dropdown-menu-label>Panel Position</ui-dropdown-menu-label>\n    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>\n    <ui-dropdown-menu-radio-group value.two-way=\"position\">\n      <ui-dropdown-menu-radio-item value=\"top\">Top</ui-dropdown-menu-radio-item>\n      <ui-dropdown-menu-radio-item value=\"bottom\">Bottom</ui-dropdown-menu-radio-item>\n      <ui-dropdown-menu-radio-item value=\"right\">Right</ui-dropdown-menu-radio-item>\n    </ui-dropdown-menu-radio-group>\n  </ui-dropdown-menu-content>\n</ui-dropdown-menu>\n<p class=\"text-muted-foreground mt-4 text-sm\">Position: \\${position}</p>\n`\n\n@customElement({\n  name: 'dropdown-menu-radio-group',\n  template: TEMPLATE,\n  dependencies: [\n    UiDropdownMenu,\n    UiDropdownMenuTrigger,\n    UiDropdownMenuContent,\n    UiDropdownMenuRadioGroup,\n    UiDropdownMenuRadioItem,\n    UiDropdownMenuLabel,\n    UiDropdownMenuSeparator,\n  ],\n})\nexport class DropdownMenuRadioGroupDemo {\n  triggerClasses = buttonVariants({ variant: 'outline' })\n  position = 'bottom'\n}\n"
+    }
+  ]
+}
