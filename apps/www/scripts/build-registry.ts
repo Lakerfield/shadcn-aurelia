@@ -57,6 +57,15 @@ async function main(): Promise<void> {
     JSON.stringify({ name: registry.name, homepage: registry.homepage, items: indexItems }, null, 2) + '\n',
   )
 
+  // drop-in stylesheet for `shadcn-aurelia init`: theme variables + shared
+  // Tailwind layer (assumes the consumer css already has `@import "tailwindcss"`)
+  const themeVars = await readFile(join(appRoot, 'registry', 'styles', STYLE, 'theme.css'), 'utf8')
+  const twPreset = await readFile(
+    join(appRoot, '..', '..', 'packages', 'tw-preset', 'theme.css'),
+    'utf8',
+  )
+  await writeFile(join(outDir, 'styles', STYLE, 'theme.css'), `${themeVars}\n${twPreset}`)
+
   console.log(`✔ registry: ${registry.items.length} items → public/r/styles/${STYLE}/`)
 }
 

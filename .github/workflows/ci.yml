@@ -28,6 +28,38 @@ jobs:
 
       - run: pnpm typecheck
 
+  cli-e2e:
+    name: CLI init+add on template
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # registry artifacts + the CLI itself
+      - run: pnpm --filter www build:registry
+      - run: pnpm --filter shadcn-aurelia build
+
+      # fresh app from the template, then init + add + build
+      - run: cp -r templates/aurelia-vite templates/e2e-app
+      - run: node -e "const f='templates/e2e-app/package.json',j=require('./'+f);j.name='e2e-app';require('fs').writeFileSync(f,JSON.stringify(j,null,2))"
+      - run: pnpm install --no-frozen-lockfile
+      - run: node packages/cli/dist/index.js init --registry "$GITHUB_WORKSPACE/apps/www/public/r"
+        working-directory: templates/e2e-app
+      - run: node ../../packages/cli/dist/index.js add button dialog form data-table-demo
+        working-directory: templates/e2e-app
+      - run: pnpm build
+        working-directory: templates/e2e-app
+
   lint:
     name: Lint & Format
     runs-on: ubuntu-latest
