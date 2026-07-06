@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-horizontal",
+  "type": "registry:example",
+  "title": "Scroll Area Horizontal",
+  "description": "Example: scroll-area-horizontal.",
+  "registryDependencies": [
+    "scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/scroll-area-horizontal.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiScrollArea } from '@/registry/default/ui/scroll-area'\n\nconst TEMPLATE = `\n<ui-scroll-area orientation=\"horizontal\" class=\"w-96 rounded-md border whitespace-nowrap\">\n  <div class=\"flex w-max space-x-4 p-4\">\n    <figure repeat.for=\"art of artworks\" class=\"shrink-0\">\n      <div class=\"bg-muted flex h-40 w-36 items-center justify-center overflow-hidden rounded-md text-4xl\">\n        \\${art.emoji}\n      </div>\n      <figcaption class=\"text-muted-foreground pt-2 text-xs\">\n        Work by <span class=\"text-foreground font-semibold\">\\${art.artist}</span>\n      </figcaption>\n    </figure>\n  </div>\n</ui-scroll-area>\n`\n\n@customElement({\n  name: 'scroll-area-horizontal',\n  template: TEMPLATE,\n  dependencies: [UiScrollArea],\n})\nexport class ScrollAreaHorizontal {\n  artworks = [\n    { artist: 'Ornella Binni', emoji: '🌅' },\n    { artist: 'Tom Byrom', emoji: '🏔️' },\n    { artist: 'Vladimir Malyavko', emoji: '🌊' },\n    { artist: 'Ava Chen', emoji: '🌸' },\n    { artist: 'Liam Osei', emoji: '🌌' },\n    { artist: 'Mia Kato', emoji: '🍂' },\n  ]\n}\n"
+    }
+  ]
+}

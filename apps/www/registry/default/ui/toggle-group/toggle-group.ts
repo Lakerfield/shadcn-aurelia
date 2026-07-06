@@ -12,6 +12,7 @@ import {
   type ControlledSync,
   type ToggleGroupApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 import { toggleVariants, type ToggleVariants } from '@/registry/default/ui/toggle'
@@ -49,6 +50,7 @@ export class UiToggleGroup implements BehaviorSource<ToggleGroupApi> {
       setBindable: (v) => (this.value = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('toggle-group'),
       defaultValue: this.value,
       multiple: this.type === 'multiple',

@@ -13,6 +13,7 @@ import {
   type ControlledSync,
   type HoverCardApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -43,6 +44,7 @@ export class UiHoverCard implements BehaviorSource<HoverCardApi> {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('hover-card'),
       defaultOpen: this.open,
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),

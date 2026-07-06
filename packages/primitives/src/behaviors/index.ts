@@ -5,6 +5,8 @@
 import type { CollectionItem, CollectionOptions, ListCollection } from '@zag-js/collection'
 import * as accordion from '@zag-js/accordion'
 import * as checkbox from '@zag-js/checkbox'
+import * as datePicker from '@zag-js/date-picker'
+import * as toast from '@zag-js/toast'
 import * as collapsible from '@zag-js/collapsible'
 import * as combobox from '@zag-js/combobox'
 import * as dialog from '@zag-js/dialog'
@@ -94,6 +96,40 @@ export const createComboboxBehavior = (): ZagBehavior<ComboboxApi> =>
 export type NavigationMenuApi = ReturnType<typeof navigationMenu.connect>
 export const createNavigationMenuBehavior = (): ZagBehavior<NavigationMenuApi> =>
   new ZagBehavior<NavigationMenuApi>(navigationMenu.machine, navigationMenu.connect)
+
+/**
+ * Toast — Zag's sonner-style model: a store (imperative `toaster.create()`
+ * API), one group machine per region, and a child machine per visible toast.
+ */
+export type ToastStore = toast.Store
+export type ToastOptions = toast.Options
+export const createToastStore = (props: toast.StoreProps): ToastStore => toast.createStore(props)
+
+export type ToastGroupApi = ReturnType<typeof toast.group.connect>
+export const createToastGroupBehavior = (): ZagBehavior<ToastGroupApi> =>
+  new ZagBehavior<ToastGroupApi>(toast.group.machine, toast.group.connect)
+
+export type ToastApi = ReturnType<typeof toast.connect>
+export const createToastBehavior = (): ZagBehavior<ToastApi> =>
+  new ZagBehavior<ToastApi>(toast.machine, toast.connect)
+
+export type DatePickerApi = ReturnType<typeof datePicker.connect>
+export const createDatePickerBehavior = (): ZagBehavior<DatePickerApi> =>
+  new ZagBehavior<DatePickerApi>(datePicker.machine, datePicker.connect)
+
+/** Date helpers re-exported so registry code never imports date libs directly. */
+export { parseDate, today, getLocalTimeZone, CalendarDate } from '@internationalized/date'
+export type { DateValue } from '@internationalized/date'
+
+/**
+ * Carousel — embla's vanilla core behind the facade (not a Zag machine).
+ * `createCarouselEngine(viewport, options)` returns the embla api.
+ */
+export { default as createCarouselEngine } from 'embla-carousel'
+export type {
+  EmblaCarouselType as CarouselEngine,
+  EmblaOptionsType as CarouselOptions,
+} from 'embla-carousel'
 
 /**
  * List collection for select/combobox — wraps Zag's collection so registry

@@ -21,6 +21,7 @@ import {
   bindPart,
   type ControlledSync,
   type MenuApi,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { menuContext, menuContentClasses, type MenuSource } from '@/registry/default/ui/dropdown-menu'
 import { cn } from '@/registry/default/lib/cn'
@@ -58,6 +59,7 @@ export class UiContextMenu implements MenuSource {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('context-menu'),
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),
       onSelect: (d: { value: string }) => {

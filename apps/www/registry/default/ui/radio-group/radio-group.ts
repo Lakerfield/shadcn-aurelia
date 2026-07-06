@@ -14,6 +14,7 @@ import {
   type ControlledSync,
   type RadioGroupApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -47,6 +48,7 @@ export class UiRadioGroup implements BehaviorSource<RadioGroupApi> {
       setBindable: (v) => (this.value = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('radio-group'),
       defaultValue: this.value || null,
       disabled: this.disabled,

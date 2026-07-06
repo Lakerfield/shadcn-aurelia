@@ -15,6 +15,7 @@ import {
   type ControlledSync,
   type TabsApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -46,6 +47,7 @@ export class UiTabs implements BehaviorSource<TabsApi> {
       setBindable: (v) => (this.value = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('tabs'),
       defaultValue: this.value || undefined,
       onValueChange: (d: { value: string }) => this.sync?.fromMachine(d.value),

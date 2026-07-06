@@ -23,6 +23,7 @@ import {
   type ControlledSync,
   type SelectApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -96,6 +97,7 @@ export class UiSelect implements SelectOwner {
     // Items registered during their own attached() (bottom-up, before ours),
     // so the collection is complete here — init right before start.
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('select'),
       collection: this.buildCollection(),
       defaultValue: this.value ? [this.value] : [],

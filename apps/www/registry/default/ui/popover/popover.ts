@@ -12,6 +12,7 @@ import {
   type ControlledSync,
   type PopoverApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -42,6 +43,7 @@ export class UiPopover implements BehaviorSource<PopoverApi> {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('popover'),
       defaultOpen: this.open,
       portalled: true,

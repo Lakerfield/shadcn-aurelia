@@ -19,6 +19,7 @@ import {
   type ControlledSync,
   type AccordionApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -57,6 +58,7 @@ export class UiAccordion implements BehaviorSource<AccordionApi> {
       setBindable: (v) => (this.value = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('accordion'),
       defaultValue: this.value,
       multiple: this.type === 'multiple',

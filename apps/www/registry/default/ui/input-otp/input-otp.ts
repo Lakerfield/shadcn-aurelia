@@ -10,6 +10,7 @@ import {
   createId,
   bindPart,
   type ControlledSync,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -36,6 +37,7 @@ export class UiInputOtp {
       setBindable: (v) => (this.value = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('input-otp'),
       defaultValue: this.value ? this.value.split('') : undefined,
       count: Number(this.count),

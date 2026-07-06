@@ -23,6 +23,7 @@ import {
   type Context,
   type NavigationMenuApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -53,6 +54,7 @@ export class UiNavigationMenu implements BehaviorSource<NavigationMenuApi> {
   binding(): void {
     navigationMenuContext.set(this.host, this)
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('nav-menu'),
       onValueChange: (d: { value: string | null }) => {
         this.host.dispatchEvent(new CustomEvent('value-change', { detail: { value: d.value }, bubbles: true }))

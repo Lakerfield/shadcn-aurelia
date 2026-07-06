@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-demo",
+  "type": "registry:example",
+  "title": "Calendar Demo",
+  "description": "Example: calendar-demo.",
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/calendar-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiCalendar } from '@/registry/default/ui/calendar'\n\nconst TEMPLATE = `\n<ui-calendar value.two-way=\"date\" class=\"rounded-md border\"></ui-calendar>\n<p class=\"text-muted-foreground mt-4 text-sm\">Selected: \\${date || '—'}</p>\n`\n\n@customElement({\n  name: 'calendar-demo',\n  template: TEMPLATE,\n  dependencies: [UiCalendar],\n})\nexport class CalendarDemo {\n  date = ''\n}\n"
+    }
+  ]
+}

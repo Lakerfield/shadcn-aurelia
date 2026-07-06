@@ -11,6 +11,7 @@ import {
   type ControlledSync,
   type TooltipApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 
 export const tooltipContext = createContext<UiTooltip>()
@@ -40,6 +41,7 @@ export class UiTooltip implements BehaviorSource<TooltipApi> {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('tooltip'),
       defaultOpen: this.open,
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),

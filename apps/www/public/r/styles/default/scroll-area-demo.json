@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-demo",
+  "type": "registry:example",
+  "title": "Scroll Area Demo",
+  "description": "Example: scroll-area-demo.",
+  "registryDependencies": [
+    "scroll-area",
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/scroll-area-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiScrollArea } from '@/registry/default/ui/scroll-area'\nimport { UiSeparator } from '@/registry/default/ui/separator'\n\nconst TEMPLATE = `\n<ui-scroll-area class=\"h-72 w-48 rounded-md border\">\n  <div class=\"p-4\">\n    <p class=\"mb-4 text-sm leading-none font-medium\">Tags</p>\n    <template repeat.for=\"tag of tags\">\n      <div class=\"text-sm\">\\${tag}</div>\n      <ui-separator class=\"my-2\"></ui-separator>\n    </template>\n  </div>\n</ui-scroll-area>\n`\n\n@customElement({\n  name: 'scroll-area-demo',\n  template: TEMPLATE,\n  dependencies: [UiScrollArea, UiSeparator],\n})\nexport class ScrollAreaDemo {\n  tags = Array.from({ length: 50 }, (_, i) => `v1.2.0-beta.${50 - i}`)\n}\n"
+    }
+  ]
+}

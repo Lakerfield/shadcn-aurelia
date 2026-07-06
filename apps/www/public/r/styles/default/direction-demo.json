@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction-demo",
+  "type": "registry:example",
+  "title": "Direction Demo",
+  "description": "Example: direction-demo.",
+  "registryDependencies": [
+    "direction",
+    "slider",
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/direction-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiDirection } from '@/registry/default/ui/direction'\nimport { UiSlider } from '@/registry/default/ui/slider'\nimport {\n  UiSelect,\n  UiSelectTrigger,\n  UiSelectContent,\n  UiSelectItem,\n} from '@/registry/default/ui/select'\nimport { UiLabel } from '@/registry/default/ui/label'\n\nconst TEMPLATE = `\n<div class=\"grid w-full max-w-sm gap-8\">\n  <div class=\"grid gap-3\">\n    <ui-label>LTR (default)</ui-label>\n    <ui-slider value.bind=\"[40]\" class=\"w-full\"></ui-slider>\n  </div>\n  <ui-direction dir=\"rtl\" class=\"grid gap-3\">\n    <ui-label>RTL — arrow keys and layout flip</ui-label>\n    <ui-slider value.bind=\"[40]\" class=\"w-full\"></ui-slider>\n    <ui-select placeholder=\"بچینید…\">\n      <ui-select-trigger class=\"w-[180px]\"></ui-select-trigger>\n      <ui-select-content>\n        <ui-select-item value=\"one\">اول</ui-select-item>\n        <ui-select-item value=\"two\">دوم</ui-select-item>\n        <ui-select-item value=\"three\">سوم</ui-select-item>\n      </ui-select-content>\n    </ui-select>\n  </ui-direction>\n</div>\n`\n\n@customElement({\n  name: 'direction-demo',\n  template: TEMPLATE,\n  dependencies: [UiDirection, UiSlider, UiSelect, UiSelectTrigger, UiSelectContent, UiSelectItem, UiLabel],\n})\nexport class DirectionDemo {}\n"
+    }
+  ]
+}

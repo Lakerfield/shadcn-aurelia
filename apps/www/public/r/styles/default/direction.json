@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction",
+  "type": "registry:ui",
+  "title": "Direction",
+  "description": "RTL provider that flips reading direction for wrapped components.",
+  "dependencies": [
+    "@shadcn-aurelia/primitives"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/direction/direction.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-direction — RTL provider. Sets the `dir` attribute on its subtree;\n * machine-backed components resolve their reading direction from the nearest\n * `dir` attribute at init (via resolveDirection), so wrap components in this\n * provider (or set `dir` on any ancestor / <html>) to flip them to RTL.\n *\n *   <ui-direction dir=\"rtl\">\n *     <ui-select>…</ui-select>\n *   </ui-direction>\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { cn } from '@/registry/default/lib/cn'\n\n@customElement({ name: 'ui-direction', template: '<au-slot></au-slot>' })\nexport class UiDirection {\n  @bindable() dir: 'ltr' | 'rtl' = 'ltr'\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n\n  binding(): void {\n    // Set before children bind — machine roots read the DOM during their init.\n    this.host.setAttribute('dir', this.dir)\n  }\n\n  bound(): void {\n    this.host.className = cn('block', this.host.getAttribute('class') ?? '')\n  }\n\n  dirChanged(v: 'ltr' | 'rtl'): void {\n    this.host.setAttribute('dir', v)\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/direction/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiDirection } from './direction'\n"
+    }
+  ]
+}

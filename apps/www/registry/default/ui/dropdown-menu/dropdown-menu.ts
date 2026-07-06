@@ -30,6 +30,7 @@ import {
   type ControlledSync,
   type MenuApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -88,6 +89,7 @@ export class UiDropdownMenu implements MenuSource {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('menu'),
       defaultOpen: this.open,
       positioning: { placement: this.placement, gutter: 4 },
@@ -520,6 +522,7 @@ export class UiDropdownMenuSub implements MenuSource {
     this._parent = this.host.parentElement ? (menuContext.get(this.host.parentElement) ?? null) : null
     menuContext.set(this.host, this)
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('menu-sub'),
       positioning: { placement: 'right-start', gutter: 0 },
     })

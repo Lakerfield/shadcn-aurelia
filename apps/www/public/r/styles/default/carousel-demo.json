@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-demo",
+  "type": "registry:example",
+  "title": "Carousel Demo",
+  "description": "Example: carousel-demo.",
+  "registryDependencies": [
+    "carousel",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/carousel-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCarousel,\n  UiCarouselContent,\n  UiCarouselItem,\n  UiCarouselPrevious,\n  UiCarouselNext,\n} from '@/registry/default/ui/carousel'\nimport { UiCard, UiCardContent } from '@/registry/default/ui/card'\n\nconst TEMPLATE = `\n<ui-carousel class=\"w-full max-w-xs\">\n  <ui-carousel-content>\n    <ui-carousel-item repeat.for=\"n of numbers\">\n      <div class=\"p-1\">\n        <ui-card>\n          <ui-card-content class=\"flex aspect-square items-center justify-center p-6\">\n            <span class=\"text-4xl font-semibold\">\\${n}</span>\n          </ui-card-content>\n        </ui-card>\n      </div>\n    </ui-carousel-item>\n  </ui-carousel-content>\n  <ui-carousel-previous></ui-carousel-previous>\n  <ui-carousel-next></ui-carousel-next>\n</ui-carousel>\n`\n\n@customElement({\n  name: 'carousel-demo',\n  template: TEMPLATE,\n  dependencies: [UiCarousel, UiCarouselContent, UiCarouselItem, UiCarouselPrevious, UiCarouselNext, UiCard, UiCardContent],\n})\nexport class CarouselDemo {\n  numbers = [1, 2, 3, 4, 5]\n}\n"
+    }
+  ]
+}

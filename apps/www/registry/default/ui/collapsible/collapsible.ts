@@ -13,6 +13,7 @@ import {
   type ControlledSync,
   type CollapsibleApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -44,6 +45,7 @@ export class UiCollapsible implements BehaviorSource<CollapsibleApi> {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('collapsible'),
       defaultOpen: this.open,
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),

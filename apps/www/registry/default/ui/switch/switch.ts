@@ -9,6 +9,7 @@ import {
   createId,
   bindPart,
   type ControlledSync,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -52,6 +53,7 @@ export class UiSwitch {
       setBindable: (v) => (this.checked = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('switch'),
       defaultChecked: this.checked,
       disabled: this.disabled,

@@ -24,6 +24,7 @@ import {
   bindPart,
   type ComboboxApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -116,6 +117,7 @@ export class UiCommand implements CommandOwner {
 
   attached(): void {
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('command'),
       collection: this.buildCollection(),
       // Palette semantics: list always visible, first match highlighted,

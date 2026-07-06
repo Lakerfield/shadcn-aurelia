@@ -25,6 +25,7 @@ import {
   type ControlledSync,
   type DialogApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -57,6 +58,7 @@ export class UiDialog implements BehaviorSource<DialogApi> {
       setBindable: (v) => (this.open = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('dialog'),
       defaultOpen: this.open,
       role: this.role,

@@ -24,6 +24,7 @@ import {
   type ControlledSync,
   type ComboboxApi,
   type BehaviorSource,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -121,6 +122,7 @@ export class UiCombobox implements ComboboxOwner {
 
   attached(): void {
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('combobox'),
       collection: this.buildCollection(),
       defaultValue: this.value ? [this.value] : [],

@@ -172,6 +172,22 @@ import { CommandDemo } from '@/registry/default/examples/command-demo'
 import commandDemoSource from '@/registry/default/examples/command-demo.ts?raw'
 import { NavigationMenuDemo } from '@/registry/default/examples/navigation-menu-demo'
 import navigationMenuDemoSource from '@/registry/default/examples/navigation-menu-demo.ts?raw'
+import { ScrollAreaDemo } from '@/registry/default/examples/scroll-area-demo'
+import scrollAreaDemoSource from '@/registry/default/examples/scroll-area-demo.ts?raw'
+import { ScrollAreaHorizontal } from '@/registry/default/examples/scroll-area-horizontal'
+import scrollAreaHorizontalSource from '@/registry/default/examples/scroll-area-horizontal.ts?raw'
+import { DirectionDemo } from '@/registry/default/examples/direction-demo'
+import directionDemoSource from '@/registry/default/examples/direction-demo.ts?raw'
+import { CalendarDemo } from '@/registry/default/examples/calendar-demo'
+import calendarDemoSource from '@/registry/default/examples/calendar-demo.ts?raw'
+import { DatePickerDemo } from '@/registry/default/examples/date-picker-demo'
+import datePickerDemoSource from '@/registry/default/examples/date-picker-demo.ts?raw'
+import { CarouselDemo } from '@/registry/default/examples/carousel-demo'
+import carouselDemoSource from '@/registry/default/examples/carousel-demo.ts?raw'
+import { CarouselMultiple } from '@/registry/default/examples/carousel-multiple'
+import carouselMultipleSource from '@/registry/default/examples/carousel-multiple.ts?raw'
+import { SonnerDemo } from '@/registry/default/examples/sonner-demo'
+import sonnerDemoSource from '@/registry/default/examples/sonner-demo.ts?raw'
 import { SelectDemo } from '@/registry/default/examples/select-demo'
 import selectDemoSource from '@/registry/default/examples/select-demo.ts?raw'
 import { SelectScrollable } from '@/registry/default/examples/select-scrollable'
@@ -282,6 +298,21 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'calendar',
+    title: 'Calendar',
+    description: 'A date field component that allows users to enter and edit dates.',
+    examples: [{ title: 'Default', component: CalendarDemo, source: calendarDemoSource }],
+  },
+  {
+    name: 'carousel',
+    title: 'Carousel',
+    description: 'A carousel with motion and swipe built using Embla.',
+    examples: [
+      { title: 'Default', component: CarouselDemo, source: carouselDemoSource },
+      { title: 'Multiple items', component: CarouselMultiple, source: carouselMultipleSource },
+    ],
+  },
+  {
     name: 'checkbox',
     title: 'Checkbox',
     description: 'A control that allows the user to toggle between checked and not checked.',
@@ -318,6 +349,12 @@ export const componentDocs: ComponentDoc[] = [
     examples: [{ title: 'Default', component: ContextMenuDemo, source: contextMenuDemoSource }],
   },
   {
+    name: 'date-picker',
+    title: 'Date Picker',
+    description: 'A date picker component with calendar in a popover.',
+    examples: [{ title: 'Default', component: DatePickerDemo, source: datePickerDemoSource }],
+  },
+  {
     name: 'dialog',
     title: 'Dialog',
     description: 'A window overlaid on the primary content, rendering the content underneath inert.',
@@ -325,6 +362,12 @@ export const componentDocs: ComponentDoc[] = [
       { title: 'Default', component: DialogDemo, source: dialogDemoSource },
       { title: 'Controlled', component: DialogControlled, source: dialogControlledSource },
     ],
+  },
+  {
+    name: 'direction',
+    title: 'Direction',
+    description: 'RTL provider — flips reading direction for all wrapped components.',
+    examples: [{ title: 'RTL', component: DirectionDemo, source: directionDemoSource }],
   },
   {
     name: 'dropdown-menu',
@@ -463,6 +506,15 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'scroll-area',
+    title: 'Scroll Area',
+    description: 'Augments native scroll functionality with custom, themeable scrollbars.',
+    examples: [
+      { title: 'Default', component: ScrollAreaDemo, source: scrollAreaDemoSource },
+      { title: 'Horizontal', component: ScrollAreaHorizontal, source: scrollAreaHorizontalSource },
+    ],
+  },
+  {
     name: 'select',
     title: 'Select',
     description: 'Displays a list of options for the user to pick from — triggered by a button.',
@@ -506,6 +558,12 @@ export const componentDocs: ComponentDoc[] = [
       { title: 'Default', component: SliderDemo, source: sliderDemoSource },
       { title: 'Range', component: SliderRange, source: sliderRangeSource },
     ],
+  },
+  {
+    name: 'sonner',
+    title: 'Sonner',
+    description: 'An opinionated toast component with stacked notifications.',
+    examples: [{ title: 'Default', component: SonnerDemo, source: sonnerDemoSource }],
   },
   {
     name: 'spinner',

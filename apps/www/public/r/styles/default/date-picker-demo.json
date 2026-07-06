@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-demo",
+  "type": "registry:example",
+  "title": "Date Picker Demo",
+  "description": "Example: date-picker-demo.",
+  "registryDependencies": [
+    "date-picker",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/date-picker-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiDatePicker, UiDatePickerTrigger, UiDatePickerContent } from '@/registry/default/ui/date-picker'\nimport { UiCalendar } from '@/registry/default/ui/calendar'\n\nconst TEMPLATE = `\n<ui-date-picker value.two-way=\"date\" placeholder=\"Pick a date\">\n  <ui-date-picker-trigger class=\"w-[240px]\"></ui-date-picker-trigger>\n  <ui-date-picker-content>\n    <ui-calendar></ui-calendar>\n  </ui-date-picker-content>\n</ui-date-picker>\n<p class=\"text-muted-foreground mt-4 text-sm\">Selected: \\${date || '—'}</p>\n`\n\n@customElement({\n  name: 'date-picker-demo',\n  template: TEMPLATE,\n  dependencies: [UiDatePicker, UiDatePickerTrigger, UiDatePickerContent, UiCalendar],\n})\nexport class DatePickerDemo {\n  date = ''\n}\n"
+    }
+  ]
+}

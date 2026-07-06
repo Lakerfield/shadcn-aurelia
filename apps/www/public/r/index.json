@@ -211,6 +211,28 @@
       ]
     },
     {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Inline month grid for picking dates.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/calendar/calendar.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/calendar/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -225,6 +247,29 @@
         },
         {
           "path": "registry/default/ui/card/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Carousel with motion and swipe built on Embla.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/carousel/carousel.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/carousel/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -341,6 +386,29 @@
       ]
     },
     {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Calendar in a popover, anchored to a trigger.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn",
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/date-picker/date-picker.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/date-picker/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -358,6 +426,28 @@
         },
         {
           "path": "registry/default/ui/dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "RTL provider that flips reading direction for wrapped components.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/direction/direction.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/direction/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -702,6 +792,28 @@
       ]
     },
     {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Native scrolling with custom, themeable scrollbars.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/scroll-area/scroll-area.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/scroll-area/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
@@ -803,6 +915,28 @@
         },
         {
           "path": "registry/default/ui/slider/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Sonner-style stacked toasts on the Zag toast engine.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/sonner/sonner.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/sonner/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -1254,6 +1388,21 @@
       ]
     },
     {
+      "name": "calendar-demo",
+      "type": "registry:example",
+      "title": "Calendar Demo",
+      "description": "Example: calendar-demo.",
+      "registryDependencies": [
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/calendar-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "card-demo",
       "type": "registry:example",
       "title": "Card Demo",
@@ -1279,6 +1428,38 @@
       "files": [
         {
           "path": "registry/default/examples/card-simple.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "carousel-demo",
+      "type": "registry:example",
+      "title": "Carousel Demo",
+      "description": "Example: carousel-demo.",
+      "registryDependencies": [
+        "carousel",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/carousel-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "carousel-multiple",
+      "type": "registry:example",
+      "title": "Carousel Multiple",
+      "description": "Example: carousel-multiple.",
+      "registryDependencies": [
+        "carousel",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/carousel-multiple.ts",
           "type": "registry:example"
         }
       ]
@@ -1390,6 +1571,22 @@
       ]
     },
     {
+      "name": "date-picker-demo",
+      "type": "registry:example",
+      "title": "Date Picker Demo",
+      "description": "Example: date-picker-demo.",
+      "registryDependencies": [
+        "date-picker",
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/date-picker-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "dialog-controlled",
       "type": "registry:example",
       "title": "Dialog Controlled",
@@ -1415,6 +1612,24 @@
       "files": [
         {
           "path": "registry/default/examples/dialog-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "direction-demo",
+      "type": "registry:example",
+      "title": "Direction Demo",
+      "description": "Example: direction-demo.",
+      "registryDependencies": [
+        "direction",
+        "slider",
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/direction-demo.ts",
           "type": "registry:example"
         }
       ]
@@ -1874,6 +2089,37 @@
       ]
     },
     {
+      "name": "scroll-area-demo",
+      "type": "registry:example",
+      "title": "Scroll Area Demo",
+      "description": "Example: scroll-area-demo.",
+      "registryDependencies": [
+        "scroll-area",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/scroll-area-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area-horizontal",
+      "type": "registry:example",
+      "title": "Scroll Area Horizontal",
+      "description": "Example: scroll-area-horizontal.",
+      "registryDependencies": [
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/scroll-area-horizontal.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "select-demo",
       "type": "registry:example",
       "title": "Select Demo",
@@ -2019,6 +2265,22 @@
       "files": [
         {
           "path": "registry/default/examples/slider-range.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-demo",
+      "type": "registry:example",
+      "title": "Sonner Demo",
+      "description": "Example: sonner-demo.",
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/sonner-demo.ts",
           "type": "registry:example"
         }
       ]

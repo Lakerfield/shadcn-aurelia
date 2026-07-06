@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-demo",
+  "type": "registry:example",
+  "title": "Sonner Demo",
+  "description": "Example: sonner-demo.",
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/sonner-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSonner, toaster } from '@/registry/default/ui/sonner'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-sonner></ui-sonner>\n<div class=\"flex flex-wrap gap-3\">\n  <ui-button variant=\"outline\" click.trigger=\"show()\">Show toast</ui-button>\n  <ui-button variant=\"outline\" click.trigger=\"success()\">Success</ui-button>\n  <ui-button variant=\"outline\" click.trigger=\"error()\">Error</ui-button>\n</div>\n`\n\n@customElement({\n  name: 'sonner-demo',\n  template: TEMPLATE,\n  dependencies: [UiSonner, UiButton],\n})\nexport class SonnerDemo {\n  private count = 0\n\n  show(): void {\n    this.count++\n    toaster.create({\n      title: `Event has been created (#${this.count})`,\n      description: 'Sunday, December 03, 2026 at 9:00 AM',\n    })\n  }\n\n  success(): void {\n    toaster.success({ title: 'Changes saved', description: 'Your profile has been updated.' })\n  }\n\n  error(): void {\n    toaster.error({ title: 'Something went wrong', description: 'Please try again later.' })\n  }\n}\n"
+    }
+  ]
+}

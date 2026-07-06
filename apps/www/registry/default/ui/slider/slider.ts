@@ -10,6 +10,7 @@ import {
   createId,
   bindPart,
   type ControlledSync,
+  resolveDirection,
 } from '@shadcn-aurelia/primitives'
 import { cn } from '@/registry/default/lib/cn'
 
@@ -53,6 +54,7 @@ export class UiSlider {
       setBindable: (v) => (this.value = v),
     })
     this.behavior.init({
+      dir: resolveDirection(this.host),
       id: createId('slider'),
       defaultValue: this.value.map(Number),
       // attribute-sourced bindables arrive as strings — coerce
