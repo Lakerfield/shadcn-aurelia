@@ -65,14 +65,16 @@
   }
 }
 
-/* tw-animate-css equivalents for Zag/Radix data-state attributes */
+/* tw-animate-css equivalents for Zag/Radix data-state attributes.
+   Scoped to overlay surfaces (…-content / …-overlay): triggers carry the same
+   data-state attribute and must not replay an entry animation on toggle. */
 @layer utilities {
-  [data-state="open"] {
+  [data-state="open"]:where([data-slot$="-content"], [data-slot$="-overlay"]) {
     animation:
       fade-in 150ms ease-out,
       zoom-in-95 150ms ease-out;
   }
-  [data-state="closed"] {
+  [data-state="closed"]:where([data-slot$="-content"], [data-slot$="-overlay"]) {
     animation:
       fade-out 100ms ease-in,
       zoom-out-95 100ms ease-in;
