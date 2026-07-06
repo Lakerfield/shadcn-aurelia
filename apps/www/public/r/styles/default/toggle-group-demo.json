@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-demo",
+  "type": "registry:example",
+  "title": "Toggle Group Demo",
+  "description": "Example: toggle-group-demo.",
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-group-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiToggleGroup, UiToggleGroupItem } from '@/registry/default/ui/toggle-group'\n\nconst TEMPLATE = `\n<ui-toggle-group type=\"multiple\" variant=\"outline\">\n  <ui-toggle-group-item value=\"bold\">B</ui-toggle-group-item>\n  <ui-toggle-group-item value=\"italic\"><i>I</i></ui-toggle-group-item>\n  <ui-toggle-group-item value=\"underline\"><u>U</u></ui-toggle-group-item>\n</ui-toggle-group>\n`\n\n@customElement({\n  name: 'toggle-group-demo',\n  template: TEMPLATE,\n  dependencies: [UiToggleGroup, UiToggleGroupItem],\n})\nexport class ToggleGroupDemo {}\n"
+    }
+  ]
+}

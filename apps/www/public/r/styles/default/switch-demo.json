@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-demo",
+  "type": "registry:example",
+  "title": "Switch Demo",
+  "description": "Example: switch-demo.",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSwitch } from '@/registry/default/ui/switch'\n\nconst TEMPLATE = `\n<ui-switch>Airplane mode</ui-switch>\n`\n\n@customElement({ name: 'switch-demo', template: TEMPLATE, dependencies: [UiSwitch] })\nexport class SwitchDemo {}\n"
+    }
+  ]
+}

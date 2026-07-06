@@ -99,7 +99,37 @@ importers:
 
   packages/primitives:
     dependencies:
+      '@zag-js/accordion':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/checkbox':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/collapsible':
+        specifier: ^1.42.0
+        version: 1.42.0
       '@zag-js/core':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/pin-input':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/progress':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/radio-group':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/slider':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/switch':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/tabs':
+        specifier: ^1.42.0
+        version: 1.42.0
+      '@zag-js/toggle-group':
         specifier: ^1.42.0
         version: 1.42.0
       '@zag-js/tooltip':
@@ -857,8 +887,17 @@ packages:
     resolution: {integrity: sha512-4g3BLxfdTMy8iZG0MaBkadnlRrCJ74cQiFbyEVMrkwIoqdyaXXQM22cotDvrl4x28wgIZ9rEJRoM+mmhSJpJ1g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@zag-js/accordion@1.42.0':
+    resolution: {integrity: sha512-eTVh6Uz3CqdcJDr5mHWTT+oICSrZFfYCCxIpOKF00nADmb96nCDqOAYFMf8gM3J/4UDS/V27QzEH5GPmFWiHIw==}
+
   '@zag-js/anatomy@1.42.0':
     resolution: {integrity: sha512-F6kRAPxgBZRZmuV5SLywcrGNSclKcAcPAAgSrEdr2Z2dzFgQngbvS4dmdQyGau/vtQ42OlCI48Ri4t0hZxXkMw==}
+
+  '@zag-js/checkbox@1.42.0':
+    resolution: {integrity: sha512-Pn4IHtJFGLUorynWiOUN79qvYofbvIB8xM6ZwRR7gi8TjRdYPL8rVc5ASlNxus9slsvHGevRtKl5dLbT2DONNg==}
+
+  '@zag-js/collapsible@1.42.0':
+    resolution: {integrity: sha512-MSQo9qRwp2r6aj3G/lKd3gSXAAjuCaq1LtLT3BxHEQ5skn2NQWTKVgReUSuDJNl0Lz+Z5WYq5+5TCDHr4YKHRA==}
 
   '@zag-js/core@1.42.0':
     resolution: {integrity: sha512-jE/sbpZvbD+/etbawzhL/L2lP1pPefed5d919je+K5h9b6GAK3lUThleaDUCww3bT53B1L7O5gtqBapW37N1ug==}
@@ -869,11 +908,32 @@ packages:
   '@zag-js/focus-visible@1.42.0':
     resolution: {integrity: sha512-zT1Fk+8m6x6hzoD5fOIEV4JQIX33pwkBzANqwruQwaSqkOYtI2FmsG71YHnzKvrBppG2okPrRHEMyZEgfshIcQ==}
 
+  '@zag-js/pin-input@1.42.0':
+    resolution: {integrity: sha512-DvIh+ir//QRvjLdgRRkBLggUnewwfPRNx++iiL7gJ1D9bEulr1yXFTiqFK7hxtEv6BrXCbT9vlrPzrdS0r0pHg==}
+
   '@zag-js/popper@1.42.0':
     resolution: {integrity: sha512-hQvXzLen/hXCItww5tJT6+VLxnee8CpsX0FabIiHub/fKIB6OeHmS/lk+RnIII57bljdjLSus/KnT8Xlmj6tRw==}
 
+  '@zag-js/progress@1.42.0':
+    resolution: {integrity: sha512-ZGex63fTJHy4or5N8fBUxiwqxBGd1Vr+OE0Bnm8+FAQNjJ5BtCLhIlmsIUS8aX2SrBR0j/tp8E0ss35/PNq29Q==}
+
+  '@zag-js/radio-group@1.42.0':
+    resolution: {integrity: sha512-VtoN9/d3HCe/oumjdwKzv/KilF2aLzbt1IYpejXF7Cwat8xmqnCoxiA2PLjE9NfD97ZM7grng1YGcjqrWOWvuQ==}
+
+  '@zag-js/slider@1.42.0':
+    resolution: {integrity: sha512-bHTNGxM2H2oag5IbsfsV/OJegz4ic1Zs89Mvm+ryVzqOc0upJl0xMC/D/K8wnRJ8OPubNnldA+R4W8o+/4IU8w==}
+
   '@zag-js/store@1.42.0':
     resolution: {integrity: sha512-qQ5LB+l2dR1rZFCsErn9PeSrOADjnsvDl1NreEN/AaKXw9RK0YiQDqaCh7ndqjjA72UAcrnzgXsS0AAqxCC+MQ==}
+
+  '@zag-js/switch@1.42.0':
+    resolution: {integrity: sha512-227GNBAz8mYSKVsHV6r4YA/1/0rtbrP2foygPligDOkWMsNP9cjnW1HwM/z3x54UPWLqKuZjsjD7LSuDhbxtBA==}
+
+  '@zag-js/tabs@1.42.0':
+    resolution: {integrity: sha512-O0qFmeneJHr85AUL/44mHQy8Cr/jCZzh55rTKz5sBoZxmk7PIGopsasNLnpyaZ34tOpcKnNEg96FdlZ4O1bjlQ==}
+
+  '@zag-js/toggle-group@1.42.0':
+    resolution: {integrity: sha512-lhsPcj115a646wxHgzSkhSW4IZFKw4pqRTHSL0e8vR4jgCRhGLBzE70S+EgYIj+000A05eB+or0PhX5zeMK5qQ==}
 
   '@zag-js/tooltip@1.42.0':
     resolution: {integrity: sha512-viRGjX2yxF317M2G2tYvPS7+ZS3osmE+iGm40ZPg0sciezSZW1l4ZFSQ56qyCJ8rTUKv3T1m0NPWYhqVoT3eoA==}
@@ -2901,7 +2961,32 @@ snapshots:
       '@typescript-eslint/types': 8.62.1
       eslint-visitor-keys: 5.0.1
 
+  '@zag-js/accordion@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
   '@zag-js/anatomy@1.42.0': {}
+
+  '@zag-js/checkbox@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/focus-visible': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/collapsible@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
 
   '@zag-js/core@1.42.0':
     dependencies:
@@ -2916,15 +3001,73 @@ snapshots:
     dependencies:
       '@zag-js/dom-query': 1.42.0
 
+  '@zag-js/pin-input@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
   '@zag-js/popper@1.42.0':
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@zag-js/dom-query': 1.42.0
       '@zag-js/utils': 1.42.0
 
+  '@zag-js/progress@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/radio-group@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/focus-visible': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/slider@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
   '@zag-js/store@1.42.0':
     dependencies:
       proxy-compare: 3.0.1
+
+  '@zag-js/switch@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/focus-visible': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/tabs@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
+
+  '@zag-js/toggle-group@1.42.0':
+    dependencies:
+      '@zag-js/anatomy': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/dom-query': 1.42.0
+      '@zag-js/types': 1.42.0
+      '@zag-js/utils': 1.42.0
 
   '@zag-js/tooltip@1.42.0':
     dependencies:

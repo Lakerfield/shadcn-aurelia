@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-controlled",
+  "type": "registry:example",
+  "title": "Radio Group Controlled",
+  "description": "Example: radio-group-controlled.",
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/radio-group-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiRadioGroup, UiRadioGroupItem } from '@/registry/default/ui/radio-group'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-start gap-3\">\n  <ui-radio-group value.two-way=\"plan\">\n    <ui-radio-group-item value=\"free\">Free — €0/mo</ui-radio-group-item>\n    <ui-radio-group-item value=\"pro\">Pro — €12/mo</ui-radio-group-item>\n    <ui-radio-group-item value=\"team\" disabled.bind=\"true\">Team (coming soon)</ui-radio-group-item>\n  </ui-radio-group>\n  <p class=\"text-muted-foreground text-sm\">Selected plan: \\${plan}</p>\n</div>\n`\n\n@customElement({\n  name: 'radio-group-controlled',\n  template: TEMPLATE,\n  dependencies: [UiRadioGroup, UiRadioGroupItem],\n})\nexport class RadioGroupControlled {\n  plan = 'pro'\n}\n"
+    }
+  ]
+}

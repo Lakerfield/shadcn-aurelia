@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-demo",
+  "type": "registry:example",
+  "title": "Pagination Demo",
+  "description": "Example: pagination-demo.",
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/pagination-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiPagination,\n  UiPaginationContent,\n  UiPaginationItem,\n  UiPaginationLinkAttribute,\n  UiPaginationPreviousAttribute,\n  UiPaginationNextAttribute,\n  UiPaginationEllipsis,\n} from '@/registry/default/ui/pagination'\n\nconst TEMPLATE = `\n<ui-pagination>\n  <ui-pagination-content>\n    <ui-pagination-item><a href=\"#\" ui-pagination-previous>Previous</a></ui-pagination-item>\n    <ui-pagination-item><a href=\"#\" ui-pagination-link>1</a></ui-pagination-item>\n    <ui-pagination-item><a href=\"#\" ui-pagination-link=\"active.bind: true\">2</a></ui-pagination-item>\n    <ui-pagination-item><a href=\"#\" ui-pagination-link>3</a></ui-pagination-item>\n    <ui-pagination-item><ui-pagination-ellipsis></ui-pagination-ellipsis></ui-pagination-item>\n    <ui-pagination-item><a href=\"#\" ui-pagination-next>Next</a></ui-pagination-item>\n  </ui-pagination-content>\n</ui-pagination>\n`\n\n@customElement({\n  name: 'pagination-demo',\n  template: TEMPLATE,\n  dependencies: [\n    UiPagination,\n    UiPaginationContent,\n    UiPaginationItem,\n    UiPaginationLinkAttribute,\n    UiPaginationPreviousAttribute,\n    UiPaginationNextAttribute,\n    UiPaginationEllipsis,\n  ],\n})\nexport class PaginationDemo {}\n"
+    }
+  ]
+}

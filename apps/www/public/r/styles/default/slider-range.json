@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-range",
+  "type": "registry:example",
+  "title": "Slider Range",
+  "description": "Example: slider-range.",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-range.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSlider } from '@/registry/default/ui/slider'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-sm flex-col gap-3\">\n  <ui-slider value.two-way=\"range\" max=\"100\" step=\"5\"></ui-slider>\n  <p class=\"text-muted-foreground text-sm\">Range: \\${range[0]} – \\${range[1]}</p>\n</div>\n`\n\n@customElement({ name: 'slider-range', template: TEMPLATE, dependencies: [UiSlider] })\nexport class SliderRange {\n  range: number[] = [25, 75]\n}\n"
+    }
+  ]
+}

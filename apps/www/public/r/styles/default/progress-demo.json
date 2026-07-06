@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-demo",
+  "type": "registry:example",
+  "title": "Progress Demo",
+  "description": "Example: progress-demo.",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/progress-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiProgress } from '@/registry/default/ui/progress'\n\nconst TEMPLATE = `\n<ui-progress class=\"max-w-sm\" value.bind=\"66\"></ui-progress>\n`\n\n@customElement({ name: 'progress-demo', template: TEMPLATE, dependencies: [UiProgress] })\nexport class ProgressDemo {}\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-demo",
+  "type": "registry:example",
+  "title": "Collapsible Demo",
+  "description": "Example: collapsible-demo.",
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/collapsible-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCollapsible,\n  UiCollapsibleTrigger,\n  UiCollapsibleContent,\n} from '@/registry/default/ui/collapsible'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-collapsible class=\"flex w-full max-w-sm flex-col gap-2\">\n  <div class=\"flex items-center justify-between gap-4\">\n    <p class=\"text-sm font-semibold\">@aurelia starred 3 repositories</p>\n    <ui-collapsible-trigger class=\"\\${triggerClasses}\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n           stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <path d=\"m7 15 5 5 5-5\"></path><path d=\"m7 9 5-5 5 5\"></path>\n      </svg>\n      <span class=\"sr-only\">Toggle</span>\n    </ui-collapsible-trigger>\n  </div>\n  <div class=\"rounded-md border px-4 py-2 font-mono text-sm\">aurelia/aurelia</div>\n  <ui-collapsible-content class=\"flex flex-col gap-2\">\n    <div class=\"rounded-md border px-4 py-2 font-mono text-sm\">aurelia/skills</div>\n    <div class=\"rounded-md border px-4 py-2 font-mono text-sm\">shadcn-aurelia</div>\n  </ui-collapsible-content>\n</ui-collapsible>\n`\n\n@customElement({\n  name: 'collapsible-demo',\n  template: TEMPLATE,\n  dependencies: [UiCollapsible, UiCollapsibleTrigger, UiCollapsibleContent],\n})\nexport class CollapsibleDemo {\n  triggerClasses = buttonVariants({ variant: 'ghost', size: 'icon' })\n}\n"
+    }
+  ]
+}

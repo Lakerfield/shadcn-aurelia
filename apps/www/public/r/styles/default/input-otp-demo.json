@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-demo",
+  "type": "registry:example",
+  "title": "Input Otp Demo",
+  "description": "Example: input-otp-demo.",
+  "registryDependencies": [
+    "input-otp"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-otp-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiInputOtp } from '@/registry/default/ui/input-otp'\n\nconst TEMPLATE = `\n<ui-input-otp count=\"6\" group-size=\"3\"></ui-input-otp>\n`\n\n@customElement({ name: 'input-otp-demo', template: TEMPLATE, dependencies: [UiInputOtp] })\nexport class InputOtpDemo {}\n"
+    }
+  ]
+}

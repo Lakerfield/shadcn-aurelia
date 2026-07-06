@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-controlled",
+  "type": "registry:example",
+  "title": "Checkbox Controlled",
+  "description": "Example: checkbox-controlled.",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiCheckbox } from '@/registry/default/ui/checkbox'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-start gap-3\">\n  <ui-checkbox checked.two-way=\"subscribed\">Subscribe to newsletter</ui-checkbox>\n  <p class=\"text-muted-foreground text-sm\">Subscribed: \\${subscribed}</p>\n</div>\n`\n\n@customElement({ name: 'checkbox-controlled', template: TEMPLATE, dependencies: [UiCheckbox] })\nexport class CheckboxControlled {\n  subscribed = false\n}\n"
+    }
+  ]
+}

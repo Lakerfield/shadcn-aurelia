@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-demo",
+  "type": "registry:example",
+  "title": "Toggle Demo",
+  "description": "Example: toggle-demo.",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiToggle } from '@/registry/default/ui/toggle'\n\nconst TEMPLATE = `\n<ui-toggle>\n  <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n       stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <line x1=\"19\" x2=\"10\" y1=\"4\" y2=\"4\"></line>\n    <line x1=\"14\" x2=\"5\" y1=\"20\" y2=\"20\"></line>\n    <line x1=\"15\" x2=\"9\" y1=\"4\" y2=\"20\"></line>\n  </svg>\n  Italic\n</ui-toggle>\n`\n\n@customElement({ name: 'toggle-demo', template: TEMPLATE, dependencies: [UiToggle] })\nexport class ToggleDemo {}\n"
+    }
+  ]
+}

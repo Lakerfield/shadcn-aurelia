@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "title": "Progress",
+  "description": "Displays completion progress of a task.",
+  "dependencies": [
+    "@shadcn-aurelia/primitives"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/progress/progress.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-progress — Zag progress behind the facade. Single-element (host = root).\n *   <ui-progress value.bind=\"66\"></ui-progress>\n */\nimport { customElement, bindable, INode, resolve } from 'aurelia'\nimport { createProgressBehavior, createId, bindPart } from '@shadcn-aurelia/primitives'\nimport { cn } from '@/registry/default/lib/cn'\n\nconst TEMPLATE = `\n<div ref=\"rangeEl\" data-slot=\"progress-indicator\" class=\"bg-primary h-full w-full flex-1 transition-all\"></div>\n`\n\n@customElement({ name: 'ui-progress', template: TEMPLATE })\nexport class UiProgress {\n  @bindable() value = 0\n  @bindable() max = 100\n\n  rangeEl!: HTMLDivElement\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private readonly behavior = createProgressBehavior()\n  private disposers: Array<() => void> = []\n\n  binding(): void {\n    this.behavior.init({\n      id: createId('progress'),\n      defaultValue: Number(this.value),\n      max: Number(this.max),\n    })\n  }\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'progress')\n    this.host.className = cn(\n      'bg-primary/20 relative block h-2 w-full overflow-hidden rounded-full',\n      author,\n    )\n  }\n\n  attached(): void {\n    this.behavior.start()\n    this.disposers = [\n      bindPart(this.behavior, this.host, (api) => api.getRootProps()),\n      bindPart(this.behavior, this.rangeEl, (api) => api.getRangeProps()),\n    ]\n  }\n\n  valueChanged(v: number): void {\n    this.behavior.api?.setValue(Number(v))\n  }\n\n  detaching(): void {\n    this.disposers.forEach((d) => d())\n    this.disposers = []\n    this.behavior.stop()\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/progress/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiProgress } from './progress'\n"
+    }
+  ]
+}

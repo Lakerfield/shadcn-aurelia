@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-demo",
+  "type": "registry:example",
+  "title": "Radio Group Demo",
+  "description": "Example: radio-group-demo.",
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/radio-group-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiRadioGroup, UiRadioGroupItem } from '@/registry/default/ui/radio-group'\n\nconst TEMPLATE = `\n<ui-radio-group value=\"comfortable\">\n  <ui-radio-group-item value=\"default\">Default</ui-radio-group-item>\n  <ui-radio-group-item value=\"comfortable\">Comfortable</ui-radio-group-item>\n  <ui-radio-group-item value=\"compact\">Compact</ui-radio-group-item>\n</ui-radio-group>\n`\n\n@customElement({\n  name: 'radio-group-demo',\n  template: TEMPLATE,\n  dependencies: [UiRadioGroup, UiRadioGroupItem],\n})\nexport class RadioGroupDemo {}\n"
+    }
+  ]
+}

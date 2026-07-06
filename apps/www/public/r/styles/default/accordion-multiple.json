@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-multiple",
+  "type": "registry:example",
+  "title": "Accordion Multiple",
+  "description": "Example: accordion-multiple.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-multiple.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiAccordion,\n  UiAccordionItem,\n  UiAccordionTrigger,\n  UiAccordionContent,\n} from '@/registry/default/ui/accordion'\n\nconst TEMPLATE = `\n<ui-accordion type=\"multiple\" class=\"w-full max-w-md\">\n  <ui-accordion-item value=\"shipping\">\n    <ui-accordion-trigger>Shipping</ui-accordion-trigger>\n    <ui-accordion-content>Free shipping on orders over €50.</ui-accordion-content>\n  </ui-accordion-item>\n  <ui-accordion-item value=\"returns\">\n    <ui-accordion-trigger>Returns</ui-accordion-trigger>\n    <ui-accordion-content>30-day return policy, no questions asked.</ui-accordion-content>\n  </ui-accordion-item>\n</ui-accordion>\n`\n\n@customElement({\n  name: 'accordion-multiple',\n  template: TEMPLATE,\n  dependencies: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent],\n})\nexport class AccordionMultiple {}\n"
+    }
+  ]
+}

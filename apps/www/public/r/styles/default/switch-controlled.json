@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-controlled",
+  "type": "registry:example",
+  "title": "Switch Controlled",
+  "description": "Example: switch-controlled.",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSwitch } from '@/registry/default/ui/switch'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-start gap-3\">\n  <ui-switch checked.two-way=\"notifications\">Notifications: \\${notifications ? 'on' : 'off'}</ui-switch>\n  <ui-button variant=\"outline\" size=\"sm\" click.trigger=\"notifications = !notifications\">\n    Toggle from outside\n  </ui-button>\n</div>\n`\n\n@customElement({ name: 'switch-controlled', template: TEMPLATE, dependencies: [UiSwitch, UiButton] })\nexport class SwitchControlled {\n  notifications = true\n}\n"
+    }
+  ]
+}

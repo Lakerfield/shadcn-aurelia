@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-controlled",
+  "type": "registry:example",
+  "title": "Input Otp Controlled",
+  "description": "Example: input-otp-controlled.",
+  "registryDependencies": [
+    "input-otp"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-otp-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiInputOtp } from '@/registry/default/ui/input-otp'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-start gap-3\">\n  <ui-input-otp count=\"4\" value.two-way=\"code\"></ui-input-otp>\n  <p class=\"text-muted-foreground text-sm\">Code: \\${code || '—'}</p>\n</div>\n`\n\n@customElement({ name: 'input-otp-controlled', template: TEMPLATE, dependencies: [UiInputOtp] })\nexport class InputOtpControlled {\n  code = ''\n}\n"
+    }
+  ]
+}

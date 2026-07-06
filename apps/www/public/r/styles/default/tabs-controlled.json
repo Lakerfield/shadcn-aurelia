@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-controlled",
+  "type": "registry:example",
+  "title": "Tabs Controlled",
+  "description": "Example: tabs-controlled.",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@/registry/default/ui/tabs'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-sm flex-col items-start gap-3\">\n  <ui-tabs value.two-way=\"tab\" class=\"w-full\">\n    <ui-tabs-list>\n      <ui-tabs-trigger value=\"overview\">Overview</ui-tabs-trigger>\n      <ui-tabs-trigger value=\"analytics\">Analytics</ui-tabs-trigger>\n      <ui-tabs-trigger value=\"reports\" disabled.bind=\"true\">Reports</ui-tabs-trigger>\n    </ui-tabs-list>\n    <ui-tabs-content value=\"overview\" class=\"text-sm\">Overview panel</ui-tabs-content>\n    <ui-tabs-content value=\"analytics\" class=\"text-sm\">Analytics panel</ui-tabs-content>\n    <ui-tabs-content value=\"reports\" class=\"text-sm\">Reports panel</ui-tabs-content>\n  </ui-tabs>\n  <ui-button variant=\"outline\" size=\"sm\" click.trigger=\"tab = 'analytics'\">Jump to analytics</ui-button>\n</div>\n`\n\n@customElement({\n  name: 'tabs-controlled',\n  template: TEMPLATE,\n  dependencies: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent, UiButton],\n})\nexport class TabsControlled {\n  tab = 'overview'\n}\n"
+    }
+  ]
+}

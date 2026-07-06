@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-single",
+  "type": "registry:example",
+  "title": "Toggle Group Single",
+  "description": "Example: toggle-group-single.",
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-group-single.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiToggleGroup, UiToggleGroupItem } from '@/registry/default/ui/toggle-group'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-start gap-2\">\n  <ui-toggle-group type=\"single\" value.two-way=\"align\">\n    <ui-toggle-group-item value=\"left\">Left</ui-toggle-group-item>\n    <ui-toggle-group-item value=\"center\">Center</ui-toggle-group-item>\n    <ui-toggle-group-item value=\"right\">Right</ui-toggle-group-item>\n  </ui-toggle-group>\n  <span class=\"text-muted-foreground text-sm\">align: \\${align}</span>\n</div>\n`\n\n@customElement({\n  name: 'toggle-group-single',\n  template: TEMPLATE,\n  dependencies: [UiToggleGroup, UiToggleGroupItem],\n})\nexport class ToggleGroupSingle {\n  align: string[] = ['center']\n}\n"
+    }
+  ]
+}

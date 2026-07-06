@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-controlled",
+  "type": "registry:example",
+  "title": "Collapsible Controlled",
+  "description": "Example: collapsible-controlled.",
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/collapsible-controlled.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiCollapsible,\n  UiCollapsibleTrigger,\n  UiCollapsibleContent,\n} from '@/registry/default/ui/collapsible'\nimport { buttonVariants } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<ui-collapsible open.two-way=\"isOpen\" class=\"flex w-full max-w-sm flex-col items-start gap-2\">\n  <ui-collapsible-trigger class=\"\\${triggerClasses}\">\n    \\${isOpen ? 'Hide' : 'Show'} details\n  </ui-collapsible-trigger>\n  <ui-collapsible-content class=\"text-muted-foreground text-sm\">\n    These details are \\${isOpen ? 'visible' : 'hidden'} — state is two-way bound.\n  </ui-collapsible-content>\n</ui-collapsible>\n`\n\n@customElement({\n  name: 'collapsible-controlled',\n  template: TEMPLATE,\n  dependencies: [UiCollapsible, UiCollapsibleTrigger, UiCollapsibleContent],\n})\nexport class CollapsibleControlled {\n  isOpen = true\n  triggerClasses = buttonVariants({ variant: 'outline', size: 'sm' })\n}\n"
+    }
+  ]
+}

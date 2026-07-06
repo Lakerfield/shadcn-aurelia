@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-variants",
+  "type": "registry:example",
+  "title": "Toggle Variants",
+  "description": "Example: toggle-variants.",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-variants.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiToggle } from '@/registry/default/ui/toggle'\n\nconst TEMPLATE = `\n<div class=\"flex items-center gap-2\">\n  <ui-toggle variant=\"outline\" pressed.two-way=\"bold\">Bold</ui-toggle>\n  <ui-toggle variant=\"outline\" size=\"sm\">Small</ui-toggle>\n  <ui-toggle variant=\"outline\" size=\"lg\">Large</ui-toggle>\n  <ui-toggle disabled.bind=\"true\">Disabled</ui-toggle>\n  <span class=\"text-muted-foreground text-sm\">bold: \\${bold}</span>\n</div>\n`\n\n@customElement({ name: 'toggle-variants-demo', template: TEMPLATE, dependencies: [UiToggle] })\nexport class ToggleVariantsDemo {\n  bold = true\n}\n"
+    }
+  ]
+}

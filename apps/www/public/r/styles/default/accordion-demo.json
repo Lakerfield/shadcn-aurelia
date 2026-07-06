@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-demo",
+  "type": "registry:example",
+  "title": "Accordion Demo",
+  "description": "Example: accordion-demo.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiAccordion,\n  UiAccordionItem,\n  UiAccordionTrigger,\n  UiAccordionContent,\n} from '@/registry/default/ui/accordion'\n\nconst TEMPLATE = `\n<ui-accordion collapsible.bind=\"true\" value.bind=\"['item-1']\" class=\"w-full max-w-md\">\n  <ui-accordion-item value=\"item-1\">\n    <ui-accordion-trigger>Is it accessible?</ui-accordion-trigger>\n    <ui-accordion-content>\n      Yes. It follows the WAI-ARIA accordion pattern via the Zag state machine.\n    </ui-accordion-content>\n  </ui-accordion-item>\n  <ui-accordion-item value=\"item-2\">\n    <ui-accordion-trigger>Is it styled?</ui-accordion-trigger>\n    <ui-accordion-content>\n      Yes. It ships with shadcn's default styles — customize freely.\n    </ui-accordion-content>\n  </ui-accordion-item>\n  <ui-accordion-item value=\"item-3\">\n    <ui-accordion-trigger>Is it animated?</ui-accordion-trigger>\n    <ui-accordion-content>\n      Yes, height animations driven by data-state and the --height variable.\n    </ui-accordion-content>\n  </ui-accordion-item>\n</ui-accordion>\n`\n\n@customElement({\n  name: 'accordion-demo',\n  template: TEMPLATE,\n  dependencies: [UiAccordion, UiAccordionItem, UiAccordionTrigger, UiAccordionContent],\n})\nexport class AccordionDemo {}\n"
+    }
+  ]
+}

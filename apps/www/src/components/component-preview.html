@@ -8,7 +8,8 @@
                click.trigger="setTab('code')">Code</ui-button>
   </div>
 
-  <div show.bind="tab === 'preview'" class="flex min-h-[240px] items-center justify-center p-10">
+  <div show.bind="tab === 'preview'" data-slot="preview-pane"
+       class="flex min-h-[240px] items-center justify-center p-10">
     <au-slot></au-slot>
   </div>
 

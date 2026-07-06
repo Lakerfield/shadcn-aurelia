@@ -20,6 +20,28 @@
       ]
     },
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of interactive headings.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/accordion/accordion.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/accordion/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
@@ -184,6 +206,50 @@
       ]
     },
     {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A control that toggles between checked and not checked.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/checkbox/checkbox.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/checkbox/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "An interactive component which expands/collapses a panel.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/collapsible/collapsible.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/collapsible/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "empty",
       "type": "registry:ui",
       "title": "Empty",
@@ -242,6 +308,28 @@
         },
         {
           "path": "registry/default/ui/input-group/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Accessible one-time-password input.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/input-otp/input-otp.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/input-otp/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -326,6 +414,70 @@
       ]
     },
     {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination with page navigation, next and previous links.",
+      "registryDependencies": [
+        "cn",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/pagination/pagination.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/pagination/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Displays completion progress of a task.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/progress/progress.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/progress/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of checkable buttons, one checked at a time.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/radio-group/radio-group.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/radio-group/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
@@ -364,6 +516,28 @@
       ]
     },
     {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "An input to select a value from a range.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/slider/slider.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/slider/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
@@ -378,6 +552,28 @@
         },
         {
           "path": "registry/default/ui/spinner/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A control that toggles between on and off.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/switch/switch.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/switch/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -402,6 +598,28 @@
       ]
     },
     {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Layered sections of content displayed one at a time.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tabs/tabs.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/tabs/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
@@ -416,6 +634,51 @@
         },
         {
           "path": "registry/default/ui/textarea/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A two-state button that can be on or off.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toggle/toggle.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/toggle/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of two-state buttons.",
+      "dependencies": [
+        "@shadcn-aurelia/primitives"
+      ],
+      "registryDependencies": [
+        "cn",
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/toggle-group/toggle-group.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/ui/toggle-group/index.ts",
           "type": "registry:ui"
         }
       ]
@@ -449,6 +712,36 @@
         {
           "path": "registry/default/ui/tooltip/index.ts",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-demo",
+      "type": "registry:example",
+      "title": "Accordion Demo",
+      "description": "Example: accordion-demo.",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-multiple",
+      "type": "registry:example",
+      "title": "Accordion Multiple",
+      "description": "Example: accordion-multiple.",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-multiple.ts",
+          "type": "registry:example"
         }
       ]
     },
@@ -693,6 +986,66 @@
       ]
     },
     {
+      "name": "checkbox-controlled",
+      "type": "registry:example",
+      "title": "Checkbox Controlled",
+      "description": "Example: checkbox-controlled.",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/checkbox-controlled.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-demo",
+      "type": "registry:example",
+      "title": "Checkbox Demo",
+      "description": "Example: checkbox-demo.",
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/checkbox-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-controlled",
+      "type": "registry:example",
+      "title": "Collapsible Controlled",
+      "description": "Example: collapsible-controlled.",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/collapsible-controlled.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-demo",
+      "type": "registry:example",
+      "title": "Collapsible Demo",
+      "description": "Example: collapsible-demo.",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/collapsible-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "empty-demo",
       "type": "registry:example",
       "title": "Empty Demo",
@@ -778,6 +1131,36 @@
       "files": [
         {
           "path": "registry/default/examples/input-group-kbd.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-controlled",
+      "type": "registry:example",
+      "title": "Input Otp Controlled",
+      "description": "Example: input-otp-controlled.",
+      "registryDependencies": [
+        "input-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-otp-controlled.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-demo",
+      "type": "registry:example",
+      "title": "Input Otp Demo",
+      "description": "Example: input-otp-demo.",
+      "registryDependencies": [
+        "input-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/input-otp-demo.ts",
           "type": "registry:example"
         }
       ]
@@ -903,6 +1286,96 @@
       ]
     },
     {
+      "name": "pagination-demo",
+      "type": "registry:example",
+      "title": "Pagination Demo",
+      "description": "Example: pagination-demo.",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/pagination-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pagination-interactive",
+      "type": "registry:example",
+      "title": "Pagination Interactive",
+      "description": "Example: pagination-interactive.",
+      "registryDependencies": [
+        "pagination"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/pagination-interactive.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progress-demo",
+      "type": "registry:example",
+      "title": "Progress Demo",
+      "description": "Example: progress-demo.",
+      "registryDependencies": [
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/progress-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progress-live",
+      "type": "registry:example",
+      "title": "Progress Live",
+      "description": "Example: progress-live.",
+      "registryDependencies": [
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/progress-live.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-controlled",
+      "type": "registry:example",
+      "title": "Radio Group Controlled",
+      "description": "Example: radio-group-controlled.",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/radio-group-controlled.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-demo",
+      "type": "registry:example",
+      "title": "Radio Group Demo",
+      "description": "Example: radio-group-demo.",
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/radio-group-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "separator-demo",
       "type": "registry:example",
       "title": "Separator Demo",
@@ -963,6 +1436,36 @@
       ]
     },
     {
+      "name": "slider-demo",
+      "type": "registry:example",
+      "title": "Slider Demo",
+      "description": "Example: slider-demo.",
+      "registryDependencies": [
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-range",
+      "type": "registry:example",
+      "title": "Slider Range",
+      "description": "Example: slider-range.",
+      "registryDependencies": [
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-range.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "spinner-button",
       "type": "registry:example",
       "title": "Spinner Button",
@@ -988,6 +1491,36 @@
       "files": [
         {
           "path": "registry/default/examples/spinner-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-controlled",
+      "type": "registry:example",
+      "title": "Switch Controlled",
+      "description": "Example: switch-controlled.",
+      "registryDependencies": [
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/switch-controlled.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-demo",
+      "type": "registry:example",
+      "title": "Switch Demo",
+      "description": "Example: switch-demo.",
+      "registryDependencies": [
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/switch-demo.ts",
           "type": "registry:example"
         }
       ]
@@ -1023,6 +1556,36 @@
       ]
     },
     {
+      "name": "tabs-controlled",
+      "type": "registry:example",
+      "title": "Tabs Controlled",
+      "description": "Example: tabs-controlled.",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-controlled.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-demo",
+      "type": "registry:example",
+      "title": "Tabs Demo",
+      "description": "Example: tabs-demo.",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "textarea-demo",
       "type": "registry:example",
       "title": "Textarea Demo",
@@ -1048,6 +1611,66 @@
       "files": [
         {
           "path": "registry/default/examples/textarea-label.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-demo",
+      "type": "registry:example",
+      "title": "Toggle Demo",
+      "description": "Example: toggle-demo.",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-demo",
+      "type": "registry:example",
+      "title": "Toggle Group Demo",
+      "description": "Example: toggle-group-demo.",
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-demo.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-single",
+      "type": "registry:example",
+      "title": "Toggle Group Single",
+      "description": "Example: toggle-group-single.",
+      "registryDependencies": [
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-group-single.ts",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-variants",
+      "type": "registry:example",
+      "title": "Toggle Variants",
+      "description": "Example: toggle-variants.",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-variants.ts",
           "type": "registry:example"
         }
       ]

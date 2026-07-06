@@ -49,6 +49,18 @@ export function applySpreadProps(element: HTMLElement, props: PropBag): () => vo
       continue
     }
 
+    // aria-* attributes are tri-state: false must be serialized, not removed
+    // (aria-selected="false" ≠ absent for assistive tech).
+    if (typeof val === 'boolean' && key.startsWith('aria-')) {
+      const prev = element.getAttribute(key)
+      element.setAttribute(key, String(val))
+      cleanups.push(() => {
+        if (prev === null) element.removeAttribute(key)
+        else element.setAttribute(key, prev)
+      })
+      continue
+    }
+
     // Boolean false → remove the attribute (handles HTML boolean attrs like `hidden`, `disabled`).
     // Boolean true → set the attribute with an empty string (idiomatic HTML).
     if (val === false) {

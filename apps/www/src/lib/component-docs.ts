@@ -87,6 +87,55 @@ import tooltipDemoSource from '@/registry/default/examples/tooltip-demo.ts?raw'
 import { TypographyDemo } from '@/registry/default/examples/typography-demo'
 import typographyDemoSource from '@/registry/default/examples/typography-demo.ts?raw'
 
+import { AccordionDemo } from '@/registry/default/examples/accordion-demo'
+import accordionDemoSource from '@/registry/default/examples/accordion-demo.ts?raw'
+import { AccordionMultiple } from '@/registry/default/examples/accordion-multiple'
+import accordionMultipleSource from '@/registry/default/examples/accordion-multiple.ts?raw'
+import { CheckboxDemo } from '@/registry/default/examples/checkbox-demo'
+import checkboxDemoSource from '@/registry/default/examples/checkbox-demo.ts?raw'
+import { CheckboxControlled } from '@/registry/default/examples/checkbox-controlled'
+import checkboxControlledSource from '@/registry/default/examples/checkbox-controlled.ts?raw'
+import { CollapsibleDemo } from '@/registry/default/examples/collapsible-demo'
+import collapsibleDemoSource from '@/registry/default/examples/collapsible-demo.ts?raw'
+import { CollapsibleControlled } from '@/registry/default/examples/collapsible-controlled'
+import collapsibleControlledSource from '@/registry/default/examples/collapsible-controlled.ts?raw'
+import { InputOtpDemo } from '@/registry/default/examples/input-otp-demo'
+import inputOtpDemoSource from '@/registry/default/examples/input-otp-demo.ts?raw'
+import { InputOtpControlled } from '@/registry/default/examples/input-otp-controlled'
+import inputOtpControlledSource from '@/registry/default/examples/input-otp-controlled.ts?raw'
+import { PaginationDemo } from '@/registry/default/examples/pagination-demo'
+import paginationDemoSource from '@/registry/default/examples/pagination-demo.ts?raw'
+import { PaginationInteractive } from '@/registry/default/examples/pagination-interactive'
+import paginationInteractiveSource from '@/registry/default/examples/pagination-interactive.ts?raw'
+import { ProgressDemo } from '@/registry/default/examples/progress-demo'
+import progressDemoSource from '@/registry/default/examples/progress-demo.ts?raw'
+import { ProgressLive } from '@/registry/default/examples/progress-live'
+import progressLiveSource from '@/registry/default/examples/progress-live.ts?raw'
+import { RadioGroupDemo } from '@/registry/default/examples/radio-group-demo'
+import radioGroupDemoSource from '@/registry/default/examples/radio-group-demo.ts?raw'
+import { RadioGroupControlled } from '@/registry/default/examples/radio-group-controlled'
+import radioGroupControlledSource from '@/registry/default/examples/radio-group-controlled.ts?raw'
+import { SliderDemo } from '@/registry/default/examples/slider-demo'
+import sliderDemoSource from '@/registry/default/examples/slider-demo.ts?raw'
+import { SliderRange } from '@/registry/default/examples/slider-range'
+import sliderRangeSource from '@/registry/default/examples/slider-range.ts?raw'
+import { SwitchDemo } from '@/registry/default/examples/switch-demo'
+import switchDemoSource from '@/registry/default/examples/switch-demo.ts?raw'
+import { SwitchControlled } from '@/registry/default/examples/switch-controlled'
+import switchControlledSource from '@/registry/default/examples/switch-controlled.ts?raw'
+import { TabsDemo } from '@/registry/default/examples/tabs-demo'
+import tabsDemoSource from '@/registry/default/examples/tabs-demo.ts?raw'
+import { TabsControlled } from '@/registry/default/examples/tabs-controlled'
+import tabsControlledSource from '@/registry/default/examples/tabs-controlled.ts?raw'
+import { ToggleDemo } from '@/registry/default/examples/toggle-demo'
+import toggleDemoSource from '@/registry/default/examples/toggle-demo.ts?raw'
+import { ToggleVariantsDemo } from '@/registry/default/examples/toggle-variants'
+import toggleVariantsDemoSource from '@/registry/default/examples/toggle-variants.ts?raw'
+import { ToggleGroupDemo } from '@/registry/default/examples/toggle-group-demo'
+import toggleGroupDemoSource from '@/registry/default/examples/toggle-group-demo.ts?raw'
+import { ToggleGroupSingle } from '@/registry/default/examples/toggle-group-single'
+import toggleGroupSingleSource from '@/registry/default/examples/toggle-group-single.ts?raw'
+
 export interface ComponentExample {
   title: string
   component: unknown
@@ -101,6 +150,15 @@ export interface ComponentDoc {
 }
 
 export const componentDocs: ComponentDoc[] = [
+  {
+    name: 'accordion',
+    title: 'Accordion',
+    description: 'A vertically stacked set of interactive headings that each reveal a section of content.',
+    examples: [
+      { title: 'Default', component: AccordionDemo, source: accordionDemoSource },
+      { title: 'Multiple', component: AccordionMultiple, source: accordionMultipleSource },
+    ],
+  },
   {
     name: 'alert',
     title: 'Alert',
@@ -174,6 +232,24 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'checkbox',
+    title: 'Checkbox',
+    description: 'A control that allows the user to toggle between checked and not checked.',
+    examples: [
+      { title: 'Default', component: CheckboxDemo, source: checkboxDemoSource },
+      { title: 'Controlled', component: CheckboxControlled, source: checkboxControlledSource },
+    ],
+  },
+  {
+    name: 'collapsible',
+    title: 'Collapsible',
+    description: 'An interactive component which expands/collapses a panel.',
+    examples: [
+      { title: 'Default', component: CollapsibleDemo, source: collapsibleDemoSource },
+      { title: 'Controlled', component: CollapsibleControlled, source: collapsibleControlledSource },
+    ],
+  },
+  {
     name: 'empty',
     title: 'Empty',
     description: 'Displays an empty state with optional media, title, description and actions.',
@@ -198,6 +274,15 @@ export const componentDocs: ComponentDoc[] = [
     examples: [
       { title: 'With icon', component: InputGroupDemo, source: inputGroupDemoSource },
       { title: 'With kbd', component: InputGroupKbd, source: inputGroupKbdSource },
+    ],
+  },
+  {
+    name: 'input-otp',
+    title: 'Input OTP',
+    description: 'Accessible one-time-password input with copy-paste functionality.',
+    examples: [
+      { title: 'Default', component: InputOtpDemo, source: inputOtpDemoSource },
+      { title: 'Controlled', component: InputOtpControlled, source: inputOtpControlledSource },
     ],
   },
   {
@@ -237,6 +322,33 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'pagination',
+    title: 'Pagination',
+    description: 'Pagination with page navigation, next and previous links.',
+    examples: [
+      { title: 'Default', component: PaginationDemo, source: paginationDemoSource },
+      { title: 'Interactive', component: PaginationInteractive, source: paginationInteractiveSource },
+    ],
+  },
+  {
+    name: 'progress',
+    title: 'Progress',
+    description: 'Displays an indicator showing the completion progress of a task.',
+    examples: [
+      { title: 'Default', component: ProgressDemo, source: progressDemoSource },
+      { title: 'Live', component: ProgressLive, source: progressLiveSource },
+    ],
+  },
+  {
+    name: 'radio-group',
+    title: 'Radio Group',
+    description: 'A set of checkable buttons where no more than one can be checked at a time.',
+    examples: [
+      { title: 'Default', component: RadioGroupDemo, source: radioGroupDemoSource },
+      { title: 'Controlled', component: RadioGroupControlled, source: radioGroupControlledSource },
+    ],
+  },
+  {
     name: 'separator',
     title: 'Separator',
     description: 'Visually or semantically separates content.',
@@ -255,12 +367,30 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'slider',
+    title: 'Slider',
+    description: 'An input where the user selects a value from within a given range.',
+    examples: [
+      { title: 'Default', component: SliderDemo, source: sliderDemoSource },
+      { title: 'Range', component: SliderRange, source: sliderRangeSource },
+    ],
+  },
+  {
     name: 'spinner',
     title: 'Spinner',
     description: 'An indicator showing an in-progress operation.',
     examples: [
       { title: 'Sizes', component: SpinnerDemo, source: spinnerDemoSource },
       { title: 'In a button', component: SpinnerButton, source: spinnerButtonSource },
+    ],
+  },
+  {
+    name: 'switch',
+    title: 'Switch',
+    description: 'A control that allows the user to toggle between on and off.',
+    examples: [
+      { title: 'Default', component: SwitchDemo, source: switchDemoSource },
+      { title: 'Controlled', component: SwitchControlled, source: switchControlledSource },
     ],
   },
   {
@@ -273,12 +403,39 @@ export const componentDocs: ComponentDoc[] = [
     ],
   },
   {
+    name: 'tabs',
+    title: 'Tabs',
+    description: 'A set of layered sections of content displayed one at a time.',
+    examples: [
+      { title: 'Default', component: TabsDemo, source: tabsDemoSource },
+      { title: 'Controlled', component: TabsControlled, source: tabsControlledSource },
+    ],
+  },
+  {
     name: 'textarea',
     title: 'Textarea',
     description: 'Displays a form textarea or a component that looks like a textarea.',
     examples: [
       { title: 'Default', component: TextareaDemo, source: textareaDemoSource },
       { title: 'With label', component: TextareaLabel, source: textareaLabelSource },
+    ],
+  },
+  {
+    name: 'toggle',
+    title: 'Toggle',
+    description: 'A two-state button that can be either on or off.',
+    examples: [
+      { title: 'Default', component: ToggleDemo, source: toggleDemoSource },
+      { title: 'Variants', component: ToggleVariantsDemo, source: toggleVariantsDemoSource },
+    ],
+  },
+  {
+    name: 'toggle-group',
+    title: 'Toggle Group',
+    description: 'A set of two-state buttons that can be toggled on or off.',
+    examples: [
+      { title: 'Multiple', component: ToggleGroupDemo, source: toggleGroupDemoSource },
+      { title: 'Single', component: ToggleGroupSingle, source: toggleGroupSingleSource },
     ],
   },
   {

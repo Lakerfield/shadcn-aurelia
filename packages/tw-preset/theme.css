@@ -14,6 +14,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -91,5 +93,15 @@
   @keyframes zoom-out-95 {
     from { transform: scale(1); }
     to   { transform: scale(0.95); }
+  }
+
+  /* Zag sets --height on collapsible/accordion content while animating */
+  @keyframes accordion-down {
+    from { height: 0; }
+    to   { height: var(--height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--height); }
+    to   { height: 0; }
   }
 }

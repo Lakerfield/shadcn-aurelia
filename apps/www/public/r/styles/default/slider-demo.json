@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-demo",
+  "type": "registry:example",
+  "title": "Slider Demo",
+  "description": "Example: slider-demo.",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiSlider } from '@/registry/default/ui/slider'\n\nconst TEMPLATE = `\n<ui-slider class=\"max-w-sm\" value.bind=\"[50]\" max=\"100\" step=\"1\"></ui-slider>\n`\n\n@customElement({ name: 'slider-demo', template: TEMPLATE, dependencies: [UiSlider] })\nexport class SliderDemo {}\n"
+    }
+  ]
+}

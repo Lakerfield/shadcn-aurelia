@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-interactive",
+  "type": "registry:example",
+  "title": "Pagination Interactive",
+  "description": "Example: pagination-interactive.",
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/pagination-interactive.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport {\n  UiPagination,\n  UiPaginationContent,\n  UiPaginationItem,\n  UiPaginationLinkAttribute,\n  UiPaginationPreviousAttribute,\n  UiPaginationNextAttribute,\n} from '@/registry/default/ui/pagination'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col items-center gap-2\">\n  <ui-pagination aria-label=\"interactive pagination\">\n    <ui-pagination-content>\n      <ui-pagination-item>\n        <a ui-pagination-previous click.trigger=\"go(page - 1)\" tabindex=\"0\" role=\"button\">Previous</a>\n      </ui-pagination-item>\n      <ui-pagination-item repeat.for=\"p of pages\">\n        <a ui-pagination-link=\"active.bind: p === page\" click.trigger=\"go(p)\" tabindex=\"0\" role=\"button\">\\${p}</a>\n      </ui-pagination-item>\n      <ui-pagination-item>\n        <a ui-pagination-next click.trigger=\"go(page + 1)\" tabindex=\"0\" role=\"button\">Next</a>\n      </ui-pagination-item>\n    </ui-pagination-content>\n  </ui-pagination>\n  <p class=\"text-muted-foreground text-sm\">Page \\${page} of \\${pages.length}</p>\n</div>\n`\n\n@customElement({\n  name: 'pagination-interactive',\n  template: TEMPLATE,\n  dependencies: [\n    UiPagination,\n    UiPaginationContent,\n    UiPaginationItem,\n    UiPaginationLinkAttribute,\n    UiPaginationPreviousAttribute,\n    UiPaginationNextAttribute,\n  ],\n})\nexport class PaginationInteractive {\n  pages = [1, 2, 3, 4, 5]\n  page = 1\n\n  go(p: number): void {\n    if (p >= 1 && p <= this.pages.length) this.page = p\n  }\n}\n"
+    }
+  ]
+}

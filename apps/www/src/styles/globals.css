@@ -5,3 +5,10 @@
 
 /* Shared @theme mapping, dark variant, base layer, data-state animations */
 @import "@shadcn-aurelia/tw-preset";
+
+/* Docs chrome: demo hosts inside the preview pane are layout-transparent so
+   template roots (w-full, max-w-*) size against the preview pane, not the
+   shrink-to-fit demo host element. */
+component-preview [data-slot="preview-pane"] > * {
+  display: contents;
+}

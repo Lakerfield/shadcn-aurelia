@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "type": "registry:ui",
+  "title": "Toggle Group",
+  "description": "A set of two-state buttons.",
+  "dependencies": [
+    "@shadcn-aurelia/primitives"
+  ],
+  "registryDependencies": [
+    "cn",
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/toggle-group/toggle-group.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-toggle-group — Zag toggle-group (roving focus, single/multiple selection).\n * Items inherit variant/size from the root, matching shadcn's context pattern.\n */\nimport { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'\nimport {\n  createToggleGroupBehavior,\n  createControlledSync,\n  createContext,\n  createId,\n  bindPart,\n  type ControlledSync,\n  type ToggleGroupApi,\n  type BehaviorSource,\n} from '@shadcn-aurelia/primitives'\nimport { cn } from '@/registry/default/lib/cn'\nimport { toggleVariants, type ToggleVariants } from '@/registry/default/ui/toggle'\n\nexport const toggleGroupContext = createContext<UiToggleGroup>()\n\n@customElement({ name: 'ui-toggle-group', template: '<au-slot></au-slot>' })\nexport class UiToggleGroup implements BehaviorSource<ToggleGroupApi> {\n  /** Selected values (array; single-item array when type=\"single\"). */\n  @bindable({ mode: BindingMode.twoWay }) value: string[] = []\n  @bindable() type: 'single' | 'multiple' = 'single'\n  @bindable() variant: ToggleVariants['variant'] = 'default'\n  @bindable() size: ToggleVariants['size'] = 'default'\n  @bindable() disabled = false\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private readonly behavior = createToggleGroupBehavior()\n  private sync: ControlledSync<string[]> | null = null\n  private disposeRoot: (() => void) | null = null\n\n  get api(): ToggleGroupApi | null {\n    return this.behavior.api\n  }\n\n  subscribe(listener: () => void): () => void {\n    return this.behavior.subscribe(listener)\n  }\n\n  binding(): void {\n    toggleGroupContext.set(this.host, this)\n    this.sync = createControlledSync<string[]>({\n      host: this.host,\n      eventName: 'value-change',\n      setMachineValue: (v) => this.behavior.api?.setValue(v),\n      setBindable: (v) => (this.value = v),\n    })\n    this.behavior.init({\n      id: createId('toggle-group'),\n      defaultValue: this.value,\n      multiple: this.type === 'multiple',\n      disabled: this.disabled,\n      onValueChange: (d: { value: string[] }) => this.sync?.fromMachine(d.value),\n    })\n  }\n\n  bound(): void {\n    const author = this.host.getAttribute('class') ?? ''\n    this.host.setAttribute('data-slot', 'toggle-group')\n    this.host.setAttribute('data-variant', this.variant ?? 'default')\n    this.host.setAttribute('data-size', this.size ?? 'default')\n    this.host.className = cn(\n      'group/toggle-group flex w-fit items-center rounded-md data-[variant=outline]:shadow-xs',\n      author,\n    )\n  }\n\n  attached(): void {\n    this.behavior.start()\n    this.disposeRoot = bindPart(this.behavior, this.host, (api) => api.getRootProps())\n  }\n\n  valueChanged(v: string[]): void {\n    this.sync?.fromBindable(v)\n  }\n\n  detaching(): void {\n    this.disposeRoot?.()\n    this.behavior.stop()\n    toggleGroupContext.delete(this.host)\n  }\n}\n\nconst ITEM_TEMPLATE = `\n<button ref=\"btn\" type=\"button\" class.bind=\"classes\" data-slot=\"toggle-group-item\">\n  <au-slot></au-slot>\n</button>\n`\n\n@customElement({ name: 'ui-toggle-group-item', template: ITEM_TEMPLATE })\nexport class UiToggleGroupItem {\n  @bindable() value = ''\n\n  btn!: HTMLButtonElement\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private group: UiToggleGroup | null = null\n  private dispose: (() => void) | null = null\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(\n      toggleVariants({\n        variant: this.group?.variant ?? 'default',\n        size: this.group?.size ?? 'default',\n      }),\n      'min-w-0 flex-1 shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10',\n      this.group?.variant === 'outline' && 'border-l-0 first:border-l',\n      this.authorClasses,\n    )\n  }\n\n  attached(): void {\n    this.group = toggleGroupContext.get(this.host) ?? null\n    if (!this.group) {\n      console.warn('[ui-toggle-group-item] No parent <ui-toggle-group> found')\n      return\n    }\n    this.dispose = bindPart(this.group, this.btn, (api) => api.getItemProps({ value: this.value }))\n  }\n\n  detaching(): void {\n    this.dispose?.()\n    this.dispose = null\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/toggle-group/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiToggleGroup, UiToggleGroupItem, toggleGroupContext } from './toggle-group'\n"
+    }
+  ]
+}

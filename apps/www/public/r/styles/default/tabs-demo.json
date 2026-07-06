@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-demo",
+  "type": "registry:example",
+  "title": "Tabs Demo",
+  "description": "Example: tabs-demo.",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent } from '@/registry/default/ui/tabs'\nimport {\n  UiCard,\n  UiCardHeader,\n  UiCardTitle,\n  UiCardDescription,\n  UiCardContent,\n} from '@/registry/default/ui/card'\n\nconst TEMPLATE = `\n<ui-tabs value=\"account\" class=\"w-full max-w-sm\">\n  <ui-tabs-list class=\"w-full\">\n    <ui-tabs-trigger value=\"account\">Account</ui-tabs-trigger>\n    <ui-tabs-trigger value=\"password\">Password</ui-tabs-trigger>\n  </ui-tabs-list>\n  <ui-tabs-content value=\"account\">\n    <ui-card>\n      <ui-card-header>\n        <ui-card-title>Account</ui-card-title>\n        <ui-card-description>Make changes to your account here.</ui-card-description>\n      </ui-card-header>\n      <ui-card-content>\n        <p class=\"text-sm\">Account settings…</p>\n      </ui-card-content>\n    </ui-card>\n  </ui-tabs-content>\n  <ui-tabs-content value=\"password\">\n    <ui-card>\n      <ui-card-header>\n        <ui-card-title>Password</ui-card-title>\n        <ui-card-description>Change your password here.</ui-card-description>\n      </ui-card-header>\n      <ui-card-content>\n        <p class=\"text-sm\">Password settings…</p>\n      </ui-card-content>\n    </ui-card>\n  </ui-tabs-content>\n</ui-tabs>\n`\n\n@customElement({\n  name: 'tabs-demo',\n  template: TEMPLATE,\n  dependencies: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent, UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardContent],\n})\nexport class TabsDemo {}\n"
+    }
+  ]
+}

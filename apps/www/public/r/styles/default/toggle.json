@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "A two-state button that can be on or off.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/toggle/toggle.ts",
+      "type": "registry:ui",
+      "content": "/**\n * ui-toggle — native pressed-state button (no machine needed; aria-pressed).\n */\nimport { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/registry/default/lib/cn'\n\nexport const toggleVariants = cva(\n  \"inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-muted hover:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap\",\n  {\n    variants: {\n      variant: {\n        default: 'bg-transparent',\n        outline: 'border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground',\n      },\n      size: {\n        default: 'h-9 px-2 min-w-9',\n        sm: 'h-8 px-1.5 min-w-8',\n        lg: 'h-10 px-2.5 min-w-10',\n      },\n    },\n    defaultVariants: { variant: 'default', size: 'default' },\n  },\n)\n\nexport type ToggleVariants = VariantProps<typeof toggleVariants>\n\nconst TEMPLATE = `\n<button type=\"button\" class.bind=\"classes\" data-slot=\"toggle\"\n        data-state.bind=\"pressed ? 'on' : 'off'\"\n        aria-pressed.bind=\"pressed\"\n        disabled.bind=\"disabled\"\n        click.trigger=\"toggle()\">\n  <au-slot></au-slot>\n</button>\n`\n\n@customElement({ name: 'ui-toggle', template: TEMPLATE })\nexport class UiToggle {\n  @bindable({ mode: BindingMode.twoWay }) pressed = false\n  @bindable() variant: ToggleVariants['variant'] = 'default'\n  @bindable() size: ToggleVariants['size'] = 'default'\n  @bindable() disabled = false\n\n  private readonly host: HTMLElement = resolve(INode) as HTMLElement\n  private authorClasses = ''\n\n  created(): void {\n    this.host.style.display = 'contents'\n  }\n\n  bound(): void {\n    this.authorClasses = this.host.getAttribute('class') ?? ''\n  }\n\n  get classes(): string {\n    return cn(toggleVariants({ variant: this.variant, size: this.size }), this.authorClasses)\n  }\n\n  toggle(): void {\n    this.pressed = !this.pressed\n    this.host.dispatchEvent(new CustomEvent('pressed-change', { detail: this.pressed, bubbles: true }))\n  }\n}\n"
+    },
+    {
+      "path": "registry/default/ui/toggle/index.ts",
+      "type": "registry:ui",
+      "content": "export { UiToggle, toggleVariants, type ToggleVariants } from './toggle'\n"
+    }
+  ]
+}

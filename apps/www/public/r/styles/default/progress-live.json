@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-live",
+  "type": "registry:example",
+  "title": "Progress Live",
+  "description": "Example: progress-live.",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/progress-live.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiProgress } from '@/registry/default/ui/progress'\nimport { UiButton } from '@/registry/default/ui/button'\n\nconst TEMPLATE = `\n<div class=\"flex w-full max-w-sm flex-col items-start gap-3\">\n  <ui-progress value.bind=\"value\"></ui-progress>\n  <div class=\"flex items-center gap-2\">\n    <ui-button variant=\"outline\" size=\"sm\" click.trigger=\"value = Math.max(0, value - 10)\">-10</ui-button>\n    <ui-button variant=\"outline\" size=\"sm\" click.trigger=\"value = Math.min(100, value + 10)\">+10</ui-button>\n    <span class=\"text-muted-foreground text-sm\">\\${value}%</span>\n  </div>\n</div>\n`\n\n@customElement({ name: 'progress-live', template: TEMPLATE, dependencies: [UiProgress, UiButton] })\nexport class ProgressLive {\n  value = 30\n  Math = Math\n}\n"
+    }
+  ]
+}

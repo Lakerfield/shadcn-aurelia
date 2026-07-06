@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-demo",
+  "type": "registry:example",
+  "title": "Checkbox Demo",
+  "description": "Example: checkbox-demo.",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-demo.ts",
+      "type": "registry:example",
+      "content": "import { customElement } from 'aurelia'\nimport { UiCheckbox } from '@/registry/default/ui/checkbox'\n\nconst TEMPLATE = `\n<div class=\"flex flex-col gap-3\">\n  <ui-checkbox>Accept terms and conditions</ui-checkbox>\n  <ui-checkbox checked.bind=\"true\">Enabled by default</ui-checkbox>\n  <ui-checkbox disabled.bind=\"true\">Disabled</ui-checkbox>\n</div>\n`\n\n@customElement({ name: 'checkbox-demo', template: TEMPLATE, dependencies: [UiCheckbox] })\nexport class CheckboxDemo {}\n"
+    }
+  ]
+}
