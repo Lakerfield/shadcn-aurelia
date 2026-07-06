@@ -632,8 +632,18 @@ export class UiDropdownMenuSubContent {
       console.warn('[ui-dropdown-menu-sub-content] No <ui-dropdown-menu-sub> found')
       return
     }
+    // Sub-content portals to <body> BEFORE its parent (attached is bottom-up),
+    // so with Zag's uniform --z-index:50 it paints UNDER the parent menu.
+    // Raise it by nesting depth.
+    let depth = 0
+    for (let cur = menu.parentMenu; cur; cur = cur.parentMenu ?? null) depth++
+    const zIndex = 50 + depth
     this.disposers = [
-      bindPart(menu, this.positionerEl, (api) => api.getPositionerProps()),
+      bindPart(menu, this.positionerEl, (api) => {
+        const props = api.getPositionerProps()
+        const style = typeof props.style === 'string' ? props.style : ''
+        return { ...props, style: `${style};z-index:${zIndex}` }
+      }),
       bindPart(menu, this.contentEl, (api) => api.getContentProps()),
     ]
   }
