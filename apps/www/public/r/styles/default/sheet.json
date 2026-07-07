@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Sheet",
   "description": "Side-anchored dialog panel.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn",
-    "dialog"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+  "registryDependencies": ["cn", "dialog"],
   "files": [
     {
       "path": "registry/default/ui/sheet/sheet.ts",

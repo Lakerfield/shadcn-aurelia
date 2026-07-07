@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Button Group Demo",
   "description": "Example: button-group-demo.",
-  "registryDependencies": [
-    "button-group"
-  ],
+  "registryDependencies": ["button-group"],
   "files": [
     {
       "path": "registry/default/examples/button-group-demo.ts",

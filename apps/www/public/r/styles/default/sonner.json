@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Sonner",
   "description": "Sonner-style stacked toasts on the Zag toast engine.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/sonner/sonner.ts",

@@ -58,7 +58,5 @@ export const resolveTree = async (
   }
   // dependencies before dependents: lib → ui → rest, stable within groups
   const order: Record<string, number> = { 'registry:lib': 0, 'registry:ui': 1 }
-  return [...resolved.values()].sort(
-    (a, b) => (order[a.type] ?? 2) - (order[b.type] ?? 2),
-  )
+  return [...resolved.values()].sort((a, b) => (order[a.type] ?? 2) - (order[b.type] ?? 2))
 }

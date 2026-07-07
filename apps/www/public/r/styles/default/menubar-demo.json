@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Menubar Demo",
   "description": "Example: menubar-demo.",
-  "registryDependencies": [
-    "menubar",
-    "dropdown-menu"
-  ],
+  "registryDependencies": ["menubar", "dropdown-menu"],
   "files": [
     {
       "path": "registry/default/examples/menubar-demo.ts",

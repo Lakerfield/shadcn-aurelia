@@ -33,6 +33,14 @@ const TEMPLATE = `
 @customElement({
   name: 'direction-demo',
   template: TEMPLATE,
-  dependencies: [UiDirection, UiSlider, UiSelect, UiSelectTrigger, UiSelectContent, UiSelectItem, UiLabel],
+  dependencies: [
+    UiDirection,
+    UiSlider,
+    UiSelect,
+    UiSelectTrigger,
+    UiSelectContent,
+    UiSelectItem,
+    UiLabel,
+  ],
 })
 export class DirectionDemo {}

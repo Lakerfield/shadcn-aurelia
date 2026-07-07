@@ -23,11 +23,10 @@ import {
   type Updater,
 } from '@tanstack/table-core'
 
-export interface TableEngineOptions<TData extends RowData>
-  extends Omit<
-    TableOptions<TData>,
-    'getCoreRowModel' | 'state' | 'onStateChange' | 'renderFallbackValue'
-  > {
+export interface TableEngineOptions<TData extends RowData> extends Omit<
+  TableOptions<TData>,
+  'getCoreRowModel' | 'state' | 'onStateChange' | 'renderFallbackValue'
+> {
   /** Optional row-model factory override; defaults to getCoreRowModel(). */
   getCoreRowModel?: TableOptions<TData>['getCoreRowModel']
   /** Initial (partial) table state, merged over table.initialState. */

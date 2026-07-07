@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Skeleton Card",
   "description": "Example: skeleton-card.",
-  "registryDependencies": [
-    "skeleton"
-  ],
+  "registryDependencies": ["skeleton"],
   "files": [
     {
       "path": "registry/default/examples/skeleton-card.ts",

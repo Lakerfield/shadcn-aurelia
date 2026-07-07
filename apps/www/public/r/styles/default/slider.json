@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Slider",
   "description": "An input to select a value from a range.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/slider/slider.ts",

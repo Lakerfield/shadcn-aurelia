@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Dropdown Menu Checkboxes",
   "description": "Example: dropdown-menu-checkboxes.",
-  "registryDependencies": [
-    "dropdown-menu",
-    "button"
-  ],
+  "registryDependencies": ["dropdown-menu", "button"],
   "files": [
     {
       "path": "registry/default/examples/dropdown-menu-checkboxes.ts",

@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Navigation Menu Demo",
   "description": "Example: navigation-menu-demo.",
-  "registryDependencies": [
-    "navigation-menu"
-  ],
+  "registryDependencies": ["navigation-menu"],
   "files": [
     {
       "path": "registry/default/examples/navigation-menu-demo.ts",

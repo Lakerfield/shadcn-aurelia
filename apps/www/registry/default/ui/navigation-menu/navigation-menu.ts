@@ -57,7 +57,9 @@ export class UiNavigationMenu implements BehaviorSource<NavigationMenuApi> {
       dir: resolveDirection(this.host),
       id: createId('nav-menu'),
       onValueChange: (d: { value: string | null }) => {
-        this.host.dispatchEvent(new CustomEvent('value-change', { detail: { value: d.value }, bubbles: true }))
+        this.host.dispatchEvent(
+          new CustomEvent('value-change', { detail: { value: d.value }, bubbles: true }),
+        )
       },
     })
   }
@@ -91,7 +93,10 @@ export class UiNavigationMenuList {
   bound(): void {
     const author = this.host.getAttribute('class') ?? ''
     this.host.setAttribute('data-slot', 'navigation-menu-list')
-    this.host.className = cn('group flex flex-1 list-none items-center justify-center gap-1', author)
+    this.host.className = cn(
+      'group flex flex-1 list-none items-center justify-center gap-1',
+      author,
+    )
   }
 
   attached(): void {

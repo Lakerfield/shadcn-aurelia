@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Scroll Area Horizontal",
   "description": "Example: scroll-area-horizontal.",
-  "registryDependencies": [
-    "scroll-area"
-  ],
+  "registryDependencies": ["scroll-area"],
   "files": [
     {
       "path": "registry/default/examples/scroll-area-horizontal.ts",

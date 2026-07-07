@@ -1,6 +1,8 @@
 <article class="guide-prose max-w-3xl pb-16">
   <h1>components.json</h1>
-  <p class="text-muted-foreground">Project configuration for the CLI, written by <code>init</code>.</p>
+  <p class="text-muted-foreground">
+    Project configuration for the CLI, written by <code>init</code>.
+  </p>
 
   <pre><code>{
   "$schema": "https://shadcn-aurelia.com/schema.json",
@@ -26,10 +28,10 @@
 
   <h2>prefix</h2>
   <p>
-    The custom element prefix. Registry sources use <code>ui</code>
-    (<code>&lt;ui-button&gt;</code>); the CLI rewrites tags <em>and</em> the element name strings in
-    TypeScript when you pick something else, so <code>prefix: "acme"</code> gives you
-    <code>&lt;acme-button&gt;</code> throughout. Pick it once at <code>init</code> — changing it
+    The custom element prefix. Registry sources use
+    <code>ui</code> (<code>&lt;ui-button&gt;</code>); the CLI rewrites tags <em>and</em> the element
+    name strings in TypeScript when you pick something else, so <code>prefix: "acme"</code> gives
+    you <code>&lt;acme-button&gt;</code> throughout. Pick it once at <code>init</code> — changing it
     later means re-adding components (your prefix is applied at copy time, not at runtime).
   </p>
 
@@ -51,11 +53,29 @@
     <code>src/*</code> in <code>tsconfig.json</code> and Vite.
   </p>
   <table>
-    <thead><tr><th>Alias</th><th>Default</th><th>Receives</th></tr></thead>
+    <thead>
+      <tr>
+        <th>Alias</th>
+        <th>Default</th>
+        <th>Receives</th>
+      </tr>
+    </thead>
     <tbody>
-      <tr><td><code>ui</code></td><td><code>@/components/ui</code></td><td>component folders (<code>button/</code>, <code>dialog/</code>, …)</td></tr>
-      <tr><td><code>lib</code></td><td><code>@/lib</code></td><td>utilities (<code>cn.ts</code>, shared types)</td></tr>
-      <tr><td><code>components</code></td><td><code>@/components</code></td><td>non-ui components (blocks reference this)</td></tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>@/components/ui</code></td>
+        <td>component folders (<code>button/</code>, <code>dialog/</code>, …)</td>
+      </tr>
+      <tr>
+        <td><code>lib</code></td>
+        <td><code>@/lib</code></td>
+        <td>utilities (<code>cn.ts</code>, shared types)</td>
+      </tr>
+      <tr>
+        <td><code>components</code></td>
+        <td><code>@/components</code></td>
+        <td>non-ui components (blocks reference this)</td>
+      </tr>
     </tbody>
   </table>
 

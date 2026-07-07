@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Popover Controlled",
   "description": "Example: popover-controlled.",
-  "registryDependencies": [
-    "popover"
-  ],
+  "registryDependencies": ["popover"],
   "files": [
     {
       "path": "registry/default/examples/popover-controlled.ts",

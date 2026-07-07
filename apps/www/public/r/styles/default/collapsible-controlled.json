@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Collapsible Controlled",
   "description": "Example: collapsible-controlled.",
-  "registryDependencies": [
-    "collapsible"
-  ],
+  "registryDependencies": ["collapsible"],
   "files": [
     {
       "path": "registry/default/examples/collapsible-controlled.ts",

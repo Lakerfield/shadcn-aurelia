@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Slider Demo",
   "description": "Example: slider-demo.",
-  "registryDependencies": [
-    "slider"
-  ],
+  "registryDependencies": ["slider"],
   "files": [
     {
       "path": "registry/default/examples/slider-demo.ts",

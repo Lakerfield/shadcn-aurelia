@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Item",
   "description": "A flexible list-item with media, content and actions.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/item/item.ts",

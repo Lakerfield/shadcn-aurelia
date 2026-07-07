@@ -32,7 +32,17 @@ const TEMPLATE = `
 @customElement({
   name: 'alert-dialog-demo',
   template: TEMPLATE,
-  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogFooter, UiDialogTitle, UiDialogDescription, UiAlertDialogAction, UiAlertDialogCancel],
+  dependencies: [
+    UiDialog,
+    UiDialogTrigger,
+    UiDialogContent,
+    UiDialogHeader,
+    UiDialogFooter,
+    UiDialogTitle,
+    UiDialogDescription,
+    UiAlertDialogAction,
+    UiAlertDialogCancel,
+  ],
 })
 export class AlertDialogDemo {
   triggerClasses = buttonVariants({ variant: 'outline' })

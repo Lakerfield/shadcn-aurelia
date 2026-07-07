@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Collapsible",
   "description": "An interactive component which expands/collapses a panel.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/collapsible/collapsible.ts",

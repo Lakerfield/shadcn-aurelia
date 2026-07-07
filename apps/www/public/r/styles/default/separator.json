@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Separator",
   "description": "Visually or semantically separates content.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/separator/separator.ts",

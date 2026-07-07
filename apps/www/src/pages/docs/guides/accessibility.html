@@ -1,20 +1,26 @@
 <article class="guide-prose max-w-3xl pb-16">
   <h1>Accessibility</h1>
-  <p class="text-muted-foreground">What we test, what we guarantee, and the keyboard map per component.</p>
+  <p class="text-muted-foreground">
+    What we test, what we guarantee, and the keyboard map per component.
+  </p>
 
   <h2>Statement</h2>
   <ul>
     <li>
       <strong>axe is merge-blocking.</strong> Every documentation page — and therefore every shipped
       example of every component — must pass
-      <a href="https://github.com/dequelabs/axe-core" external target="_blank" rel="noreferrer">axe-core</a>
+      <a href="https://github.com/dequelabs/axe-core" external target="_blank" rel="noreferrer"
+        >axe-core</a
+      >
       with zero violations before it lands.
     </li>
     <li>
       <strong>Keyboard behavior follows the WAI-ARIA APG.</strong> Interactive components implement
       the patterns from the
-      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" external target="_blank" rel="noreferrer">ARIA Authoring Practices Guide</a>,
-      matching the Radix behavior shadcn/ui users expect. The maps below are verified per component.
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" external target="_blank" rel="noreferrer"
+        >ARIA Authoring Practices Guide</a
+      >, matching the Radix behavior shadcn/ui users expect. The maps below are verified per
+      component.
     </li>
     <li>
       <strong>ARIA wiring is engine-owned.</strong> Roles, states (<code>aria-expanded</code>,
@@ -28,21 +34,32 @@
       validation state.
     </li>
     <li>
-      <strong>Light DOM.</strong> No shadow roots — assistive technology sees one coherent
-      document, and your own a11y tooling can inspect everything.
+      <strong>Light DOM.</strong> No shadow roots — assistive technology sees one coherent document,
+      and your own a11y tooling can inspect everything.
     </li>
     <li>
       Found an issue? Accessibility bugs are prioritized —
-      <a href="https://github.com/lakerfield/shadcn-aurelia/issues" external target="_blank" rel="noreferrer">open an issue</a>.
+      <a
+        href="https://github.com/lakerfield/shadcn-aurelia/issues"
+        external
+        target="_blank"
+        rel="noreferrer"
+        >open an issue</a
+      >.
     </li>
   </ul>
 
   <h2>Keyboard maps</h2>
   <section repeat.for="m of maps">
     <h3>${m.component}</h3>
-    <p class="text-sm text-muted-foreground">Pattern: ${m.pattern}</p>
+    <p class="text-muted-foreground text-sm">Pattern: ${m.pattern}</p>
     <table>
-      <thead><tr><th class="w-56">Key</th><th>Action</th></tr></thead>
+      <thead>
+        <tr>
+          <th class="w-56">Key</th>
+          <th>Action</th>
+        </tr>
+      </thead>
       <tbody>
         <tr repeat.for="b of m.bindings">
           <td><code>${b.keys}</code></td>

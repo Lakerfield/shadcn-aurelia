@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Avatar Fallback",
   "description": "Example: avatar-fallback.",
-  "registryDependencies": [
-    "avatar"
-  ],
+  "registryDependencies": ["avatar"],
   "files": [
     {
       "path": "registry/default/examples/avatar-fallback.ts",

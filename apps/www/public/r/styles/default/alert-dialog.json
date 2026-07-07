@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Alert Dialog",
   "description": "A modal dialog that expects a response.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn",
-    "button",
-    "dialog"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn", "button", "dialog"],
   "files": [
     {
       "path": "registry/default/ui/alert-dialog/alert-dialog.ts",

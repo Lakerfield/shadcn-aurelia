@@ -5,12 +5,7 @@
  *   const engine = createChartEngine(canvas, { type: 'bar', data, options })
  *   engine.destroy()
  */
-import {
-  Chart,
-  registerables,
-  type ChartConfiguration,
-  type ChartType,
-} from 'chart.js'
+import { Chart, registerables, type ChartConfiguration, type ChartType } from 'chart.js'
 
 Chart.register(...registerables)
 
@@ -21,10 +16,4 @@ export const createChartEngine = (
   configuration: ChartConfiguration,
 ): ChartEngine => new Chart(canvas, configuration)
 
-export type {
-  ChartConfiguration,
-  ChartData,
-  ChartOptions,
-  ChartType,
-  ChartDataset,
-} from 'chart.js'
+export type { ChartConfiguration, ChartData, ChartOptions, ChartType, ChartDataset } from 'chart.js'

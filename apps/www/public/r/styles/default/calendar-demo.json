@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Calendar Demo",
   "description": "Example: calendar-demo.",
-  "registryDependencies": [
-    "calendar"
-  ],
+  "registryDependencies": ["calendar"],
   "files": [
     {
       "path": "registry/default/examples/calendar-demo.ts",

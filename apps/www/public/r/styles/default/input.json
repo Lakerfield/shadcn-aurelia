@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Input",
   "description": "Displays a form input field.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/input/input.ts",

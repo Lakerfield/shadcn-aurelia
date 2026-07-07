@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Dialog Controlled",
   "description": "Example: dialog-controlled.",
-  "registryDependencies": [
-    "dialog"
-  ],
+  "registryDependencies": ["dialog"],
   "files": [
     {
       "path": "registry/default/examples/dialog-controlled.ts",

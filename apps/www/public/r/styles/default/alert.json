@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Alert",
   "description": "Displays a callout for user attention.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/alert/alert.ts",

@@ -26,7 +26,9 @@ export const runDiff = async (names: string[], options: DiffOptions): Promise<vo
   let targets = names
   if (targets.length === 0) {
     const index = await fetchIndex(config.registry)
-    targets = index.items.filter((i) => i.type === 'registry:ui' || i.type === 'registry:lib').map((i) => i.name)
+    targets = index.items
+      .filter((i) => i.type === 'registry:ui' || i.type === 'registry:lib')
+      .map((i) => i.name)
   }
 
   let changed = 0

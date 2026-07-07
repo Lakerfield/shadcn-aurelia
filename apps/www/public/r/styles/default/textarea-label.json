@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Textarea Label",
   "description": "Example: textarea-label.",
-  "registryDependencies": [
-    "textarea"
-  ],
+  "registryDependencies": ["textarea"],
   "files": [
     {
       "path": "registry/default/examples/textarea-label.ts",

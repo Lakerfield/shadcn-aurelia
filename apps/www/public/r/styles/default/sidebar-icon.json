@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Sidebar Icon",
   "description": "Example: sidebar-icon.",
-  "registryDependencies": [
-    "sidebar"
-  ],
+  "registryDependencies": ["sidebar"],
   "files": [
     {
       "path": "registry/default/examples/sidebar-icon.ts",

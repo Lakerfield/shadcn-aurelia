@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Resizable Handle Demo",
   "description": "Example: resizable-handle-demo.",
-  "registryDependencies": [
-    "resizable"
-  ],
+  "registryDependencies": ["resizable"],
   "files": [
     {
       "path": "registry/default/examples/resizable-handle-demo.ts",

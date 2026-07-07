@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Skeleton Demo",
   "description": "Example: skeleton-demo.",
-  "registryDependencies": [
-    "skeleton"
-  ],
+  "registryDependencies": ["skeleton"],
   "files": [
     {
       "path": "registry/default/examples/skeleton-demo.ts",

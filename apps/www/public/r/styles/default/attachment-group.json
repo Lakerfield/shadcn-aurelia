@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Attachment Group",
   "description": "Example: attachment-group.",
-  "registryDependencies": [
-    "attachment"
-  ],
+  "registryDependencies": ["attachment"],
   "files": [
     {
       "path": "registry/default/examples/attachment-group.ts",

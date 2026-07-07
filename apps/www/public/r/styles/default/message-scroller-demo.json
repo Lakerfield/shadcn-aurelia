@@ -4,11 +4,7 @@
   "type": "registry:example",
   "title": "Message Scroller Demo",
   "description": "Example: message-scroller-demo.",
-  "registryDependencies": [
-    "message-scroller",
-    "bubble",
-    "button"
-  ],
+  "registryDependencies": ["message-scroller", "bubble", "button"],
   "files": [
     {
       "path": "registry/default/examples/message-scroller-demo.ts",

@@ -1,1 +1,7 @@
-export { UiAlert, UiAlertTitle, UiAlertDescription, alertVariants, type AlertVariants } from './alert'
+export {
+  UiAlert,
+  UiAlertTitle,
+  UiAlertDescription,
+  alertVariants,
+  type AlertVariants,
+} from './alert'

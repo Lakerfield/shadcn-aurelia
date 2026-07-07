@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Separator Demo",
   "description": "Example: separator-demo.",
-  "registryDependencies": [
-    "separator"
-  ],
+  "registryDependencies": ["separator"],
   "files": [
     {
       "path": "registry/default/examples/separator-demo.ts",

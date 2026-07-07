@@ -21,10 +21,14 @@ export const runBuild = async (options: BuildOptions): Promise<void> => {
   // file paths in the manifest are relative to the project root (upstream shadcn convention)
   const sourceRoot = options.cwd
 
-  const raw = JSON.parse(await readFile(registryPath, 'utf8').catch(() => fail(`cannot read ${registryPath}`)))
+  const raw = JSON.parse(
+    await readFile(registryPath, 'utf8').catch(() => fail(`cannot read ${registryPath}`)),
+  )
   const parsed = registrySchema.safeParse(raw)
   if (!parsed.success) {
-    fail(`registry.json is invalid:\n${parsed.error.issues.map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n')}`)
+    fail(
+      `registry.json is invalid:\n${parsed.error.issues.map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n')}`,
+    )
   }
   const registry = parsed.data!
 
@@ -55,7 +59,13 @@ export const runBuild = async (options: BuildOptions): Promise<void> => {
 
   await writeFile(
     join(outDir, 'index.json'),
-    JSON.stringify({ name: registry.name, homepage: registry.homepage, items: indexItems }, null, 2) + '\n',
+    JSON.stringify(
+      { name: registry.name, homepage: registry.homepage, items: indexItems },
+      null,
+      2,
+    ) + '\n',
   )
-  success(`registry: ${registry.items.length} item(s) → ${join(options.output, 'styles', options.style)}/`)
+  success(
+    `registry: ${registry.items.length} item(s) → ${join(options.output, 'styles', options.style)}/`,
+  )
 }

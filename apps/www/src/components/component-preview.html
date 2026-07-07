@@ -1,19 +1,30 @@
 <import from="@/registry/default/ui/button"></import>
 
-<div class="overflow-hidden rounded-lg border border-border">
-  <div class="flex items-center gap-1 border-b border-border bg-muted/40 px-3 py-2">
-    <ui-button size="sm" variant.bind="tab === 'preview' ? 'secondary' : 'ghost'"
-               click.trigger="setTab('preview')">Preview</ui-button>
-    <ui-button size="sm" variant.bind="tab === 'code' ? 'secondary' : 'ghost'"
-               click.trigger="setTab('code')">Code</ui-button>
+<div class="border-border overflow-hidden rounded-lg border">
+  <div class="border-border bg-muted/40 flex items-center gap-1 border-b px-3 py-2">
+    <ui-button
+      size="sm"
+      variant.bind="tab === 'preview' ? 'secondary' : 'ghost'"
+      click.trigger="setTab('preview')"
+      >Preview</ui-button
+    >
+    <ui-button
+      size="sm"
+      variant.bind="tab === 'code' ? 'secondary' : 'ghost'"
+      click.trigger="setTab('code')"
+      >Code</ui-button
+    >
   </div>
 
-  <div show.bind="tab === 'preview'" data-slot="preview-pane"
-       class="flex min-h-[240px] items-center justify-center p-10">
+  <div
+    show.bind="tab === 'preview'"
+    data-slot="preview-pane"
+    class="flex min-h-[240px] items-center justify-center p-10"
+  >
     <au-slot></au-slot>
   </div>
 
-  <div show.bind="tab === 'code'" class="max-h-[400px] overflow-auto bg-muted/40 p-4">
+  <div show.bind="tab === 'code'" class="bg-muted/40 max-h-[400px] overflow-auto p-4">
     <pre class="text-xs leading-relaxed"><code>${code}</code></pre>
   </div>
 </div>

@@ -1,5 +1,10 @@
 import { customElement } from 'aurelia'
-import { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle } from '@/registry/default/ui/dialog'
+import {
+  UiDialog,
+  UiDialogTrigger,
+  UiDialogHeader,
+  UiDialogTitle,
+} from '@/registry/default/ui/dialog'
 import { UiSheetContent } from '@/registry/default/ui/sheet'
 import { buttonVariants } from '@/registry/default/ui/button'
 

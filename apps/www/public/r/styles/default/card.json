@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Card",
   "description": "Displays a card with header, content, and footer.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/card/card.ts",

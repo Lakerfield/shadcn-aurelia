@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Bubble",
   "description": "Chat bubbles with variants, alignment and reactions.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/bubble/bubble.ts",

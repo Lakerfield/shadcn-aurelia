@@ -5,16 +5,31 @@
   <h2>Requirements</h2>
   <ul>
     <li><strong>Aurelia 2</strong> (RC or later) with TypeScript.</li>
-    <li><strong>Vite 7</strong> with <code>@aurelia/vite-plugin</code>. Vite 8 currently breaks Aurelia's TC39 decorators (its Oxc transform strips types but leaves decorators raw) — stay on Vite 7 until that is resolved.</li>
-    <li><strong>Tailwind CSS v4</strong> via <code>@tailwindcss/vite</code>, with <code>@import "tailwindcss"</code> in your stylesheet.</li>
-    <li>A <code>@</code> path alias pointing at <code>src/</code> (in both <code>tsconfig.json</code> and Vite).</li>
+    <li>
+      <strong>Vite 7</strong> with <code>@aurelia/vite-plugin</code>. Vite 8 currently breaks
+      Aurelia's TC39 decorators (its Oxc transform strips types but leaves decorators raw) — stay on
+      Vite 7 until that is resolved.
+    </li>
+    <li>
+      <strong>Tailwind CSS v4</strong> via <code>@tailwindcss/vite</code>, with
+      <code>@import "tailwindcss"</code> in your stylesheet.
+    </li>
+    <li>
+      A <code>@</code> path alias pointing at <code>src/</code> (in both
+      <code>tsconfig.json</code> and Vite).
+    </li>
   </ul>
 
   <h2>Option 1 — start from the template</h2>
   <p>
     The repository ships a pre-configured starter at
-    <a href="https://github.com/lakerfield/shadcn-aurelia/tree/main/templates/aurelia-vite" external target="_blank" rel="noreferrer">templates/aurelia-vite</a>:
-    Aurelia 2 + Vite 7 + Tailwind v4 + the <code>@</code> alias, ready for <code>init</code>.
+    <a
+      href="https://github.com/lakerfield/shadcn-aurelia/tree/main/templates/aurelia-vite"
+      external
+      target="_blank"
+      rel="noreferrer"
+      >templates/aurelia-vite</a
+    >: Aurelia 2 + Vite 7 + Tailwind v4 + the <code>@</code> alias, ready for <code>init</code>.
   </p>
   <pre><code>npx degit lakerfield/shadcn-aurelia/templates/aurelia-vite my-app
 cd my-app
@@ -25,7 +40,10 @@ npm install</code></pre>
   <h3>1. Tailwind CSS v4</h3>
   <p>If you don't have Tailwind yet:</p>
   <pre><code>npm install tailwindcss @tailwindcss/vite</code></pre>
-  <p>Add the plugin to <code>vite.config.ts</code> and create a stylesheet imported from <code>main.ts</code>:</p>
+  <p>
+    Add the plugin to <code>vite.config.ts</code> and create a stylesheet imported from
+    <code>main.ts</code>:
+  </p>
   <pre><code>// vite.config.ts
 import { defineConfig } from 'vite'
 import aurelia from '@aurelia/vite-plugin'
@@ -54,9 +72,9 @@ export default defineConfig({
   <pre><code>npx shadcn-aurelia init</code></pre>
   <p>
     <code>init</code> verifies the prerequisites above, writes a
-    <a load="../components-json"><code>components.json</code></a>, downloads the theme stylesheet
-    (CSS variables + base layer + animations) as <code>shadcn-aurelia.css</code> next to your
-    Tailwind entry stylesheet, and imports it there.
+    <a load="../components-json"><code>components.json</code></a
+    >, downloads the theme stylesheet (CSS variables + base layer + animations) as
+    <code>shadcn-aurelia.css</code> next to your Tailwind entry stylesheet, and imports it there.
   </p>
 
   <h3>4. Add components</h3>
@@ -87,7 +105,7 @@ npx shadcn-aurelia add dialog form data-table-adapter</code></pre>
     <code>package.json</code>); pass <code>--cwd</code> if invoking from the workspace root. Package
     manager detection walks up parent directories, so pnpm/yarn/bun workspaces with a root lockfile
     install dependencies into the right place. Components are copied per app — if you want a shared
-    UI package instead, point the <code>aliases</code> in <code>components.json</code> at your shared
-    package's paths.
+    UI package instead, point the <code>aliases</code> in <code>components.json</code> at your
+    shared package's paths.
   </p>
 </article>

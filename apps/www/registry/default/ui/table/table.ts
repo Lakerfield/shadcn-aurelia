@@ -55,7 +55,11 @@ function defineTablePart(name: string, slot: string, classes: string) {
   return TablePart
 }
 
-export const UiTableHeaderAttribute = defineTablePart('ui-table-header', 'table-header', '[&_tr]:border-b')
+export const UiTableHeaderAttribute = defineTablePart(
+  'ui-table-header',
+  'table-header',
+  '[&_tr]:border-b',
+)
 
 export const UiTableBodyAttribute = defineTablePart(
   'ui-table-body',

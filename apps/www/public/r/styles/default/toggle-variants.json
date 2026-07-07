@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Toggle Variants",
   "description": "Example: toggle-variants.",
-  "registryDependencies": [
-    "toggle"
-  ],
+  "registryDependencies": ["toggle"],
   "files": [
     {
       "path": "registry/default/examples/toggle-variants.ts",

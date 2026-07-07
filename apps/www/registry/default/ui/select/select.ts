@@ -277,7 +277,9 @@ export class UiSelectItem {
     this.unregister = select.registerItem(this.itemData)
     this.disposers = [
       bindPart(select, this.host, (api) => api.getItemProps({ item: this.itemData! })),
-      bindPart(select, this.indicatorEl, (api) => api.getItemIndicatorProps({ item: this.itemData! })),
+      bindPart(select, this.indicatorEl, (api) =>
+        api.getItemIndicatorProps({ item: this.itemData! }),
+      ),
     ]
   }
 

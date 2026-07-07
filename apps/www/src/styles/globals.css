@@ -1,15 +1,15 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Theme CSS variables — canonical source lives in the registry */
-@import "../../registry/styles/default/theme.css";
+@import '../../registry/styles/default/theme.css';
 
 /* Shared @theme mapping, dark variant, base layer, data-state animations */
-@import "@shadcn-aurelia/tw-preset";
+@import '@shadcn-aurelia/tw-preset';
 
 /* Docs chrome: demo hosts inside the preview pane are layout-transparent so
    template roots (w-full, max-w-*) size against the preview pane, not the
    shrink-to-fit demo host element. */
-component-preview [data-slot="preview-pane"] > * {
+component-preview [data-slot='preview-pane'] > * {
   display: contents;
 }
 

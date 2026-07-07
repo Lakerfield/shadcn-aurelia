@@ -4,11 +4,7 @@
   "type": "registry:example",
   "title": "Message Demo",
   "description": "Example: message-demo.",
-  "registryDependencies": [
-    "message",
-    "bubble",
-    "avatar"
-  ],
+  "registryDependencies": ["message", "bubble", "avatar"],
   "files": [
     {
       "path": "registry/default/examples/message-demo.ts",

@@ -79,7 +79,9 @@ const CONTROL_SELECTOR =
   'input:not([type=hidden]), textarea, select, [role=combobox], [role=listbox], [role=radiogroup], [role=slider], [role=spinbutton], [role=switch], [role=textbox], [role=group][data-slot=input-otp]'
 
 const isCheckable = (el: HTMLElement): boolean =>
-  el.matches('input[type=checkbox], input[type=radio], [role=checkbox], [role=radio], [role=switch]')
+  el.matches(
+    'input[type=checkbox], input[type=radio], [role=checkbox], [role=radio], [role=switch]',
+  )
 
 @customElement({ name: 'ui-field', template: '<au-slot></au-slot>' })
 export class UiField implements FieldOwner {
@@ -151,7 +153,9 @@ export class UiField implements FieldOwner {
     if (!this.labelEl || control.hasAttribute('aria-label')) return
     const resolvesToText = (ids: string | null): boolean =>
       !!ids &&
-      ids.split(' ').some((id) => (document.getElementById(id)?.textContent ?? '').trim().length > 0)
+      ids
+        .split(' ')
+        .some((id) => (document.getElementById(id)?.textContent ?? '').trim().length > 0)
     if (resolvesToText(control.getAttribute('aria-labelledby'))) return
     // controls that already get their name from a wrapping label (e.g. ui-checkbox with slotted text)
     const wrapping = control.closest('label')
@@ -380,7 +384,10 @@ export class UiFieldContent {
   bound(): void {
     const author = this.host.getAttribute('class') ?? ''
     this.host.setAttribute('data-slot', 'field-content')
-    this.host.className = cn('group/field-content flex flex-1 flex-col gap-1.5 leading-snug', author)
+    this.host.className = cn(
+      'group/field-content flex flex-1 flex-col gap-1.5 leading-snug',
+      author,
+    )
   }
 }
 
@@ -458,7 +465,11 @@ const SEPARATOR_TEMPLATE = `
 </span>
 `
 
-@customElement({ name: 'ui-field-separator', template: SEPARATOR_TEMPLATE, dependencies: [UiSeparator] })
+@customElement({
+  name: 'ui-field-separator',
+  template: SEPARATOR_TEMPLATE,
+  dependencies: [UiSeparator],
+})
 export class UiFieldSeparator {
   contentEl!: HTMLSpanElement
 

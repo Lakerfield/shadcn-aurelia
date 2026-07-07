@@ -178,7 +178,9 @@ export class UiCalendar implements DatePickerOwner {
     // Nested in a ui-date-picker? Render against its machine. Re-publish the
     // context on our own host: day cells render AFTER the popover content
     // portals to <body>, so a lookup walking past this host would find nothing.
-    const external = this.host.parentElement ? datePickerContext.get(this.host.parentElement) : undefined
+    const external = this.host.parentElement
+      ? datePickerContext.get(this.host.parentElement)
+      : undefined
     if (external) {
       this.owner = external
       datePickerContext.set(this.host, external)
@@ -200,7 +202,8 @@ export class UiCalendar implements DatePickerOwner {
       open: true,
       defaultValue: this.value ? [parseDate(this.value)] : [],
       // d.value[0].toString() is ISO (yyyy-mm-dd); valueAsString is locale-formatted
-      onValueChange: (d: { value: DateValue[] }) => this.sync?.fromMachine(d.value[0]?.toString() ?? ''),
+      onValueChange: (d: { value: DateValue[] }) =>
+        this.sync?.fromMachine(d.value[0]?.toString() ?? ''),
     })
   }
 
@@ -242,4 +245,3 @@ export class UiCalendar implements DatePickerOwner {
     datePickerContext.delete(this.host)
   }
 }
-

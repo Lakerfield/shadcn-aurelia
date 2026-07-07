@@ -1,1 +1,7 @@
-export { UiMarker, UiMarkerIcon, UiMarkerContent, markerVariants, type MarkerVariants } from './marker'
+export {
+  UiMarker,
+  UiMarkerIcon,
+  UiMarkerContent,
+  markerVariants,
+  type MarkerVariants,
+} from './marker'

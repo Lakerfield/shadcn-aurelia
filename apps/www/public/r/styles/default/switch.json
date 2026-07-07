@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Switch",
   "description": "A control that toggles between on and off.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/switch/switch.ts",

@@ -24,7 +24,10 @@ export interface ResizableGroupOwner {
   unregisterHandle(handle: UiResizableHandle): void
   /** Resize the panel pair around `handle` so the previous panel gets `size` percent. */
   resizeAround(handle: UiResizableHandle, size: number): void
-  neighbors(handle: UiResizableHandle): { prev: UiResizablePanel | null; next: UiResizablePanel | null }
+  neighbors(handle: UiResizableHandle): {
+    prev: UiResizablePanel | null
+    next: UiResizablePanel | null
+  }
   sizeInPixels(): number
 }
 
@@ -46,10 +49,7 @@ export class UiResizablePanelGroup implements ResizableGroupOwner {
     const author = this.host.getAttribute('class') ?? ''
     this.host.setAttribute('data-slot', 'resizable-panel-group')
     this.host.setAttribute('data-direction', this.direction)
-    this.host.className = cn(
-      'flex h-full w-full data-[direction=vertical]:flex-col',
-      author,
-    )
+    this.host.className = cn('flex h-full w-full data-[direction=vertical]:flex-col', author)
   }
 
   registerPanel(panel: UiResizablePanel): void {
@@ -85,7 +85,10 @@ export class UiResizablePanelGroup implements ResizableGroupOwner {
     for (const p of this.panels) p.applySize()
   }
 
-  neighbors(handle: UiResizableHandle): { prev: UiResizablePanel | null; next: UiResizablePanel | null } {
+  neighbors(handle: UiResizableHandle): {
+    prev: UiResizablePanel | null
+    next: UiResizablePanel | null
+  } {
     let prev: UiResizablePanel | null = null
     let next: UiResizablePanel | null = null
     for (const p of this.panels) {
@@ -151,7 +154,9 @@ export class UiResizablePanel {
     const author = this.host.getAttribute('class') ?? ''
     this.host.setAttribute('data-slot', 'resizable-panel')
     this.host.className = cn('overflow-hidden', author)
-    this.owner = this.host.parentElement ? resizableContext.get(this.host.parentElement) ?? null : null
+    this.owner = this.host.parentElement
+      ? (resizableContext.get(this.host.parentElement) ?? null)
+      : null
     this.owner?.registerPanel(this)
   }
 
@@ -191,7 +196,9 @@ export class UiResizableHandle {
       'touch-none select-none',
       author,
     )
-    this.owner = this.host.parentElement ? resizableContext.get(this.host.parentElement) ?? null : null
+    this.owner = this.host.parentElement
+      ? (resizableContext.get(this.host.parentElement) ?? null)
+      : null
     this.owner?.registerHandle(this)
     // a vertical separator sits between horizontally arranged panels
     const separatorOrientation = this.owner?.direction === 'vertical' ? 'horizontal' : 'vertical'
@@ -244,8 +251,10 @@ export class UiResizableHandle {
     const horizontal = this.owner.direction === 'horizontal'
     const step = e.shiftKey ? 10 : 1
     let next: number | null = null
-    if ((horizontal && e.key === 'ArrowLeft') || (!horizontal && e.key === 'ArrowUp')) next = prev.size - step
-    else if ((horizontal && e.key === 'ArrowRight') || (!horizontal && e.key === 'ArrowDown')) next = prev.size + step
+    if ((horizontal && e.key === 'ArrowLeft') || (!horizontal && e.key === 'ArrowUp'))
+      next = prev.size - step
+    else if ((horizontal && e.key === 'ArrowRight') || (!horizontal && e.key === 'ArrowDown'))
+      next = prev.size + step
     else if (e.key === 'Home') next = prev.minSizeNumber
     else if (e.key === 'End') next = prev.maxSizeNumber
     if (next !== null) {

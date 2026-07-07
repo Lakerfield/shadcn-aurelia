@@ -29,7 +29,15 @@ const TEMPLATE = `
 @customElement({
   name: 'dialog-controlled',
   template: TEMPLATE,
-  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogTitle, UiDialogDescription, UiButton],
+  dependencies: [
+    UiDialog,
+    UiDialogTrigger,
+    UiDialogContent,
+    UiDialogHeader,
+    UiDialogTitle,
+    UiDialogDescription,
+    UiButton,
+  ],
 })
 export class DialogControlled {
   isOpen = false

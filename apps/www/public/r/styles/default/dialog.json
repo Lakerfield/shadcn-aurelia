@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Dialog",
   "description": "A modal window overlaid on the primary content.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/dialog/dialog.ts",

@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Attachment Demo",
   "description": "Example: attachment-demo.",
-  "registryDependencies": [
-    "attachment"
-  ],
+  "registryDependencies": ["attachment"],
   "files": [
     {
       "path": "registry/default/examples/attachment-demo.ts",

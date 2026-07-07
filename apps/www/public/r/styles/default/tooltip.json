@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Tooltip",
   "description": "A popup that displays information related to an element on hover or focus.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/tooltip/tooltip.ts",

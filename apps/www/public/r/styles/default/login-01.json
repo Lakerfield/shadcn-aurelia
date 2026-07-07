@@ -4,12 +4,7 @@
   "type": "registry:block",
   "title": "Login",
   "description": "A simple login form in a card: email, password, social login and sign-up link.",
-  "registryDependencies": [
-    "card",
-    "field",
-    "input",
-    "button"
-  ],
+  "registryDependencies": ["card", "field", "input", "button"],
   "files": [
     {
       "path": "registry/default/blocks/login-01/login-01.ts",

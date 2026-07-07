@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Button Group Nested",
   "description": "Example: button-group-nested.",
-  "registryDependencies": [
-    "button-group"
-  ],
+  "registryDependencies": ["button-group"],
   "files": [
     {
       "path": "registry/default/examples/button-group-nested.ts",

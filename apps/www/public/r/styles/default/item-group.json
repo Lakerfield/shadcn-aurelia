@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Item Group",
   "description": "Example: item-group.",
-  "registryDependencies": [
-    "item"
-  ],
+  "registryDependencies": ["item"],
   "files": [
     {
       "path": "registry/default/examples/item-group.ts",

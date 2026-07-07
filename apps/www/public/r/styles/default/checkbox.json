@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Checkbox",
   "description": "A control that toggles between checked and not checked.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/checkbox/checkbox.ts",

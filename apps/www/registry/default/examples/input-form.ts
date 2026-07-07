@@ -21,7 +21,11 @@ const TEMPLATE = `
 </form>
 `
 
-@customElement({ name: 'input-form', template: TEMPLATE, dependencies: [UiInput, UiLabel, UiButton] })
+@customElement({
+  name: 'input-form',
+  template: TEMPLATE,
+  dependencies: [UiInput, UiLabel, UiButton],
+})
 export class InputForm {
   name = ''
 

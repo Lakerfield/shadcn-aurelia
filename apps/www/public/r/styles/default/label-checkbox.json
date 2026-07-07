@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Label Checkbox",
   "description": "Example: label-checkbox.",
-  "registryDependencies": [
-    "label"
-  ],
+  "registryDependencies": ["label"],
   "files": [
     {
       "path": "registry/default/examples/label-checkbox.ts",

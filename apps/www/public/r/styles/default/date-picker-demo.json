@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Date Picker Demo",
   "description": "Example: date-picker-demo.",
-  "registryDependencies": [
-    "date-picker",
-    "calendar"
-  ],
+  "registryDependencies": ["date-picker", "calendar"],
   "files": [
     {
       "path": "registry/default/examples/date-picker-demo.ts",

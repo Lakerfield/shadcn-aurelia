@@ -9,14 +9,16 @@
   <p>
     React components (<code>&lt;Button&gt;</code>) become Aurelia custom elements
     (<code>&lt;ui-button&gt;</code>). The <code>ui-</code> prefix is configurable per project via
-    <a load="../components-json"><code>components.json</code></a>. Elements render in the
-    <strong>light DOM</strong> — no shadow roots — so Tailwind utilities, your global stylesheet and
-    the theme variables apply directly. These are Aurelia components, not standalone web components;
-    they need the Aurelia runtime.
+    <a load="../components-json"><code>components.json</code></a
+    >. Elements render in the <strong>light DOM</strong> — no shadow roots — so Tailwind utilities,
+    your global stylesheet and the theme variables apply directly. These are Aurelia components, not
+    standalone web components; they need the Aurelia runtime.
   </p>
 
   <h2>Slots instead of children</h2>
-  <p>JSX children become <code>au-slot</code> projection. Composition looks the same in practice:</p>
+  <p>
+    JSX children become <code>au-slot</code> projection. Composition looks the same in practice:
+  </p>
   <pre><code>&lt;ui-card&gt;
   &lt;ui-card-header&gt;
     &lt;ui-card-title&gt;Title&lt;/ui-card-title&gt;
@@ -59,9 +61,10 @@
 
   <h2>Zag.js instead of Radix</h2>
   <p>
-    Interactive behavior comes from <a href="https://zagjs.com" external target="_blank" rel="noreferrer">Zag.js</a>
-    state machines behind a facade in <code>@shadcn-aurelia/primitives</code>. Copied components
-    import <em>only</em> from that facade — keyboard maps, ARIA wiring and <code>data-state</code>
+    Interactive behavior comes from
+    <a href="https://zagjs.com" external target="_blank" rel="noreferrer">Zag.js</a> state machines
+    behind a facade in <code>@shadcn-aurelia/primitives</code>. Copied components import
+    <em>only</em> from that facade — keyboard maps, ARIA wiring and <code>data-state</code>
     attributes match the Radix/WAI-ARIA APG behavior shadcn/ui users expect (see
     <a load="../accessibility">Accessibility</a>). Primitives may migrate to native implementations
     over time without changing your components.
@@ -79,15 +82,18 @@
     <li><code>cn()</code> (clsx + tailwind-merge) and CVA variant definitions.</li>
     <li>All Tailwind classes, CSS variables and the theming contract — upstream themes drop in.</li>
     <li><code>data-slot</code>, <code>data-state</code>, <code>data-side</code> attributes.</li>
-    <li>The registry/CLI model, including <code>components.json</code> and registry item schema compatibility.</li>
+    <li>
+      The registry/CLI model, including <code>components.json</code> and registry item schema
+      compatibility.
+    </li>
   </ul>
 
   <h2>Not (yet) ported</h2>
   <p>
     <code>drawer</code> (vaul's drag gestures) is deferred; everything else from the shadcn/ui v4
-    inventory is available — including the chat suite (<code>attachment</code>,
-    <code>bubble</code>, <code>message</code>, <code>message-scroller</code>,
-    <code>marker</code>), where <code>message-scroller</code> runs on a native engine in
+    inventory is available — including the chat suite (<code>attachment</code>, <code>bubble</code>,
+    <code>message</code>, <code>message-scroller</code>, <code>marker</code>), where
+    <code>message-scroller</code> runs on a native engine in
     <code>@shadcn-aurelia/primitives</code> ported from upstream's own primitive.
   </p>
 </article>

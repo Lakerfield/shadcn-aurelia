@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Switch Demo",
   "description": "Example: switch-demo.",
-  "registryDependencies": [
-    "switch"
-  ],
+  "registryDependencies": ["switch"],
   "files": [
     {
       "path": "registry/default/examples/switch-demo.ts",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Scroll Area",
   "description": "Native scrolling with custom, themeable scrollbars.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/scroll-area/scroll-area.ts",

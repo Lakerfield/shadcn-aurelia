@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Breadcrumb",
   "description": "Displays the path to the current resource using a hierarchy of links.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/breadcrumb/breadcrumb.ts",

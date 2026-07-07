@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Tabs Demo",
   "description": "Example: tabs-demo.",
-  "registryDependencies": [
-    "tabs"
-  ],
+  "registryDependencies": ["tabs"],
   "files": [
     {
       "path": "registry/default/examples/tabs-demo.ts",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Badge",
   "description": "Displays a badge or a component that looks like a badge.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/badge/badge.ts",

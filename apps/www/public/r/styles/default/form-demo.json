@@ -4,12 +4,7 @@
   "type": "registry:example",
   "title": "Form Demo",
   "description": "Example: form-demo.",
-  "registryDependencies": [
-    "form",
-    "field",
-    "input",
-    "button"
-  ],
+  "registryDependencies": ["form", "field", "input", "button"],
   "files": [
     {
       "path": "registry/default/examples/form-demo.ts",

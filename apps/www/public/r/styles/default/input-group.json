@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Input Group",
   "description": "Composes an input with icons, buttons or keyboard hints.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/input-group/input-group.ts",

@@ -91,7 +91,10 @@ export class UiSlider {
       const thumb = document.createElement('div')
       thumb.dataset.slot = 'slider-thumb'
       thumb.className = THUMB_CLASSES
-      thumb.setAttribute('aria-label', this.value.length > 1 ? `${this.label} ${index + 1}` : this.label)
+      thumb.setAttribute(
+        'aria-label',
+        this.value.length > 1 ? `${this.label} ${index + 1}` : this.label,
+      )
       const input = document.createElement('input')
       thumb.appendChild(input)
       this.controlEl.appendChild(thumb)

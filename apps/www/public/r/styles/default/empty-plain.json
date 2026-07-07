@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Empty Plain",
   "description": "Example: empty-plain.",
-  "registryDependencies": [
-    "empty"
-  ],
+  "registryDependencies": ["empty"],
   "files": [
     {
       "path": "registry/default/examples/empty-plain.ts",

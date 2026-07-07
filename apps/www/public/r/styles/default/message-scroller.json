@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Message Scroller",
   "description": "Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "button",
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["button", "cn"],
   "files": [
     {
       "path": "registry/default/ui/message-scroller/message-scroller.ts",

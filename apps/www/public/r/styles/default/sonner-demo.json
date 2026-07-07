@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Sonner Demo",
   "description": "Example: sonner-demo.",
-  "registryDependencies": [
-    "sonner",
-    "button"
-  ],
+  "registryDependencies": ["sonner", "button"],
   "files": [
     {
       "path": "registry/default/examples/sonner-demo.ts",

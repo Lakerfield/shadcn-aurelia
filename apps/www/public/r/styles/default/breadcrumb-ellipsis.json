@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Breadcrumb Ellipsis",
   "description": "Example: breadcrumb-ellipsis.",
-  "registryDependencies": [
-    "breadcrumb"
-  ],
+  "registryDependencies": ["breadcrumb"],
   "files": [
     {
       "path": "registry/default/examples/breadcrumb-ellipsis.ts",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Dropdown Menu",
   "description": "Menu of actions triggered by a button, with checkbox/radio items and submenus.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/dropdown-menu/dropdown-menu.ts",

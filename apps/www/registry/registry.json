@@ -8,10 +8,7 @@
       "type": "registry:lib",
       "title": "cn",
       "description": "Class-name composition: clsx + tailwind-merge.",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "registry/default/lib/cn.ts",
@@ -35,12 +32,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "alert",
@@ -57,12 +50,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "alert-dialog",
@@ -79,14 +68,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "button",
-        "dialog"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "button", "dialog"]
     },
     {
       "name": "aspect-ratio",
@@ -103,9 +86,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "avatar",
@@ -122,9 +103,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "badge",
@@ -141,12 +120,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "breadcrumb",
@@ -163,9 +138,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "button",
@@ -182,12 +155,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "button-group",
@@ -204,12 +173,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "calendar",
@@ -226,12 +191,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "card",
@@ -248,9 +209,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "carousel",
@@ -267,13 +226,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "button"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "button"]
     },
     {
       "name": "chart",
@@ -290,12 +244,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "checkbox",
@@ -312,12 +262,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "collapsible",
@@ -334,12 +280,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "combobox",
@@ -356,12 +298,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "command",
@@ -378,12 +316,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "context-menu",
@@ -400,13 +334,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "dropdown-menu"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "dropdown-menu"]
     },
     {
       "name": "date-picker",
@@ -423,13 +352,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "calendar"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "calendar"]
     },
     {
       "name": "dialog",
@@ -446,12 +370,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "direction",
@@ -468,12 +388,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "dropdown-menu",
@@ -490,12 +406,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "empty",
@@ -512,12 +424,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "field",
@@ -534,14 +442,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn",
-        "separator"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+      "registryDependencies": ["cn", "separator"]
     },
     {
       "name": "form",
@@ -558,14 +460,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@aurelia/validation",
-        "@aurelia/validation-html"
-      ],
-      "registryDependencies": [
-        "cn",
-        "field"
-      ]
+      "dependencies": ["@aurelia/validation", "@aurelia/validation-html"],
+      "registryDependencies": ["cn", "field"]
     },
     {
       "name": "hover-card",
@@ -582,12 +478,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "input",
@@ -604,9 +496,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "input-group",
@@ -623,12 +513,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "input-otp",
@@ -645,12 +531,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "item",
@@ -667,12 +549,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "kbd",
@@ -689,9 +567,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "label",
@@ -708,9 +584,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "menubar",
@@ -727,13 +601,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "dropdown-menu"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "dropdown-menu"]
     },
     {
       "name": "native-select",
@@ -750,9 +619,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "navigation-menu",
@@ -769,12 +636,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "pagination",
@@ -791,10 +654,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn",
-        "button"
-      ]
+      "registryDependencies": ["cn", "button"]
     },
     {
       "name": "popover",
@@ -811,12 +671,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "progress",
@@ -833,12 +689,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "radio-group",
@@ -855,12 +707,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "resizable",
@@ -877,12 +725,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "scroll-area",
@@ -899,12 +743,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "select",
@@ -921,12 +761,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "separator",
@@ -943,9 +779,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "sheet",
@@ -962,14 +796,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn",
-        "dialog"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+      "registryDependencies": ["cn", "dialog"]
     },
     {
       "name": "sidebar",
@@ -986,19 +814,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn",
-        "button",
-        "input",
-        "separator",
-        "skeleton",
-        "sheet",
-        "tooltip"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+      "registryDependencies": ["cn", "button", "input", "separator", "skeleton", "sheet", "tooltip"]
     },
     {
       "name": "skeleton",
@@ -1015,9 +832,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "slider",
@@ -1034,12 +849,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "sonner",
@@ -1056,12 +867,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "spinner",
@@ -1078,9 +885,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "switch",
@@ -1097,12 +902,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "table",
@@ -1119,9 +920,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "tabs",
@@ -1138,12 +937,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "textarea",
@@ -1160,9 +955,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "registryDependencies": ["cn"]
     },
     {
       "name": "toggle",
@@ -1179,12 +972,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "toggle-group",
@@ -1201,13 +990,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "toggle"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "toggle"]
     },
     {
       "name": "tooltip",
@@ -1232,12 +1016,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ]
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"]
     },
     {
       "name": "accordion-demo",
@@ -1250,9 +1030,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-multiple",
@@ -1265,9 +1043,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "alert-demo",
@@ -1280,9 +1056,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "alert"
-      ]
+      "registryDependencies": ["alert"]
     },
     {
       "name": "alert-destructive",
@@ -1295,9 +1069,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "alert"
-      ]
+      "registryDependencies": ["alert"]
     },
     {
       "name": "alert-dialog-demo",
@@ -1310,9 +1082,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "alert-dialog"
-      ]
+      "registryDependencies": ["alert-dialog"]
     },
     {
       "name": "alert-dialog-destructive",
@@ -1325,9 +1095,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "alert-dialog"
-      ]
+      "registryDependencies": ["alert-dialog"]
     },
     {
       "name": "aspect-ratio-demo",
@@ -1340,9 +1108,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "aspect-ratio"
-      ]
+      "registryDependencies": ["aspect-ratio"]
     },
     {
       "name": "aspect-ratio-square",
@@ -1355,9 +1121,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "aspect-ratio"
-      ]
+      "registryDependencies": ["aspect-ratio"]
     },
     {
       "name": "avatar-demo",
@@ -1370,9 +1134,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-fallback",
@@ -1385,9 +1147,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "badge-custom",
@@ -1400,9 +1160,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "badge"
-      ]
+      "registryDependencies": ["badge"]
     },
     {
       "name": "badge-demo",
@@ -1415,9 +1173,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "badge"
-      ]
+      "registryDependencies": ["badge"]
     },
     {
       "name": "breadcrumb-demo",
@@ -1430,9 +1186,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-ellipsis",
@@ -1445,9 +1199,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "button-demo",
@@ -1460,9 +1212,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "button-group-demo",
@@ -1475,9 +1225,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-nested",
@@ -1490,9 +1238,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-variants",
@@ -1505,9 +1251,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "calendar-demo",
@@ -1520,9 +1264,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "calendar"
-      ]
+      "registryDependencies": ["calendar"]
     },
     {
       "name": "card-demo",
@@ -1535,9 +1277,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-simple",
@@ -1550,9 +1290,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "carousel-demo",
@@ -1565,10 +1303,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "carousel",
-        "card"
-      ]
+      "registryDependencies": ["carousel", "card"]
     },
     {
       "name": "carousel-multiple",
@@ -1581,10 +1316,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "carousel",
-        "card"
-      ]
+      "registryDependencies": ["carousel", "card"]
     },
     {
       "name": "chart-demo",
@@ -1597,9 +1329,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "chart"
-      ]
+      "registryDependencies": ["chart"]
     },
     {
       "name": "chart-line",
@@ -1612,9 +1342,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "chart"
-      ]
+      "registryDependencies": ["chart"]
     },
     {
       "name": "checkbox-controlled",
@@ -1627,9 +1355,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "checkbox"
-      ]
+      "registryDependencies": ["checkbox"]
     },
     {
       "name": "checkbox-demo",
@@ -1642,9 +1368,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "checkbox"
-      ]
+      "registryDependencies": ["checkbox"]
     },
     {
       "name": "collapsible-controlled",
@@ -1657,9 +1381,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-demo",
@@ -1672,9 +1394,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "combobox-demo",
@@ -1687,9 +1407,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "combobox"
-      ]
+      "registryDependencies": ["combobox"]
     },
     {
       "name": "command-demo",
@@ -1702,9 +1420,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "command"
-      ]
+      "registryDependencies": ["command"]
     },
     {
       "name": "context-menu-demo",
@@ -1717,10 +1433,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "context-menu",
-        "dropdown-menu"
-      ]
+      "registryDependencies": ["context-menu", "dropdown-menu"]
     },
     {
       "name": "data-table-demo",
@@ -1733,13 +1446,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "table",
-        "input",
-        "button",
-        "checkbox",
-        "dropdown-menu"
-      ]
+      "registryDependencies": ["table", "input", "button", "checkbox", "dropdown-menu"]
     },
     {
       "name": "date-picker-demo",
@@ -1752,10 +1459,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "date-picker",
-        "calendar"
-      ]
+      "registryDependencies": ["date-picker", "calendar"]
     },
     {
       "name": "dialog-controlled",
@@ -1768,9 +1472,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "dialog"
-      ]
+      "registryDependencies": ["dialog"]
     },
     {
       "name": "dialog-demo",
@@ -1783,9 +1485,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "dialog"
-      ]
+      "registryDependencies": ["dialog"]
     },
     {
       "name": "direction-demo",
@@ -1798,12 +1498,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "direction",
-        "slider",
-        "select",
-        "label"
-      ]
+      "registryDependencies": ["direction", "slider", "select", "label"]
     },
     {
       "name": "dropdown-menu-checkboxes",
@@ -1816,10 +1511,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "dropdown-menu",
-        "button"
-      ]
+      "registryDependencies": ["dropdown-menu", "button"]
     },
     {
       "name": "dropdown-menu-demo",
@@ -1832,10 +1524,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "dropdown-menu",
-        "button"
-      ]
+      "registryDependencies": ["dropdown-menu", "button"]
     },
     {
       "name": "dropdown-menu-radio-group",
@@ -1848,10 +1537,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "dropdown-menu",
-        "button"
-      ]
+      "registryDependencies": ["dropdown-menu", "button"]
     },
     {
       "name": "empty-demo",
@@ -1864,9 +1550,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "empty"
-      ]
+      "registryDependencies": ["empty"]
     },
     {
       "name": "empty-plain",
@@ -1879,9 +1563,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "empty"
-      ]
+      "registryDependencies": ["empty"]
     },
     {
       "name": "field-choice-card",
@@ -1894,10 +1576,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "field",
-        "checkbox"
-      ]
+      "registryDependencies": ["field", "checkbox"]
     },
     {
       "name": "field-demo",
@@ -1910,12 +1589,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "field",
-        "input",
-        "textarea",
-        "switch"
-      ]
+      "registryDependencies": ["field", "input", "textarea", "switch"]
     },
     {
       "name": "form-demo",
@@ -1928,12 +1602,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "form",
-        "field",
-        "input",
-        "button"
-      ]
+      "registryDependencies": ["form", "field", "input", "button"]
     },
     {
       "name": "hover-card-demo",
@@ -1946,9 +1615,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "hover-card"
-      ]
+      "registryDependencies": ["hover-card"]
     },
     {
       "name": "input-demo",
@@ -1961,9 +1628,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "input"
-      ]
+      "registryDependencies": ["input"]
     },
     {
       "name": "input-form",
@@ -1976,9 +1641,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "input"
-      ]
+      "registryDependencies": ["input"]
     },
     {
       "name": "input-group-demo",
@@ -1991,9 +1654,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "input-group"
-      ]
+      "registryDependencies": ["input-group"]
     },
     {
       "name": "input-group-kbd",
@@ -2006,9 +1667,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "input-group"
-      ]
+      "registryDependencies": ["input-group"]
     },
     {
       "name": "input-otp-controlled",
@@ -2021,9 +1680,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "input-otp"
-      ]
+      "registryDependencies": ["input-otp"]
     },
     {
       "name": "input-otp-demo",
@@ -2036,9 +1693,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "input-otp"
-      ]
+      "registryDependencies": ["input-otp"]
     },
     {
       "name": "item-demo",
@@ -2051,9 +1706,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "item"
-      ]
+      "registryDependencies": ["item"]
     },
     {
       "name": "item-group",
@@ -2066,9 +1719,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "item"
-      ]
+      "registryDependencies": ["item"]
     },
     {
       "name": "kbd-demo",
@@ -2081,9 +1732,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "kbd"
-      ]
+      "registryDependencies": ["kbd"]
     },
     {
       "name": "kbd-inline",
@@ -2096,9 +1745,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "kbd"
-      ]
+      "registryDependencies": ["kbd"]
     },
     {
       "name": "label-checkbox",
@@ -2111,9 +1758,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "label"
-      ]
+      "registryDependencies": ["label"]
     },
     {
       "name": "label-demo",
@@ -2126,9 +1771,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "label"
-      ]
+      "registryDependencies": ["label"]
     },
     {
       "name": "menubar-demo",
@@ -2141,10 +1784,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "menubar",
-        "dropdown-menu"
-      ]
+      "registryDependencies": ["menubar", "dropdown-menu"]
     },
     {
       "name": "native-select-demo",
@@ -2157,9 +1797,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "native-select"
-      ]
+      "registryDependencies": ["native-select"]
     },
     {
       "name": "native-select-label",
@@ -2172,9 +1810,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "native-select"
-      ]
+      "registryDependencies": ["native-select"]
     },
     {
       "name": "navigation-menu-demo",
@@ -2187,9 +1823,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "navigation-menu"
-      ]
+      "registryDependencies": ["navigation-menu"]
     },
     {
       "name": "pagination-demo",
@@ -2202,9 +1836,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "pagination"
-      ]
+      "registryDependencies": ["pagination"]
     },
     {
       "name": "pagination-interactive",
@@ -2217,9 +1849,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "pagination"
-      ]
+      "registryDependencies": ["pagination"]
     },
     {
       "name": "popover-controlled",
@@ -2232,9 +1862,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "popover"
-      ]
+      "registryDependencies": ["popover"]
     },
     {
       "name": "popover-demo",
@@ -2247,9 +1875,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "popover"
-      ]
+      "registryDependencies": ["popover"]
     },
     {
       "name": "progress-demo",
@@ -2262,9 +1888,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "progress"
-      ]
+      "registryDependencies": ["progress"]
     },
     {
       "name": "progress-live",
@@ -2277,9 +1901,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "progress"
-      ]
+      "registryDependencies": ["progress"]
     },
     {
       "name": "radio-group-controlled",
@@ -2292,9 +1914,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "radio-group"
-      ]
+      "registryDependencies": ["radio-group"]
     },
     {
       "name": "radio-group-demo",
@@ -2307,9 +1927,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "radio-group"
-      ]
+      "registryDependencies": ["radio-group"]
     },
     {
       "name": "resizable-demo",
@@ -2322,9 +1940,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "resizable"
-      ]
+      "registryDependencies": ["resizable"]
     },
     {
       "name": "resizable-handle-demo",
@@ -2337,9 +1953,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "resizable"
-      ]
+      "registryDependencies": ["resizable"]
     },
     {
       "name": "scroll-area-demo",
@@ -2352,10 +1966,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "scroll-area",
-        "separator"
-      ]
+      "registryDependencies": ["scroll-area", "separator"]
     },
     {
       "name": "scroll-area-horizontal",
@@ -2368,9 +1979,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "scroll-area"
-      ]
+      "registryDependencies": ["scroll-area"]
     },
     {
       "name": "select-demo",
@@ -2383,9 +1992,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "select"
-      ]
+      "registryDependencies": ["select"]
     },
     {
       "name": "select-scrollable",
@@ -2398,9 +2005,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "select"
-      ]
+      "registryDependencies": ["select"]
     },
     {
       "name": "separator-demo",
@@ -2413,9 +2018,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "separator"
-      ]
+      "registryDependencies": ["separator"]
     },
     {
       "name": "separator-semantic",
@@ -2428,9 +2031,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "separator"
-      ]
+      "registryDependencies": ["separator"]
     },
     {
       "name": "sheet-demo",
@@ -2443,9 +2044,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "sheet"
-      ]
+      "registryDependencies": ["sheet"]
     },
     {
       "name": "sheet-sides",
@@ -2458,9 +2057,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "sheet"
-      ]
+      "registryDependencies": ["sheet"]
     },
     {
       "name": "sidebar-demo",
@@ -2473,9 +2070,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "sidebar"
-      ]
+      "registryDependencies": ["sidebar"]
     },
     {
       "name": "sidebar-icon",
@@ -2488,9 +2083,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "sidebar"
-      ]
+      "registryDependencies": ["sidebar"]
     },
     {
       "name": "skeleton-card",
@@ -2503,9 +2096,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "skeleton"
-      ]
+      "registryDependencies": ["skeleton"]
     },
     {
       "name": "skeleton-demo",
@@ -2518,9 +2109,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "skeleton"
-      ]
+      "registryDependencies": ["skeleton"]
     },
     {
       "name": "slider-demo",
@@ -2533,9 +2122,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "slider"
-      ]
+      "registryDependencies": ["slider"]
     },
     {
       "name": "slider-range",
@@ -2548,9 +2135,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "slider"
-      ]
+      "registryDependencies": ["slider"]
     },
     {
       "name": "sonner-demo",
@@ -2563,10 +2148,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "sonner",
-        "button"
-      ]
+      "registryDependencies": ["sonner", "button"]
     },
     {
       "name": "spinner-button",
@@ -2579,9 +2161,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "spinner"
-      ]
+      "registryDependencies": ["spinner"]
     },
     {
       "name": "spinner-demo",
@@ -2594,9 +2174,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "spinner"
-      ]
+      "registryDependencies": ["spinner"]
     },
     {
       "name": "switch-controlled",
@@ -2609,9 +2187,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "switch"
-      ]
+      "registryDependencies": ["switch"]
     },
     {
       "name": "switch-demo",
@@ -2624,9 +2200,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "switch"
-      ]
+      "registryDependencies": ["switch"]
     },
     {
       "name": "table-demo",
@@ -2639,9 +2213,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "table"
-      ]
+      "registryDependencies": ["table"]
     },
     {
       "name": "table-footer",
@@ -2654,9 +2226,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "table"
-      ]
+      "registryDependencies": ["table"]
     },
     {
       "name": "tabs-controlled",
@@ -2669,9 +2239,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "tabs"
-      ]
+      "registryDependencies": ["tabs"]
     },
     {
       "name": "tabs-demo",
@@ -2684,9 +2252,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "tabs"
-      ]
+      "registryDependencies": ["tabs"]
     },
     {
       "name": "textarea-demo",
@@ -2699,9 +2265,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "textarea"
-      ]
+      "registryDependencies": ["textarea"]
     },
     {
       "name": "textarea-label",
@@ -2714,9 +2278,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "textarea"
-      ]
+      "registryDependencies": ["textarea"]
     },
     {
       "name": "toggle-demo",
@@ -2729,9 +2291,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "toggle"
-      ]
+      "registryDependencies": ["toggle"]
     },
     {
       "name": "toggle-group-demo",
@@ -2744,9 +2304,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "toggle-group"
-      ]
+      "registryDependencies": ["toggle-group"]
     },
     {
       "name": "toggle-group-single",
@@ -2759,9 +2317,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "toggle-group"
-      ]
+      "registryDependencies": ["toggle-group"]
     },
     {
       "name": "toggle-variants",
@@ -2774,9 +2330,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "toggle"
-      ]
+      "registryDependencies": ["toggle"]
     },
     {
       "name": "tooltip-controlled",
@@ -2789,9 +2343,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "tooltip"
-      ]
+      "registryDependencies": ["tooltip"]
     },
     {
       "name": "tooltip-demo",
@@ -2804,9 +2356,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "tooltip"
-      ]
+      "registryDependencies": ["tooltip"]
     },
     {
       "name": "typography-demo",
@@ -2825,12 +2375,7 @@
       "type": "registry:block",
       "title": "Login",
       "description": "A simple login form in a card: email, password, social login and sign-up link.",
-      "registryDependencies": [
-        "card",
-        "field",
-        "input",
-        "button"
-      ],
+      "registryDependencies": ["card", "field", "input", "button"],
       "files": [
         {
           "path": "registry/default/blocks/login-01/login-01.ts",
@@ -2844,14 +2389,7 @@
       "type": "registry:block",
       "title": "Dashboard",
       "description": "A dashboard shell: sidebar with navigation, breadcrumb header, stat cards and a chart.",
-      "registryDependencies": [
-        "sidebar",
-        "breadcrumb",
-        "card",
-        "separator",
-        "badge",
-        "chart"
-      ],
+      "registryDependencies": ["sidebar", "breadcrumb", "card", "separator", "badge", "chart"],
       "files": [
         {
           "path": "registry/default/blocks/dashboard-01/dashboard-01.ts",
@@ -2865,13 +2403,7 @@
       "type": "registry:block",
       "title": "Settings",
       "description": "A settings page: profile fields, a timezone select and notification switches.",
-      "registryDependencies": [
-        "field",
-        "input",
-        "button",
-        "switch",
-        "select"
-      ],
+      "registryDependencies": ["field", "input", "button", "switch", "select"],
       "files": [
         {
           "path": "registry/default/blocks/settings-01/settings-01.ts",
@@ -2885,12 +2417,8 @@
       "type": "registry:ui",
       "title": "Marker",
       "description": "Inline timeline or day markers between chat messages.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/marker/marker.ts",
@@ -2907,9 +2435,7 @@
       "type": "registry:ui",
       "title": "Message",
       "description": "A chat message row: avatar plus content column with header and footer.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/message/message.ts",
@@ -2926,12 +2452,8 @@
       "type": "registry:ui",
       "title": "Bubble",
       "description": "Chat bubbles with variants, alignment and reactions.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/bubble/bubble.ts",
@@ -2948,13 +2470,8 @@
       "type": "registry:ui",
       "title": "Attachment",
       "description": "File and upload chips for chat input and messages.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "button",
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["button", "cn"],
       "files": [
         {
           "path": "registry/default/ui/attachment/attachment.ts",
@@ -2971,13 +2488,8 @@
       "type": "registry:ui",
       "title": "Message Scroller",
       "description": "Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "button",
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["button", "cn"],
       "files": [
         {
           "path": "registry/default/ui/message-scroller/message-scroller.ts",
@@ -3000,9 +2512,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "marker"
-      ]
+      "registryDependencies": ["marker"]
     },
     {
       "name": "bubble-demo",
@@ -3015,9 +2525,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "bubble"
-      ]
+      "registryDependencies": ["bubble"]
     },
     {
       "name": "bubble-reactions",
@@ -3030,9 +2538,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "bubble"
-      ]
+      "registryDependencies": ["bubble"]
     },
     {
       "name": "message-demo",
@@ -3045,11 +2551,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "message",
-        "bubble",
-        "avatar"
-      ]
+      "registryDependencies": ["message", "bubble", "avatar"]
     },
     {
       "name": "attachment-demo",
@@ -3062,9 +2564,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "attachment"
-      ]
+      "registryDependencies": ["attachment"]
     },
     {
       "name": "attachment-group",
@@ -3077,9 +2577,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "attachment"
-      ]
+      "registryDependencies": ["attachment"]
     },
     {
       "name": "message-scroller-demo",
@@ -3092,11 +2590,7 @@
           "type": "registry:example"
         }
       ],
-      "registryDependencies": [
-        "message-scroller",
-        "bubble",
-        "button"
-      ]
+      "registryDependencies": ["message-scroller", "bubble", "button"]
     },
     {
       "name": "chat-demo",

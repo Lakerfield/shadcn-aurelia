@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Progress Demo",
   "description": "Example: progress-demo.",
-  "registryDependencies": [
-    "progress"
-  ],
+  "registryDependencies": ["progress"],
   "files": [
     {
       "path": "registry/default/examples/progress-demo.ts",

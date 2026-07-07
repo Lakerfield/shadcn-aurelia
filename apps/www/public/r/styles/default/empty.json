@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Empty",
   "description": "Displays an empty state.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/empty/empty.ts",

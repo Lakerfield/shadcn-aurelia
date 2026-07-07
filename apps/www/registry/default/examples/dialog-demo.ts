@@ -38,7 +38,18 @@ const TEMPLATE = `
 @customElement({
   name: 'dialog-demo',
   template: TEMPLATE,
-  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogFooter, UiDialogTitle, UiDialogDescription, UiButton, UiInput, UiLabel],
+  dependencies: [
+    UiDialog,
+    UiDialogTrigger,
+    UiDialogContent,
+    UiDialogHeader,
+    UiDialogFooter,
+    UiDialogTitle,
+    UiDialogDescription,
+    UiButton,
+    UiInput,
+    UiLabel,
+  ],
 })
 export class DialogDemo {
   name = 'Ada Lovelace'

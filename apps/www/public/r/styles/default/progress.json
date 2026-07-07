@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Progress",
   "description": "Displays completion progress of a task.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/progress/progress.ts",

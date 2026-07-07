@@ -66,7 +66,9 @@ export function applySpreadProps(element: HTMLElement, props: PropBag): () => vo
     if (val === false) {
       const wasPresent = element.hasAttribute(key)
       if (wasPresent) element.removeAttribute(key)
-      cleanups.push(() => { if (wasPresent) element.setAttribute(key, '') })
+      cleanups.push(() => {
+        if (wasPresent) element.setAttribute(key, '')
+      })
       continue
     }
     if (val === true) {

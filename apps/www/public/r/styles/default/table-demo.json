@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Table Demo",
   "description": "Example: table-demo.",
-  "registryDependencies": [
-    "table"
-  ],
+  "registryDependencies": ["table"],
   "files": [
     {
       "path": "registry/default/examples/table-demo.ts",

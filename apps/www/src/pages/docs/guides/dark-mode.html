@@ -1,6 +1,8 @@
 <article class="guide-prose max-w-3xl pb-16">
   <h1>Dark Mode</h1>
-  <p class="text-muted-foreground">Class-based dark mode, toggled on the <code>&lt;html&gt;</code> element.</p>
+  <p class="text-muted-foreground">
+    Class-based dark mode, toggled on the <code>&lt;html&gt;</code> element.
+  </p>
 
   <p>
     The theme stylesheet defines a custom variant so that Tailwind's <code>dark:</code> utilities —
@@ -45,8 +47,8 @@ export class ThemeToggle {
   <h2>Portalled content</h2>
   <p>
     Overlays (dialogs, menus, tooltips) render under <code>document.body</code>. Because the
-    variables live on <code>:root</code> and the variant matches <em>any</em> <code>.dark</code>
-    ancestor including <code>&lt;html&gt;</code>, portalled content themes correctly with no extra
-    wiring.
+    variables live on <code>:root</code> and the variant matches <em>any</em>
+    <code>.dark</code> ancestor including <code>&lt;html&gt;</code>, portalled content themes
+    correctly with no extra wiring.
   </p>
 </article>

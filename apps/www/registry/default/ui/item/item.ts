@@ -118,7 +118,12 @@ function defineHostPart(name: string, slot: string, classes: string, role?: stri
   return HostPart
 }
 
-export const UiItemGroup = defineHostPart('ui-item-group', 'item-group', 'group/item-group flex flex-col', 'list')
+export const UiItemGroup = defineHostPart(
+  'ui-item-group',
+  'item-group',
+  'group/item-group flex flex-col',
+  'list',
+)
 
 export const UiItemContent = defineHostPart(
   'ui-item-content',
@@ -138,7 +143,11 @@ export const UiItemDescription = defineHostPart(
   'text-muted-foreground line-clamp-2 block text-sm leading-normal font-normal text-balance [&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
 )
 
-export const UiItemActions = defineHostPart('ui-item-actions', 'item-actions', 'flex items-center gap-2')
+export const UiItemActions = defineHostPart(
+  'ui-item-actions',
+  'item-actions',
+  'flex items-center gap-2',
+)
 
 export const UiItemHeader = defineHostPart(
   'ui-item-header',

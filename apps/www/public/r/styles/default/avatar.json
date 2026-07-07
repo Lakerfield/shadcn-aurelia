@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Avatar",
   "description": "An image element with a fallback for representing the user.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/avatar/avatar.ts",

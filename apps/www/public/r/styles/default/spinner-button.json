@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Spinner Button",
   "description": "Example: spinner-button.",
-  "registryDependencies": [
-    "spinner"
-  ],
+  "registryDependencies": ["spinner"],
   "files": [
     {
       "path": "registry/default/examples/spinner-button.ts",

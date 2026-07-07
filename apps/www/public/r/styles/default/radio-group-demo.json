@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Radio Group Demo",
   "description": "Example: radio-group-demo.",
-  "registryDependencies": [
-    "radio-group"
-  ],
+  "registryDependencies": ["radio-group"],
   "files": [
     {
       "path": "registry/default/examples/radio-group-demo.ts",

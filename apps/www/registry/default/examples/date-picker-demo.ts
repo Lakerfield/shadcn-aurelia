@@ -1,5 +1,9 @@
 import { customElement } from 'aurelia'
-import { UiDatePicker, UiDatePickerTrigger, UiDatePickerContent } from '@/registry/default/ui/date-picker'
+import {
+  UiDatePicker,
+  UiDatePickerTrigger,
+  UiDatePickerContent,
+} from '@/registry/default/ui/date-picker'
 import { UiCalendar } from '@/registry/default/ui/calendar'
 
 const TEMPLATE = `

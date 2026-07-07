@@ -29,7 +29,15 @@ const TEMPLATE = `
 @customElement({
   name: 'carousel-demo',
   template: TEMPLATE,
-  dependencies: [UiCarousel, UiCarouselContent, UiCarouselItem, UiCarouselPrevious, UiCarouselNext, UiCard, UiCardContent],
+  dependencies: [
+    UiCarousel,
+    UiCarouselContent,
+    UiCarouselItem,
+    UiCarouselPrevious,
+    UiCarouselNext,
+    UiCard,
+    UiCardContent,
+  ],
 })
 export class CarouselDemo {
   numbers = [1, 2, 3, 4, 5]

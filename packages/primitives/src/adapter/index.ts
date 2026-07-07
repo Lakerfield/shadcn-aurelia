@@ -6,11 +6,7 @@ export {
   type ControlledSync,
   type ControlledSyncOptions,
 } from './controlled-state'
-export {
-  createTableEngine,
-  type TableEngine,
-  type TableEngineOptions,
-} from './table-engine'
+export { createTableEngine, type TableEngine, type TableEngineOptions } from './table-engine'
 export {
   createMessageScrollerEngine,
   MessageScrollerEngine,

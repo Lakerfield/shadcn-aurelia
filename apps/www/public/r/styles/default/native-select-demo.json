@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Native Select Demo",
   "description": "Example: native-select-demo.",
-  "registryDependencies": [
-    "native-select"
-  ],
+  "registryDependencies": ["native-select"],
   "files": [
     {
       "path": "registry/default/examples/native-select-demo.ts",

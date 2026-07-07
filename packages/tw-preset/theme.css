@@ -69,42 +69,66 @@
    Scoped to overlay surfaces (…-content / …-overlay): triggers carry the same
    data-state attribute and must not replay an entry animation on toggle. */
 @layer utilities {
-  [data-state="open"]:where([data-slot$="-content"], [data-slot$="-overlay"]) {
+  [data-state='open']:where([data-slot$='-content'], [data-slot$='-overlay']) {
     animation:
       fade-in 150ms ease-out,
       zoom-in-95 150ms ease-out;
   }
-  [data-state="closed"]:where([data-slot$="-content"], [data-slot$="-overlay"]) {
+  [data-state='closed']:where([data-slot$='-content'], [data-slot$='-overlay']) {
     animation:
       fade-out 100ms ease-in,
       zoom-out-95 100ms ease-in;
   }
 
   @keyframes fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   @keyframes fade-out {
-    from { opacity: 1; }
-    to   { opacity: 0; }
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
   @keyframes zoom-in-95 {
-    from { transform: scale(0.95); }
-    to   { transform: scale(1); }
+    from {
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
   }
   @keyframes zoom-out-95 {
-    from { transform: scale(1); }
-    to   { transform: scale(0.95); }
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.95);
+    }
   }
 
   /* Zag sets --height on collapsible/accordion content while animating */
   @keyframes accordion-down {
-    from { height: 0; }
-    to   { height: var(--height); }
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--height);
+    }
   }
   @keyframes accordion-up {
-    from { height: var(--height); }
-    to   { height: 0; }
+    from {
+      height: var(--height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 
@@ -125,27 +149,27 @@
 
 /* scroll-fade */
 @property --scroll-fade-t {
-  syntax: "<length-percentage>";
+  syntax: '<length-percentage>';
   inherits: false;
   initial-value: 0px;
 }
 @property --scroll-fade-b {
-  syntax: "<length-percentage>";
+  syntax: '<length-percentage>';
   inherits: false;
   initial-value: 0px;
 }
 @property --scroll-fade-s {
-  syntax: "<length-percentage>";
+  syntax: '<length-percentage>';
   inherits: false;
   initial-value: 0px;
 }
 @property --scroll-fade-e {
-  syntax: "<length-percentage>";
+  syntax: '<length-percentage>';
   inherits: false;
   initial-value: 0px;
 }
 @property --scroll-fade-mask {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 
@@ -155,12 +179,18 @@
       --scroll-fade-t: 0px;
     }
     to {
-      --scroll-fade-t: var(--_scroll-fade-size-t, var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10))));
+      --scroll-fade-t: var(
+        --_scroll-fade-size-t,
+        var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10)))
+      );
     }
   }
   @keyframes scroll-fade-reveal-b {
     from {
-      --scroll-fade-b: var(--_scroll-fade-size-b, var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10))));
+      --scroll-fade-b: var(
+        --_scroll-fade-size-b,
+        var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10)))
+      );
     }
     to {
       --scroll-fade-b: 0px;
@@ -171,12 +201,18 @@
       --scroll-fade-s: 0px;
     }
     to {
-      --scroll-fade-s: var(--_scroll-fade-size-s, var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10))));
+      --scroll-fade-s: var(
+        --_scroll-fade-size-s,
+        var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10)))
+      );
     }
   }
   @keyframes scroll-fade-reveal-e {
     from {
-      --scroll-fade-e: var(--_scroll-fade-size-e, var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10))));
+      --scroll-fade-e: var(
+        --_scroll-fade-size-e,
+        var(--scroll-fade-size, min(12%, calc(var(--spacing) * 10)))
+      );
     }
     to {
       --scroll-fade-e: 0px;
@@ -280,7 +316,7 @@
     #000 calc(100% - var(--scroll-fade-e, 0px)),
     transparent 100%
   );
-  &:where([dir="rtl"], [dir="rtl"] *) {
+  &:where([dir='rtl'], [dir='rtl'] *) {
     --scroll-fade-inline: linear-gradient(
       to left,
       transparent 0,
@@ -364,10 +400,7 @@
   @supports (animation-timeline: scroll()) {
     animation: scroll-fade-reveal-b 1ms ease-in-out;
     animation-timeline: scroll(self y);
-    animation-range: calc(
-        100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))
-      )
-      100%;
+    animation-range: calc(100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))) 100%;
     animation-fill-mode: both;
   }
 
@@ -427,10 +460,7 @@
   @supports (animation-timeline: scroll()) {
     animation: scroll-fade-reveal-e 1ms ease-in-out;
     animation-timeline: scroll(self x);
-    animation-range: calc(
-        100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))
-      )
-      100%;
+    animation-range: calc(100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))) 100%;
     animation-fill-mode: both;
   }
 
@@ -450,7 +480,7 @@
     #000 var(--scroll-fade-s, 0px),
     #000 100%
   );
-  &:where([dir="rtl"], [dir="rtl"] *) {
+  &:where([dir='rtl'], [dir='rtl'] *) {
     --scroll-fade-mask: linear-gradient(
       to left,
       transparent 0,
@@ -488,7 +518,7 @@
     #000 calc(100% - var(--scroll-fade-e, 0px)),
     transparent 100%
   );
-  &:where([dir="rtl"], [dir="rtl"] *) {
+  &:where([dir='rtl'], [dir='rtl'] *) {
     --scroll-fade-mask: linear-gradient(
       to left,
       #000 0,
@@ -506,10 +536,7 @@
   @supports (animation-timeline: scroll()) {
     animation: scroll-fade-reveal-e 1ms ease-in-out;
     animation-timeline: scroll(self inline);
-    animation-range: calc(
-        100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))
-      )
-      100%;
+    animation-range: calc(100% - var(--scroll-fade-reveal, calc(var(--spacing) * 24))) 100%;
     animation-fill-mode: both;
   }
 
@@ -549,16 +576,16 @@
 
 /* shimmer */
 @property --shimmer-angle {
-  syntax: "<angle>";
+  syntax: '<angle>';
   inherits: true;
   initial-value: 20deg;
 }
 @property --shimmer-image {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --shimmer-text-fill {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 
@@ -576,21 +603,16 @@
 @utility shimmer {
   --_spread: var(--shimmer-spread, calc(3ch + 40px));
   --_base: currentColor;
-  --_highlight: var(
-    --shimmer-color,
-    oklch(from currentColor l c h / calc(alpha * 0.2))
-  );
+  --_highlight: var(--shimmer-color, oklch(from currentColor l c h / calc(alpha* 0.2)));
 
   background-image: var(
     --shimmer-image,
     linear-gradient(
       calc(90deg + var(--shimmer-angle)),
       var(--_base) calc(50% - var(--_spread)),
-      color-mix(in oklch, var(--_highlight), var(--_base) 50%)
-        calc(50% - var(--_spread) * 0.5),
+      color-mix(in oklch, var(--_highlight), var(--_base) 50%) calc(50% - var(--_spread) * 0.5),
       var(--_highlight) 50%,
-      color-mix(in oklch, var(--_highlight), var(--_base) 50%)
-        calc(50% + var(--_spread) * 0.5),
+      color-mix(in oklch, var(--_highlight), var(--_base) 50%) calc(50% + var(--_spread) * 0.5),
       var(--_base) calc(50% + var(--_spread))
     )
   );
@@ -609,7 +631,7 @@
     );
   }
 
-  &:where([dir="rtl"], [dir="rtl"] *) {
+  &:where([dir='rtl'], [dir='rtl'] *) {
     animation-direction: reverse;
   }
 }

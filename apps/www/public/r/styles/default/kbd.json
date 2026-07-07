@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Kbd",
   "description": "Displays keyboard keys and shortcuts.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/kbd/kbd.ts",

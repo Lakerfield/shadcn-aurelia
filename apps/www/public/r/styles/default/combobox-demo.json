@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Combobox Demo",
   "description": "Example: combobox-demo.",
-  "registryDependencies": [
-    "combobox"
-  ],
+  "registryDependencies": ["combobox"],
   "files": [
     {
       "path": "registry/default/examples/combobox-demo.ts",

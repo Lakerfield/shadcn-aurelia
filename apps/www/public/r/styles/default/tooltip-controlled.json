@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Tooltip Controlled",
   "description": "Example: tooltip-controlled.",
-  "registryDependencies": [
-    "tooltip"
-  ],
+  "registryDependencies": ["tooltip"],
   "files": [
     {
       "path": "registry/default/examples/tooltip-controlled.ts",

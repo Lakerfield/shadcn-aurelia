@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Select Scrollable",
   "description": "Example: select-scrollable.",
-  "registryDependencies": [
-    "select"
-  ],
+  "registryDependencies": ["select"],
   "files": [
     {
       "path": "registry/default/examples/select-scrollable.ts",

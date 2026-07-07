@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Label Demo",
   "description": "Example: label-demo.",
-  "registryDependencies": [
-    "label"
-  ],
+  "registryDependencies": ["label"],
   "files": [
     {
       "path": "registry/default/examples/label-demo.ts",

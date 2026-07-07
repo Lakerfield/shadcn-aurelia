@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Marker",
   "description": "Inline timeline or day markers between chat messages.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/marker/marker.ts",

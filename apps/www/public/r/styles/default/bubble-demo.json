@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Bubble Demo",
   "description": "Example: bubble-demo.",
-  "registryDependencies": [
-    "bubble"
-  ],
+  "registryDependencies": ["bubble"],
   "files": [
     {
       "path": "registry/default/examples/bubble-demo.ts",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Direction",
   "description": "RTL provider that flips reading direction for wrapped components.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/direction/direction.ts",

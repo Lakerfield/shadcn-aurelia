@@ -1,10 +1,12 @@
 <article class="guide-prose max-w-3xl pb-16">
   <h1>Theming</h1>
-  <p class="text-muted-foreground">CSS variables drive every color, radius and animation — identical to shadcn/ui.</p>
+  <p class="text-muted-foreground">
+    CSS variables drive every color, radius and animation — identical to shadcn/ui.
+  </p>
 
   <p>
-    <code>init</code> writes a <code>shadcn-aurelia.css</code> next to your Tailwind stylesheet. It has
-    three parts: the color variables (light values on <code>:root</code>, dark values on
+    <code>init</code> writes a <code>shadcn-aurelia.css</code> next to your Tailwind stylesheet. It
+    has three parts: the color variables (light values on <code>:root</code>, dark values on
     <code>.dark</code>), an <code>@theme inline</code> block that maps those variables to Tailwind
     utilities (<code>bg-background</code>, <code>text-muted-foreground</code>, …), and a base layer
     with focus/border defaults plus the <code>data-state</code> animations.
@@ -13,7 +15,13 @@
   <h2>The variable contract</h2>
   <p>
     Colors come in <code>background</code>/<code>foreground</code> pairs, in
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch" external target="_blank" rel="noreferrer">oklch</a>:
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
+      external
+      target="_blank"
+      rel="noreferrer"
+      >oklch</a
+    >:
   </p>
   <pre><code>:root {
   --radius: 0.625rem;
@@ -38,16 +46,48 @@
   /* … */
 }</code></pre>
   <table>
-    <thead><tr><th>Variable</th><th>Used for</th></tr></thead>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Used for</th>
+      </tr>
+    </thead>
     <tbody>
-      <tr><td><code>--background</code> / <code>--foreground</code></td><td>page background and default text</td></tr>
-      <tr><td><code>--card</code>, <code>--popover</code></td><td>surface colors (+ matching <code>-foreground</code>)</td></tr>
-      <tr><td><code>--primary</code>, <code>--secondary</code>, <code>--accent</code>, <code>--muted</code></td><td>component variants (+ <code>-foreground</code>)</td></tr>
-      <tr><td><code>--destructive</code></td><td>errors and destructive actions</td></tr>
-      <tr><td><code>--border</code>, <code>--input</code>, <code>--ring</code></td><td>borders, form control borders, focus rings</td></tr>
-      <tr><td><code>--chart-1</code> … <code>--chart-5</code></td><td>chart series palette</td></tr>
-      <tr><td><code>--sidebar-*</code></td><td>the sidebar component's own surface scale</td></tr>
-      <tr><td><code>--radius</code></td><td>base radius; <code>rounded-sm/md/lg/xl</code> derive from it</td></tr>
+      <tr>
+        <td><code>--background</code> / <code>--foreground</code></td>
+        <td>page background and default text</td>
+      </tr>
+      <tr>
+        <td><code>--card</code>, <code>--popover</code></td>
+        <td>surface colors (+ matching <code>-foreground</code>)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>--primary</code>, <code>--secondary</code>, <code>--accent</code>,
+          <code>--muted</code>
+        </td>
+        <td>component variants (+ <code>-foreground</code>)</td>
+      </tr>
+      <tr>
+        <td><code>--destructive</code></td>
+        <td>errors and destructive actions</td>
+      </tr>
+      <tr>
+        <td><code>--border</code>, <code>--input</code>, <code>--ring</code></td>
+        <td>borders, form control borders, focus rings</td>
+      </tr>
+      <tr>
+        <td><code>--chart-1</code> … <code>--chart-5</code></td>
+        <td>chart series palette</td>
+      </tr>
+      <tr>
+        <td><code>--sidebar-*</code></td>
+        <td>the sidebar component's own surface scale</td>
+      </tr>
+      <tr>
+        <td><code>--radius</code></td>
+        <td>base radius; <code>rounded-sm/md/lg/xl</code> derive from it</td>
+      </tr>
     </tbody>
   </table>
 
@@ -55,8 +95,10 @@
   <p>
     Because the file is copied into your project, theming is just editing CSS. Change
     <code>--primary</code>, tweak <code>--radius</code>, or paste a whole palette from the
-    <a href="https://ui.shadcn.com/themes" external target="_blank" rel="noreferrer">shadcn/ui theme
-    generator</a> — the variable names are identical, so upstream themes work as-is.
+    <a href="https://ui.shadcn.com/themes" external target="_blank" rel="noreferrer"
+      >shadcn/ui theme generator</a
+    >
+    — the variable names are identical, so upstream themes work as-is.
   </p>
   <p>Adding your own semantic color follows the same pattern:</p>
   <pre><code>:root { --warning: oklch(0.84 0.16 84); --warning-foreground: oklch(0.28 0.07 46); }
@@ -66,7 +108,10 @@
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
 }</code></pre>
-  <p>…which makes <code>bg-warning</code> and <code>text-warning-foreground</code> available everywhere.</p>
+  <p>
+    …which makes <code>bg-warning</code> and <code>text-warning-foreground</code> available
+    everywhere.
+  </p>
 
   <h2>Charts</h2>
   <p>

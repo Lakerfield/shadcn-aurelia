@@ -66,7 +66,8 @@ export class UiDatePicker implements DatePickerOwner {
       defaultValue: this.value ? [parseDate(this.value)] : [],
       positioning: { placement: 'bottom-start', gutter: 4 },
       // d.value[0].toString() is ISO (yyyy-mm-dd); valueAsString is locale-formatted
-      onValueChange: (d: { value: DateValue[] }) => this.sync?.fromMachine(d.value[0]?.toString() ?? ''),
+      onValueChange: (d: { value: DateValue[] }) =>
+        this.sync?.fromMachine(d.value[0]?.toString() ?? ''),
     })
   }
 

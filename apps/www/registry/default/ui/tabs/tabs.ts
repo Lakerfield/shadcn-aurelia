@@ -164,7 +164,8 @@ export class UiTabsContent {
 
   attached(): void {
     const tabs = tabsContext.get(this.host)
-    if (tabs) this.dispose = bindPart(tabs, this.host, (api) => api.getContentProps({ value: this.value }))
+    if (tabs)
+      this.dispose = bindPart(tabs, this.host, (api) => api.getContentProps({ value: this.value }))
   }
 
   detaching(): void {

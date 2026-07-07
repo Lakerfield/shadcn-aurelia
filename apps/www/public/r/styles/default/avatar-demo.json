@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Avatar Demo",
   "description": "Example: avatar-demo.",
-  "registryDependencies": [
-    "avatar"
-  ],
+  "registryDependencies": ["avatar"],
   "files": [
     {
       "path": "registry/default/examples/avatar-demo.ts",

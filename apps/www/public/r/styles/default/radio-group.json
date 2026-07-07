@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Radio Group",
   "description": "A set of checkable buttons, one checked at a time.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/radio-group/radio-group.ts",

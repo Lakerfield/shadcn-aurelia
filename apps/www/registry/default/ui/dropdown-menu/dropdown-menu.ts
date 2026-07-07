@@ -95,7 +95,9 @@ export class UiDropdownMenu implements MenuSource {
       positioning: { placement: this.placement, gutter: 4 },
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),
       onSelect: (d: { value: string }) => {
-        this.host.dispatchEvent(new CustomEvent('select', { detail: { value: d.value }, bubbles: true }))
+        this.host.dispatchEvent(
+          new CustomEvent('select', { detail: { value: d.value }, bubbles: true }),
+        )
       },
     })
   }
@@ -287,7 +289,9 @@ export class UiDropdownMenuCheckboxItem {
           closeOnSelect: this.closeOnSelect,
           onCheckedChange: (checked: boolean) => {
             this.checked = checked
-            this.host.dispatchEvent(new CustomEvent('checked-change', { detail: { checked }, bubbles: true }))
+            this.host.dispatchEvent(
+              new CustomEvent('checked-change', { detail: { checked }, bubbles: true }),
+            )
           },
         }),
       ),
@@ -405,7 +409,10 @@ export class UiDropdownMenuRadioItem {
         }),
       ),
       bindPart(menu, this.indicatorEl, (api) =>
-        api.getItemIndicatorProps({ value: this.value, checked: group.currentValue === this.value }),
+        api.getItemIndicatorProps({
+          value: this.value,
+          checked: group.currentValue === this.value,
+        }),
       ),
     ]
   }
@@ -519,7 +526,9 @@ export class UiDropdownMenuSub implements MenuSource {
 
   binding(): void {
     // Resolve the parent BEFORE shadowing the context for our own subtree.
-    this._parent = this.host.parentElement ? (menuContext.get(this.host.parentElement) ?? null) : null
+    this._parent = this.host.parentElement
+      ? (menuContext.get(this.host.parentElement) ?? null)
+      : null
     menuContext.set(this.host, this)
     this.behavior.init({
       dir: resolveDirection(this.host),
@@ -568,7 +577,10 @@ function pairSource(parent: MenuSource, child: MenuSource): BehaviorSource<[Menu
 
 const CHEVRON_RIGHT = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto size-4"><path d="m9 18 6-6-6-6"></path></svg>`
 
-@customElement({ name: 'ui-dropdown-menu-sub-trigger', template: `<au-slot></au-slot>${CHEVRON_RIGHT}` })
+@customElement({
+  name: 'ui-dropdown-menu-sub-trigger',
+  template: `<au-slot></au-slot>${CHEVRON_RIGHT}`,
+})
 export class UiDropdownMenuSubTrigger {
   @bindable() inset = false
 

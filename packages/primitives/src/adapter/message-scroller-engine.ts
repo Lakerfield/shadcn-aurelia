@@ -28,15 +28,7 @@ const SCROLL_POSITION_EPSILON = 0.5
 const AUTOSCROLLING_CLEAR_DELAY = 180
 
 /** Viewport keys that count as deliberate scroll intent. */
-const USER_SCROLL_KEYS = new Set([
-  'ArrowDown',
-  'ArrowUp',
-  'End',
-  'Home',
-  'PageDown',
-  'PageUp',
-  ' ',
-])
+const USER_SCROLL_KEYS = new Set(['ArrowDown', 'ArrowUp', 'End', 'Home', 'PageDown', 'PageUp', ' '])
 
 export interface MessageScrollerScrollable {
   /** Content extends above the viewport (can scroll toward the start). */
@@ -125,7 +117,10 @@ export class MessageScrollerEngine {
   private spacerGap = 0
 
   private readonly messageElements = new Map<string, HTMLElement>()
-  private pendingScrollToMessage: { messageId: string; options?: MessageScrollerScrollOptions } | null = null
+  private pendingScrollToMessage: {
+    messageId: string
+    options?: MessageScrollerScrollOptions
+  } | null = null
   private pendingScrollFrame: number | null = null
 
   private readonly listeners = new Set<(state: MessageScrollerScrollable) => void>()
@@ -139,7 +134,8 @@ export class MessageScrollerEngine {
     this.autoScroll = options.autoScroll ?? false
     this.defaultScrollPosition = options.defaultScrollPosition ?? 'end'
     this.scrollEdgeThreshold = options.scrollEdgeThreshold ?? DEFAULT_SCROLL_EDGE_THRESHOLD
-    this.scrollPreviousItemPeek = options.scrollPreviousItemPeek ?? DEFAULT_SCROLL_PREVIOUS_ITEM_PEEK
+    this.scrollPreviousItemPeek =
+      options.scrollPreviousItemPeek ?? DEFAULT_SCROLL_PREVIOUS_ITEM_PEEK
     this.scrollMargin = options.scrollMargin ?? DEFAULT_SCROLL_MARGIN
     this.preserveScrollOnPrepend = options.preserveScrollOnPrepend ?? true
     if (this.autoScroll) this.mode = 'following-bottom'
@@ -295,7 +291,10 @@ export class MessageScrollerEngine {
     let contentBottom = padding.start + padding.end
     for (const item of items) {
       const rect = item.getBoundingClientRect()
-      contentBottom = Math.max(contentBottom, rect.bottom - viewportRect.top + scrollTop + padding.end)
+      contentBottom = Math.max(
+        contentBottom,
+        rect.bottom - viewportRect.top + scrollTop + padding.end,
+      )
     }
     return contentBottom
   }
@@ -318,7 +317,11 @@ export class MessageScrollerEngine {
 
   private getElementTop(element: HTMLElement): number {
     const viewport = this.viewport!
-    return element.getBoundingClientRect().top - viewport.getBoundingClientRect().top + viewport.scrollTop
+    return (
+      element.getBoundingClientRect().top -
+      viewport.getBoundingClientRect().top +
+      viewport.scrollTop
+    )
   }
 
   private getElementViewportTop(element: HTMLElement): number {
@@ -330,14 +333,21 @@ export class MessageScrollerEngine {
     return this.content ? getBlockPadding(this.content) : { start: 0, end: 0 }
   }
 
-  private getElementScrollTop(element: HTMLElement, align: MessageScrollerScrollAlign, scrollMargin: number): number {
+  private getElementScrollTop(
+    element: HTMLElement,
+    align: MessageScrollerScrollAlign,
+    scrollMargin: number,
+  ): number {
     const viewport = this.viewport!
     const elementTop = this.getElementTop(element)
     const elementHeight = element.getBoundingClientRect().height
     const contentPadding = this.getContentBlockPadding()
 
     if (align === 'center') {
-      const insetHeight = Math.max(0, viewport.clientHeight - contentPadding.start - contentPadding.end)
+      const insetHeight = Math.max(
+        0,
+        viewport.clientHeight - contentPadding.start - contentPadding.end,
+      )
       return elementTop - contentPadding.start - (insetHeight - elementHeight) / 2 - scrollMargin
     }
     if (align === 'end') {
@@ -362,7 +372,9 @@ export class MessageScrollerEngine {
   // ---- attribute + mode bookkeeping -----------------------------------------
 
   private writeStateAttributes(): void {
-    const scrollable = [this.state.start && 'start', this.state.end && 'end'].filter(Boolean).join(' ')
+    const scrollable = [this.state.start && 'start', this.state.end && 'end']
+      .filter(Boolean)
+      .join(' ')
     for (const element of [this.root, this.viewport]) {
       if (!element) continue
       if (scrollable) element.setAttribute('data-scrollable', scrollable)
@@ -402,7 +414,11 @@ export class MessageScrollerEngine {
   }
 
   private userScrollIntent(): void {
-    if (this.mode === 'following-bottom' || this.mode === 'anchored-to-message' || this.mode === 'settling-jump') {
+    if (
+      this.mode === 'following-bottom' ||
+      this.mode === 'anchored-to-message' ||
+      this.mode === 'settling-jump'
+    ) {
       this.anchoredElement = null
       this.mode = 'free-scrolling'
     }
@@ -444,7 +460,11 @@ export class MessageScrollerEngine {
     spacer.style.marginTop = next > 0 ? `${-this.spacerGap}px` : ''
   }
 
-  private scrollToPosition(scrollTop: number, behavior: ScrollBehavior, autoscrolling = false): void {
+  private scrollToPosition(
+    scrollTop: number,
+    behavior: ScrollBehavior,
+    autoscrolling = false,
+  ): void {
     const viewport = this.viewport
     if (!viewport) return
     const next = Math.max(0, scrollTop)
@@ -700,6 +720,8 @@ export class MessageScrollerEngine {
   }
 }
 
-export function createMessageScrollerEngine(options: MessageScrollerOptions = {}): MessageScrollerEngine {
+export function createMessageScrollerEngine(
+  options: MessageScrollerOptions = {},
+): MessageScrollerEngine {
   return new MessageScrollerEngine(options)
 }

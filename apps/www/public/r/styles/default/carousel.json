@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Carousel",
   "description": "Carousel with motion and swipe built on Embla.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn",
-    "button"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn", "button"],
   "files": [
     {
       "path": "registry/default/ui/carousel/carousel.ts",

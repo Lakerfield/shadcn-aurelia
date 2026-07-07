@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Toggle Group Single",
   "description": "Example: toggle-group-single.",
-  "registryDependencies": [
-    "toggle-group"
-  ],
+  "registryDependencies": ["toggle-group"],
   "files": [
     {
       "path": "registry/default/examples/toggle-group-single.ts",

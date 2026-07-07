@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Message",
   "description": "A chat message row: avatar plus content column with header and footer.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/message/message.ts",

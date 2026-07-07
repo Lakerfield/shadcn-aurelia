@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Hover Card",
   "description": "Preview content available behind a link.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/hover-card/hover-card.ts",

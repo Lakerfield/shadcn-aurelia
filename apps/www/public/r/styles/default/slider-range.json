@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Slider Range",
   "description": "Example: slider-range.",
-  "registryDependencies": [
-    "slider"
-  ],
+  "registryDependencies": ["slider"],
   "files": [
     {
       "path": "registry/default/examples/slider-range.ts",

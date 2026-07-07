@@ -35,7 +35,17 @@ const TEMPLATE = `
 @customElement({
   name: 'alert-dialog-destructive',
   template: TEMPLATE,
-  dependencies: [UiDialog, UiDialogTrigger, UiDialogContent, UiDialogHeader, UiDialogFooter, UiDialogTitle, UiDialogDescription, UiAlertDialogAction, UiAlertDialogCancel],
+  dependencies: [
+    UiDialog,
+    UiDialogTrigger,
+    UiDialogContent,
+    UiDialogHeader,
+    UiDialogFooter,
+    UiDialogTitle,
+    UiDialogDescription,
+    UiAlertDialogAction,
+    UiAlertDialogCancel,
+  ],
 })
 export class AlertDialogDestructive {
   deleted = 0

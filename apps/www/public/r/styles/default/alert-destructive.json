@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Alert Destructive",
   "description": "Example: alert-destructive.",
-  "registryDependencies": [
-    "alert"
-  ],
+  "registryDependencies": ["alert"],
   "files": [
     {
       "path": "registry/default/examples/alert-destructive.ts",

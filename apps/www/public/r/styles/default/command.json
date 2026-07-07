@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Command",
   "description": "cmdk-style command palette with filtering and keyboard navigation.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/command/command.ts",

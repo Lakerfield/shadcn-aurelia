@@ -78,9 +78,10 @@ export class UiCommand implements CommandOwner {
   }
 
   private buildCollection() {
-    const items = this.visibleValues === null
-      ? [...this.items]
-      : this.items.filter((i) => this.visibleValues!.has(i.value))
+    const items =
+      this.visibleValues === null
+        ? [...this.items]
+        : this.items.filter((i) => this.visibleValues!.has(i.value))
     return createListCollection({
       items: items.map(({ value, label, disabled }) => ({ value, label, disabled })),
       itemToValue: (item) => item.value,
@@ -96,9 +97,10 @@ export class UiCommand implements CommandOwner {
 
   private applyFilter(query: string): void {
     const q = query.trim().toLowerCase()
-    this.visibleValues = q === '' ? null : new Set(
-      this.items.filter((i) => i.label.toLowerCase().includes(q)).map((i) => i.value),
-    )
+    this.visibleValues =
+      q === ''
+        ? null
+        : new Set(this.items.filter((i) => i.label.toLowerCase().includes(q)).map((i) => i.value))
     this.refreshCollection()
   }
 

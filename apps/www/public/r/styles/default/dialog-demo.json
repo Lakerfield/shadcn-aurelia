@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Dialog Demo",
   "description": "Example: dialog-demo.",
-  "registryDependencies": [
-    "dialog"
-  ],
+  "registryDependencies": ["dialog"],
   "files": [
     {
       "path": "registry/default/examples/dialog-demo.ts",

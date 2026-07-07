@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Checkbox Controlled",
   "description": "Example: checkbox-controlled.",
-  "registryDependencies": [
-    "checkbox"
-  ],
+  "registryDependencies": ["checkbox"],
   "files": [
     {
       "path": "registry/default/examples/checkbox-controlled.ts",

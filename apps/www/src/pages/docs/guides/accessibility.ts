@@ -24,7 +24,10 @@ export class Accessibility {
       component: 'Tabs',
       pattern: 'APG Tabs',
       bindings: [
-        { keys: 'ArrowRight / ArrowLeft', action: 'Move to and activate the next / previous tab (ArrowDown/Up when vertical)' },
+        {
+          keys: 'ArrowRight / ArrowLeft',
+          action: 'Move to and activate the next / previous tab (ArrowDown/Up when vertical)',
+        },
         { keys: 'Home / End', action: 'First / last tab' },
         { keys: 'Tab', action: 'Move focus into the active panel' },
       ],
@@ -91,7 +94,10 @@ export class Accessibility {
       bindings: [
         { keys: 'Enter / Space / ArrowDown', action: 'Open the menu and focus the first item' },
         { keys: 'ArrowDown / ArrowUp', action: 'Move between items' },
-        { keys: 'ArrowRight / ArrowLeft', action: 'Open / close a submenu (menubar: also moves between menus)' },
+        {
+          keys: 'ArrowRight / ArrowLeft',
+          action: 'Open / close a submenu (menubar: also moves between menus)',
+        },
         { keys: 'Home / End', action: 'First / last item' },
         { keys: 'Characters', action: 'Typeahead to a matching item' },
         { keys: 'Escape', action: 'Close and return focus to the trigger' },
@@ -145,9 +151,18 @@ export class Accessibility {
       component: 'Message Scroller',
       pattern: 'scroll region (role=region + role=log)',
       bindings: [
-        { keys: 'Tab', action: 'Focus the transcript viewport, then the scroll button when visible' },
-        { keys: 'Arrow keys / PageUp / PageDown / Home / End', action: 'Scroll the focused viewport (releases follow-bottom)' },
-        { keys: 'Enter / Space', action: 'On the scroll button: jump to the newest (or first) message' },
+        {
+          keys: 'Tab',
+          action: 'Focus the transcript viewport, then the scroll button when visible',
+        },
+        {
+          keys: 'Arrow keys / PageUp / PageDown / Home / End',
+          action: 'Scroll the focused viewport (releases follow-bottom)',
+        },
+        {
+          keys: 'Enter / Space',
+          action: 'On the scroll button: jump to the newest (or first) message',
+        },
       ],
     },
   ]

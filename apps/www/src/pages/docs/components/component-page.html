@@ -7,7 +7,9 @@
   </header>
 
   <section repeat.for="ex of doc.examples" class="space-y-3">
-    <h2 if.bind="doc.examples.length > 1" class="text-xl font-semibold tracking-tight">${ex.title}</h2>
+    <h2 if.bind="doc.examples.length > 1" class="text-xl font-semibold tracking-tight">
+      ${ex.title}
+    </h2>
     <component-preview code.bind="ex.source">
       <au-compose component.bind="ex.component"></au-compose>
     </component-preview>

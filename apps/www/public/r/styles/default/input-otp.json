@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Input OTP",
   "description": "Accessible one-time-password input.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/input-otp/input-otp.ts",

@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Context Menu",
   "description": "Menu at the pointer, triggered by right click or long press.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn",
-    "dropdown-menu"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn", "dropdown-menu"],
   "files": [
     {
       "path": "registry/default/ui/context-menu/context-menu.ts",

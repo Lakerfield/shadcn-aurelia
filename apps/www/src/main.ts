@@ -13,10 +13,9 @@ if (
   document.documentElement.classList.add('dark')
 }
 
-Aurelia
-  .register(
-    RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false }),
-    ValidationHtmlConfiguration,
-  )
+Aurelia.register(
+  RouterConfiguration.customize({ useUrlFragmentHash: false, useHref: false }),
+  ValidationHtmlConfiguration,
+)
   .app(AppRoot)
   .start()

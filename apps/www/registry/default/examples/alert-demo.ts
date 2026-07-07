@@ -12,5 +12,9 @@ const TEMPLATE = `
 </ui-alert>
 `
 
-@customElement({ name: 'alert-demo', template: TEMPLATE, dependencies: [UiAlert, UiAlertTitle, UiAlertDescription] })
+@customElement({
+  name: 'alert-demo',
+  template: TEMPLATE,
+  dependencies: [UiAlert, UiAlertTitle, UiAlertDescription],
+})
 export class AlertDemo {}

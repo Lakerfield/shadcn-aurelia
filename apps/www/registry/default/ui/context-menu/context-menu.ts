@@ -23,7 +23,11 @@ import {
   type MenuApi,
   resolveDirection,
 } from '@shadcn-aurelia/primitives'
-import { menuContext, menuContentClasses, type MenuSource } from '@/registry/default/ui/dropdown-menu'
+import {
+  menuContext,
+  menuContentClasses,
+  type MenuSource,
+} from '@/registry/default/ui/dropdown-menu'
 import { cn } from '@/registry/default/lib/cn'
 
 @customElement({ name: 'ui-context-menu', template: '<au-slot></au-slot>' })
@@ -63,7 +67,9 @@ export class UiContextMenu implements MenuSource {
       id: createId('context-menu'),
       onOpenChange: (d: { open: boolean }) => this.sync?.fromMachine(d.open),
       onSelect: (d: { value: string }) => {
-        this.host.dispatchEvent(new CustomEvent('select', { detail: { value: d.value }, bubbles: true }))
+        this.host.dispatchEvent(
+          new CustomEvent('select', { detail: { value: d.value }, bubbles: true }),
+        )
       },
     })
   }

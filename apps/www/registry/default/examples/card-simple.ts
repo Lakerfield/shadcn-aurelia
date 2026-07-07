@@ -1,5 +1,11 @@
 import { customElement } from 'aurelia'
-import { UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardContent } from '@/registry/default/ui/card'
+import {
+  UiCard,
+  UiCardHeader,
+  UiCardTitle,
+  UiCardDescription,
+  UiCardContent,
+} from '@/registry/default/ui/card'
 
 const TEMPLATE = `
 <ui-card class="w-full max-w-sm">

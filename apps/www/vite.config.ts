@@ -4,11 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 export default defineConfig({
-  plugins: [
-    aurelia({ useDev: true }),
-    tailwindcss(),
-    nodePolyfills(),
-  ],
+  plugins: [aurelia({ useDev: true }), tailwindcss(), nodePolyfills()],
   resolve: {
     alias: [
       { find: /^@\/registry\//, replacement: '/registry/' },

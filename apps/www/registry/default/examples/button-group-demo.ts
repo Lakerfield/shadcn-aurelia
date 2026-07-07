@@ -10,5 +10,9 @@ const TEMPLATE = `
 </ui-button-group>
 `
 
-@customElement({ name: 'button-group-demo', template: TEMPLATE, dependencies: [UiButtonGroup, UiButton] })
+@customElement({
+  name: 'button-group-demo',
+  template: TEMPLATE,
+  dependencies: [UiButtonGroup, UiButton],
+})
 export class ButtonGroupDemo {}

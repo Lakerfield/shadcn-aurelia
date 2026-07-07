@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Aspect Ratio",
   "description": "Displays content within a desired ratio.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/aspect-ratio/aspect-ratio.ts",

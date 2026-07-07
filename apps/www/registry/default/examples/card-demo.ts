@@ -35,6 +35,15 @@ const TEMPLATE = `
 @customElement({
   name: 'card-demo',
   template: TEMPLATE,
-  dependencies: [UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardAction, UiCardContent, UiCardFooter, UiButton],
+  dependencies: [
+    UiCard,
+    UiCardHeader,
+    UiCardTitle,
+    UiCardDescription,
+    UiCardAction,
+    UiCardContent,
+    UiCardFooter,
+    UiButton,
+  ],
 })
 export class CardDemo {}

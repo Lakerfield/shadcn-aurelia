@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Marker Demo",
   "description": "Example: marker-demo.",
-  "registryDependencies": [
-    "marker"
-  ],
+  "registryDependencies": ["marker"],
   "files": [
     {
       "path": "registry/default/examples/marker-demo.ts",

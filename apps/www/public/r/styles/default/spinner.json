@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Spinner",
   "description": "An indicator showing an in-progress operation.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/spinner/spinner.ts",

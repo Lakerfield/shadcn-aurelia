@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Hover Card Demo",
   "description": "Example: hover-card-demo.",
-  "registryDependencies": [
-    "hover-card"
-  ],
+  "registryDependencies": ["hover-card"],
   "files": [
     {
       "path": "registry/default/examples/hover-card-demo.ts",

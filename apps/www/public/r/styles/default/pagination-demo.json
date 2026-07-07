@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Pagination Demo",
   "description": "Example: pagination-demo.",
-  "registryDependencies": [
-    "pagination"
-  ],
+  "registryDependencies": ["pagination"],
   "files": [
     {
       "path": "registry/default/examples/pagination-demo.ts",

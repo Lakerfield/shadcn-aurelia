@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Chart Line",
   "description": "Example: chart-line.",
-  "registryDependencies": [
-    "chart"
-  ],
+  "registryDependencies": ["chart"],
   "files": [
     {
       "path": "registry/default/examples/chart-line.ts",

@@ -32,6 +32,14 @@ const TEMPLATE = `
 @customElement({
   name: 'empty-demo',
   template: TEMPLATE,
-  dependencies: [UiEmpty, UiEmptyHeader, UiEmptyMedia, UiEmptyTitle, UiEmptyDescription, UiEmptyContent, UiButton],
+  dependencies: [
+    UiEmpty,
+    UiEmptyHeader,
+    UiEmptyMedia,
+    UiEmptyTitle,
+    UiEmptyDescription,
+    UiEmptyContent,
+    UiButton,
+  ],
 })
 export class EmptyDemo {}

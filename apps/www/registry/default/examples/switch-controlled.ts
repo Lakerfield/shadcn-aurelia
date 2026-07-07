@@ -11,7 +11,11 @@ const TEMPLATE = `
 </div>
 `
 
-@customElement({ name: 'switch-controlled', template: TEMPLATE, dependencies: [UiSwitch, UiButton] })
+@customElement({
+  name: 'switch-controlled',
+  template: TEMPLATE,
+  dependencies: [UiSwitch, UiButton],
+})
 export class SwitchControlled {
   notifications = true
 }

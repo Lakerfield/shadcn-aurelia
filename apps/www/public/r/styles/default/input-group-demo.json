@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Input Group Demo",
   "description": "Example: input-group-demo.",
-  "registryDependencies": [
-    "input-group"
-  ],
+  "registryDependencies": ["input-group"],
   "files": [
     {
       "path": "registry/default/examples/input-group-demo.ts",

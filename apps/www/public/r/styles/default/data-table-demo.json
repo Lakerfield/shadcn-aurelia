@@ -4,13 +4,7 @@
   "type": "registry:example",
   "title": "Data Table Demo",
   "description": "Example: data-table-demo.",
-  "registryDependencies": [
-    "table",
-    "input",
-    "button",
-    "checkbox",
-    "dropdown-menu"
-  ],
+  "registryDependencies": ["table", "input", "button", "checkbox", "dropdown-menu"],
   "files": [
     {
       "path": "registry/default/examples/data-table-demo.ts",

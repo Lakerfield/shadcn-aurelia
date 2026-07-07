@@ -4,12 +4,7 @@
   "type": "registry:example",
   "title": "Field Demo",
   "description": "Example: field-demo.",
-  "registryDependencies": [
-    "field",
-    "input",
-    "textarea",
-    "switch"
-  ],
+  "registryDependencies": ["field", "input", "textarea", "switch"],
   "files": [
     {
       "path": "registry/default/examples/field-demo.ts",

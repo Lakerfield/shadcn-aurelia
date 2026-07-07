@@ -116,11 +116,35 @@ export class ChatDemo {
 
   entries: ChatEntry[] = [
     { id: 'day1', kind: 'marker', text: 'Yesterday' },
-    { id: 'c1', kind: 'message', align: 'start', from: 'AB', text: 'Here is the final report for review.', attachment: { name: 'q2-report.pdf', size: '1.8 MB' } },
-    { id: 'c2', kind: 'message', align: 'end', text: 'Thanks! I will take a look this afternoon.', footer: 'Read' },
+    {
+      id: 'c1',
+      kind: 'message',
+      align: 'start',
+      from: 'AB',
+      text: 'Here is the final report for review.',
+      attachment: { name: 'q2-report.pdf', size: '1.8 MB' },
+    },
+    {
+      id: 'c2',
+      kind: 'message',
+      align: 'end',
+      text: 'Thanks! I will take a look this afternoon.',
+      footer: 'Read',
+    },
     { id: 'day2', kind: 'marker', text: 'Today' },
-    { id: 'c3', kind: 'message', align: 'start', from: 'AB', text: 'Any feedback on the numbers in section 3?' },
-    { id: 'c4', kind: 'message', align: 'end', text: 'Looks solid. One question about the churn figure — can you double-check the cohort?' },
+    {
+      id: 'c3',
+      kind: 'message',
+      align: 'start',
+      from: 'AB',
+      text: 'Any feedback on the numbers in section 3?',
+    },
+    {
+      id: 'c4',
+      kind: 'message',
+      align: 'end',
+      text: 'Looks solid. One question about the churn figure — can you double-check the cohort?',
+    },
   ]
 
   reply(): void {
@@ -129,7 +153,9 @@ export class ChatDemo {
     this.replyCount++
     const id = `r${this.replyCount}`
     const words =
-      'Checked it — the cohort was off by one week. Corrected churn is 3.2 percent, which is in line with the previous quarter.'.split(' ')
+      'Checked it — the cohort was off by one week. Corrected churn is 3.2 percent, which is in line with the previous quarter.'.split(
+        ' ',
+      )
     let shown = 0
     this.entries = [...this.entries, { id, kind: 'message', align: 'start', from: 'AB', text: '' }]
     this.timer = setInterval(() => {

@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Context Menu Demo",
   "description": "Example: context-menu-demo.",
-  "registryDependencies": [
-    "context-menu",
-    "dropdown-menu"
-  ],
+  "registryDependencies": ["context-menu", "dropdown-menu"],
   "files": [
     {
       "path": "registry/default/examples/context-menu-demo.ts",

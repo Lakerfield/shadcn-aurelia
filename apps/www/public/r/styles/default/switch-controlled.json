@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Switch Controlled",
   "description": "Example: switch-controlled.",
-  "registryDependencies": [
-    "switch"
-  ],
+  "registryDependencies": ["switch"],
   "files": [
     {
       "path": "registry/default/examples/switch-controlled.ts",

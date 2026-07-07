@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Toggle Demo",
   "description": "Example: toggle-demo.",
-  "registryDependencies": [
-    "toggle"
-  ],
+  "registryDependencies": ["toggle"],
   "files": [
     {
       "path": "registry/default/examples/toggle-demo.ts",

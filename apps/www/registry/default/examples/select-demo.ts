@@ -28,7 +28,14 @@ const TEMPLATE = `
 @customElement({
   name: 'select-demo',
   template: TEMPLATE,
-  dependencies: [UiSelect, UiSelectTrigger, UiSelectContent, UiSelectItem, UiSelectGroup, UiSelectLabel],
+  dependencies: [
+    UiSelect,
+    UiSelectTrigger,
+    UiSelectContent,
+    UiSelectItem,
+    UiSelectGroup,
+    UiSelectLabel,
+  ],
 })
 export class SelectDemo {
   fruit = ''

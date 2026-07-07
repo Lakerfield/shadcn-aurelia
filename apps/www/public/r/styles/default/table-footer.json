@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Table Footer",
   "description": "Example: table-footer.",
-  "registryDependencies": [
-    "table"
-  ],
+  "registryDependencies": ["table"],
   "files": [
     {
       "path": "registry/default/examples/table-footer.ts",

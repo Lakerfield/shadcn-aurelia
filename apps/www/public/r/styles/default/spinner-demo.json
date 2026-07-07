@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Spinner Demo",
   "description": "Example: spinner-demo.",
-  "registryDependencies": [
-    "spinner"
-  ],
+  "registryDependencies": ["spinner"],
   "files": [
     {
       "path": "registry/default/examples/spinner-demo.ts",

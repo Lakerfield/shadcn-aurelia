@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Pagination",
   "description": "Pagination with page navigation, next and previous links.",
-  "registryDependencies": [
-    "cn",
-    "button"
-  ],
+  "registryDependencies": ["cn", "button"],
   "files": [
     {
       "path": "registry/default/ui/pagination/pagination.ts",

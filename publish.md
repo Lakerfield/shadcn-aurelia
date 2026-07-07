@@ -6,11 +6,11 @@ How to release the shadcn-aurelia packages. Releases are managed with
 
 ## What gets published
 
-| Package | npm name | Contents |
-|---|---|---|
-| `packages/cli` | `shadcn-aurelia` | the CLI (`dist/`, bin `shadcn-aurelia`) |
-| `packages/primitives` | `@shadcn-aurelia/primitives` | behavior facade layer (`dist/`) |
-| `packages/tw-preset` | `@shadcn-aurelia/tw-preset` | Tailwind theme layer (`theme.css`) |
+| Package               | npm name                     | Contents                                |
+| --------------------- | ---------------------------- | --------------------------------------- |
+| `packages/cli`        | `shadcn-aurelia`             | the CLI (`dist/`, bin `shadcn-aurelia`) |
+| `packages/primitives` | `@shadcn-aurelia/primitives` | behavior facade layer (`dist/`)         |
+| `packages/tw-preset`  | `@shadcn-aurelia/tw-preset`  | Tailwind theme layer (`theme.css`)      |
 
 `apps/www`, `packages/tests` and `templates/*` are `"private": true` and are
 never published. Components themselves are **not** npm packages — they are
@@ -20,7 +20,7 @@ with the docs site).
 ## One-time setup
 
 1. **npm account + organization.** Log in on [npmjs.com](https://www.npmjs.com),
-   then *Add Organization* → name `shadcn-aurelia` (free, public packages).
+   then _Add Organization_ → name `shadcn-aurelia` (free, public packages).
    This owns the `@shadcn-aurelia/*` scope. The unscoped name `shadcn-aurelia`
    for the CLI is claimed by its first publish.
 2. **Enable 2FA** on the account (Settings → Two-Factor Authentication).
@@ -28,7 +28,7 @@ with the docs site).
    Verify with `npm whoami`.
 4. For CI publishing (optional, below): create a **granular access token** on
    npmjs.com (Access Tokens → Generate New Token → Granular) with
-   *Read and write* on the `@shadcn-aurelia` scope and the `shadcn-aurelia`
+   _Read and write_ on the `@shadcn-aurelia` scope and the `shadcn-aurelia`
    package, and store it as the `NPM_TOKEN` secret in the GitHub repo.
 
 ## Release flow (manual)
@@ -62,8 +62,8 @@ Notes
   ahead of npm, so re-running is safe.
 - `"access": "public"` in `.changeset/config.json` makes the scoped packages
   public on first publish (scoped packages default to private otherwise).
-- With 2FA in *auth-and-writes* mode npm prompts for an OTP during publish;
-  use *auth-only* (or an automation token) for unattended publishes.
+- With 2FA in _auth-and-writes_ mode npm prompts for an OTP during publish;
+  use _auth-only_ (or an automation token) for unattended publishes.
 - Dry run first: `pnpm build && pnpm -r publish --dry-run --no-git-checks`.
 
 ## Canary / snapshot releases
@@ -118,7 +118,7 @@ jobs:
 ```
 
 Requires the `NPM_TOKEN` secret from the one-time setup (and npm 2FA set to
-*auth-only*, or an automation token, so CI can publish without an OTP).
+_auth-only_, or an automation token, so CI can publish without an OTP).
 
 ## Checklist before the first real publish
 

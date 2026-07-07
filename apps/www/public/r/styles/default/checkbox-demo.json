@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Checkbox Demo",
   "description": "Example: checkbox-demo.",
-  "registryDependencies": [
-    "checkbox"
-  ],
+  "registryDependencies": ["checkbox"],
   "files": [
     {
       "path": "registry/default/examples/checkbox-demo.ts",

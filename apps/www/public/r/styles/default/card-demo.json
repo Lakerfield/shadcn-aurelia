@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Card Demo",
   "description": "Example: card-demo.",
-  "registryDependencies": [
-    "card"
-  ],
+  "registryDependencies": ["card"],
   "files": [
     {
       "path": "registry/default/examples/card-demo.ts",

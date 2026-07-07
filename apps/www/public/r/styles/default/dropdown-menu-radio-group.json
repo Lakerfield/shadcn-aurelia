@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Dropdown Menu Radio Group",
   "description": "Example: dropdown-menu-radio-group.",
-  "registryDependencies": [
-    "dropdown-menu",
-    "button"
-  ],
+  "registryDependencies": ["dropdown-menu", "button"],
   "files": [
     {
       "path": "registry/default/examples/dropdown-menu-radio-group.ts",

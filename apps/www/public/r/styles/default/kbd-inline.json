@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Kbd Inline",
   "description": "Example: kbd-inline.",
-  "registryDependencies": [
-    "kbd"
-  ],
+  "registryDependencies": ["kbd"],
   "files": [
     {
       "path": "registry/default/examples/kbd-inline.ts",

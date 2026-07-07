@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Tabs",
   "description": "Layered sections of content displayed one at a time.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/tabs/tabs.ts",

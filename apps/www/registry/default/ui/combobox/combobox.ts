@@ -104,9 +104,10 @@ export class UiCombobox implements ComboboxOwner {
 
   private applyFilter(query: string): void {
     const q = query.trim().toLowerCase()
-    this.visibleValues = q === '' ? null : new Set(
-      this.items.filter((i) => i.label.toLowerCase().includes(q)).map((i) => i.value),
-    )
+    this.visibleValues =
+      q === ''
+        ? null
+        : new Set(this.items.filter((i) => i.label.toLowerCase().includes(q)).map((i) => i.value))
     this.refreshCollection()
   }
 
@@ -308,7 +309,9 @@ export class UiComboboxItem {
     updateVisibility()
     this.disposers = [
       bindPart(combobox, this.host, (api) => api.getItemProps({ item: this.itemData! })),
-      bindPart(combobox, this.indicatorEl, (api) => api.getItemIndicatorProps({ item: this.itemData! })),
+      bindPart(combobox, this.indicatorEl, (api) =>
+        api.getItemIndicatorProps({ item: this.itemData! }),
+      ),
       combobox.subscribe(updateVisibility),
     ]
   }

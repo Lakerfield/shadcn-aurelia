@@ -25,7 +25,8 @@ export class Blocks {
     {
       name: 'dashboard-01',
       title: 'Dashboard',
-      description: 'A dashboard shell: sidebar with navigation, breadcrumb header, stat cards and a chart.',
+      description:
+        'A dashboard shell: sidebar with navigation, breadcrumb header, stat cards and a chart.',
       component: DashboardPage,
       source: dashboardSource,
     },

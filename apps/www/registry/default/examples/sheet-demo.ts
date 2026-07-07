@@ -1,5 +1,11 @@
 import { customElement } from 'aurelia'
-import { UiDialog, UiDialogTrigger, UiDialogHeader, UiDialogTitle, UiDialogDescription } from '@/registry/default/ui/dialog'
+import {
+  UiDialog,
+  UiDialogTrigger,
+  UiDialogHeader,
+  UiDialogTitle,
+  UiDialogDescription,
+} from '@/registry/default/ui/dialog'
 import { UiSheetContent } from '@/registry/default/ui/sheet'
 import { buttonVariants } from '@/registry/default/ui/button'
 
@@ -19,7 +25,14 @@ const TEMPLATE = `
 @customElement({
   name: 'sheet-demo',
   template: TEMPLATE,
-  dependencies: [UiDialog, UiDialogTrigger, UiSheetContent, UiDialogHeader, UiDialogTitle, UiDialogDescription],
+  dependencies: [
+    UiDialog,
+    UiDialogTrigger,
+    UiSheetContent,
+    UiDialogHeader,
+    UiDialogTitle,
+    UiDialogDescription,
+  ],
 })
 export class SheetDemo {
   triggerClasses = buttonVariants({ variant: 'outline' })

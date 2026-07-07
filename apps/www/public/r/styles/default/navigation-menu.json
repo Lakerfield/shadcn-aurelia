@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Navigation Menu",
   "description": "Collection of links for navigating websites, with expandable panels.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/navigation-menu/navigation-menu.ts",

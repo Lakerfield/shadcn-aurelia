@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Alert Demo",
   "description": "Example: alert-demo.",
-  "registryDependencies": [
-    "alert"
-  ],
+  "registryDependencies": ["alert"],
   "files": [
     {
       "path": "registry/default/examples/alert-demo.ts",

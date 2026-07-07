@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Aspect Ratio Demo",
   "description": "Example: aspect-ratio-demo.",
-  "registryDependencies": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["aspect-ratio"],
   "files": [
     {
       "path": "registry/default/examples/aspect-ratio-demo.ts",

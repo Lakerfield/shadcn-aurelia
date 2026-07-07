@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Sheet Sides",
   "description": "Example: sheet-sides.",
-  "registryDependencies": [
-    "sheet"
-  ],
+  "registryDependencies": ["sheet"],
   "files": [
     {
       "path": "registry/default/examples/sheet-sides.ts",

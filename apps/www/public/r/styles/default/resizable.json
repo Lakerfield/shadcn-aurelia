@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Resizable",
   "description": "Accessible resizable panel groups and layouts with keyboard support.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/resizable/resizable.ts",

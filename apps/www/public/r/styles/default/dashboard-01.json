@@ -4,14 +4,7 @@
   "type": "registry:block",
   "title": "Dashboard",
   "description": "A dashboard shell: sidebar with navigation, breadcrumb header, stat cards and a chart.",
-  "registryDependencies": [
-    "sidebar",
-    "breadcrumb",
-    "card",
-    "separator",
-    "badge",
-    "chart"
-  ],
+  "registryDependencies": ["sidebar", "breadcrumb", "card", "separator", "badge", "chart"],
   "files": [
     {
       "path": "registry/default/blocks/dashboard-01/dashboard-01.ts",

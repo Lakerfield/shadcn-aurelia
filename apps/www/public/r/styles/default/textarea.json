@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Textarea",
   "description": "Displays a form textarea.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/textarea/textarea.ts",

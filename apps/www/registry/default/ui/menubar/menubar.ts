@@ -28,7 +28,11 @@ import {
   type MenuApi,
   resolveDirection,
 } from '@shadcn-aurelia/primitives'
-import { menuContext, menuContentClasses, type MenuSource } from '@/registry/default/ui/dropdown-menu'
+import {
+  menuContext,
+  menuContentClasses,
+  type MenuSource,
+} from '@/registry/default/ui/dropdown-menu'
 import { cn } from '@/registry/default/lib/cn'
 
 export interface MenubarCoordinator {
@@ -163,7 +167,9 @@ export class UiMenubarMenu implements MenuSource {
         else this.coordinator?.notifyClosed(this)
       },
       onSelect: (d: { value: string }) => {
-        this.host.dispatchEvent(new CustomEvent('select', { detail: { value: d.value }, bubbles: true }))
+        this.host.dispatchEvent(
+          new CustomEvent('select', { detail: { value: d.value }, bubbles: true }),
+        )
       },
     })
   }

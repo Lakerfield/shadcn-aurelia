@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Input Form",
   "description": "Example: input-form.",
-  "registryDependencies": [
-    "input"
-  ],
+  "registryDependencies": ["input"],
   "files": [
     {
       "path": "registry/default/examples/input-form.ts",

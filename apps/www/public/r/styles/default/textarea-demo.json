@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Textarea Demo",
   "description": "Example: textarea-demo.",
-  "registryDependencies": [
-    "textarea"
-  ],
+  "registryDependencies": ["textarea"],
   "files": [
     {
       "path": "registry/default/examples/textarea-demo.ts",

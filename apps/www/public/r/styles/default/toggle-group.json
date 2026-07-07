@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Toggle Group",
   "description": "A set of two-state buttons.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn",
-    "toggle"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn", "toggle"],
   "files": [
     {
       "path": "registry/default/ui/toggle-group/toggle-group.ts",

@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Kbd Demo",
   "description": "Example: kbd-demo.",
-  "registryDependencies": [
-    "kbd"
-  ],
+  "registryDependencies": ["kbd"],
   "files": [
     {
       "path": "registry/default/examples/kbd-demo.ts",

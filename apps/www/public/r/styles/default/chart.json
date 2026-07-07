@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Chart",
   "description": "Themeable charts on chart.js, wired to the shadcn chart color variables.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/chart/chart.ts",

@@ -26,8 +26,16 @@ export const guideLinks: GuideLink[] = [
     { path: 'theming', component: import('./guides/theming'), title: 'Theming' },
     { path: 'dark-mode', component: import('./guides/dark-mode'), title: 'Dark Mode' },
     { path: 'cli', component: import('./guides/cli'), title: 'CLI' },
-    { path: 'components-json', component: import('./guides/components-json'), title: 'components.json' },
-    { path: 'differences', component: import('./guides/differences'), title: 'Differences from shadcn/ui' },
+    {
+      path: 'components-json',
+      component: import('./guides/components-json'),
+      title: 'components.json',
+    },
+    {
+      path: 'differences',
+      component: import('./guides/differences'),
+      title: 'Differences from shadcn/ui',
+    },
     { path: 'accessibility', component: import('./guides/accessibility'), title: 'Accessibility' },
     { path: 'blocks', component: import('./guides/blocks'), title: 'Blocks' },
     {

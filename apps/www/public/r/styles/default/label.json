@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Label",
   "description": "Renders an accessible label associated with a control.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/label/label.ts",

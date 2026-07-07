@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Popover",
   "description": "Rich content in a portal, triggered by a button.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/popover/popover.ts",

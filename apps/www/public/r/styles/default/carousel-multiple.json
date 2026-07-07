@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Carousel Multiple",
   "description": "Example: carousel-multiple.",
-  "registryDependencies": [
-    "carousel",
-    "card"
-  ],
+  "registryDependencies": ["carousel", "card"],
   "files": [
     {
       "path": "registry/default/examples/carousel-multiple.ts",

@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Carousel Demo",
   "description": "Example: carousel-demo.",
-  "registryDependencies": [
-    "carousel",
-    "card"
-  ],
+  "registryDependencies": ["carousel", "card"],
   "files": [
     {
       "path": "registry/default/examples/carousel-demo.ts",

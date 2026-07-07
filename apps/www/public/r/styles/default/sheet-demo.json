@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Sheet Demo",
   "description": "Example: sheet-demo.",
-  "registryDependencies": [
-    "sheet"
-  ],
+  "registryDependencies": ["sheet"],
   "files": [
     {
       "path": "registry/default/examples/sheet-demo.ts",

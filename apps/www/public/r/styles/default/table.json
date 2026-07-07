@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Table",
   "description": "A responsive table (attributes on native table elements).",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/table/table.ts",

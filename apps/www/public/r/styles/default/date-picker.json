@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Date Picker",
   "description": "Calendar in a popover, anchored to a trigger.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn",
-    "calendar"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn", "calendar"],
   "files": [
     {
       "path": "registry/default/ui/date-picker/date-picker.ts",

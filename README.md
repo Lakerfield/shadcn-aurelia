@@ -45,13 +45,13 @@ your project — you own the code and change whatever you want. Interactive beha
 
 ## Repository layout
 
-| Path | Contents |
-|---|---|
-| `apps/www` | docs site + component registry (source of truth) |
-| `packages/primitives` | `@shadcn-aurelia/primitives` — behavior facades (Zag adapters, portal, table/chart engines) |
-| `packages/tw-preset` | `@shadcn-aurelia/tw-preset` — shared Tailwind theme layer |
-| `packages/cli` | the `shadcn-aurelia` CLI |
-| `templates/aurelia-vite` | pre-configured starter app |
+| Path                     | Contents                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| `apps/www`               | docs site + component registry (source of truth)                                            |
+| `packages/primitives`    | `@shadcn-aurelia/primitives` — behavior facades (Zag adapters, portal, table/chart engines) |
+| `packages/tw-preset`     | `@shadcn-aurelia/tw-preset` — shared Tailwind theme layer                                   |
+| `packages/cli`           | the `shadcn-aurelia` CLI                                                                    |
+| `templates/aurelia-vite` | pre-configured starter app                                                                  |
 
 ## Development
 

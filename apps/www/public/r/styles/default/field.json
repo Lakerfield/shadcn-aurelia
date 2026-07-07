@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Field",
   "description": "Accessible form field anatomy: label, control, description and error wiring.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn",
-    "separator"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+  "registryDependencies": ["cn", "separator"],
   "files": [
     {
       "path": "registry/default/ui/field/field.ts",

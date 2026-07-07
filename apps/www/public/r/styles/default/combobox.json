@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Combobox",
   "description": "Autocomplete input with a filtered suggestion list.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/combobox/combobox.ts",

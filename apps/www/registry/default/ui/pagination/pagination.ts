@@ -89,7 +89,8 @@ export class UiPaginationPreviousAttribute {
   bound(): void {
     const author = this.el.getAttribute('class') ?? ''
     this.el.setAttribute('data-slot', 'pagination-previous')
-    if (!this.el.hasAttribute('aria-label')) this.el.setAttribute('aria-label', 'Go to previous page')
+    if (!this.el.hasAttribute('aria-label'))
+      this.el.setAttribute('aria-label', 'Go to previous page')
     this.el.className = cn(
       buttonVariants({ variant: 'ghost', size: 'default' }),
       'cursor-pointer gap-1 px-2.5 sm:pl-2.5',

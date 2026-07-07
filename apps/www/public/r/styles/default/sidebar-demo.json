@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Sidebar Demo",
   "description": "Example: sidebar-demo.",
-  "registryDependencies": [
-    "sidebar"
-  ],
+  "registryDependencies": ["sidebar"],
   "files": [
     {
       "path": "registry/default/examples/sidebar-demo.ts",

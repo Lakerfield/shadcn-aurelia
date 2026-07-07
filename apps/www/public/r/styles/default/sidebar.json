@@ -4,19 +4,8 @@
   "type": "registry:ui",
   "title": "Sidebar",
   "description": "A composable, themeable and customizable application sidebar.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn",
-    "button",
-    "input",
-    "separator",
-    "skeleton",
-    "sheet",
-    "tooltip"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+  "registryDependencies": ["cn", "button", "input", "separator", "skeleton", "sheet", "tooltip"],
   "files": [
     {
       "path": "registry/default/ui/sidebar/sidebar.ts",

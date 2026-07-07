@@ -4,12 +4,7 @@
   "type": "registry:example",
   "title": "Direction Demo",
   "description": "Example: direction-demo.",
-  "registryDependencies": [
-    "direction",
-    "slider",
-    "select",
-    "label"
-  ],
+  "registryDependencies": ["direction", "slider", "select", "label"],
   "files": [
     {
       "path": "registry/default/examples/direction-demo.ts",

@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Breadcrumb Demo",
   "description": "Example: breadcrumb-demo.",
-  "registryDependencies": [
-    "breadcrumb"
-  ],
+  "registryDependencies": ["breadcrumb"],
   "files": [
     {
       "path": "registry/default/examples/breadcrumb-demo.ts",

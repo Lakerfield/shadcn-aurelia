@@ -4,13 +4,7 @@
   "type": "registry:block",
   "title": "Settings",
   "description": "A settings page: profile fields, a timezone select and notification switches.",
-  "registryDependencies": [
-    "field",
-    "input",
-    "button",
-    "switch",
-    "select"
-  ],
+  "registryDependencies": ["field", "input", "button", "switch", "select"],
   "files": [
     {
       "path": "registry/default/blocks/settings-01/settings-01.ts",

@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Accordion Demo",
   "description": "Example: accordion-demo.",
-  "registryDependencies": [
-    "accordion"
-  ],
+  "registryDependencies": ["accordion"],
   "files": [
     {
       "path": "registry/default/examples/accordion-demo.ts",

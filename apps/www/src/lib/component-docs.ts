@@ -247,7 +247,8 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'accordion',
     title: 'Accordion',
-    description: 'A vertically stacked set of interactive headings that each reveal a section of content.',
+    description:
+      'A vertically stacked set of interactive headings that each reveal a section of content.',
     examples: [
       { title: 'Default', component: AccordionDemo, source: accordionDemoSource },
       { title: 'Multiple', component: AccordionMultiple, source: accordionMultipleSource },
@@ -265,10 +266,15 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'alert-dialog',
     title: 'Alert Dialog',
-    description: 'A modal dialog that interrupts the user with important content and expects a response.',
+    description:
+      'A modal dialog that interrupts the user with important content and expects a response.',
     examples: [
       { title: 'Default', component: AlertDialogDemo, source: alertDialogDemoSource },
-      { title: 'Destructive', component: AlertDialogDestructive, source: alertDialogDestructiveSource },
+      {
+        title: 'Destructive',
+        component: AlertDialogDestructive,
+        source: alertDialogDestructiveSource,
+      },
     ],
   },
   {
@@ -322,7 +328,11 @@ export const componentDocs: ComponentDoc[] = [
     description: 'Chat bubbles with variants, alignment and reactions.',
     examples: [
       { title: 'Variants', component: BubbleDemo, source: bubbleDemoSource },
-      { title: 'Reactions & interactive', component: BubbleReactions, source: bubbleReactionsSource },
+      {
+        title: 'Reactions & interactive',
+        component: BubbleReactions,
+        source: bubbleReactionsSource,
+      },
     ],
   },
   {
@@ -391,7 +401,11 @@ export const componentDocs: ComponentDoc[] = [
     description: 'An interactive component which expands/collapses a panel.',
     examples: [
       { title: 'Default', component: CollapsibleDemo, source: collapsibleDemoSource },
-      { title: 'Controlled', component: CollapsibleControlled, source: collapsibleControlledSource },
+      {
+        title: 'Controlled',
+        component: CollapsibleControlled,
+        source: collapsibleControlledSource,
+      },
     ],
   },
   {
@@ -409,13 +423,15 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'context-menu',
     title: 'Context Menu',
-    description: 'Displays a menu located at the pointer, triggered by a right click or a long press.',
+    description:
+      'Displays a menu located at the pointer, triggered by a right click or a long press.',
     examples: [{ title: 'Default', component: ContextMenuDemo, source: contextMenuDemoSource }],
   },
   {
     name: 'data-table',
     title: 'Data Table',
-    description: 'Powerful table with sorting, filtering, selection and pagination on @tanstack/table-core.',
+    description:
+      'Powerful table with sorting, filtering, selection and pagination on @tanstack/table-core.',
     examples: [{ title: 'Default', component: DataTableDemo, source: dataTableDemoSource }],
   },
   {
@@ -427,7 +443,8 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'dialog',
     title: 'Dialog',
-    description: 'A window overlaid on the primary content, rendering the content underneath inert.',
+    description:
+      'A window overlaid on the primary content, rendering the content underneath inert.',
     examples: [
       { title: 'Default', component: DialogDemo, source: dialogDemoSource },
       { title: 'Controlled', component: DialogControlled, source: dialogControlledSource },
@@ -442,11 +459,20 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'dropdown-menu',
     title: 'Dropdown Menu',
-    description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
+    description:
+      'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
     examples: [
       { title: 'Default', component: DropdownMenuDemo, source: dropdownMenuDemoSource },
-      { title: 'Checkboxes', component: DropdownMenuCheckboxes, source: dropdownMenuCheckboxesSource },
-      { title: 'Radio Group', component: DropdownMenuRadioGroupDemo, source: dropdownMenuRadioGroupSource },
+      {
+        title: 'Checkboxes',
+        component: DropdownMenuCheckboxes,
+        source: dropdownMenuCheckboxesSource,
+      },
+      {
+        title: 'Radio Group',
+        component: DropdownMenuRadioGroupDemo,
+        source: dropdownMenuRadioGroupSource,
+      },
     ],
   },
   {
@@ -542,7 +568,8 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'menubar',
     title: 'Menubar',
-    description: 'A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.',
+    description:
+      'A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.',
     examples: [{ title: 'Default', component: MenubarDemo, source: menubarDemoSource }],
   },
   {
@@ -554,7 +581,8 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'message-scroller',
     title: 'Message Scroller',
-    description: 'Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.',
+    description:
+      'Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.',
     examples: [
       { title: 'Default', component: MessageScrollerDemo, source: messageScrollerDemoSource },
       { title: 'Chat', component: ChatDemo, source: chatDemoSource },
@@ -563,7 +591,8 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'native-select',
     title: 'Native Select',
-    description: 'A styled native <select> element — as a custom attribute, so options stay native.',
+    description:
+      'A styled native <select> element — as a custom attribute, so options stay native.',
     examples: [
       { title: 'Default', component: NativeSelectDemo, source: nativeSelectDemoSource },
       { title: 'With label', component: NativeSelectLabel, source: nativeSelectLabelSource },
@@ -573,7 +602,9 @@ export const componentDocs: ComponentDoc[] = [
     name: 'navigation-menu',
     title: 'Navigation Menu',
     description: 'A collection of links for navigating websites, with expandable panels.',
-    examples: [{ title: 'Default', component: NavigationMenuDemo, source: navigationMenuDemoSource }],
+    examples: [
+      { title: 'Default', component: NavigationMenuDemo, source: navigationMenuDemoSource },
+    ],
   },
   {
     name: 'pagination',
@@ -581,7 +612,11 @@ export const componentDocs: ComponentDoc[] = [
     description: 'Pagination with page navigation, next and previous links.',
     examples: [
       { title: 'Default', component: PaginationDemo, source: paginationDemoSource },
-      { title: 'Interactive', component: PaginationInteractive, source: paginationInteractiveSource },
+      {
+        title: 'Interactive',
+        component: PaginationInteractive,
+        source: paginationInteractiveSource,
+      },
     ],
   },
   {
@@ -650,7 +685,8 @@ export const componentDocs: ComponentDoc[] = [
   {
     name: 'sheet',
     title: 'Sheet',
-    description: 'Extends the dialog to display content that complements the main content of the screen.',
+    description:
+      'Extends the dialog to display content that complements the main content of the screen.',
     examples: [
       { title: 'Default', component: SheetDemo, source: sheetDemoSource },
       { title: 'Sides', component: SheetSides, source: sheetSidesSource },

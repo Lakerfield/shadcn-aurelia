@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Accordion Multiple",
   "description": "Example: accordion-multiple.",
-  "registryDependencies": [
-    "accordion"
-  ],
+  "registryDependencies": ["accordion"],
   "files": [
     {
       "path": "registry/default/examples/accordion-multiple.ts",

@@ -49,7 +49,9 @@ export const runAdd = async (names: string[], options: AddOptions): Promise<void
       info(`  ${dim('+')} ${relative(project.root, abs)}`)
     }
   }
-  success(`${written} file(s) written${skipped > 0 ? `, ${skipped} existing skipped (use --overwrite)` : ''}`)
+  success(
+    `${written} file(s) written${skipped > 0 ? `, ${skipped} existing skipped (use --overwrite)` : ''}`,
+  )
 
   const wanted = new Set<string>()
   for (const item of items) {

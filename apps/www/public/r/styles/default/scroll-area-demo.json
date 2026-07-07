@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Scroll Area Demo",
   "description": "Example: scroll-area-demo.",
-  "registryDependencies": [
-    "scroll-area",
-    "separator"
-  ],
+  "registryDependencies": ["scroll-area", "separator"],
   "files": [
     {
       "path": "registry/default/examples/scroll-area-demo.ts",

@@ -16,7 +16,10 @@ export class UiAvatar {
     const author = this.host.getAttribute('class') ?? ''
     this.host.setAttribute('data-slot', 'avatar')
     this.host.setAttribute('data-status', 'loading')
-    this.host.className = cn('group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full', author)
+    this.host.className = cn(
+      'group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full',
+      author,
+    )
   }
 }
 

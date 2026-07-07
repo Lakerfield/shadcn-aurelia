@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Alert Dialog Destructive",
   "description": "Example: alert-dialog-destructive.",
-  "registryDependencies": [
-    "alert-dialog"
-  ],
+  "registryDependencies": ["alert-dialog"],
   "files": [
     {
       "path": "registry/default/examples/alert-dialog-destructive.ts",

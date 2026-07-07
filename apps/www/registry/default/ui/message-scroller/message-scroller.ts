@@ -48,7 +48,8 @@ export class UiMessageScrollerProvider {
   @bindable({ attribute: 'scroll-edge-threshold' }) scrollEdgeThreshold: number | string = 8
   @bindable({ attribute: 'scroll-previous-item-peek' }) scrollPreviousItemPeek: number | string = 64
   @bindable({ attribute: 'scroll-margin' }) scrollMargin: number | string = 0
-  @bindable({ attribute: 'preserve-scroll-on-prepend' }) preserveScrollOnPrepend: boolean | string = true
+  @bindable({ attribute: 'preserve-scroll-on-prepend' }) preserveScrollOnPrepend: boolean | string =
+    true
 
   readonly host: HTMLElement = resolve(INode) as HTMLElement
   engine!: MessageScrollerEngine
@@ -64,7 +65,8 @@ export class UiMessageScrollerProvider {
       scrollEdgeThreshold: coerceNumber(this.scrollEdgeThreshold, 8),
       scrollPreviousItemPeek: coerceNumber(this.scrollPreviousItemPeek, 64),
       scrollMargin: coerceNumber(this.scrollMargin, 0),
-      preserveScrollOnPrepend: this.preserveScrollOnPrepend !== false && this.preserveScrollOnPrepend !== 'false',
+      preserveScrollOnPrepend:
+        this.preserveScrollOnPrepend !== false && this.preserveScrollOnPrepend !== 'false',
     })
     messageScrollerContext.set(this.host, this.engine)
   }
@@ -153,7 +155,8 @@ export class UiMessageScrollerContent {
     const author = this.host.getAttribute('class') ?? ''
     this.host.setAttribute('data-slot', 'message-scroller-content')
     if (!this.host.hasAttribute('role')) this.host.setAttribute('role', 'log')
-    if (!this.host.hasAttribute('aria-relevant')) this.host.setAttribute('aria-relevant', 'additions')
+    if (!this.host.hasAttribute('aria-relevant'))
+      this.host.setAttribute('aria-relevant', 'additions')
     this.host.className = cn('flex h-max min-h-full flex-col gap-8', author)
   }
 

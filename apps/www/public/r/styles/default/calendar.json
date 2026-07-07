@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Calendar",
   "description": "Inline month grid for picking dates.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/calendar/calendar.ts",

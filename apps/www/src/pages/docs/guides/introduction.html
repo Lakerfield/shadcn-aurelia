@@ -7,24 +7,38 @@
   <p>
     shadcn-aurelia is a faithful port of
     <a href="https://ui.shadcn.com" external target="_blank" rel="noreferrer">shadcn/ui</a>
-    to <a href="https://aurelia.io" external target="_blank" rel="noreferrer">Aurelia 2</a>.
-    It follows the same philosophy: this is <strong>not a component library you install from npm</strong>.
-    It is a collection of re-usable components that you copy into your project via a CLI and a
-    registry — and then own outright.
+    to <a href="https://aurelia.io" external target="_blank" rel="noreferrer">Aurelia 2</a>. It
+    follows the same philosophy: this is
+    <strong>not a component library you install from npm</strong>. It is a collection of re-usable
+    components that you copy into your project via a CLI and a registry — and then own outright.
   </p>
 
   <h2>Why copy-paste?</h2>
   <ul>
-    <li><strong>Open code.</strong> The component source lives in your repo. Change anything — markup, classes, behavior.</li>
-    <li><strong>No API treadmill.</strong> There is no wrapper API between you and the component; you edit the component itself.</li>
-    <li><strong>Composition.</strong> Components share a small set of conventions (<code>data-slot</code> attributes, <code>cn()</code>, CVA variants) so they compose predictably.</li>
-    <li><strong>Beautiful defaults.</strong> Styles are ported 1:1 from shadcn/ui, on Tailwind CSS v4 with the same CSS-variable theming contract.</li>
+    <li>
+      <strong>Open code.</strong> The component source lives in your repo. Change anything — markup,
+      classes, behavior.
+    </li>
+    <li>
+      <strong>No API treadmill.</strong> There is no wrapper API between you and the component; you
+      edit the component itself.
+    </li>
+    <li>
+      <strong>Composition.</strong> Components share a small set of conventions (<code
+        >data-slot</code
+      >
+      attributes, <code>cn()</code>, CVA variants) so they compose predictably.
+    </li>
+    <li>
+      <strong>Beautiful defaults.</strong> Styles are ported 1:1 from shadcn/ui, on Tailwind CSS v4
+      with the same CSS-variable theming contract.
+    </li>
   </ul>
 
   <h2>How it works</h2>
   <p>
-    Components are distributed through a registry at <code>https://shadcn-aurelia.com/r</code>.
-    The <code>shadcn-aurelia</code> CLI reads that registry, resolves dependencies, rewrites import
+    Components are distributed through a registry at <code>https://shadcn-aurelia.com/r</code>. The
+    <code>shadcn-aurelia</code> CLI reads that registry, resolves dependencies, rewrites import
     aliases and element prefixes to match your project, and writes the files into your source tree:
   </p>
   <pre><code>npx shadcn-aurelia init
@@ -32,16 +46,34 @@ npx shadcn-aurelia add button dialog form</code></pre>
   <p>
     Interactive behavior (menus, dialogs, comboboxes, date pickers …) is powered by
     <a href="https://zagjs.com" external target="_blank" rel="noreferrer">Zag.js</a> state machines,
-    wrapped behind a stable facade in <code>@shadcn-aurelia/primitives</code>. Your copied components
-    only import from that facade, so engine internals can evolve without touching your code.
+    wrapped behind a stable facade in <code>@shadcn-aurelia/primitives</code>. Your copied
+    components only import from that facade, so engine internals can evolve without touching your
+    code.
   </p>
 
   <h2>Credits</h2>
   <ul>
-    <li><a href="https://ui.shadcn.com" external target="_blank" rel="noreferrer">shadcn/ui</a> — the original design, anatomy and styles this project ports.</li>
-    <li><a href="https://zagjs.com" external target="_blank" rel="noreferrer">Zag.js</a> — framework-agnostic state machines powering the interactive components.</li>
-    <li><a href="https://www.shadcn-svelte.com" external target="_blank" rel="noreferrer">shadcn-svelte</a> and <a href="https://www.shadcn-vue.com" external target="_blank" rel="noreferrer">shadcn-vue</a> — the community ports that established the conventions for porting shadcn/ui to other frameworks.</li>
-    <li><a href="https://aurelia.io" external target="_blank" rel="noreferrer">Aurelia 2</a> — the framework this is all built for.</li>
+    <li>
+      <a href="https://ui.shadcn.com" external target="_blank" rel="noreferrer">shadcn/ui</a> — the
+      original design, anatomy and styles this project ports.
+    </li>
+    <li>
+      <a href="https://zagjs.com" external target="_blank" rel="noreferrer">Zag.js</a> —
+      framework-agnostic state machines powering the interactive components.
+    </li>
+    <li>
+      <a href="https://www.shadcn-svelte.com" external target="_blank" rel="noreferrer"
+        >shadcn-svelte</a
+      >
+      and
+      <a href="https://www.shadcn-vue.com" external target="_blank" rel="noreferrer">shadcn-vue</a>
+      — the community ports that established the conventions for porting shadcn/ui to other
+      frameworks.
+    </li>
+    <li>
+      <a href="https://aurelia.io" external target="_blank" rel="noreferrer">Aurelia 2</a> — the
+      framework this is all built for.
+    </li>
   </ul>
 
   <h2>Next steps</h2>

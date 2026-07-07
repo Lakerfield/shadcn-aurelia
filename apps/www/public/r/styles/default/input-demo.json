@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Input Demo",
   "description": "Example: input-demo.",
-  "registryDependencies": [
-    "input"
-  ],
+  "registryDependencies": ["input"],
   "files": [
     {
       "path": "registry/default/examples/input-demo.ts",

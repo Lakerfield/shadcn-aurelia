@@ -440,7 +440,11 @@ export const UiSidebarGroupContent = definePart(
 
 const SEPARATOR_TEMPLATE = `<ui-separator class.bind="classes" data-slot="sidebar-separator" data-sidebar="separator"></ui-separator>`
 
-@customElement({ name: 'ui-sidebar-separator', template: SEPARATOR_TEMPLATE, dependencies: [UiSeparator] })
+@customElement({
+  name: 'ui-sidebar-separator',
+  template: SEPARATOR_TEMPLATE,
+  dependencies: [UiSeparator],
+})
 export class UiSidebarSeparator {
   private readonly host: HTMLElement = resolve(INode) as HTMLElement
   private authorClasses = ''
@@ -674,7 +678,11 @@ const MENU_SKELETON_TEMPLATE = `
 <ui-skeleton class="h-4 max-w-(--skeleton-width) flex-1" data-sidebar="menu-skeleton-text"></ui-skeleton>
 `
 
-@customElement({ name: 'ui-sidebar-menu-skeleton', template: MENU_SKELETON_TEMPLATE, dependencies: [UiSkeleton] })
+@customElement({
+  name: 'ui-sidebar-menu-skeleton',
+  template: MENU_SKELETON_TEMPLATE,
+  dependencies: [UiSkeleton],
+})
 export class UiSidebarMenuSkeleton {
   @bindable() showIcon = false
 

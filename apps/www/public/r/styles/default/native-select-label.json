@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Native Select Label",
   "description": "Example: native-select-label.",
-  "registryDependencies": [
-    "native-select"
-  ],
+  "registryDependencies": ["native-select"],
   "files": [
     {
       "path": "registry/default/examples/native-select-label.ts",

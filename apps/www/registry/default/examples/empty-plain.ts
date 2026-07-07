@@ -1,5 +1,10 @@
 import { customElement } from 'aurelia'
-import { UiEmpty, UiEmptyHeader, UiEmptyTitle, UiEmptyDescription } from '@/registry/default/ui/empty'
+import {
+  UiEmpty,
+  UiEmptyHeader,
+  UiEmptyTitle,
+  UiEmptyDescription,
+} from '@/registry/default/ui/empty'
 
 const TEMPLATE = `
 <ui-empty class="w-full max-w-md">

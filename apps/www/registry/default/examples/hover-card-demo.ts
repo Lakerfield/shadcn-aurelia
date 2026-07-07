@@ -1,5 +1,9 @@
 import { customElement } from 'aurelia'
-import { UiHoverCard, UiHoverCardTrigger, UiHoverCardContent } from '@/registry/default/ui/hover-card'
+import {
+  UiHoverCard,
+  UiHoverCardTrigger,
+  UiHoverCardContent,
+} from '@/registry/default/ui/hover-card'
 import { UiAvatar, UiAvatarImage, UiAvatarFallback } from '@/registry/default/ui/avatar'
 
 const TEMPLATE = `
@@ -25,6 +29,13 @@ const TEMPLATE = `
 @customElement({
   name: 'hover-card-demo',
   template: TEMPLATE,
-  dependencies: [UiHoverCard, UiHoverCardTrigger, UiHoverCardContent, UiAvatar, UiAvatarImage, UiAvatarFallback],
+  dependencies: [
+    UiHoverCard,
+    UiHoverCardTrigger,
+    UiHoverCardContent,
+    UiAvatar,
+    UiAvatarImage,
+    UiAvatarFallback,
+  ],
 })
 export class HoverCardDemo {}

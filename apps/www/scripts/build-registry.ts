@@ -54,7 +54,11 @@ async function main(): Promise<void> {
 
   await writeFile(
     join(outDir, 'index.json'),
-    JSON.stringify({ name: registry.name, homepage: registry.homepage, items: indexItems }, null, 2) + '\n',
+    JSON.stringify(
+      { name: registry.name, homepage: registry.homepage, items: indexItems },
+      null,
+      2,
+    ) + '\n',
   )
 
   // drop-in stylesheet for `shadcn-aurelia init`: theme variables + shared

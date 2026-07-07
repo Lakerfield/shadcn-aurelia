@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Skeleton",
   "description": "Use to show a placeholder while content is loading.",
-  "registryDependencies": [
-    "cn"
-  ],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/skeleton/skeleton.ts",

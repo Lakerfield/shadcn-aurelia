@@ -10,5 +10,9 @@ const TEMPLATE = `
 </select>
 `
 
-@customElement({ name: 'native-select-demo', template: TEMPLATE, dependencies: [UiNativeSelectAttribute] })
+@customElement({
+  name: 'native-select-demo',
+  template: TEMPLATE,
+  dependencies: [UiNativeSelectAttribute],
+})
 export class NativeSelectDemo {}

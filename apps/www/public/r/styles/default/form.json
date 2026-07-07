@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Form",
   "description": "Form validation with @aurelia/validation wired into the field anatomy.",
-  "dependencies": [
-    "@aurelia/validation",
-    "@aurelia/validation-html"
-  ],
-  "registryDependencies": [
-    "cn",
-    "field"
-  ],
+  "dependencies": ["@aurelia/validation", "@aurelia/validation-html"],
+  "registryDependencies": ["cn", "field"],
   "files": [
     {
       "path": "registry/default/ui/form/form.ts",

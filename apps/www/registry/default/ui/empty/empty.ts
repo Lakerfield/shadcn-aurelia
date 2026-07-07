@@ -70,7 +70,11 @@ export const UiEmptyHeader = defineHostPart(
   'flex max-w-sm flex-col items-center gap-2 text-center',
 )
 
-export const UiEmptyTitle = defineHostPart('ui-empty-title', 'empty-title', 'block text-lg font-medium tracking-tight')
+export const UiEmptyTitle = defineHostPart(
+  'ui-empty-title',
+  'empty-title',
+  'block text-lg font-medium tracking-tight',
+)
 
 export const UiEmptyDescription = defineHostPart(
   'ui-empty-description',

@@ -42,6 +42,16 @@ const TEMPLATE = `
 @customElement({
   name: 'tabs-demo',
   template: TEMPLATE,
-  dependencies: [UiTabs, UiTabsList, UiTabsTrigger, UiTabsContent, UiCard, UiCardHeader, UiCardTitle, UiCardDescription, UiCardContent],
+  dependencies: [
+    UiTabs,
+    UiTabsList,
+    UiTabsTrigger,
+    UiTabsContent,
+    UiCard,
+    UiCardHeader,
+    UiCardTitle,
+    UiCardDescription,
+    UiCardContent,
+  ],
 })
 export class TabsDemo {}

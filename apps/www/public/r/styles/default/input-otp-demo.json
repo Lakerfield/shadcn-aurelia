@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Input Otp Demo",
   "description": "Example: input-otp-demo.",
-  "registryDependencies": [
-    "input-otp"
-  ],
+  "registryDependencies": ["input-otp"],
   "files": [
     {
       "path": "registry/default/examples/input-otp-demo.ts",

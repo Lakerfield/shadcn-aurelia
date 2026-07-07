@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Tabs Controlled",
   "description": "Example: tabs-controlled.",
-  "registryDependencies": [
-    "tabs"
-  ],
+  "registryDependencies": ["tabs"],
   "files": [
     {
       "path": "registry/default/examples/tabs-controlled.ts",

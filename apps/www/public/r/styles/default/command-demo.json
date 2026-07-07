@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Command Demo",
   "description": "Example: command-demo.",
-  "registryDependencies": [
-    "command"
-  ],
+  "registryDependencies": ["command"],
   "files": [
     {
       "path": "registry/default/examples/command-demo.ts",

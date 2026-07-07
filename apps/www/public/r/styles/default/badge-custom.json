@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Badge Custom",
   "description": "Example: badge-custom.",
-  "registryDependencies": [
-    "badge"
-  ],
+  "registryDependencies": ["badge"],
   "files": [
     {
       "path": "registry/default/examples/badge-custom.ts",

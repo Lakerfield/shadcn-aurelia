@@ -4,10 +4,7 @@
   "type": "registry:example",
   "title": "Field Choice Card",
   "description": "Example: field-choice-card.",
-  "registryDependencies": [
-    "field",
-    "checkbox"
-  ],
+  "registryDependencies": ["field", "checkbox"],
   "files": [
     {
       "path": "registry/default/examples/field-choice-card.ts",

@@ -86,7 +86,8 @@ export const preflight = async (project: ProjectInfo): Promise<Preflight> => {
   if (!deps['vite'] && !deps['webpack'])
     warnings.push('neither vite nor webpack found — only Vite is tested')
 
-  if (!deps['tailwindcss']) errors.push('no `tailwindcss` dependency found — Tailwind v4 is required')
+  if (!deps['tailwindcss'])
+    errors.push('no `tailwindcss` dependency found — Tailwind v4 is required')
   else if (!/^[\^~]?4\./.test(deps['tailwindcss']) && deps['tailwindcss'] !== 'latest')
     warnings.push(`tailwindcss version "${deps['tailwindcss']}" — v4 is required`)
 

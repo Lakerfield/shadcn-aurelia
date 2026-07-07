@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Empty Demo",
   "description": "Example: empty-demo.",
-  "registryDependencies": [
-    "empty"
-  ],
+  "registryDependencies": ["empty"],
   "files": [
     {
       "path": "registry/default/examples/empty-demo.ts",

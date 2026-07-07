@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Toggle Group Demo",
   "description": "Example: toggle-group-demo.",
-  "registryDependencies": [
-    "toggle-group"
-  ],
+  "registryDependencies": ["toggle-group"],
   "files": [
     {
       "path": "registry/default/examples/toggle-group-demo.ts",

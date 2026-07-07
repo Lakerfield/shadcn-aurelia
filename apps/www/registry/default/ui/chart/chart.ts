@@ -68,7 +68,10 @@ export class UiChartContainer {
     this.build()
     // colors are resolved to concrete values; re-resolve on light/dark switch
     this.themeObserver = new MutationObserver(() => this.rebuild())
-    this.themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    this.themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
   }
 
   private applyConfigVars(): void {
@@ -110,8 +113,16 @@ export class UiChartContainer {
       ...(CARTESIAN_TYPES.has(this.type)
         ? {
             scales: {
-              x: { grid: { display: false }, ticks: { color: foreground }, border: { color: border } },
-              y: { grid: { color: border }, ticks: { color: foreground }, border: { display: false } },
+              x: {
+                grid: { display: false },
+                ticks: { color: foreground },
+                border: { color: border },
+              },
+              y: {
+                grid: { color: border },
+                ticks: { color: foreground },
+                border: { display: false },
+              },
             },
           }
         : {}),

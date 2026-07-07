@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Select Demo",
   "description": "Example: select-demo.",
-  "registryDependencies": [
-    "select"
-  ],
+  "registryDependencies": ["select"],
   "files": [
     {
       "path": "registry/default/examples/select-demo.ts",

@@ -50,7 +50,6 @@ export const targetPath = (
   const rel = p.startsWith(registryPrefix) ? p.slice(registryPrefix.length) : p
   if (rel.startsWith('ui/')) return join(aliasToDir(config.aliases.ui, project), rel.slice(3))
   if (rel.startsWith('lib/')) return join(aliasToDir(config.aliases.lib, project), rel.slice(4))
-  if (rel.startsWith('examples/'))
-    return join(aliasToDir(config.aliases.components, project), rel)
+  if (rel.startsWith('examples/')) return join(aliasToDir(config.aliases.components, project), rel)
   return join(aliasToDir(config.aliases.components, project), rel)
 }

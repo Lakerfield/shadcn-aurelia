@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Tooltip Demo",
   "description": "Example: tooltip-demo.",
-  "registryDependencies": [
-    "tooltip"
-  ],
+  "registryDependencies": ["tooltip"],
   "files": [
     {
       "path": "registry/default/examples/tooltip-demo.ts",

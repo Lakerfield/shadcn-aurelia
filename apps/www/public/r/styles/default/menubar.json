@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Menubar",
   "description": "Desktop-style persistent menu bar with hover-switching menus.",
-  "dependencies": [
-    "@shadcn-aurelia/primitives"
-  ],
-  "registryDependencies": [
-    "cn",
-    "dropdown-menu"
-  ],
+  "dependencies": ["@shadcn-aurelia/primitives"],
+  "registryDependencies": ["cn", "dropdown-menu"],
   "files": [
     {
       "path": "registry/default/ui/menubar/menubar.ts",

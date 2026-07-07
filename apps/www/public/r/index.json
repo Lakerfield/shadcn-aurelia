@@ -7,10 +7,7 @@
       "type": "registry:lib",
       "title": "cn",
       "description": "Class-name composition: clsx + tailwind-merge.",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "registry/default/lib/cn.ts",
@@ -24,12 +21,8 @@
       "type": "registry:ui",
       "title": "Accordion",
       "description": "A vertically stacked set of interactive headings.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/accordion/accordion.ts",
@@ -46,12 +39,8 @@
       "type": "registry:ui",
       "title": "Alert",
       "description": "Displays a callout for user attention.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/alert/alert.ts",
@@ -68,14 +57,8 @@
       "type": "registry:ui",
       "title": "Alert Dialog",
       "description": "A modal dialog that expects a response.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "button",
-        "dialog"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "button", "dialog"],
       "files": [
         {
           "path": "registry/default/ui/alert-dialog/alert-dialog.ts",
@@ -92,9 +75,7 @@
       "type": "registry:ui",
       "title": "Aspect Ratio",
       "description": "Displays content within a desired ratio.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/aspect-ratio/aspect-ratio.ts",
@@ -111,9 +92,7 @@
       "type": "registry:ui",
       "title": "Avatar",
       "description": "An image element with a fallback for representing the user.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/avatar/avatar.ts",
@@ -130,12 +109,8 @@
       "type": "registry:ui",
       "title": "Badge",
       "description": "Displays a badge or a component that looks like a badge.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/badge/badge.ts",
@@ -152,9 +127,7 @@
       "type": "registry:ui",
       "title": "Breadcrumb",
       "description": "Displays the path to the current resource using a hierarchy of links.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/breadcrumb/breadcrumb.ts",
@@ -171,12 +144,8 @@
       "type": "registry:ui",
       "title": "Button",
       "description": "Displays a button or a component that looks like a button.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/button/button.ts",
@@ -193,12 +162,8 @@
       "type": "registry:ui",
       "title": "Button Group",
       "description": "Groups related buttons and controls with collapsed borders.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/button-group/button-group.ts",
@@ -215,12 +180,8 @@
       "type": "registry:ui",
       "title": "Calendar",
       "description": "Inline month grid for picking dates.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/calendar/calendar.ts",
@@ -237,9 +198,7 @@
       "type": "registry:ui",
       "title": "Card",
       "description": "Displays a card with header, content, and footer.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/card/card.ts",
@@ -256,13 +215,8 @@
       "type": "registry:ui",
       "title": "Carousel",
       "description": "Carousel with motion and swipe built on Embla.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "button"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "button"],
       "files": [
         {
           "path": "registry/default/ui/carousel/carousel.ts",
@@ -279,12 +233,8 @@
       "type": "registry:ui",
       "title": "Chart",
       "description": "Themeable charts on chart.js, wired to the shadcn chart color variables.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/chart/chart.ts",
@@ -301,12 +251,8 @@
       "type": "registry:ui",
       "title": "Checkbox",
       "description": "A control that toggles between checked and not checked.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/checkbox/checkbox.ts",
@@ -323,12 +269,8 @@
       "type": "registry:ui",
       "title": "Collapsible",
       "description": "An interactive component which expands/collapses a panel.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/collapsible/collapsible.ts",
@@ -345,12 +287,8 @@
       "type": "registry:ui",
       "title": "Combobox",
       "description": "Autocomplete input with a filtered suggestion list.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/combobox/combobox.ts",
@@ -367,12 +305,8 @@
       "type": "registry:ui",
       "title": "Command",
       "description": "cmdk-style command palette with filtering and keyboard navigation.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/command/command.ts",
@@ -389,13 +323,8 @@
       "type": "registry:ui",
       "title": "Context Menu",
       "description": "Menu at the pointer, triggered by right click or long press.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "dropdown-menu"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "dropdown-menu"],
       "files": [
         {
           "path": "registry/default/ui/context-menu/context-menu.ts",
@@ -412,13 +341,8 @@
       "type": "registry:ui",
       "title": "Date Picker",
       "description": "Calendar in a popover, anchored to a trigger.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "calendar"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "calendar"],
       "files": [
         {
           "path": "registry/default/ui/date-picker/date-picker.ts",
@@ -435,12 +359,8 @@
       "type": "registry:ui",
       "title": "Dialog",
       "description": "A modal window overlaid on the primary content.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/dialog/dialog.ts",
@@ -457,12 +377,8 @@
       "type": "registry:ui",
       "title": "Direction",
       "description": "RTL provider that flips reading direction for wrapped components.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/direction/direction.ts",
@@ -479,12 +395,8 @@
       "type": "registry:ui",
       "title": "Dropdown Menu",
       "description": "Menu of actions triggered by a button, with checkbox/radio items and submenus.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/dropdown-menu/dropdown-menu.ts",
@@ -501,12 +413,8 @@
       "type": "registry:ui",
       "title": "Empty",
       "description": "Displays an empty state.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/empty/empty.ts",
@@ -523,14 +431,8 @@
       "type": "registry:ui",
       "title": "Field",
       "description": "Accessible form field anatomy: label, control, description and error wiring.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn",
-        "separator"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+      "registryDependencies": ["cn", "separator"],
       "files": [
         {
           "path": "registry/default/ui/field/field.ts",
@@ -547,14 +449,8 @@
       "type": "registry:ui",
       "title": "Form",
       "description": "Form validation with @aurelia/validation wired into the field anatomy.",
-      "dependencies": [
-        "@aurelia/validation",
-        "@aurelia/validation-html"
-      ],
-      "registryDependencies": [
-        "cn",
-        "field"
-      ],
+      "dependencies": ["@aurelia/validation", "@aurelia/validation-html"],
+      "registryDependencies": ["cn", "field"],
       "files": [
         {
           "path": "registry/default/ui/form/form.ts",
@@ -571,12 +467,8 @@
       "type": "registry:ui",
       "title": "Hover Card",
       "description": "Preview content available behind a link.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/hover-card/hover-card.ts",
@@ -593,9 +485,7 @@
       "type": "registry:ui",
       "title": "Input",
       "description": "Displays a form input field.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/input/input.ts",
@@ -612,12 +502,8 @@
       "type": "registry:ui",
       "title": "Input Group",
       "description": "Composes an input with icons, buttons or keyboard hints.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/input-group/input-group.ts",
@@ -634,12 +520,8 @@
       "type": "registry:ui",
       "title": "Input OTP",
       "description": "Accessible one-time-password input.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/input-otp/input-otp.ts",
@@ -656,12 +538,8 @@
       "type": "registry:ui",
       "title": "Item",
       "description": "A flexible list-item with media, content and actions.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/item/item.ts",
@@ -678,9 +556,7 @@
       "type": "registry:ui",
       "title": "Kbd",
       "description": "Displays keyboard keys and shortcuts.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/kbd/kbd.ts",
@@ -697,9 +573,7 @@
       "type": "registry:ui",
       "title": "Label",
       "description": "Renders an accessible label associated with a control.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/label/label.ts",
@@ -716,13 +590,8 @@
       "type": "registry:ui",
       "title": "Menubar",
       "description": "Desktop-style persistent menu bar with hover-switching menus.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "dropdown-menu"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "dropdown-menu"],
       "files": [
         {
           "path": "registry/default/ui/menubar/menubar.ts",
@@ -739,9 +608,7 @@
       "type": "registry:ui",
       "title": "Native Select",
       "description": "A styled native select element (custom attribute).",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/native-select/native-select.ts",
@@ -758,12 +625,8 @@
       "type": "registry:ui",
       "title": "Navigation Menu",
       "description": "Collection of links for navigating websites, with expandable panels.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/navigation-menu/navigation-menu.ts",
@@ -780,10 +643,7 @@
       "type": "registry:ui",
       "title": "Pagination",
       "description": "Pagination with page navigation, next and previous links.",
-      "registryDependencies": [
-        "cn",
-        "button"
-      ],
+      "registryDependencies": ["cn", "button"],
       "files": [
         {
           "path": "registry/default/ui/pagination/pagination.ts",
@@ -800,12 +660,8 @@
       "type": "registry:ui",
       "title": "Popover",
       "description": "Rich content in a portal, triggered by a button.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/popover/popover.ts",
@@ -822,12 +678,8 @@
       "type": "registry:ui",
       "title": "Progress",
       "description": "Displays completion progress of a task.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/progress/progress.ts",
@@ -844,12 +696,8 @@
       "type": "registry:ui",
       "title": "Radio Group",
       "description": "A set of checkable buttons, one checked at a time.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/radio-group/radio-group.ts",
@@ -866,12 +714,8 @@
       "type": "registry:ui",
       "title": "Resizable",
       "description": "Accessible resizable panel groups and layouts with keyboard support.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/resizable/resizable.ts",
@@ -888,12 +732,8 @@
       "type": "registry:ui",
       "title": "Scroll Area",
       "description": "Native scrolling with custom, themeable scrollbars.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/scroll-area/scroll-area.ts",
@@ -910,12 +750,8 @@
       "type": "registry:ui",
       "title": "Select",
       "description": "List of options for the user to pick from, triggered by a button.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/select/select.ts",
@@ -932,9 +768,7 @@
       "type": "registry:ui",
       "title": "Separator",
       "description": "Visually or semantically separates content.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/separator/separator.ts",
@@ -951,14 +785,8 @@
       "type": "registry:ui",
       "title": "Sheet",
       "description": "Side-anchored dialog panel.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn",
-        "dialog"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
+      "registryDependencies": ["cn", "dialog"],
       "files": [
         {
           "path": "registry/default/ui/sheet/sheet.ts",
@@ -975,10 +803,7 @@
       "type": "registry:ui",
       "title": "Sidebar",
       "description": "A composable, themeable and customizable application sidebar.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives", "class-variance-authority"],
       "registryDependencies": [
         "cn",
         "button",
@@ -1004,9 +829,7 @@
       "type": "registry:ui",
       "title": "Skeleton",
       "description": "Use to show a placeholder while content is loading.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/skeleton/skeleton.ts",
@@ -1023,12 +846,8 @@
       "type": "registry:ui",
       "title": "Slider",
       "description": "An input to select a value from a range.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/slider/slider.ts",
@@ -1045,12 +864,8 @@
       "type": "registry:ui",
       "title": "Sonner",
       "description": "Sonner-style stacked toasts on the Zag toast engine.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/sonner/sonner.ts",
@@ -1067,9 +882,7 @@
       "type": "registry:ui",
       "title": "Spinner",
       "description": "An indicator showing an in-progress operation.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/spinner/spinner.ts",
@@ -1086,12 +899,8 @@
       "type": "registry:ui",
       "title": "Switch",
       "description": "A control that toggles between on and off.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/switch/switch.ts",
@@ -1108,9 +917,7 @@
       "type": "registry:ui",
       "title": "Table",
       "description": "A responsive table (attributes on native table elements).",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/table/table.ts",
@@ -1127,12 +934,8 @@
       "type": "registry:ui",
       "title": "Tabs",
       "description": "Layered sections of content displayed one at a time.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/tabs/tabs.ts",
@@ -1149,9 +952,7 @@
       "type": "registry:ui",
       "title": "Textarea",
       "description": "Displays a form textarea.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/textarea/textarea.ts",
@@ -1168,12 +969,8 @@
       "type": "registry:ui",
       "title": "Toggle",
       "description": "A two-state button that can be on or off.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/toggle/toggle.ts",
@@ -1190,13 +987,8 @@
       "type": "registry:ui",
       "title": "Toggle Group",
       "description": "A set of two-state buttons.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn",
-        "toggle"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn", "toggle"],
       "files": [
         {
           "path": "registry/default/ui/toggle-group/toggle-group.ts",
@@ -1213,12 +1005,8 @@
       "type": "registry:ui",
       "title": "Tooltip",
       "description": "A popup that displays information related to an element on hover or focus.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/tooltip/tooltip.ts",
@@ -1243,9 +1031,7 @@
       "type": "registry:example",
       "title": "Accordion Demo",
       "description": "Example: accordion-demo.",
-      "registryDependencies": [
-        "accordion"
-      ],
+      "registryDependencies": ["accordion"],
       "files": [
         {
           "path": "registry/default/examples/accordion-demo.ts",
@@ -1258,9 +1044,7 @@
       "type": "registry:example",
       "title": "Accordion Multiple",
       "description": "Example: accordion-multiple.",
-      "registryDependencies": [
-        "accordion"
-      ],
+      "registryDependencies": ["accordion"],
       "files": [
         {
           "path": "registry/default/examples/accordion-multiple.ts",
@@ -1273,9 +1057,7 @@
       "type": "registry:example",
       "title": "Alert Demo",
       "description": "Example: alert-demo.",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "registry/default/examples/alert-demo.ts",
@@ -1288,9 +1070,7 @@
       "type": "registry:example",
       "title": "Alert Destructive",
       "description": "Example: alert-destructive.",
-      "registryDependencies": [
-        "alert"
-      ],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "registry/default/examples/alert-destructive.ts",
@@ -1303,9 +1083,7 @@
       "type": "registry:example",
       "title": "Alert Dialog Demo",
       "description": "Example: alert-dialog-demo.",
-      "registryDependencies": [
-        "alert-dialog"
-      ],
+      "registryDependencies": ["alert-dialog"],
       "files": [
         {
           "path": "registry/default/examples/alert-dialog-demo.ts",
@@ -1318,9 +1096,7 @@
       "type": "registry:example",
       "title": "Alert Dialog Destructive",
       "description": "Example: alert-dialog-destructive.",
-      "registryDependencies": [
-        "alert-dialog"
-      ],
+      "registryDependencies": ["alert-dialog"],
       "files": [
         {
           "path": "registry/default/examples/alert-dialog-destructive.ts",
@@ -1333,9 +1109,7 @@
       "type": "registry:example",
       "title": "Aspect Ratio Demo",
       "description": "Example: aspect-ratio-demo.",
-      "registryDependencies": [
-        "aspect-ratio"
-      ],
+      "registryDependencies": ["aspect-ratio"],
       "files": [
         {
           "path": "registry/default/examples/aspect-ratio-demo.ts",
@@ -1348,9 +1122,7 @@
       "type": "registry:example",
       "title": "Aspect Ratio Square",
       "description": "Example: aspect-ratio-square.",
-      "registryDependencies": [
-        "aspect-ratio"
-      ],
+      "registryDependencies": ["aspect-ratio"],
       "files": [
         {
           "path": "registry/default/examples/aspect-ratio-square.ts",
@@ -1363,9 +1135,7 @@
       "type": "registry:example",
       "title": "Avatar Demo",
       "description": "Example: avatar-demo.",
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
           "path": "registry/default/examples/avatar-demo.ts",
@@ -1378,9 +1148,7 @@
       "type": "registry:example",
       "title": "Avatar Fallback",
       "description": "Example: avatar-fallback.",
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
           "path": "registry/default/examples/avatar-fallback.ts",
@@ -1393,9 +1161,7 @@
       "type": "registry:example",
       "title": "Badge Custom",
       "description": "Example: badge-custom.",
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "registry/default/examples/badge-custom.ts",
@@ -1408,9 +1174,7 @@
       "type": "registry:example",
       "title": "Badge Demo",
       "description": "Example: badge-demo.",
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "registry/default/examples/badge-demo.ts",
@@ -1423,9 +1187,7 @@
       "type": "registry:example",
       "title": "Breadcrumb Demo",
       "description": "Example: breadcrumb-demo.",
-      "registryDependencies": [
-        "breadcrumb"
-      ],
+      "registryDependencies": ["breadcrumb"],
       "files": [
         {
           "path": "registry/default/examples/breadcrumb-demo.ts",
@@ -1438,9 +1200,7 @@
       "type": "registry:example",
       "title": "Breadcrumb Ellipsis",
       "description": "Example: breadcrumb-ellipsis.",
-      "registryDependencies": [
-        "breadcrumb"
-      ],
+      "registryDependencies": ["breadcrumb"],
       "files": [
         {
           "path": "registry/default/examples/breadcrumb-ellipsis.ts",
@@ -1453,9 +1213,7 @@
       "type": "registry:example",
       "title": "Button Demo",
       "description": "Example: button-demo.",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "registry/default/examples/button-demo.ts",
@@ -1468,9 +1226,7 @@
       "type": "registry:example",
       "title": "Button Group Demo",
       "description": "Example: button-group-demo.",
-      "registryDependencies": [
-        "button-group"
-      ],
+      "registryDependencies": ["button-group"],
       "files": [
         {
           "path": "registry/default/examples/button-group-demo.ts",
@@ -1483,9 +1239,7 @@
       "type": "registry:example",
       "title": "Button Group Nested",
       "description": "Example: button-group-nested.",
-      "registryDependencies": [
-        "button-group"
-      ],
+      "registryDependencies": ["button-group"],
       "files": [
         {
           "path": "registry/default/examples/button-group-nested.ts",
@@ -1498,9 +1252,7 @@
       "type": "registry:example",
       "title": "Button Variants",
       "description": "Example: button-variants.",
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "registry/default/examples/button-variants.ts",
@@ -1513,9 +1265,7 @@
       "type": "registry:example",
       "title": "Calendar Demo",
       "description": "Example: calendar-demo.",
-      "registryDependencies": [
-        "calendar"
-      ],
+      "registryDependencies": ["calendar"],
       "files": [
         {
           "path": "registry/default/examples/calendar-demo.ts",
@@ -1528,9 +1278,7 @@
       "type": "registry:example",
       "title": "Card Demo",
       "description": "Example: card-demo.",
-      "registryDependencies": [
-        "card"
-      ],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "registry/default/examples/card-demo.ts",
@@ -1543,9 +1291,7 @@
       "type": "registry:example",
       "title": "Card Simple",
       "description": "Example: card-simple.",
-      "registryDependencies": [
-        "card"
-      ],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "registry/default/examples/card-simple.ts",
@@ -1558,10 +1304,7 @@
       "type": "registry:example",
       "title": "Carousel Demo",
       "description": "Example: carousel-demo.",
-      "registryDependencies": [
-        "carousel",
-        "card"
-      ],
+      "registryDependencies": ["carousel", "card"],
       "files": [
         {
           "path": "registry/default/examples/carousel-demo.ts",
@@ -1574,10 +1317,7 @@
       "type": "registry:example",
       "title": "Carousel Multiple",
       "description": "Example: carousel-multiple.",
-      "registryDependencies": [
-        "carousel",
-        "card"
-      ],
+      "registryDependencies": ["carousel", "card"],
       "files": [
         {
           "path": "registry/default/examples/carousel-multiple.ts",
@@ -1590,9 +1330,7 @@
       "type": "registry:example",
       "title": "Chart Demo",
       "description": "Example: chart-demo.",
-      "registryDependencies": [
-        "chart"
-      ],
+      "registryDependencies": ["chart"],
       "files": [
         {
           "path": "registry/default/examples/chart-demo.ts",
@@ -1605,9 +1343,7 @@
       "type": "registry:example",
       "title": "Chart Line",
       "description": "Example: chart-line.",
-      "registryDependencies": [
-        "chart"
-      ],
+      "registryDependencies": ["chart"],
       "files": [
         {
           "path": "registry/default/examples/chart-line.ts",
@@ -1620,9 +1356,7 @@
       "type": "registry:example",
       "title": "Checkbox Controlled",
       "description": "Example: checkbox-controlled.",
-      "registryDependencies": [
-        "checkbox"
-      ],
+      "registryDependencies": ["checkbox"],
       "files": [
         {
           "path": "registry/default/examples/checkbox-controlled.ts",
@@ -1635,9 +1369,7 @@
       "type": "registry:example",
       "title": "Checkbox Demo",
       "description": "Example: checkbox-demo.",
-      "registryDependencies": [
-        "checkbox"
-      ],
+      "registryDependencies": ["checkbox"],
       "files": [
         {
           "path": "registry/default/examples/checkbox-demo.ts",
@@ -1650,9 +1382,7 @@
       "type": "registry:example",
       "title": "Collapsible Controlled",
       "description": "Example: collapsible-controlled.",
-      "registryDependencies": [
-        "collapsible"
-      ],
+      "registryDependencies": ["collapsible"],
       "files": [
         {
           "path": "registry/default/examples/collapsible-controlled.ts",
@@ -1665,9 +1395,7 @@
       "type": "registry:example",
       "title": "Collapsible Demo",
       "description": "Example: collapsible-demo.",
-      "registryDependencies": [
-        "collapsible"
-      ],
+      "registryDependencies": ["collapsible"],
       "files": [
         {
           "path": "registry/default/examples/collapsible-demo.ts",
@@ -1680,9 +1408,7 @@
       "type": "registry:example",
       "title": "Combobox Demo",
       "description": "Example: combobox-demo.",
-      "registryDependencies": [
-        "combobox"
-      ],
+      "registryDependencies": ["combobox"],
       "files": [
         {
           "path": "registry/default/examples/combobox-demo.ts",
@@ -1695,9 +1421,7 @@
       "type": "registry:example",
       "title": "Command Demo",
       "description": "Example: command-demo.",
-      "registryDependencies": [
-        "command"
-      ],
+      "registryDependencies": ["command"],
       "files": [
         {
           "path": "registry/default/examples/command-demo.ts",
@@ -1710,10 +1434,7 @@
       "type": "registry:example",
       "title": "Context Menu Demo",
       "description": "Example: context-menu-demo.",
-      "registryDependencies": [
-        "context-menu",
-        "dropdown-menu"
-      ],
+      "registryDependencies": ["context-menu", "dropdown-menu"],
       "files": [
         {
           "path": "registry/default/examples/context-menu-demo.ts",
@@ -1726,13 +1447,7 @@
       "type": "registry:example",
       "title": "Data Table Demo",
       "description": "Example: data-table-demo.",
-      "registryDependencies": [
-        "table",
-        "input",
-        "button",
-        "checkbox",
-        "dropdown-menu"
-      ],
+      "registryDependencies": ["table", "input", "button", "checkbox", "dropdown-menu"],
       "files": [
         {
           "path": "registry/default/examples/data-table-demo.ts",
@@ -1745,10 +1460,7 @@
       "type": "registry:example",
       "title": "Date Picker Demo",
       "description": "Example: date-picker-demo.",
-      "registryDependencies": [
-        "date-picker",
-        "calendar"
-      ],
+      "registryDependencies": ["date-picker", "calendar"],
       "files": [
         {
           "path": "registry/default/examples/date-picker-demo.ts",
@@ -1761,9 +1473,7 @@
       "type": "registry:example",
       "title": "Dialog Controlled",
       "description": "Example: dialog-controlled.",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "files": [
         {
           "path": "registry/default/examples/dialog-controlled.ts",
@@ -1776,9 +1486,7 @@
       "type": "registry:example",
       "title": "Dialog Demo",
       "description": "Example: dialog-demo.",
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "files": [
         {
           "path": "registry/default/examples/dialog-demo.ts",
@@ -1791,12 +1499,7 @@
       "type": "registry:example",
       "title": "Direction Demo",
       "description": "Example: direction-demo.",
-      "registryDependencies": [
-        "direction",
-        "slider",
-        "select",
-        "label"
-      ],
+      "registryDependencies": ["direction", "slider", "select", "label"],
       "files": [
         {
           "path": "registry/default/examples/direction-demo.ts",
@@ -1809,10 +1512,7 @@
       "type": "registry:example",
       "title": "Dropdown Menu Checkboxes",
       "description": "Example: dropdown-menu-checkboxes.",
-      "registryDependencies": [
-        "dropdown-menu",
-        "button"
-      ],
+      "registryDependencies": ["dropdown-menu", "button"],
       "files": [
         {
           "path": "registry/default/examples/dropdown-menu-checkboxes.ts",
@@ -1825,10 +1525,7 @@
       "type": "registry:example",
       "title": "Dropdown Menu Demo",
       "description": "Example: dropdown-menu-demo.",
-      "registryDependencies": [
-        "dropdown-menu",
-        "button"
-      ],
+      "registryDependencies": ["dropdown-menu", "button"],
       "files": [
         {
           "path": "registry/default/examples/dropdown-menu-demo.ts",
@@ -1841,10 +1538,7 @@
       "type": "registry:example",
       "title": "Dropdown Menu Radio Group",
       "description": "Example: dropdown-menu-radio-group.",
-      "registryDependencies": [
-        "dropdown-menu",
-        "button"
-      ],
+      "registryDependencies": ["dropdown-menu", "button"],
       "files": [
         {
           "path": "registry/default/examples/dropdown-menu-radio-group.ts",
@@ -1857,9 +1551,7 @@
       "type": "registry:example",
       "title": "Empty Demo",
       "description": "Example: empty-demo.",
-      "registryDependencies": [
-        "empty"
-      ],
+      "registryDependencies": ["empty"],
       "files": [
         {
           "path": "registry/default/examples/empty-demo.ts",
@@ -1872,9 +1564,7 @@
       "type": "registry:example",
       "title": "Empty Plain",
       "description": "Example: empty-plain.",
-      "registryDependencies": [
-        "empty"
-      ],
+      "registryDependencies": ["empty"],
       "files": [
         {
           "path": "registry/default/examples/empty-plain.ts",
@@ -1887,10 +1577,7 @@
       "type": "registry:example",
       "title": "Field Choice Card",
       "description": "Example: field-choice-card.",
-      "registryDependencies": [
-        "field",
-        "checkbox"
-      ],
+      "registryDependencies": ["field", "checkbox"],
       "files": [
         {
           "path": "registry/default/examples/field-choice-card.ts",
@@ -1903,12 +1590,7 @@
       "type": "registry:example",
       "title": "Field Demo",
       "description": "Example: field-demo.",
-      "registryDependencies": [
-        "field",
-        "input",
-        "textarea",
-        "switch"
-      ],
+      "registryDependencies": ["field", "input", "textarea", "switch"],
       "files": [
         {
           "path": "registry/default/examples/field-demo.ts",
@@ -1921,12 +1603,7 @@
       "type": "registry:example",
       "title": "Form Demo",
       "description": "Example: form-demo.",
-      "registryDependencies": [
-        "form",
-        "field",
-        "input",
-        "button"
-      ],
+      "registryDependencies": ["form", "field", "input", "button"],
       "files": [
         {
           "path": "registry/default/examples/form-demo.ts",
@@ -1939,9 +1616,7 @@
       "type": "registry:example",
       "title": "Hover Card Demo",
       "description": "Example: hover-card-demo.",
-      "registryDependencies": [
-        "hover-card"
-      ],
+      "registryDependencies": ["hover-card"],
       "files": [
         {
           "path": "registry/default/examples/hover-card-demo.ts",
@@ -1954,9 +1629,7 @@
       "type": "registry:example",
       "title": "Input Demo",
       "description": "Example: input-demo.",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "files": [
         {
           "path": "registry/default/examples/input-demo.ts",
@@ -1969,9 +1642,7 @@
       "type": "registry:example",
       "title": "Input Form",
       "description": "Example: input-form.",
-      "registryDependencies": [
-        "input"
-      ],
+      "registryDependencies": ["input"],
       "files": [
         {
           "path": "registry/default/examples/input-form.ts",
@@ -1984,9 +1655,7 @@
       "type": "registry:example",
       "title": "Input Group Demo",
       "description": "Example: input-group-demo.",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "files": [
         {
           "path": "registry/default/examples/input-group-demo.ts",
@@ -1999,9 +1668,7 @@
       "type": "registry:example",
       "title": "Input Group Kbd",
       "description": "Example: input-group-kbd.",
-      "registryDependencies": [
-        "input-group"
-      ],
+      "registryDependencies": ["input-group"],
       "files": [
         {
           "path": "registry/default/examples/input-group-kbd.ts",
@@ -2014,9 +1681,7 @@
       "type": "registry:example",
       "title": "Input Otp Controlled",
       "description": "Example: input-otp-controlled.",
-      "registryDependencies": [
-        "input-otp"
-      ],
+      "registryDependencies": ["input-otp"],
       "files": [
         {
           "path": "registry/default/examples/input-otp-controlled.ts",
@@ -2029,9 +1694,7 @@
       "type": "registry:example",
       "title": "Input Otp Demo",
       "description": "Example: input-otp-demo.",
-      "registryDependencies": [
-        "input-otp"
-      ],
+      "registryDependencies": ["input-otp"],
       "files": [
         {
           "path": "registry/default/examples/input-otp-demo.ts",
@@ -2044,9 +1707,7 @@
       "type": "registry:example",
       "title": "Item Demo",
       "description": "Example: item-demo.",
-      "registryDependencies": [
-        "item"
-      ],
+      "registryDependencies": ["item"],
       "files": [
         {
           "path": "registry/default/examples/item-demo.ts",
@@ -2059,9 +1720,7 @@
       "type": "registry:example",
       "title": "Item Group",
       "description": "Example: item-group.",
-      "registryDependencies": [
-        "item"
-      ],
+      "registryDependencies": ["item"],
       "files": [
         {
           "path": "registry/default/examples/item-group.ts",
@@ -2074,9 +1733,7 @@
       "type": "registry:example",
       "title": "Kbd Demo",
       "description": "Example: kbd-demo.",
-      "registryDependencies": [
-        "kbd"
-      ],
+      "registryDependencies": ["kbd"],
       "files": [
         {
           "path": "registry/default/examples/kbd-demo.ts",
@@ -2089,9 +1746,7 @@
       "type": "registry:example",
       "title": "Kbd Inline",
       "description": "Example: kbd-inline.",
-      "registryDependencies": [
-        "kbd"
-      ],
+      "registryDependencies": ["kbd"],
       "files": [
         {
           "path": "registry/default/examples/kbd-inline.ts",
@@ -2104,9 +1759,7 @@
       "type": "registry:example",
       "title": "Label Checkbox",
       "description": "Example: label-checkbox.",
-      "registryDependencies": [
-        "label"
-      ],
+      "registryDependencies": ["label"],
       "files": [
         {
           "path": "registry/default/examples/label-checkbox.ts",
@@ -2119,9 +1772,7 @@
       "type": "registry:example",
       "title": "Label Demo",
       "description": "Example: label-demo.",
-      "registryDependencies": [
-        "label"
-      ],
+      "registryDependencies": ["label"],
       "files": [
         {
           "path": "registry/default/examples/label-demo.ts",
@@ -2134,10 +1785,7 @@
       "type": "registry:example",
       "title": "Menubar Demo",
       "description": "Example: menubar-demo.",
-      "registryDependencies": [
-        "menubar",
-        "dropdown-menu"
-      ],
+      "registryDependencies": ["menubar", "dropdown-menu"],
       "files": [
         {
           "path": "registry/default/examples/menubar-demo.ts",
@@ -2150,9 +1798,7 @@
       "type": "registry:example",
       "title": "Native Select Demo",
       "description": "Example: native-select-demo.",
-      "registryDependencies": [
-        "native-select"
-      ],
+      "registryDependencies": ["native-select"],
       "files": [
         {
           "path": "registry/default/examples/native-select-demo.ts",
@@ -2165,9 +1811,7 @@
       "type": "registry:example",
       "title": "Native Select Label",
       "description": "Example: native-select-label.",
-      "registryDependencies": [
-        "native-select"
-      ],
+      "registryDependencies": ["native-select"],
       "files": [
         {
           "path": "registry/default/examples/native-select-label.ts",
@@ -2180,9 +1824,7 @@
       "type": "registry:example",
       "title": "Navigation Menu Demo",
       "description": "Example: navigation-menu-demo.",
-      "registryDependencies": [
-        "navigation-menu"
-      ],
+      "registryDependencies": ["navigation-menu"],
       "files": [
         {
           "path": "registry/default/examples/navigation-menu-demo.ts",
@@ -2195,9 +1837,7 @@
       "type": "registry:example",
       "title": "Pagination Demo",
       "description": "Example: pagination-demo.",
-      "registryDependencies": [
-        "pagination"
-      ],
+      "registryDependencies": ["pagination"],
       "files": [
         {
           "path": "registry/default/examples/pagination-demo.ts",
@@ -2210,9 +1850,7 @@
       "type": "registry:example",
       "title": "Pagination Interactive",
       "description": "Example: pagination-interactive.",
-      "registryDependencies": [
-        "pagination"
-      ],
+      "registryDependencies": ["pagination"],
       "files": [
         {
           "path": "registry/default/examples/pagination-interactive.ts",
@@ -2225,9 +1863,7 @@
       "type": "registry:example",
       "title": "Popover Controlled",
       "description": "Example: popover-controlled.",
-      "registryDependencies": [
-        "popover"
-      ],
+      "registryDependencies": ["popover"],
       "files": [
         {
           "path": "registry/default/examples/popover-controlled.ts",
@@ -2240,9 +1876,7 @@
       "type": "registry:example",
       "title": "Popover Demo",
       "description": "Example: popover-demo.",
-      "registryDependencies": [
-        "popover"
-      ],
+      "registryDependencies": ["popover"],
       "files": [
         {
           "path": "registry/default/examples/popover-demo.ts",
@@ -2255,9 +1889,7 @@
       "type": "registry:example",
       "title": "Progress Demo",
       "description": "Example: progress-demo.",
-      "registryDependencies": [
-        "progress"
-      ],
+      "registryDependencies": ["progress"],
       "files": [
         {
           "path": "registry/default/examples/progress-demo.ts",
@@ -2270,9 +1902,7 @@
       "type": "registry:example",
       "title": "Progress Live",
       "description": "Example: progress-live.",
-      "registryDependencies": [
-        "progress"
-      ],
+      "registryDependencies": ["progress"],
       "files": [
         {
           "path": "registry/default/examples/progress-live.ts",
@@ -2285,9 +1915,7 @@
       "type": "registry:example",
       "title": "Radio Group Controlled",
       "description": "Example: radio-group-controlled.",
-      "registryDependencies": [
-        "radio-group"
-      ],
+      "registryDependencies": ["radio-group"],
       "files": [
         {
           "path": "registry/default/examples/radio-group-controlled.ts",
@@ -2300,9 +1928,7 @@
       "type": "registry:example",
       "title": "Radio Group Demo",
       "description": "Example: radio-group-demo.",
-      "registryDependencies": [
-        "radio-group"
-      ],
+      "registryDependencies": ["radio-group"],
       "files": [
         {
           "path": "registry/default/examples/radio-group-demo.ts",
@@ -2315,9 +1941,7 @@
       "type": "registry:example",
       "title": "Resizable Demo",
       "description": "Example: resizable-demo.",
-      "registryDependencies": [
-        "resizable"
-      ],
+      "registryDependencies": ["resizable"],
       "files": [
         {
           "path": "registry/default/examples/resizable-demo.ts",
@@ -2330,9 +1954,7 @@
       "type": "registry:example",
       "title": "Resizable Handle Demo",
       "description": "Example: resizable-handle-demo.",
-      "registryDependencies": [
-        "resizable"
-      ],
+      "registryDependencies": ["resizable"],
       "files": [
         {
           "path": "registry/default/examples/resizable-handle-demo.ts",
@@ -2345,10 +1967,7 @@
       "type": "registry:example",
       "title": "Scroll Area Demo",
       "description": "Example: scroll-area-demo.",
-      "registryDependencies": [
-        "scroll-area",
-        "separator"
-      ],
+      "registryDependencies": ["scroll-area", "separator"],
       "files": [
         {
           "path": "registry/default/examples/scroll-area-demo.ts",
@@ -2361,9 +1980,7 @@
       "type": "registry:example",
       "title": "Scroll Area Horizontal",
       "description": "Example: scroll-area-horizontal.",
-      "registryDependencies": [
-        "scroll-area"
-      ],
+      "registryDependencies": ["scroll-area"],
       "files": [
         {
           "path": "registry/default/examples/scroll-area-horizontal.ts",
@@ -2376,9 +1993,7 @@
       "type": "registry:example",
       "title": "Select Demo",
       "description": "Example: select-demo.",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "files": [
         {
           "path": "registry/default/examples/select-demo.ts",
@@ -2391,9 +2006,7 @@
       "type": "registry:example",
       "title": "Select Scrollable",
       "description": "Example: select-scrollable.",
-      "registryDependencies": [
-        "select"
-      ],
+      "registryDependencies": ["select"],
       "files": [
         {
           "path": "registry/default/examples/select-scrollable.ts",
@@ -2406,9 +2019,7 @@
       "type": "registry:example",
       "title": "Separator Demo",
       "description": "Example: separator-demo.",
-      "registryDependencies": [
-        "separator"
-      ],
+      "registryDependencies": ["separator"],
       "files": [
         {
           "path": "registry/default/examples/separator-demo.ts",
@@ -2421,9 +2032,7 @@
       "type": "registry:example",
       "title": "Separator Semantic",
       "description": "Example: separator-semantic.",
-      "registryDependencies": [
-        "separator"
-      ],
+      "registryDependencies": ["separator"],
       "files": [
         {
           "path": "registry/default/examples/separator-semantic.ts",
@@ -2436,9 +2045,7 @@
       "type": "registry:example",
       "title": "Sheet Demo",
       "description": "Example: sheet-demo.",
-      "registryDependencies": [
-        "sheet"
-      ],
+      "registryDependencies": ["sheet"],
       "files": [
         {
           "path": "registry/default/examples/sheet-demo.ts",
@@ -2451,9 +2058,7 @@
       "type": "registry:example",
       "title": "Sheet Sides",
       "description": "Example: sheet-sides.",
-      "registryDependencies": [
-        "sheet"
-      ],
+      "registryDependencies": ["sheet"],
       "files": [
         {
           "path": "registry/default/examples/sheet-sides.ts",
@@ -2466,9 +2071,7 @@
       "type": "registry:example",
       "title": "Sidebar Demo",
       "description": "Example: sidebar-demo.",
-      "registryDependencies": [
-        "sidebar"
-      ],
+      "registryDependencies": ["sidebar"],
       "files": [
         {
           "path": "registry/default/examples/sidebar-demo.ts",
@@ -2481,9 +2084,7 @@
       "type": "registry:example",
       "title": "Sidebar Icon",
       "description": "Example: sidebar-icon.",
-      "registryDependencies": [
-        "sidebar"
-      ],
+      "registryDependencies": ["sidebar"],
       "files": [
         {
           "path": "registry/default/examples/sidebar-icon.ts",
@@ -2496,9 +2097,7 @@
       "type": "registry:example",
       "title": "Skeleton Card",
       "description": "Example: skeleton-card.",
-      "registryDependencies": [
-        "skeleton"
-      ],
+      "registryDependencies": ["skeleton"],
       "files": [
         {
           "path": "registry/default/examples/skeleton-card.ts",
@@ -2511,9 +2110,7 @@
       "type": "registry:example",
       "title": "Skeleton Demo",
       "description": "Example: skeleton-demo.",
-      "registryDependencies": [
-        "skeleton"
-      ],
+      "registryDependencies": ["skeleton"],
       "files": [
         {
           "path": "registry/default/examples/skeleton-demo.ts",
@@ -2526,9 +2123,7 @@
       "type": "registry:example",
       "title": "Slider Demo",
       "description": "Example: slider-demo.",
-      "registryDependencies": [
-        "slider"
-      ],
+      "registryDependencies": ["slider"],
       "files": [
         {
           "path": "registry/default/examples/slider-demo.ts",
@@ -2541,9 +2136,7 @@
       "type": "registry:example",
       "title": "Slider Range",
       "description": "Example: slider-range.",
-      "registryDependencies": [
-        "slider"
-      ],
+      "registryDependencies": ["slider"],
       "files": [
         {
           "path": "registry/default/examples/slider-range.ts",
@@ -2556,10 +2149,7 @@
       "type": "registry:example",
       "title": "Sonner Demo",
       "description": "Example: sonner-demo.",
-      "registryDependencies": [
-        "sonner",
-        "button"
-      ],
+      "registryDependencies": ["sonner", "button"],
       "files": [
         {
           "path": "registry/default/examples/sonner-demo.ts",
@@ -2572,9 +2162,7 @@
       "type": "registry:example",
       "title": "Spinner Button",
       "description": "Example: spinner-button.",
-      "registryDependencies": [
-        "spinner"
-      ],
+      "registryDependencies": ["spinner"],
       "files": [
         {
           "path": "registry/default/examples/spinner-button.ts",
@@ -2587,9 +2175,7 @@
       "type": "registry:example",
       "title": "Spinner Demo",
       "description": "Example: spinner-demo.",
-      "registryDependencies": [
-        "spinner"
-      ],
+      "registryDependencies": ["spinner"],
       "files": [
         {
           "path": "registry/default/examples/spinner-demo.ts",
@@ -2602,9 +2188,7 @@
       "type": "registry:example",
       "title": "Switch Controlled",
       "description": "Example: switch-controlled.",
-      "registryDependencies": [
-        "switch"
-      ],
+      "registryDependencies": ["switch"],
       "files": [
         {
           "path": "registry/default/examples/switch-controlled.ts",
@@ -2617,9 +2201,7 @@
       "type": "registry:example",
       "title": "Switch Demo",
       "description": "Example: switch-demo.",
-      "registryDependencies": [
-        "switch"
-      ],
+      "registryDependencies": ["switch"],
       "files": [
         {
           "path": "registry/default/examples/switch-demo.ts",
@@ -2632,9 +2214,7 @@
       "type": "registry:example",
       "title": "Table Demo",
       "description": "Example: table-demo.",
-      "registryDependencies": [
-        "table"
-      ],
+      "registryDependencies": ["table"],
       "files": [
         {
           "path": "registry/default/examples/table-demo.ts",
@@ -2647,9 +2227,7 @@
       "type": "registry:example",
       "title": "Table Footer",
       "description": "Example: table-footer.",
-      "registryDependencies": [
-        "table"
-      ],
+      "registryDependencies": ["table"],
       "files": [
         {
           "path": "registry/default/examples/table-footer.ts",
@@ -2662,9 +2240,7 @@
       "type": "registry:example",
       "title": "Tabs Controlled",
       "description": "Example: tabs-controlled.",
-      "registryDependencies": [
-        "tabs"
-      ],
+      "registryDependencies": ["tabs"],
       "files": [
         {
           "path": "registry/default/examples/tabs-controlled.ts",
@@ -2677,9 +2253,7 @@
       "type": "registry:example",
       "title": "Tabs Demo",
       "description": "Example: tabs-demo.",
-      "registryDependencies": [
-        "tabs"
-      ],
+      "registryDependencies": ["tabs"],
       "files": [
         {
           "path": "registry/default/examples/tabs-demo.ts",
@@ -2692,9 +2266,7 @@
       "type": "registry:example",
       "title": "Textarea Demo",
       "description": "Example: textarea-demo.",
-      "registryDependencies": [
-        "textarea"
-      ],
+      "registryDependencies": ["textarea"],
       "files": [
         {
           "path": "registry/default/examples/textarea-demo.ts",
@@ -2707,9 +2279,7 @@
       "type": "registry:example",
       "title": "Textarea Label",
       "description": "Example: textarea-label.",
-      "registryDependencies": [
-        "textarea"
-      ],
+      "registryDependencies": ["textarea"],
       "files": [
         {
           "path": "registry/default/examples/textarea-label.ts",
@@ -2722,9 +2292,7 @@
       "type": "registry:example",
       "title": "Toggle Demo",
       "description": "Example: toggle-demo.",
-      "registryDependencies": [
-        "toggle"
-      ],
+      "registryDependencies": ["toggle"],
       "files": [
         {
           "path": "registry/default/examples/toggle-demo.ts",
@@ -2737,9 +2305,7 @@
       "type": "registry:example",
       "title": "Toggle Group Demo",
       "description": "Example: toggle-group-demo.",
-      "registryDependencies": [
-        "toggle-group"
-      ],
+      "registryDependencies": ["toggle-group"],
       "files": [
         {
           "path": "registry/default/examples/toggle-group-demo.ts",
@@ -2752,9 +2318,7 @@
       "type": "registry:example",
       "title": "Toggle Group Single",
       "description": "Example: toggle-group-single.",
-      "registryDependencies": [
-        "toggle-group"
-      ],
+      "registryDependencies": ["toggle-group"],
       "files": [
         {
           "path": "registry/default/examples/toggle-group-single.ts",
@@ -2767,9 +2331,7 @@
       "type": "registry:example",
       "title": "Toggle Variants",
       "description": "Example: toggle-variants.",
-      "registryDependencies": [
-        "toggle"
-      ],
+      "registryDependencies": ["toggle"],
       "files": [
         {
           "path": "registry/default/examples/toggle-variants.ts",
@@ -2782,9 +2344,7 @@
       "type": "registry:example",
       "title": "Tooltip Controlled",
       "description": "Example: tooltip-controlled.",
-      "registryDependencies": [
-        "tooltip"
-      ],
+      "registryDependencies": ["tooltip"],
       "files": [
         {
           "path": "registry/default/examples/tooltip-controlled.ts",
@@ -2797,9 +2357,7 @@
       "type": "registry:example",
       "title": "Tooltip Demo",
       "description": "Example: tooltip-demo.",
-      "registryDependencies": [
-        "tooltip"
-      ],
+      "registryDependencies": ["tooltip"],
       "files": [
         {
           "path": "registry/default/examples/tooltip-demo.ts",
@@ -2824,12 +2382,7 @@
       "type": "registry:block",
       "title": "Login",
       "description": "A simple login form in a card: email, password, social login and sign-up link.",
-      "registryDependencies": [
-        "card",
-        "field",
-        "input",
-        "button"
-      ],
+      "registryDependencies": ["card", "field", "input", "button"],
       "files": [
         {
           "path": "registry/default/blocks/login-01/login-01.ts",
@@ -2843,14 +2396,7 @@
       "type": "registry:block",
       "title": "Dashboard",
       "description": "A dashboard shell: sidebar with navigation, breadcrumb header, stat cards and a chart.",
-      "registryDependencies": [
-        "sidebar",
-        "breadcrumb",
-        "card",
-        "separator",
-        "badge",
-        "chart"
-      ],
+      "registryDependencies": ["sidebar", "breadcrumb", "card", "separator", "badge", "chart"],
       "files": [
         {
           "path": "registry/default/blocks/dashboard-01/dashboard-01.ts",
@@ -2864,13 +2410,7 @@
       "type": "registry:block",
       "title": "Settings",
       "description": "A settings page: profile fields, a timezone select and notification switches.",
-      "registryDependencies": [
-        "field",
-        "input",
-        "button",
-        "switch",
-        "select"
-      ],
+      "registryDependencies": ["field", "input", "button", "switch", "select"],
       "files": [
         {
           "path": "registry/default/blocks/settings-01/settings-01.ts",
@@ -2884,12 +2424,8 @@
       "type": "registry:ui",
       "title": "Marker",
       "description": "Inline timeline or day markers between chat messages.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/marker/marker.ts",
@@ -2906,9 +2442,7 @@
       "type": "registry:ui",
       "title": "Message",
       "description": "A chat message row: avatar plus content column with header and footer.",
-      "registryDependencies": [
-        "cn"
-      ],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/message/message.ts",
@@ -2925,12 +2459,8 @@
       "type": "registry:ui",
       "title": "Bubble",
       "description": "Chat bubbles with variants, alignment and reactions.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["cn"],
       "files": [
         {
           "path": "registry/default/ui/bubble/bubble.ts",
@@ -2947,13 +2477,8 @@
       "type": "registry:ui",
       "title": "Attachment",
       "description": "File and upload chips for chat input and messages.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "button",
-        "cn"
-      ],
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["button", "cn"],
       "files": [
         {
           "path": "registry/default/ui/attachment/attachment.ts",
@@ -2970,13 +2495,8 @@
       "type": "registry:ui",
       "title": "Message Scroller",
       "description": "Chat transcript viewport with follow-bottom autoscroll, turn anchoring and scroll buttons.",
-      "dependencies": [
-        "@shadcn-aurelia/primitives"
-      ],
-      "registryDependencies": [
-        "button",
-        "cn"
-      ],
+      "dependencies": ["@shadcn-aurelia/primitives"],
+      "registryDependencies": ["button", "cn"],
       "files": [
         {
           "path": "registry/default/ui/message-scroller/message-scroller.ts",
@@ -2993,9 +2513,7 @@
       "type": "registry:example",
       "title": "Marker Demo",
       "description": "Example: marker-demo.",
-      "registryDependencies": [
-        "marker"
-      ],
+      "registryDependencies": ["marker"],
       "files": [
         {
           "path": "registry/default/examples/marker-demo.ts",
@@ -3008,9 +2526,7 @@
       "type": "registry:example",
       "title": "Bubble Demo",
       "description": "Example: bubble-demo.",
-      "registryDependencies": [
-        "bubble"
-      ],
+      "registryDependencies": ["bubble"],
       "files": [
         {
           "path": "registry/default/examples/bubble-demo.ts",
@@ -3023,9 +2539,7 @@
       "type": "registry:example",
       "title": "Bubble Reactions",
       "description": "Example: bubble-reactions.",
-      "registryDependencies": [
-        "bubble"
-      ],
+      "registryDependencies": ["bubble"],
       "files": [
         {
           "path": "registry/default/examples/bubble-reactions.ts",
@@ -3038,11 +2552,7 @@
       "type": "registry:example",
       "title": "Message Demo",
       "description": "Example: message-demo.",
-      "registryDependencies": [
-        "message",
-        "bubble",
-        "avatar"
-      ],
+      "registryDependencies": ["message", "bubble", "avatar"],
       "files": [
         {
           "path": "registry/default/examples/message-demo.ts",
@@ -3055,9 +2565,7 @@
       "type": "registry:example",
       "title": "Attachment Demo",
       "description": "Example: attachment-demo.",
-      "registryDependencies": [
-        "attachment"
-      ],
+      "registryDependencies": ["attachment"],
       "files": [
         {
           "path": "registry/default/examples/attachment-demo.ts",
@@ -3070,9 +2578,7 @@
       "type": "registry:example",
       "title": "Attachment Group",
       "description": "Example: attachment-group.",
-      "registryDependencies": [
-        "attachment"
-      ],
+      "registryDependencies": ["attachment"],
       "files": [
         {
           "path": "registry/default/examples/attachment-group.ts",
@@ -3085,11 +2591,7 @@
       "type": "registry:example",
       "title": "Message Scroller Demo",
       "description": "Example: message-scroller-demo.",
-      "registryDependencies": [
-        "message-scroller",
-        "bubble",
-        "button"
-      ],
+      "registryDependencies": ["message-scroller", "bubble", "button"],
       "files": [
         {
           "path": "registry/default/examples/message-scroller-demo.ts",

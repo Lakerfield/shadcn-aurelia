@@ -4,9 +4,7 @@
   "type": "registry:example",
   "title": "Bubble Reactions",
   "description": "Example: bubble-reactions.",
-  "registryDependencies": [
-    "bubble"
-  ],
+  "registryDependencies": ["bubble"],
   "files": [
     {
       "path": "registry/default/examples/bubble-reactions.ts",

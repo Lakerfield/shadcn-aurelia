@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Toggle",
   "description": "A two-state button that can be on or off.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "cn"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["cn"],
   "files": [
     {
       "path": "registry/default/ui/toggle/toggle.ts",
