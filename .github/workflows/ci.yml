@@ -28,6 +28,9 @@ jobs:
 
       - run: pnpm typecheck
 
+      # dual-engine behavior suites (zag vs native primitives)
+      - run: pnpm test
+
   cli-e2e:
     name: CLI init+add on template
     runs-on: ubuntu-latest

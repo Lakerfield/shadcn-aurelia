@@ -63,8 +63,10 @@
     state machines behind a facade in <code>@shadcn-aurelia/primitives</code>. Copied components
     import <em>only</em> from that facade — keyboard maps, ARIA wiring and <code>data-state</code>
     attributes match the Radix/WAI-ARIA APG behavior shadcn/ui users expect (see
-    <a load="../accessibility">Accessibility</a>). Primitives may migrate to native implementations
-    over time without changing your components.
+    <a load="../accessibility">Accessibility</a>). Primitives migrate to native implementations
+    over time without changing your components: <code>tooltip</code> already runs on a native
+    engine (verified attribute-for-attribute against the Zag machine by a dual-engine test suite),
+    and <code>message-scroller</code> was native from day one.
   </p>
 
   <h2>Context via DI</h2>

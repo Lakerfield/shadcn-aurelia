@@ -1,6 +1,7 @@
 /**
  * Behavior facades — one factory per interactive behavior. Engine v1 is Zag;
- * Phase 7 swaps these for native implementations behind the same signatures.
+ * Phase 8 swaps these for native implementations behind the same signatures
+ * (tooltip is native as of 0.2 — see `../native/`).
  */
 import type { CollectionItem, CollectionOptions, ListCollection } from '@zag-js/collection'
 import * as accordion from '@zag-js/accordion'
@@ -23,7 +24,8 @@ import * as slider from '@zag-js/slider'
 import * as switchNs from '@zag-js/switch'
 import * as tabs from '@zag-js/tabs'
 import * as toggleGroup from '@zag-js/toggle-group'
-import { ZagBehavior } from '../adapter/zag-behavior'
+import { ZagBehavior, type BehaviorSource } from '../adapter/zag-behavior'
+import { NativeTooltipBehavior, type TooltipApi, type TooltipProps } from '../native/tooltip'
 
 export type AccordionApi = ReturnType<typeof accordion.connect>
 export const createAccordionBehavior = (): ZagBehavior<AccordionApi> =>
@@ -45,9 +47,23 @@ export type PopoverApi = ReturnType<typeof popover.connect>
 export const createPopoverBehavior = (): ZagBehavior<PopoverApi> =>
   new ZagBehavior<PopoverApi>(popover.machine, popover.connect)
 
-export type TooltipApi = ReturnType<typeof tooltip.connect>
-export const createTooltipBehavior = (): ZagBehavior<TooltipApi> =>
-  new ZagBehavior<TooltipApi>(tooltip.machine, tooltip.connect)
+/**
+ * Tooltip — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { TooltipApi, TooltipProps }
+export interface TooltipBehavior extends BehaviorSource<TooltipApi> {
+  init(props: TooltipProps): void
+  start(): void
+  stop(): void
+}
+export const createTooltipBehavior = (): TooltipBehavior => new NativeTooltipBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagTooltipBehavior = (): TooltipBehavior =>
+  // zag's connect api is a structural superset; the cast bridges minor
+  // signature variance (reposition options) that the tests don't exercise
+  new ZagBehavior<TooltipApi>(tooltip.machine, tooltip.connect as unknown as () => TooltipApi)
 
 export type CollapsibleApi = ReturnType<typeof collapsible.connect>
 export const createCollapsibleBehavior = (): ZagBehavior<CollapsibleApi> =>
