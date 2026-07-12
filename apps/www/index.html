@@ -5,6 +5,15 @@
   <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>shadcn-aurelia</title>
+  <script>
+    const routeParam = 'gh_pages_route'
+    const currentUrl = new URL(window.location.href)
+    const pendingRoute = currentUrl.searchParams.get(routeParam)
+
+    if (pendingRoute !== null) {
+      window.history.replaceState(null, '', new URL(pendingRoute || '.', document.baseURI).toString())
+    }
+  </script>
   <script type="module" src="./src/main.ts"></script>
 </head>
 <body class="min-h-screen bg-background font-sans antialiased">
