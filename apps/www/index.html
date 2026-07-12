@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>shadcn-aurelia</title>
   <script>
-    const GH_PAGES_ROUTE_KEY = 'gh_pages_route'
+    const ghPagesRouteKey = 'gh_pages_route'
     const currentUrl = new URL(window.location.href)
-    const pendingRoute = currentUrl.searchParams.get(GH_PAGES_ROUTE_KEY)
+    const pendingRoute = currentUrl.searchParams.get(ghPagesRouteKey)
 
     if (pendingRoute !== null) {
       const nextUrl = pendingRoute === ''

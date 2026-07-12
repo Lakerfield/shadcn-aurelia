@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <title>shadcn-aurelia</title>
   <script>
-    const GH_PAGES_ROUTE_KEY = 'gh_pages_route'
+    const ghPagesRouteKey = 'gh_pages_route'
     const getBasePath = () => {
       const pathSegments = window.location.pathname.split('/').filter(Boolean)
 
-      return window.location.hostname.endsWith('.github.io') && pathSegments.length > 0
+      return window.location.hostname.endsWith('.github.io') && pathSegments.length > 1
         ? `/${pathSegments[0]}/`
         : '/'
     }
@@ -21,7 +21,7 @@
     const redirectUrl = new URL(basePath, window.location.origin)
 
     if (routePath !== '') {
-      redirectUrl.searchParams.set(GH_PAGES_ROUTE_KEY, routePath)
+      redirectUrl.searchParams.set(ghPagesRouteKey, routePath)
     }
 
     window.location.replace(redirectUrl)
