@@ -224,8 +224,8 @@ importers:
   templates/aurelia-vite:
     dependencies:
       '@shadcn-aurelia/primitives':
-        specifier: workspace:*
-        version: link:../../packages/primitives
+        specifier: ^0.0.2
+        version: 0.0.2(aurelia@2.0.0-rc.1)
       aurelia:
         specifier: 2.0.0-rc.1
         version: 2.0.0-rc.1
@@ -812,6 +812,11 @@ packages:
     resolution: {integrity: sha512-BfzEnDJOt9T8M989/lA37EcJgat01wLRnoi5dQf3QzOH7jzpqTAzdDbVfRljVr5r+jzKqpbHeyOfAaXxAd0PAA==}
     cpu: [x64]
     os: [win32]
+
+  '@shadcn-aurelia/primitives@0.0.2':
+    resolution: {integrity: sha512-rFcOzStfEXCiyCRSTIDSENCRIhT60e1wOk9Gw7qhi1Mxh5ZI0o4fimnBwFYIm6kL4LuPJGVAtJ6aQOT1FrNX9w==}
+    peerDependencies:
+      aurelia: 2.0.0-rc.1
 
   '@swc/helpers@0.5.23':
     resolution: {integrity: sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==}
@@ -3051,6 +3056,38 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.62.2':
     optional: true
+
+  '@shadcn-aurelia/primitives@0.0.2(aurelia@2.0.0-rc.1)':
+    dependencies:
+      '@internationalized/date': 3.12.2
+      '@tanstack/table-core': 8.21.3
+      '@zag-js/accordion': 1.42.0
+      '@zag-js/checkbox': 1.42.0
+      '@zag-js/collapsible': 1.42.0
+      '@zag-js/collection': 1.42.0
+      '@zag-js/combobox': 1.42.0
+      '@zag-js/core': 1.42.0
+      '@zag-js/date-picker': 1.42.0(@internationalized/date@3.12.2)
+      '@zag-js/dialog': 1.42.0
+      '@zag-js/hover-card': 1.42.0
+      '@zag-js/menu': 1.42.0
+      '@zag-js/navigation-menu': 1.42.0
+      '@zag-js/pin-input': 1.42.0
+      '@zag-js/popover': 1.42.0
+      '@zag-js/progress': 1.42.0
+      '@zag-js/radio-group': 1.42.0
+      '@zag-js/select': 1.42.0
+      '@zag-js/slider': 1.42.0
+      '@zag-js/switch': 1.42.0
+      '@zag-js/tabs': 1.42.0
+      '@zag-js/toast': 1.42.0
+      '@zag-js/toggle-group': 1.42.0
+      '@zag-js/tooltip': 1.42.0
+      '@zag-js/vanilla': 1.42.0
+      aurelia: 2.0.0-rc.1
+      chart.js: 4.5.1
+      embla-carousel: 8.6.0
+      tslib: 2.8.1
 
   '@swc/helpers@0.5.23':
     dependencies:
