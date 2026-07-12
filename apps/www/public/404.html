@@ -9,7 +9,10 @@
     const basePath = window.location.hostname.endsWith('.github.io') && pathSegments.length > 0
       ? `/${pathSegments[0]}/`
       : '/'
-    const routePath = `${window.location.pathname.slice(basePath.length)}${window.location.search}${window.location.hash}`
+    const relativePath = window.location.pathname === basePath
+      ? ''
+      : window.location.pathname.slice(basePath.length)
+    const routePath = `${relativePath}${window.location.search}${window.location.hash}`
     const redirectUrl = new URL(basePath, window.location.origin)
 
     if (routePath !== '') {

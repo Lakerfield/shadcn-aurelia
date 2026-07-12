@@ -11,7 +11,11 @@
     const pendingRoute = currentUrl.searchParams.get(routeParam)
 
     if (pendingRoute !== null) {
-      window.history.replaceState(null, '', new URL(pendingRoute || '.', document.baseURI).toString())
+      const nextUrl = pendingRoute === ''
+        ? document.baseURI
+        : new URL(pendingRoute, document.baseURI).toString()
+
+      window.history.replaceState(null, '', nextUrl)
     }
   </script>
   <script type="module" src="./src/main.ts"></script>
