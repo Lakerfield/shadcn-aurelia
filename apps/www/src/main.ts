@@ -4,18 +4,26 @@ import { ValidationHtmlConfiguration } from '@aurelia/validation-html'
 import { AppRoot } from './app-root'
 import './styles/globals.css'
 
-const pagesProjectPath = '/shadcn-aurelia/'
 const pendingRouteKey = 'gh-pages-route'
+
+const getBasePath = () => {
+  if (!window.location.hostname.endsWith('.github.io')) {
+    return '/'
+  }
+
+  const [projectPath = ''] = window.location.pathname.split('/').filter(Boolean)
+  return projectPath ? `/${projectPath}/` : '/'
+}
 
 const pendingRoute = sessionStorage.getItem(pendingRouteKey)
 if (pendingRoute !== null) {
   sessionStorage.removeItem(pendingRouteKey)
 
-  const basePath = window.location.pathname.startsWith(pagesProjectPath) ? pagesProjectPath : '/'
-  const normalizedRoute = pendingRoute.startsWith('/') ? pendingRoute.slice(1) : pendingRoute
-  const nextUrl = new URL(normalizedRoute || '.', `${window.location.origin}${basePath}`)
+  const basePath = getBasePath()
+  const routePath = pendingRoute.startsWith('/') ? pendingRoute : `/${pendingRoute}`
+  const nextPath = routePath === '/' ? basePath : `${basePath.replace(/\/$/, '')}${routePath}`
 
-  window.history.replaceState(null, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`)
+  window.history.replaceState(null, '', nextPath)
 }
 
 // Apply the persisted theme before first paint to avoid a light-mode flash

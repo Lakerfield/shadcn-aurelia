@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>shadcn-aurelia</title>
   <script>
-    const pagesProjectPath = '/shadcn-aurelia/'
     const pendingRouteKey = 'gh-pages-route'
-    const basePath = window.location.pathname.startsWith(pagesProjectPath) ? pagesProjectPath : '/'
-    const routePath = `${window.location.pathname.slice(basePath.length - 1)}${window.location.search}${window.location.hash}`
+    const pathSegments = window.location.pathname.split('/').filter(Boolean)
+    const basePath = window.location.hostname.endsWith('.github.io') && pathSegments.length > 0
+      ? `/${pathSegments[0]}/`
+      : '/'
+    const routePath = `/${window.location.pathname.slice(basePath.length).replace(/^\/?/, '')}${window.location.search}${window.location.hash}`
 
     sessionStorage.setItem(pendingRouteKey, routePath || '/')
     window.location.replace(basePath)
