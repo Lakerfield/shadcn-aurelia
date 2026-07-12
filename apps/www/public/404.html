@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>shadcn-aurelia</title>
+  <script>
+    const pagesProjectPath = '/shadcn-aurelia/'
+    const pendingRouteKey = 'gh-pages-route'
+    const basePath = window.location.pathname.startsWith(pagesProjectPath) ? pagesProjectPath : '/'
+    const routePath = `${window.location.pathname.slice(basePath.length - 1)}${window.location.search}${window.location.hash}`
+
+    sessionStorage.setItem(pendingRouteKey, routePath || '/')
+    window.location.replace(basePath)
+  </script>
+</head>
+<body></body>
+</html>
