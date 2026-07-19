@@ -26,10 +26,33 @@ import * as tabs from '@zag-js/tabs'
 import * as toggleGroup from '@zag-js/toggle-group'
 import { ZagBehavior, type BehaviorSource } from '../adapter/zag-behavior'
 import { NativeTooltipBehavior, type TooltipApi, type TooltipProps } from '../native/tooltip'
+import {
+  NativeAccordionBehavior,
+  type AccordionApi,
+  type AccordionProps,
+} from '../native/accordion'
+import {
+  NativeCollapsibleBehavior,
+  type CollapsibleApi,
+  type CollapsibleProps,
+} from '../native/collapsible'
+import { NativeTabsBehavior, type TabsApi, type TabsProps } from '../native/tabs'
 
-export type AccordionApi = ReturnType<typeof accordion.connect>
-export const createAccordionBehavior = (): ZagBehavior<AccordionApi> =>
-  new ZagBehavior<AccordionApi>(accordion.machine, accordion.connect)
+/**
+ * Accordion — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { AccordionApi, AccordionProps }
+export interface AccordionBehavior extends BehaviorSource<AccordionApi> {
+  init(props: AccordionProps): void
+  start(): void
+  stop(): void
+}
+export const createAccordionBehavior = (): AccordionBehavior => new NativeAccordionBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagAccordionBehavior = (): AccordionBehavior =>
+  new ZagBehavior<AccordionApi>(accordion.machine, accordion.connect as unknown as () => AccordionApi)
 
 export type CheckboxApi = ReturnType<typeof checkbox.connect>
 export const createCheckboxBehavior = (): ZagBehavior<CheckboxApi> =>
@@ -65,9 +88,24 @@ export const createZagTooltipBehavior = (): TooltipBehavior =>
   // signature variance (reposition options) that the tests don't exercise
   new ZagBehavior<TooltipApi>(tooltip.machine, tooltip.connect as unknown as () => TooltipApi)
 
-export type CollapsibleApi = ReturnType<typeof collapsible.connect>
-export const createCollapsibleBehavior = (): ZagBehavior<CollapsibleApi> =>
-  new ZagBehavior<CollapsibleApi>(collapsible.machine, collapsible.connect)
+/**
+ * Collapsible — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { CollapsibleApi, CollapsibleProps }
+export interface CollapsibleBehavior extends BehaviorSource<CollapsibleApi> {
+  init(props: CollapsibleProps): void
+  start(): void
+  stop(): void
+}
+export const createCollapsibleBehavior = (): CollapsibleBehavior => new NativeCollapsibleBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagCollapsibleBehavior = (): CollapsibleBehavior =>
+  new ZagBehavior<CollapsibleApi>(
+    collapsible.machine,
+    collapsible.connect as unknown as () => CollapsibleApi,
+  )
 
 export type PinInputApi = ReturnType<typeof pinInput.connect>
 export const createPinInputBehavior = (): ZagBehavior<PinInputApi> =>
@@ -89,9 +127,21 @@ export type SwitchApi = ReturnType<typeof switchNs.connect>
 export const createSwitchBehavior = (): ZagBehavior<SwitchApi> =>
   new ZagBehavior<SwitchApi>(switchNs.machine, switchNs.connect)
 
-export type TabsApi = ReturnType<typeof tabs.connect>
-export const createTabsBehavior = (): ZagBehavior<TabsApi> =>
-  new ZagBehavior<TabsApi>(tabs.machine, tabs.connect)
+/**
+ * Tabs — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { TabsApi, TabsProps }
+export interface TabsBehavior extends BehaviorSource<TabsApi> {
+  init(props: TabsProps): void
+  start(): void
+  stop(): void
+}
+export const createTabsBehavior = (): TabsBehavior => new NativeTabsBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagTabsBehavior = (): TabsBehavior =>
+  new ZagBehavior<TabsApi>(tabs.machine, tabs.connect as unknown as () => TabsApi)
 
 export type ToggleGroupApi = ReturnType<typeof toggleGroup.connect>
 export const createToggleGroupBehavior = (): ZagBehavior<ToggleGroupApi> =>

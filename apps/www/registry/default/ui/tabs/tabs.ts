@@ -1,5 +1,5 @@
 /**
- * ui-tabs family — Zag tabs behind the facade (roving focus, arrow keys).
+ * ui-tabs family — tabs behavior behind the primitives facade (roving focus, arrow keys).
  *   <ui-tabs value.two-way="tab">
  *     <ui-tabs-list><ui-tabs-trigger value="a">A</ui-tabs-trigger>…</ui-tabs-list>
  *     <ui-tabs-content value="a">…</ui-tabs-content>

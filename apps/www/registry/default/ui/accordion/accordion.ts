@@ -1,5 +1,5 @@
 /**
- * ui-accordion family — Zag accordion behind the facade.
+ * ui-accordion family — accordion behavior behind the primitives facade.
  * Trigger is wrapped in an <h3> per the WAI-ARIA accordion pattern.
  *
  *   <ui-accordion collapsible.bind="true">

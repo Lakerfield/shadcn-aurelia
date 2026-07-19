@@ -14,3 +14,8 @@ class ObserverStub {
 
 globalThis.ResizeObserver ??= ObserverStub as unknown as typeof ResizeObserver
 globalThis.IntersectionObserver ??= ObserverStub as unknown as typeof IntersectionObserver
+
+// jsdom has no CSS global; both engines escape machine ids in selectors
+globalThis.CSS ??= {} as typeof CSS
+globalThis.CSS.escape ??= (value: string) =>
+  String(value).replace(/[^a-zA-Z0-9_-]/g, (c) => `\\${c}`)

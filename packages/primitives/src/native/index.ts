@@ -11,6 +11,28 @@ export {
   type TooltipApi,
 } from './tooltip'
 export {
+  NativeCollapsibleBehavior,
+  createNativeCollapsibleBehavior,
+  type CollapsibleProps,
+  type CollapsibleApi,
+} from './collapsible'
+export {
+  NativeAccordionBehavior,
+  createNativeAccordionBehavior,
+  type AccordionProps,
+  type AccordionApi,
+  type AccordionItemProps,
+  type AccordionItemState,
+} from './accordion'
+export {
+  NativeTabsBehavior,
+  createNativeTabsBehavior,
+  type TabsProps,
+  type TabsApi,
+  type TabsTriggerProps,
+  type TabsTriggerState,
+} from './tabs'
+export {
   trackPlacement,
   getFloatingStyleString,
   getPlacementSide,

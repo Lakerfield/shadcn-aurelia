@@ -11,7 +11,7 @@ const TEMPLATE = `
   <ui-accordion-item value="item-1">
     <ui-accordion-trigger>Is it accessible?</ui-accordion-trigger>
     <ui-accordion-content>
-      Yes. It follows the WAI-ARIA accordion pattern via the Zag state machine.
+      Yes. It follows the WAI-ARIA accordion pattern.
     </ui-accordion-content>
   </ui-accordion-item>
   <ui-accordion-item value="item-2">
