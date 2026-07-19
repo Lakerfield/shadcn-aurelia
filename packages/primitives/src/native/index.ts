@@ -92,6 +92,17 @@ export {
   type DialogApi,
 } from './dialog'
 export {
+  NativeMenuBehavior,
+  createNativeMenuBehavior,
+  type MenuProps,
+  type MenuApi,
+  type MenuService,
+  type MenuItemProps,
+  type MenuOptionItemProps,
+  type MenuItemIndicatorProps,
+  type MenuPoint,
+} from './menu'
+export {
   trackPlacement,
   getFloatingStyleString,
   getPlacementSide,

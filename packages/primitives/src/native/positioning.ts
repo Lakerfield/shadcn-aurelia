@@ -24,9 +24,11 @@ import {
   size,
   type Middleware,
   type Placement,
+  type ReferenceElement,
+  type VirtualElement,
 } from '@floating-ui/dom'
 
-export type { Placement }
+export type { Placement, VirtualElement }
 export { getOverflowAncestors } from '@floating-ui/dom'
 
 export interface PositioningOptions {
@@ -166,10 +168,11 @@ export interface TrackPlacementOptions extends PositioningOptions {
 /**
  * Position `floating` relative to `reference` and keep it in sync while the
  * returned cleanup hasn't run. Elements are resolved lazily so this can be
- * started before the parts mount.
+ * started before the parts mount. The reference may be a floating-ui virtual
+ * element (context menu anchoring at a pointer coordinate).
  */
 export function trackPlacement(
-  getReference: () => HTMLElement | null,
+  getReference: () => ReferenceElement | null,
   getFloating: () => HTMLElement | null,
   options: TrackPlacementOptions = {},
 ): () => void {
@@ -185,7 +188,7 @@ export function trackPlacement(
   let lastAvailableWidth: number | undefined
   let lastAvailableHeight: number | undefined
   let zIndexComputed = false
-  let lastObservedReference: HTMLElement | null = null
+  let lastObservedReference: ReferenceElement | null = null
   let lastObservedFloating: HTMLElement | null = null
   let cancelAutoUpdate: (() => void) | null = null
   let disposed = false

@@ -70,6 +70,15 @@ import {
   type ToggleGroupApi,
   type ToggleGroupProps,
 } from '../native/toggle-group'
+import {
+  NativeMenuBehavior,
+  type MenuApi,
+  type MenuProps,
+  type MenuService,
+  type MenuItemProps,
+  type MenuOptionItemProps,
+  type MenuItemIndicatorProps,
+} from '../native/menu'
 
 /**
  * Accordion — native engine (Phase 8). The Zag variant remains only as the
@@ -298,9 +307,27 @@ export const createZagToggleGroupBehavior = (): ToggleGroupBehavior =>
     toggleGroup.connect as unknown as () => ToggleGroupApi,
   )
 
-export type MenuApi = ReturnType<typeof menu.connect>
-export const createMenuBehavior = (): ZagBehavior<MenuApi> =>
-  new ZagBehavior<MenuApi>(menu.machine, menu.connect)
+/**
+ * Menu — native engine (Phase 8), shared by dropdown-menu, context-menu and
+ * menubar. The Zag variant remains only as the reference implementation for
+ * the dual-engine contract tests. Submenus link machines via
+ * `api.setParent(parent.service)` / `parent.api.setChild(child.service)`;
+ * trees never mix engines, so the service handle stays opaque.
+ */
+export type { MenuApi, MenuProps, MenuService, MenuItemProps, MenuOptionItemProps, MenuItemIndicatorProps }
+export interface MenuBehavior extends BehaviorSource<MenuApi> {
+  init(props: MenuProps): void
+  start(): void
+  stop(): void
+  notify(): void
+  /** Raw machine handle — machine linking only, never used for prop bags. */
+  readonly service: unknown
+}
+export const createMenuBehavior = (): MenuBehavior => new NativeMenuBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagMenuBehavior = (): MenuBehavior =>
+  new ZagBehavior<MenuApi>(menu.machine, menu.connect as unknown as () => MenuApi)
 
 export type SelectApi = ReturnType<typeof select.connect>
 export const createSelectBehavior = (): ZagBehavior<SelectApi> =>
