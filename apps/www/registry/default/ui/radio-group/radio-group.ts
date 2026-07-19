@@ -1,5 +1,5 @@
 /**
- * ui-radio-group / ui-radio-group-item — Zag radio-group behind the facade.
+ * ui-radio-group / ui-radio-group-item — radio-group behavior behind the primitives facade.
  *   <ui-radio-group value.two-way="plan">
  *     <ui-radio-group-item value="free">Free</ui-radio-group-item>
  *   </ui-radio-group>

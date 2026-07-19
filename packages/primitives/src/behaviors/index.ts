@@ -37,6 +37,22 @@ import {
   type CollapsibleProps,
 } from '../native/collapsible'
 import { NativeTabsBehavior, type TabsApi, type TabsProps } from '../native/tabs'
+import {
+  NativeCheckboxBehavior,
+  type CheckboxApi,
+  type CheckboxProps,
+} from '../native/checkbox'
+import { NativeSwitchBehavior, type SwitchApi, type SwitchProps } from '../native/switch'
+import {
+  NativeRadioGroupBehavior,
+  type RadioGroupApi,
+  type RadioGroupProps,
+} from '../native/radio-group'
+import {
+  NativeToggleGroupBehavior,
+  type ToggleGroupApi,
+  type ToggleGroupProps,
+} from '../native/toggle-group'
 
 /**
  * Accordion — native engine (Phase 8). The Zag variant remains only as the
@@ -54,9 +70,21 @@ export const createAccordionBehavior = (): AccordionBehavior => new NativeAccord
 export const createZagAccordionBehavior = (): AccordionBehavior =>
   new ZagBehavior<AccordionApi>(accordion.machine, accordion.connect as unknown as () => AccordionApi)
 
-export type CheckboxApi = ReturnType<typeof checkbox.connect>
-export const createCheckboxBehavior = (): ZagBehavior<CheckboxApi> =>
-  new ZagBehavior<CheckboxApi>(checkbox.machine, checkbox.connect)
+/**
+ * Checkbox — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { CheckboxApi, CheckboxProps }
+export interface CheckboxBehavior extends BehaviorSource<CheckboxApi> {
+  init(props: CheckboxProps): void
+  start(): void
+  stop(): void
+}
+export const createCheckboxBehavior = (): CheckboxBehavior => new NativeCheckboxBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagCheckboxBehavior = (): CheckboxBehavior =>
+  new ZagBehavior<CheckboxApi>(checkbox.machine, checkbox.connect as unknown as () => CheckboxApi)
 
 export type DialogApi = ReturnType<typeof dialog.connect>
 export const createDialogBehavior = (): ZagBehavior<DialogApi> =>
@@ -115,17 +143,44 @@ export type ProgressApi = ReturnType<typeof progress.connect>
 export const createProgressBehavior = (): ZagBehavior<ProgressApi> =>
   new ZagBehavior<ProgressApi>(progress.machine, progress.connect)
 
-export type RadioGroupApi = ReturnType<typeof radioGroup.connect>
-export const createRadioGroupBehavior = (): ZagBehavior<RadioGroupApi> =>
-  new ZagBehavior<RadioGroupApi>(radioGroup.machine, radioGroup.connect)
+/**
+ * Radio group — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { RadioGroupApi, RadioGroupProps }
+export interface RadioGroupBehavior extends BehaviorSource<RadioGroupApi> {
+  init(props: RadioGroupProps): void
+  start(): void
+  stop(): void
+}
+export const createRadioGroupBehavior = (): RadioGroupBehavior => new NativeRadioGroupBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagRadioGroupBehavior = (): RadioGroupBehavior =>
+  new ZagBehavior<RadioGroupApi>(
+    radioGroup.machine,
+    radioGroup.connect as unknown as () => RadioGroupApi,
+  )
 
 export type SliderApi = ReturnType<typeof slider.connect>
 export const createSliderBehavior = (): ZagBehavior<SliderApi> =>
   new ZagBehavior<SliderApi>(slider.machine, slider.connect)
 
-export type SwitchApi = ReturnType<typeof switchNs.connect>
-export const createSwitchBehavior = (): ZagBehavior<SwitchApi> =>
-  new ZagBehavior<SwitchApi>(switchNs.machine, switchNs.connect)
+/**
+ * Switch — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { SwitchApi, SwitchProps }
+export interface SwitchBehavior extends BehaviorSource<SwitchApi> {
+  init(props: SwitchProps): void
+  start(): void
+  stop(): void
+}
+export const createSwitchBehavior = (): SwitchBehavior => new NativeSwitchBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagSwitchBehavior = (): SwitchBehavior =>
+  new ZagBehavior<SwitchApi>(switchNs.machine, switchNs.connect as unknown as () => SwitchApi)
 
 /**
  * Tabs — native engine (Phase 8). The Zag variant remains only as the
@@ -143,9 +198,25 @@ export const createTabsBehavior = (): TabsBehavior => new NativeTabsBehavior()
 export const createZagTabsBehavior = (): TabsBehavior =>
   new ZagBehavior<TabsApi>(tabs.machine, tabs.connect as unknown as () => TabsApi)
 
-export type ToggleGroupApi = ReturnType<typeof toggleGroup.connect>
-export const createToggleGroupBehavior = (): ZagBehavior<ToggleGroupApi> =>
-  new ZagBehavior<ToggleGroupApi>(toggleGroup.machine, toggleGroup.connect)
+/**
+ * Toggle group — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { ToggleGroupApi, ToggleGroupProps }
+export interface ToggleGroupBehavior extends BehaviorSource<ToggleGroupApi> {
+  init(props: ToggleGroupProps): void
+  start(): void
+  stop(): void
+}
+export const createToggleGroupBehavior = (): ToggleGroupBehavior =>
+  new NativeToggleGroupBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagToggleGroupBehavior = (): ToggleGroupBehavior =>
+  new ZagBehavior<ToggleGroupApi>(
+    toggleGroup.machine,
+    toggleGroup.connect as unknown as () => ToggleGroupApi,
+  )
 
 export type MenuApi = ReturnType<typeof menu.connect>
 export const createMenuBehavior = (): ZagBehavior<MenuApi> =>
