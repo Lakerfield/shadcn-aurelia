@@ -28,6 +28,12 @@ import { ZagBehavior, type BehaviorSource } from '../adapter/zag-behavior'
 import { NativeTooltipBehavior, type TooltipApi, type TooltipProps } from '../native/tooltip'
 import { NativeDialogBehavior, type DialogApi, type DialogProps } from '../native/dialog'
 import {
+  NativeProgressBehavior,
+  type ProgressApi,
+  type ProgressProps,
+} from '../native/progress'
+import { NativeSliderBehavior, type SliderApi, type SliderProps } from '../native/slider'
+import {
   NativeAccordionBehavior,
   type AccordionApi,
   type AccordionProps,
@@ -152,9 +158,21 @@ export type PinInputApi = ReturnType<typeof pinInput.connect>
 export const createPinInputBehavior = (): ZagBehavior<PinInputApi> =>
   new ZagBehavior<PinInputApi>(pinInput.machine, pinInput.connect)
 
-export type ProgressApi = ReturnType<typeof progress.connect>
-export const createProgressBehavior = (): ZagBehavior<ProgressApi> =>
-  new ZagBehavior<ProgressApi>(progress.machine, progress.connect)
+/**
+ * Progress — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { ProgressApi, ProgressProps }
+export interface ProgressBehavior extends BehaviorSource<ProgressApi> {
+  init(props: ProgressProps): void
+  start(): void
+  stop(): void
+}
+export const createProgressBehavior = (): ProgressBehavior => new NativeProgressBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagProgressBehavior = (): ProgressBehavior =>
+  new ZagBehavior<ProgressApi>(progress.machine, progress.connect as unknown as () => ProgressApi)
 
 /**
  * Radio group — native engine (Phase 8). The Zag variant remains only as the
@@ -175,9 +193,21 @@ export const createZagRadioGroupBehavior = (): RadioGroupBehavior =>
     radioGroup.connect as unknown as () => RadioGroupApi,
   )
 
-export type SliderApi = ReturnType<typeof slider.connect>
-export const createSliderBehavior = (): ZagBehavior<SliderApi> =>
-  new ZagBehavior<SliderApi>(slider.machine, slider.connect)
+/**
+ * Slider — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { SliderApi, SliderProps }
+export interface SliderBehavior extends BehaviorSource<SliderApi> {
+  init(props: SliderProps): void
+  start(): void
+  stop(): void
+}
+export const createSliderBehavior = (): SliderBehavior => new NativeSliderBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagSliderBehavior = (): SliderBehavior =>
+  new ZagBehavior<SliderApi>(slider.machine, slider.connect as unknown as () => SliderApi)
 
 /**
  * Switch — native engine (Phase 8). The Zag variant remains only as the

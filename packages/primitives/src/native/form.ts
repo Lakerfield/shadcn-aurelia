@@ -18,6 +18,24 @@ export function setElementChecked(el: HTMLInputElement | null, checked: boolean)
   else el.removeAttribute('checked')
 }
 
+/** Set the value property AND attribute, like Zag's setElementValue. */
+export function setElementValue(el: HTMLInputElement | null, value: string): void {
+  if (!el) return
+  el.value = value
+  el.setAttribute('value', value)
+}
+
+/**
+ * Zag's dispatchInputValueEvent: sync the input then emit a bubbling `input`
+ * event so form libraries listening on the input observe the programmatic
+ * change.
+ */
+export function dispatchInputValueEvent(el: HTMLInputElement | null, value: string | number): void {
+  if (!el) return
+  setElementValue(el, `${value}`)
+  el.dispatchEvent(new Event('input', { bubbles: true }))
+}
+
 /**
  * Zag's dispatchInputCheckedEvent: sync the input then emit a bubbling
  * `click` so form libraries listening on the input observe the programmatic

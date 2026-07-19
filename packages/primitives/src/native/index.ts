@@ -62,6 +62,18 @@ export {
   type ToggleItemState,
 } from './toggle-group'
 export {
+  NativeProgressBehavior,
+  createNativeProgressBehavior,
+  type ProgressProps,
+  type ProgressApi,
+} from './progress'
+export {
+  NativeSliderBehavior,
+  createNativeSliderBehavior,
+  type SliderProps,
+  type SliderApi,
+} from './slider'
+export {
   NativeDialogBehavior,
   createNativeDialogBehavior,
   type DialogProps,
