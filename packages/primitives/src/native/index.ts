@@ -62,6 +62,12 @@ export {
   type ToggleItemState,
 } from './toggle-group'
 export {
+  NativeDialogBehavior,
+  createNativeDialogBehavior,
+  type DialogProps,
+  type DialogApi,
+} from './dialog'
+export {
   trackPlacement,
   getFloatingStyleString,
   getPlacementSide,

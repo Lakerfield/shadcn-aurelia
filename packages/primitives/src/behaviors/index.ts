@@ -26,6 +26,7 @@ import * as tabs from '@zag-js/tabs'
 import * as toggleGroup from '@zag-js/toggle-group'
 import { ZagBehavior, type BehaviorSource } from '../adapter/zag-behavior'
 import { NativeTooltipBehavior, type TooltipApi, type TooltipProps } from '../native/tooltip'
+import { NativeDialogBehavior, type DialogApi, type DialogProps } from '../native/dialog'
 import {
   NativeAccordionBehavior,
   type AccordionApi,
@@ -86,9 +87,21 @@ export const createCheckboxBehavior = (): CheckboxBehavior => new NativeCheckbox
 export const createZagCheckboxBehavior = (): CheckboxBehavior =>
   new ZagBehavior<CheckboxApi>(checkbox.machine, checkbox.connect as unknown as () => CheckboxApi)
 
-export type DialogApi = ReturnType<typeof dialog.connect>
-export const createDialogBehavior = (): ZagBehavior<DialogApi> =>
-  new ZagBehavior<DialogApi>(dialog.machine, dialog.connect)
+/**
+ * Dialog — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { DialogApi, DialogProps }
+export interface DialogBehavior extends BehaviorSource<DialogApi> {
+  init(props: DialogProps): void
+  start(): void
+  stop(): void
+}
+export const createDialogBehavior = (): DialogBehavior => new NativeDialogBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagDialogBehavior = (): DialogBehavior =>
+  new ZagBehavior<DialogApi>(dialog.machine, dialog.connect as unknown as () => DialogApi)
 
 export type HoverCardApi = ReturnType<typeof hoverCard.connect>
 export const createHoverCardBehavior = (): ZagBehavior<HoverCardApi> =>
