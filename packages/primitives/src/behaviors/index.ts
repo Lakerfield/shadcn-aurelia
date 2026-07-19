@@ -34,6 +34,16 @@ import {
 } from '../native/progress'
 import { NativeSliderBehavior, type SliderApi, type SliderProps } from '../native/slider'
 import {
+  NativeHoverCardBehavior,
+  type HoverCardApi,
+  type HoverCardProps,
+} from '../native/hover-card'
+import {
+  NativePopoverBehavior,
+  type PopoverApi,
+  type PopoverProps,
+} from '../native/popover'
+import {
   NativeAccordionBehavior,
   type AccordionApi,
   type AccordionProps,
@@ -109,13 +119,40 @@ export const createDialogBehavior = (): DialogBehavior => new NativeDialogBehavi
 export const createZagDialogBehavior = (): DialogBehavior =>
   new ZagBehavior<DialogApi>(dialog.machine, dialog.connect as unknown as () => DialogApi)
 
-export type HoverCardApi = ReturnType<typeof hoverCard.connect>
-export const createHoverCardBehavior = (): ZagBehavior<HoverCardApi> =>
-  new ZagBehavior<HoverCardApi>(hoverCard.machine, hoverCard.connect)
+/**
+ * Hover card — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { HoverCardApi, HoverCardProps }
+export interface HoverCardBehavior extends BehaviorSource<HoverCardApi> {
+  init(props: HoverCardProps): void
+  start(): void
+  stop(): void
+}
+export const createHoverCardBehavior = (): HoverCardBehavior => new NativeHoverCardBehavior()
 
-export type PopoverApi = ReturnType<typeof popover.connect>
-export const createPopoverBehavior = (): ZagBehavior<PopoverApi> =>
-  new ZagBehavior<PopoverApi>(popover.machine, popover.connect)
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagHoverCardBehavior = (): HoverCardBehavior =>
+  new ZagBehavior<HoverCardApi>(
+    hoverCard.machine,
+    hoverCard.connect as unknown as () => HoverCardApi,
+  )
+
+/**
+ * Popover — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { PopoverApi, PopoverProps }
+export interface PopoverBehavior extends BehaviorSource<PopoverApi> {
+  init(props: PopoverProps): void
+  start(): void
+  stop(): void
+}
+export const createPopoverBehavior = (): PopoverBehavior => new NativePopoverBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagPopoverBehavior = (): PopoverBehavior =>
+  new ZagBehavior<PopoverApi>(popover.machine, popover.connect as unknown as () => PopoverApi)
 
 /**
  * Tooltip — native engine (Phase 8). The Zag variant remains only as the

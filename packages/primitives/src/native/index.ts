@@ -74,6 +74,18 @@ export {
   type SliderApi,
 } from './slider'
 export {
+  NativeHoverCardBehavior,
+  createNativeHoverCardBehavior,
+  type HoverCardProps,
+  type HoverCardApi,
+} from './hover-card'
+export {
+  NativePopoverBehavior,
+  createNativePopoverBehavior,
+  type PopoverProps,
+  type PopoverApi,
+} from './popover'
+export {
   NativeDialogBehavior,
   createNativeDialogBehavior,
   type DialogProps,
