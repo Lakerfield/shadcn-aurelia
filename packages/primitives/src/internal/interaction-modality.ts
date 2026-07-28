@@ -101,6 +101,15 @@ export function getInteractionModality(): InteractionModality {
   return currentModality
 }
 
+/**
+ * Force the modality (Zag's `setInteractionModality`) — listbox engines mark
+ * an open as `virtual` so the initial scroll-to-highlighted runs even though
+ * the open itself came from a pointer click.
+ */
+export function setInteractionModality(modality: InteractionModality): void {
+  currentModality = modality
+}
+
 export function isFocusVisible(): boolean {
   return currentModality === 'keyboard' || currentModality === 'virtual'
 }

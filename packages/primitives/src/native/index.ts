@@ -103,6 +103,24 @@ export {
   type MenuPoint,
 } from './menu'
 export {
+  NativeSelectBehavior,
+  createNativeSelectBehavior,
+  type SelectProps,
+  type SelectApi,
+  type SelectItemProps,
+  type SelectItemState,
+} from './select'
+export {
+  NativeComboboxBehavior,
+  createNativeComboboxBehavior,
+  type ComboboxProps,
+  type ComboboxApi,
+  type ComboboxItemProps,
+  type ComboboxItemState,
+  type ComboboxInputBehavior,
+  type ComboboxSelectionBehavior,
+} from './combobox'
+export {
   trackPlacement,
   getFloatingStyleString,
   getPlacementSide,

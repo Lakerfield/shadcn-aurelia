@@ -19,3 +19,9 @@ globalThis.IntersectionObserver ??= ObserverStub as unknown as typeof Intersecti
 globalThis.CSS ??= {} as typeof CSS
 globalThis.CSS.escape ??= (value: string) =>
   String(value).replace(/[^a-zA-Z0-9_-]/g, (c) => `\\${c}`)
+
+// jsdom implements neither Element scrolling API; both engines call them
+// (select scrolls the content back to top on close, and the highlighted
+// option into view on keyboard navigation)
+Element.prototype.scrollTo ??= () => {}
+Element.prototype.scrollIntoView ??= () => {}

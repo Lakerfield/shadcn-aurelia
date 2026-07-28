@@ -27,22 +27,14 @@ import * as toggleGroup from '@zag-js/toggle-group'
 import { ZagBehavior, type BehaviorSource } from '../adapter/zag-behavior'
 import { NativeTooltipBehavior, type TooltipApi, type TooltipProps } from '../native/tooltip'
 import { NativeDialogBehavior, type DialogApi, type DialogProps } from '../native/dialog'
-import {
-  NativeProgressBehavior,
-  type ProgressApi,
-  type ProgressProps,
-} from '../native/progress'
+import { NativeProgressBehavior, type ProgressApi, type ProgressProps } from '../native/progress'
 import { NativeSliderBehavior, type SliderApi, type SliderProps } from '../native/slider'
 import {
   NativeHoverCardBehavior,
   type HoverCardApi,
   type HoverCardProps,
 } from '../native/hover-card'
-import {
-  NativePopoverBehavior,
-  type PopoverApi,
-  type PopoverProps,
-} from '../native/popover'
+import { NativePopoverBehavior, type PopoverApi, type PopoverProps } from '../native/popover'
 import {
   NativeAccordionBehavior,
   type AccordionApi,
@@ -54,11 +46,7 @@ import {
   type CollapsibleProps,
 } from '../native/collapsible'
 import { NativeTabsBehavior, type TabsApi, type TabsProps } from '../native/tabs'
-import {
-  NativeCheckboxBehavior,
-  type CheckboxApi,
-  type CheckboxProps,
-} from '../native/checkbox'
+import { NativeCheckboxBehavior, type CheckboxApi, type CheckboxProps } from '../native/checkbox'
 import { NativeSwitchBehavior, type SwitchApi, type SwitchProps } from '../native/switch'
 import {
   NativeRadioGroupBehavior,
@@ -79,6 +67,20 @@ import {
   type MenuOptionItemProps,
   type MenuItemIndicatorProps,
 } from '../native/menu'
+import {
+  NativeSelectBehavior,
+  type SelectApi,
+  type SelectProps,
+  type SelectItemProps,
+  type SelectItemState,
+} from '../native/select'
+import {
+  NativeComboboxBehavior,
+  type ComboboxApi,
+  type ComboboxProps,
+  type ComboboxItemProps,
+  type ComboboxItemState,
+} from '../native/combobox'
 
 /**
  * Accordion — native engine (Phase 8). The Zag variant remains only as the
@@ -94,7 +96,10 @@ export const createAccordionBehavior = (): AccordionBehavior => new NativeAccord
 
 /** @internal Zag reference engine — dual-engine tests only, not public API. */
 export const createZagAccordionBehavior = (): AccordionBehavior =>
-  new ZagBehavior<AccordionApi>(accordion.machine, accordion.connect as unknown as () => AccordionApi)
+  new ZagBehavior<AccordionApi>(
+    accordion.machine,
+    accordion.connect as unknown as () => AccordionApi,
+  )
 
 /**
  * Checkbox — native engine (Phase 8). The Zag variant remains only as the
@@ -297,8 +302,7 @@ export interface ToggleGroupBehavior extends BehaviorSource<ToggleGroupApi> {
   start(): void
   stop(): void
 }
-export const createToggleGroupBehavior = (): ToggleGroupBehavior =>
-  new NativeToggleGroupBehavior()
+export const createToggleGroupBehavior = (): ToggleGroupBehavior => new NativeToggleGroupBehavior()
 
 /** @internal Zag reference engine — dual-engine tests only, not public API. */
 export const createZagToggleGroupBehavior = (): ToggleGroupBehavior =>
@@ -314,7 +318,14 @@ export const createZagToggleGroupBehavior = (): ToggleGroupBehavior =>
  * `api.setParent(parent.service)` / `parent.api.setChild(child.service)`;
  * trees never mix engines, so the service handle stays opaque.
  */
-export type { MenuApi, MenuProps, MenuService, MenuItemProps, MenuOptionItemProps, MenuItemIndicatorProps }
+export type {
+  MenuApi,
+  MenuProps,
+  MenuService,
+  MenuItemProps,
+  MenuOptionItemProps,
+  MenuItemIndicatorProps,
+}
 export interface MenuBehavior extends BehaviorSource<MenuApi> {
   init(props: MenuProps): void
   start(): void
@@ -329,13 +340,42 @@ export const createMenuBehavior = (): MenuBehavior => new NativeMenuBehavior()
 export const createZagMenuBehavior = (): MenuBehavior =>
   new ZagBehavior<MenuApi>(menu.machine, menu.connect as unknown as () => MenuApi)
 
-export type SelectApi = ReturnType<typeof select.connect>
-export const createSelectBehavior = (): ZagBehavior<SelectApi> =>
-  new ZagBehavior<SelectApi>(select.machine, select.connect)
+/**
+ * Select — native engine (Phase 8). The Zag variant remains only as the
+ * reference implementation for the dual-engine contract tests.
+ */
+export type { SelectApi, SelectProps, SelectItemProps, SelectItemState }
+export interface SelectBehavior extends BehaviorSource<SelectApi> {
+  init(props: SelectProps): void
+  updateProps(props: Partial<SelectProps>): void
+  start(): void
+  stop(): void
+  notify(): void
+}
+export const createSelectBehavior = (): SelectBehavior => new NativeSelectBehavior()
 
-export type ComboboxApi = ReturnType<typeof combobox.connect>
-export const createComboboxBehavior = (): ZagBehavior<ComboboxApi> =>
-  new ZagBehavior<ComboboxApi>(combobox.machine, combobox.connect)
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagSelectBehavior = (): SelectBehavior =>
+  new ZagBehavior<SelectApi>(select.machine, select.connect as unknown as () => SelectApi)
+
+/**
+ * Combobox — native engine (Phase 8), also driving the command palette
+ * (controlled `open: true` + `disableLayer`). The Zag variant remains only as
+ * the reference implementation for the dual-engine contract tests.
+ */
+export type { ComboboxApi, ComboboxProps, ComboboxItemProps, ComboboxItemState }
+export interface ComboboxBehavior extends BehaviorSource<ComboboxApi> {
+  init(props: ComboboxProps): void
+  updateProps(props: Partial<ComboboxProps>): void
+  start(): void
+  stop(): void
+  notify(): void
+}
+export const createComboboxBehavior = (): ComboboxBehavior => new NativeComboboxBehavior()
+
+/** @internal Zag reference engine — dual-engine tests only, not public API. */
+export const createZagComboboxBehavior = (): ComboboxBehavior =>
+  new ZagBehavior<ComboboxApi>(combobox.machine, combobox.connect as unknown as () => ComboboxApi)
 
 export type NavigationMenuApi = ReturnType<typeof navigationMenu.connect>
 export const createNavigationMenuBehavior = (): ZagBehavior<NavigationMenuApi> =>
