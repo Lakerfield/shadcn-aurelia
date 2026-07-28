@@ -1,5 +1,5 @@
 /**
- * ui-switch — Zag switch behind the primitives facade.
+ * ui-switch — switch behavior behind the primitives facade.
  *   <ui-switch checked.two-way="airplane" checked-change.trigger="...">Label</ui-switch>
  */
 import { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'

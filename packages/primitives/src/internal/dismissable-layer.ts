@@ -8,7 +8,8 @@
  */
 
 export interface DismissableLayerOptions {
-  onDismiss: () => void
+  /** Receives the triggering keydown/pointerdown so callers can inspect it. */
+  onDismiss: (event?: Event) => void
   /** Elements considered "inside" besides the layer itself (e.g. the trigger). */
   exclude?: () => Array<Element | null | undefined>
   /** Dismiss on Escape. Default true. */
@@ -38,7 +39,7 @@ function onKeydown(e: KeyboardEvent): void {
   const top = stack[stack.length - 1]
   if (top.options.escape === false) return
   e.preventDefault()
-  top.options.onDismiss()
+  top.options.onDismiss(e)
 }
 
 function onPointerdown(e: PointerEvent): void {
@@ -48,7 +49,7 @@ function onPointerdown(e: PointerEvent): void {
   for (let i = stack.length - 1; i >= 0; i--) {
     const layer = stack[i]
     if (isInside(layer, target)) break
-    if (layer.options.outsidePress !== false) layer.options.onDismiss()
+    if (layer.options.outsidePress !== false) layer.options.onDismiss(e)
   }
 }
 

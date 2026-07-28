@@ -1,5 +1,5 @@
 /**
- * ui-collapsible family — Zag collapsible behind the facade.
+ * ui-collapsible family — collapsible behavior behind the primitives facade.
  * The trigger renders a real (unstyled) button; style it with author classes
  * (e.g. buttonVariants) or place non-interactive content inside.
  */

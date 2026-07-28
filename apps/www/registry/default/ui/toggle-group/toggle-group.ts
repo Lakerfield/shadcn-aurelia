@@ -1,5 +1,5 @@
 /**
- * ui-toggle-group — Zag toggle-group (roving focus, single/multiple selection).
+ * ui-toggle-group — toggle-group behavior behind the primitives facade (roving focus, single/multiple selection).
  * Items inherit variant/size from the root, matching shadcn's context pattern.
  */
 import { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'

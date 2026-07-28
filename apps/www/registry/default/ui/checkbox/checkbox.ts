@@ -1,5 +1,5 @@
 /**
- * ui-checkbox — Zag checkbox behind the primitives facade.
+ * ui-checkbox — checkbox behavior behind the primitives facade.
  *   <ui-checkbox checked.two-way="agreed">Accept terms</ui-checkbox>
  */
 import { customElement, bindable, BindingMode, INode, resolve } from 'aurelia'

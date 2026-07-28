@@ -24,7 +24,8 @@ npx shadcn-aurelia add button dialog form
 This is **not a component library you install from npm**. The CLI copies the component source into
 your project — you own the code and change whatever you want. Interactive behavior is powered by
 [Zag.js](https://zagjs.com) state machines behind a small facade package
-(`@shadcn-aurelia/primitives`), so your copied components stay stable while engines evolve.
+(`@shadcn-aurelia/primitives`), so your copied components stay stable while engines evolve —
+`tooltip` already runs on a native engine, contract-verified against the Zag original.
 
 - [Installation](https://shadcn-aurelia.com/docs/installation)
 - [Theming](https://shadcn-aurelia.com/docs/theming) & [dark mode](https://shadcn-aurelia.com/docs/dark-mode)

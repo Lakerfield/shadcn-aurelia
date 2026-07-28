@@ -314,8 +314,16 @@ export class UiCommandItem {
     }
     updateVisibility()
     this.disposers = [
+      // pass `disabled` along — getItemDisabled reads the item object handed
+      // to getItemProps, not the collection entry
       bindPart(command, this.host, (api) =>
-        api.getItemProps({ item: { value: this.itemData!.value, label: this.itemData!.label } }),
+        api.getItemProps({
+          item: {
+            value: this.itemData!.value,
+            label: this.itemData!.label,
+            disabled: this.itemData!.disabled,
+          },
+        }),
       ),
       command.subscribe(updateVisibility),
     ]
