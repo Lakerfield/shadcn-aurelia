@@ -9,13 +9,14 @@
   },
   "main": "./dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "template"
   ],
   "engines": {
     "node": ">=18.17"
   },
   "scripts": {
-    "build": "tsc --build",
+    "build": "tsc --build && node scripts/embed-template.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
+    "aurelia-vite-template": "workspace:*",
     "typescript": "^5.7.2",
     "tslib": "^2.8.1"
   },

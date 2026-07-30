@@ -3,6 +3,7 @@
  * shadcn-aurelia — copy-paste Aurelia 2 components from a shadcn-style registry.
  */
 import { Command } from 'commander'
+import { runCreate } from './commands/create.js'
 import { runInit } from './commands/init.js'
 import { runAdd } from './commands/add.js'
 import { runDiff } from './commands/diff.js'
@@ -14,6 +15,15 @@ const program = new Command()
   .name('shadcn-aurelia')
   .description('add copy-paste Aurelia 2 components to your project')
   .version('0.0.1')
+
+program
+  .command('create')
+  .description('scaffold a new Aurelia 2 + Vite + Tailwind v4 app from the bundled template')
+  .argument('<name>', 'directory (and package name) for the new app')
+  .option('-c, --cwd <path>', 'working directory', process.cwd())
+  .action(async (name: string, opts) => {
+    await runCreate(name, { cwd: opts.cwd })
+  })
 
 program
   .command('init')

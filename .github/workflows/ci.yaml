@@ -45,6 +45,12 @@ jobs:
       - run: pnpm --filter www build:registry
       - run: pnpm --filter shadcn-aurelia build
 
+      # `create` must scaffold an npm-installable app (no workspace: protocol)
+      - run: node "$GITHUB_WORKSPACE/packages/cli/dist/index.js" create smoke-app
+        working-directory: ${{ runner.temp }}
+      - run: "! grep workspace: smoke-app/package.json"
+        working-directory: ${{ runner.temp }}
+
       # fresh app from the template, then init + add + build
       - run: cp -r templates/aurelia-vite templates/e2e-app
       - run: node -e "const f='templates/e2e-app/package.json',j=require('./'+f);j.name='e2e-app';require('fs').writeFileSync(f,JSON.stringify(j,null,2))"
