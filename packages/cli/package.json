@@ -1,6 +1,6 @@
 {
   "name": "shadcn-aurelia",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "description": "CLI for shadcn-aurelia — add copy-paste Aurelia 2 components to your project",

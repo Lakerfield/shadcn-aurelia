@@ -1,6 +1,6 @@
 {
   "name": "@shadcn-aurelia/primitives",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "description": "Headless primitive layer for shadcn-aurelia — Zag.js adapter, spread-props, DI context, portal",
