@@ -33,6 +33,10 @@ jobs:
 
       - run: pnpm --filter www... build
 
+      # Pages has no SPA rewrites: serve index.html as the 404 page so deep
+      # links like /docs boot the app and the router takes over.
+      - run: cp apps/www/dist/index.html apps/www/dist/404.html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/www/dist
