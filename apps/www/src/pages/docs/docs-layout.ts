@@ -30,6 +30,7 @@ export const guideLinks: GuideLink[] = [
     { path: 'differences', component: import('./guides/differences'), title: 'Differences from shadcn/ui' },
     { path: 'accessibility', component: import('./guides/accessibility'), title: 'Accessibility' },
     { path: 'blocks', component: import('./guides/blocks'), title: 'Blocks' },
+    { path: 'components', redirectTo: `components/${componentDocs[0].name}` },
     {
       path: 'components/:name',
       component: import('./components/component-page'),
