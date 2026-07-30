@@ -1,5 +1,13 @@
 # shadcn-aurelia
 
+## 1.0.2
+
+### Patch Changes
+
+- [`116fdce`](https://github.com/Lakerfield/shadcn-aurelia/commit/116fdcee2db26dff2a1d36ee50f20f848cc8343c) Thanks [@Lakerfield](https://github.com/Lakerfield)! - release v1.0.2, tweak start template
+
+- [`5cd626a`](https://github.com/Lakerfield/shadcn-aurelia/commit/5cd626a9c09efce11b5f3b19035f26f55cb7acba) Thanks [@Lakerfield](https://github.com/Lakerfield)! - Spell out the getting-started steps in the template's my-app.html (add button, copy the docs example, where the import and markup go) and drop the full-screen main so added components are visible without scrolling
+
 ## 1.0.1
 
 ### Patch Changes

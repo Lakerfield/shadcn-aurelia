@@ -1,5 +1,15 @@
 # www
 
+## 1.0.2
+
+### Patch Changes
+
+- [`116fdce`](https://github.com/Lakerfield/shadcn-aurelia/commit/116fdcee2db26dff2a1d36ee50f20f848cc8343c) Thanks [@Lakerfield](https://github.com/Lakerfield)! - release v1.0.2, tweak start template
+
+- Updated dependencies [[`116fdce`](https://github.com/Lakerfield/shadcn-aurelia/commit/116fdcee2db26dff2a1d36ee50f20f848cc8343c)]:
+  - @shadcn-aurelia/primitives@1.0.2
+  - @shadcn-aurelia/tw-preset@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

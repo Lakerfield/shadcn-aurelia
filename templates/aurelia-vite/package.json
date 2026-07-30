@@ -1,6 +1,6 @@
 {
   "name": "aurelia-vite-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "type": "module",
   "description": "Aurelia 2 + Vite + Tailwind v4 starter, ready for `shadcn-aurelia init`",
