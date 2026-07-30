@@ -4,8 +4,14 @@
   <div class="flex items-center gap-1 border-b border-border bg-muted/40 px-3 py-2">
     <ui-button size="sm" variant.bind="tab === 'preview' ? 'secondary' : 'ghost'"
                click.trigger="setTab('preview')">Preview</ui-button>
-    <ui-button size="sm" variant.bind="tab === 'code' ? 'secondary' : 'ghost'"
-               click.trigger="setTab('code')">Code</ui-button>
+    <template if.bind="split">
+      <ui-button size="sm" variant.bind="tab === 'html' ? 'secondary' : 'ghost'"
+                 click.trigger="setTab('html')">HTML</ui-button>
+      <ui-button size="sm" variant.bind="tab === 'ts' ? 'secondary' : 'ghost'"
+                 click.trigger="setTab('ts')">TS</ui-button>
+    </template>
+    <ui-button size="sm" variant.bind="tab === 'file' ? 'secondary' : 'ghost'"
+               click.trigger="setTab('file')">${split ? 'Single file' : 'Code'}</ui-button>
   </div>
 
   <div show.bind="tab === 'preview'" data-slot="preview-pane"
@@ -13,7 +19,15 @@
     <au-slot></au-slot>
   </div>
 
-  <div show.bind="tab === 'code'" class="max-h-[400px] overflow-auto bg-muted/40 p-4">
-    <pre class="text-xs leading-relaxed"><code>${code}</code></pre>
+  <div if.bind="split" show.bind="tab === 'html'" class="max-h-[400px] overflow-auto bg-muted/40 p-4">
+    <pre class="text-xs leading-relaxed"><code>${split.html}</code></pre>
+  </div>
+
+  <div if.bind="split" show.bind="tab === 'ts'" class="max-h-[400px] overflow-auto bg-muted/40 p-4">
+    <pre class="text-xs leading-relaxed"><code>${split.ts}</code></pre>
+  </div>
+
+  <div show.bind="tab === 'file'" class="max-h-[400px] overflow-auto bg-muted/40 p-4">
+    <pre class="text-xs leading-relaxed"><code>${file}</code></pre>
   </div>
 </div>
