@@ -42,9 +42,9 @@ const SETTINGS_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 2
 
 const TEMPLATE = `
 <ui-sidebar-provider class="relative min-h-svh w-full">
-  <ui-sidebar class="absolute h-full">
+  <ui-sidebar collapsible="icon" class="absolute h-full">
     <ui-sidebar-header>
-      <div class="flex items-center gap-2 px-2 py-1.5 text-sm font-semibold">Acme Inc</div>
+      <div class="flex items-center gap-2 px-2 py-1.5 text-sm font-semibold group-data-[collapsible=icon]:hidden">Acme Inc</div>
     </ui-sidebar-header>
     <ui-sidebar-content>
       <ui-sidebar-group>
@@ -52,23 +52,23 @@ const TEMPLATE = `
         <ui-sidebar-group-content>
           <ui-sidebar-menu>
             <ui-sidebar-menu-item>
-              <ui-sidebar-menu-button is-active.bind="true">${HOME_ICON}<span>Dashboard</span></ui-sidebar-menu-button>
+              <ui-sidebar-menu-button tooltip="Dashboard" is-active.bind="true">${HOME_ICON}<span>Dashboard</span></ui-sidebar-menu-button>
             </ui-sidebar-menu-item>
             <ui-sidebar-menu-item>
-              <ui-sidebar-menu-button>${CHART_ICON}<span>Analytics</span></ui-sidebar-menu-button>
+              <ui-sidebar-menu-button tooltip="Analytics">${CHART_ICON}<span>Analytics</span></ui-sidebar-menu-button>
             </ui-sidebar-menu-item>
             <ui-sidebar-menu-item>
-              <ui-sidebar-menu-button>${USERS_ICON}<span>Team</span></ui-sidebar-menu-button>
+              <ui-sidebar-menu-button tooltip="Team">${USERS_ICON}<span>Team</span></ui-sidebar-menu-button>
             </ui-sidebar-menu-item>
             <ui-sidebar-menu-item>
-              <ui-sidebar-menu-button>${SETTINGS_ICON}<span>Settings</span></ui-sidebar-menu-button>
+              <ui-sidebar-menu-button tooltip="Settings">${SETTINGS_ICON}<span>Settings</span></ui-sidebar-menu-button>
             </ui-sidebar-menu-item>
           </ui-sidebar-menu>
         </ui-sidebar-group-content>
       </ui-sidebar-group>
     </ui-sidebar-content>
     <ui-sidebar-footer>
-      <div class="text-muted-foreground px-2 py-1.5 text-xs">shadcn-aurelia</div>
+      <div class="text-muted-foreground px-2 py-1.5 text-xs group-data-[collapsible=icon]:hidden">shadcn-aurelia</div>
     </ui-sidebar-footer>
     <ui-sidebar-rail></ui-sidebar-rail>
   </ui-sidebar>
