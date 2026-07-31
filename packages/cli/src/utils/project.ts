@@ -11,8 +11,12 @@ export interface ProjectInfo {
   packageJson: Record<string, unknown>
   dependencies: Record<string, string>
   packageManager: 'pnpm' | 'yarn' | 'bun' | 'npm'
+  /** npm-workspace root, when it is an ancestor of `root` — npm needs `-w` from there */
+  npmWorkspaceRoot: string | null
   srcDir: string
   aliasBase: string | null
+  /** tsconfig path mappings, `/*` stripped: `@` → `src`, `@acme/ui` → `../../packages/ui/src` */
+  aliasPaths: Record<string, string>
 }
 
 export const loadProject = async (root: string): Promise<ProjectInfo | null> => {
@@ -23,35 +27,54 @@ export const loadProject = async (root: string): Promise<ProjectInfo | null> => 
     ...((packageJson.dependencies as Record<string, string>) ?? {}),
     ...((packageJson.devDependencies as Record<string, string>) ?? {}),
   }
+  const { packageManager, lockfileDir } = detectPackageManager(root)
+  const aliasPaths = await detectAliasPaths(root)
   return {
     root,
     packageJson,
     dependencies,
-    packageManager: detectPackageManager(root),
+    packageManager,
+    npmWorkspaceRoot:
+      packageManager === 'npm' && lockfileDir && lockfileDir !== root && (await isNpmWorkspaceRoot(lockfileDir))
+        ? lockfileDir
+        : null,
     srcDir: existsSync(join(root, 'src')) ? 'src' : '.',
-    aliasBase: await detectAliasBase(root),
+    aliasBase: aliasPaths['@'] ?? null,
+    aliasPaths,
   }
 }
 
-const detectPackageManager = (root: string): ProjectInfo['packageManager'] => {
+const detectPackageManager = (
+  root: string,
+): { packageManager: ProjectInfo['packageManager']; lockfileDir: string | null } => {
   // lockfiles live at the workspace root, which may be an ancestor
   let dir = root
   for (;;) {
     if (existsSync(join(dir, 'pnpm-lock.yaml')) || existsSync(join(dir, 'pnpm-workspace.yaml')))
-      return 'pnpm'
-    if (existsSync(join(dir, 'yarn.lock'))) return 'yarn'
-    if (existsSync(join(dir, 'bun.lockb')) || existsSync(join(dir, 'bun.lock'))) return 'bun'
-    if (existsSync(join(dir, 'package-lock.json'))) return 'npm'
+      return { packageManager: 'pnpm', lockfileDir: dir }
+    if (existsSync(join(dir, 'yarn.lock'))) return { packageManager: 'yarn', lockfileDir: dir }
+    if (existsSync(join(dir, 'bun.lockb')) || existsSync(join(dir, 'bun.lock')))
+      return { packageManager: 'bun', lockfileDir: dir }
+    if (existsSync(join(dir, 'package-lock.json'))) return { packageManager: 'npm', lockfileDir: dir }
     const parent = dirname(dir)
-    if (parent === dir) return 'npm'
+    if (parent === dir) return { packageManager: 'npm', lockfileDir: null }
     dir = parent
   }
 }
 
-/** Where does the `@/*` path alias point? (tsconfig paths, best effort) */
-const detectAliasBase = async (root: string): Promise<string | null> => {
+const isNpmWorkspaceRoot = async (dir: string): Promise<boolean> => {
+  try {
+    const pkg = JSON.parse(await readFile(join(dir, 'package.json'), 'utf8')) as Record<string, unknown>
+    return pkg.workspaces !== undefined
+  } catch {
+    return false
+  }
+}
+
+/** All wildcard path aliases from tsconfig (best effort): `@/*`, `@acme/ui/*`, … */
+const detectAliasPaths = async (root: string): Promise<Record<string, string>> => {
   const tsconfigPath = join(root, 'tsconfig.json')
-  if (!existsSync(tsconfigPath)) return null
+  if (!existsSync(tsconfigPath)) return {}
   try {
     const raw = await readFile(tsconfigPath, 'utf8')
     // tolerate comments/trailing commas well enough for a paths lookup
@@ -59,12 +82,15 @@ const detectAliasBase = async (root: string): Promise<string | null> => {
     const tsconfig = JSON.parse(cleaned) as {
       compilerOptions?: { baseUrl?: string; paths?: Record<string, string[]> }
     }
-    const mapping = tsconfig.compilerOptions?.paths?.['@/*']?.[0]
-    if (!mapping) return null
     const baseUrl = tsconfig.compilerOptions?.baseUrl ?? '.'
-    return join(baseUrl, mapping.replace(/\/\*$/, ''))
+    const aliases: Record<string, string> = {}
+    for (const [key, mappings] of Object.entries(tsconfig.compilerOptions?.paths ?? {})) {
+      if (!key.endsWith('/*') || !mappings[0]) continue
+      aliases[key.slice(0, -2)] = join(baseUrl, mappings[0].replace(/\/\*$/, ''))
+    }
+    return aliases
   } catch {
-    return null
+    return {}
   }
 }
 

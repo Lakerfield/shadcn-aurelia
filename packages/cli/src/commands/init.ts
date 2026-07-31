@@ -2,7 +2,6 @@
  * `shadcn-aurelia init` — preflight the project, write components.json and
  * inject the theme stylesheet.
  */
-import { existsSync } from 'node:fs'
 import { readFile, writeFile } from 'node:fs/promises'
 import { dirname, join, relative } from 'node:path'
 import type { ComponentsConfig } from '../schema/registry.js'
@@ -79,7 +78,7 @@ export const runInit = async (options: InitOptions): Promise<void> => {
     }
   }
 
-  if (!existsSync(join(project.root, 'node_modules', '@shadcn-aurelia', 'primitives'))) {
+  if (!project.dependencies['@shadcn-aurelia/primitives']) {
     warn(
       `@shadcn-aurelia/primitives is not installed — components need it:\n  ${dim(
         `${project.packageManager} add @shadcn-aurelia/primitives`,

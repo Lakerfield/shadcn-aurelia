@@ -62,10 +62,17 @@ export const runAdd = async (names: string[], options: AddOptions): Promise<void
   if (missing.length > 0) {
     if (options.install) {
       info(`installing ${missing.join(', ')} with ${project.packageManager}…`)
-      const result = spawnSync(project.packageManager, ['add', ...missing], {
-        cwd: project.root,
-        stdio: 'inherit',
-      })
+      // npm does not resolve the workspace root from a sub-package — run it
+      // from the root with -w so the root lockfile is used
+      const result = project.npmWorkspaceRoot
+        ? spawnSync('npm', ['install', ...missing, '-w', relative(project.npmWorkspaceRoot, project.root)], {
+            cwd: project.npmWorkspaceRoot,
+            stdio: 'inherit',
+          })
+        : spawnSync(project.packageManager, ['add', ...missing], {
+            cwd: project.root,
+            stdio: 'inherit',
+          })
       if (result.status !== 0) {
         warn(`dependency install failed — install manually: ${bold(missing.join(' '))}`)
       }

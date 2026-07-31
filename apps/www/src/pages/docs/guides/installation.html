@@ -85,11 +85,87 @@ npx shadcn-aurelia add dialog form data-table-adapter</code></pre>
 
   <h2>Monorepos</h2>
   <p>
-    Run the CLI from the app package (the directory containing that app's
-    <code>package.json</code>); pass <code>--cwd</code> if invoking from the workspace root. Package
-    manager detection walks up parent directories, so pnpm/yarn/bun workspaces with a root lockfile
-    install dependencies into the right place. Components are copied per app — if you want a shared
-    UI package instead, point the <code>aliases</code> in <code>components.json</code> at your shared
-    package's paths.
+    The CLI operates on one app package at a time: it looks for <code>package.json</code> and
+    <code>components.json</code> directly in its working directory (it does not search parent
+    directories). Run it from the app package, or pass <code>--cwd</code> when invoking from the
+    workspace root. Given a pnpm workspace like this:
+  </p>
+  <pre><code>acme/
+├── pnpm-workspace.yaml
+├── pnpm-lock.yaml            # root lockfile
+├── apps/
+│   ├── web/                  # Aurelia app
+│   │   ├── package.json
+│   │   ├── tsconfig.json     # "@/*" → "src/*"
+│   │   └── src/
+│   └── admin/                # another Aurelia app
+└── packages/
+    └── shared/</code></pre>
+  <p>each app gets its own <code>components.json</code> and component copies:</p>
+  <pre><code># from the workspace root
+npx shadcn-aurelia init --cwd apps/web
+npx shadcn-aurelia add button dialog --cwd apps/web
+npx shadcn-aurelia diff --cwd apps/web
+
+# or equivalently, from inside the app package
+cd apps/web
+npx shadcn-aurelia add button dialog</code></pre>
+  <p>
+    Package manager detection walks up parent directories until it finds a lockfile or workspace
+    marker (<code>pnpm-lock.yaml</code>/<code>pnpm-workspace.yaml</code>, <code>yarn.lock</code>,
+    <code>bun.lock</code>, <code>package-lock.json</code>). <code>add</code> then runs
+    <code>pnpm add</code>/<code>yarn add</code>/<code>bun add</code> inside the app package, which
+    those workspace-aware managers resolve against the root lockfile — npm dependencies such as
+    <code>@shadcn-aurelia/primitives</code> land in the right <code>package.json</code>.
+  </p>
+  <p>
+    <strong>npm workspaces</strong> are handled too: npm itself does not detect a workspace root
+    when run inside a sub-package (a plain <code>npm add</code> there would create a nested
+    lockfile), so when the root lockfile belongs to an npm workspace the CLI installs from the
+    workspace root instead — <code>npm install &lt;deps&gt; -w apps/web</code>.
+  </p>
+
+  <h3>Shared UI package</h3>
+  <p>
+    Components are copied per app by default; the copies are yours and may diverge — that is the
+    point of the copy-paste model. To share one set of components across apps instead, map a
+    workspace alias to the shared package in the app's <code>tsconfig.json</code> and Vite config,
+    and point the <code>aliases</code> in <code>components.json</code> at it. <code>add</code>
+    resolves every alias through the tsconfig <code>paths</code> (longest prefix wins), so the
+    files land in the shared package while imports are rewritten to the alias:
+  </p>
+  <pre><code>// apps/web/tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@acme/ui/*": ["../../packages/ui/src/*"]
+    }
+  }
+}</code></pre>
+  <pre><code>// apps/web/vite.config.ts → resolve.alias
+{
+  '@': fileURLToPath(new URL('./src', import.meta.url)),
+  '@acme/ui': fileURLToPath(new URL('../../packages/ui/src', import.meta.url)),
+}</code></pre>
+  <pre><code>// apps/web/components.json
+"aliases": {
+  "components": "@acme/ui/components",
+  "ui": "@acme/ui/components/ui",
+  "lib": "@acme/ui/lib"
+}</code></pre>
+  <pre><code>$ npx shadcn-aurelia add button login-01 --cwd apps/web
+  + ../../packages/ui/src/lib/cn.ts
+  + ../../packages/ui/src/components/ui/button/button.ts
+  + ../../packages/ui/src/components/blocks/login-01/login-01.ts
+  …</code></pre>
+  <p>
+    Imports inside the copied files use the alias (<code>import { cn } from '@acme/ui/lib/cn'</code>),
+    so every app that consumes the shared package needs the same tsconfig <code>paths</code> and
+    Vite alias. <code>diff</code> compares against the shared location the same way. One caveat:
+    npm dependencies (<code>@shadcn-aurelia/primitives</code>, <code>clsx</code>, …) are installed
+    into the app you ran the CLI from — under pnpm's strict layout, declare them in the shared
+    package's <code>package.json</code> as well so its files can resolve them.
   </p>
 </article>

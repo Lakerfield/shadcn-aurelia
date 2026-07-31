@@ -48,7 +48,10 @@
     <code>@/registry/default/ui/…</code>; those become your <code>ui</code> alias. Items of type
     <code>lib</code> (like <code>cn</code>) go to the <code>lib</code> alias. The aliases must be
     resolvable in your project — <code>init</code> checks that <code>@/*</code> maps to
-    <code>src/*</code> in <code>tsconfig.json</code> and Vite.
+    <code>src/*</code> in <code>tsconfig.json</code> and Vite. Any wildcard alias from your
+    tsconfig <code>paths</code> works here, not just <code>@/…</code> — see the Monorepos section
+    of <a load="../installation">Installation</a> for pointing the aliases at a shared workspace
+    package.
   </p>
   <table>
     <thead><tr><th>Alias</th><th>Default</th><th>Receives</th></tr></thead>

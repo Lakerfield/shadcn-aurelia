@@ -29,7 +29,8 @@
     <code>dialog</code> pulls in <code>cn</code>, and <code>sheet</code> pulls in
     <code>dialog</code>), rewrites import aliases and the element prefix to match your
     <code>components.json</code>, and installs missing npm dependencies with your detected package
-    manager (pnpm, npm, yarn or bun — detection walks up parent directories, so workspaces work).
+    manager (pnpm, npm, yarn or bun — detection walks up parent directories, so workspaces work;
+    in an npm workspace the install runs from the workspace root with <code>-w</code>).
   </p>
   <pre><code>npx shadcn-aurelia add button dialog form [options]</code></pre>
   <table>

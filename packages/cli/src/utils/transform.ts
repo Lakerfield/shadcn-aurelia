@@ -30,10 +30,20 @@ export const transformPrefix = (content: string, prefix: string): string => {
 export const transformContent = (content: string, config: ComponentsConfig): string =>
   transformPrefix(transformImports(content, config), config.prefix)
 
-/** Resolve an alias like `@/components/ui` to a project-relative directory. */
+/**
+ * Resolve an alias like `@/components/ui` or `@acme/ui/components/ui` to a
+ * project-relative directory, via the tsconfig path mappings (longest prefix
+ * wins). This lets `aliases` in components.json point into another workspace
+ * package — e.g. `@acme/ui/*` mapped to `../../packages/ui/src/*`.
+ */
 const aliasToDir = (alias: string, project: ProjectInfo): string => {
-  const base = project.aliasBase ?? project.srcDir
-  if (alias.startsWith('@/')) return join(base, alias.slice(2))
+  let prefix: string | null = null
+  for (const candidate of Object.keys(project.aliasPaths)) {
+    if (alias !== candidate && !alias.startsWith(candidate + '/')) continue
+    if (prefix === null || candidate.length > prefix.length) prefix = candidate
+  }
+  if (prefix !== null) return join(project.aliasPaths[prefix], alias.slice(prefix.length))
+  if (alias.startsWith('@/')) return join(project.srcDir, alias.slice(2))
   return alias
 }
 
@@ -43,8 +53,16 @@ export const targetPath = (
   config: ComponentsConfig,
   project: ProjectInfo,
 ): string => {
-  const base = project.aliasBase ?? project.srcDir
-  if (file.target) return join(base, file.target)
+  if (file.target) {
+    // targets are alias-rooted too, so components.json can redirect them
+    // (e.g. into a shared workspace package)
+    const t = posix.normalize(file.target)
+    if (t.startsWith('ui/')) return join(aliasToDir(config.aliases.ui, project), t.slice(3))
+    if (t.startsWith('lib/')) return join(aliasToDir(config.aliases.lib, project), t.slice(4))
+    if (t.startsWith('components/'))
+      return join(aliasToDir(config.aliases.components, project), t.slice('components/'.length))
+    return join(project.aliasBase ?? project.srcDir, t)
+  }
   const p = posix.normalize(file.path)
   const registryPrefix = `registry/${config.style}/`
   const rel = p.startsWith(registryPrefix) ? p.slice(registryPrefix.length) : p
