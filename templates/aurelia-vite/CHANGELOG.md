@@ -1,5 +1,14 @@
 # aurelia-vite-template
 
+## 1.0.3
+
+### Patch Changes
+
+- [`d00c122`](https://github.com/Lakerfield/shadcn-aurelia/commit/d00c122eff7731a343b195d596008d38845ea24c) Thanks [@Lakerfield](https://github.com/Lakerfield)! - release 1.0.3 - monorepo support
+
+- Updated dependencies [[`d00c122`](https://github.com/Lakerfield/shadcn-aurelia/commit/d00c122eff7731a343b195d596008d38845ea24c)]:
+  - @shadcn-aurelia/primitives@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

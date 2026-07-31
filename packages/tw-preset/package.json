@@ -1,6 +1,6 @@
 {
   "name": "@shadcn-aurelia/tw-preset",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "license": "MIT",
   "description": "Shared Tailwind v4 theme preset for shadcn-aurelia — @theme token mapping, dark-mode variant, base layer, data-state animations",
