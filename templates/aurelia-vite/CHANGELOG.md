@@ -1,5 +1,14 @@
 # aurelia-vite-template
 
+## 1.0.4
+
+### Patch Changes
+
+- [`d7ecc97`](https://github.com/Lakerfield/shadcn-aurelia/commit/d7ecc97ffa4b166d2cfac4b4fedaca53c0dc544f) Thanks [@Lakerfield](https://github.com/Lakerfield)! - update to aurelia@2.0.0-rc.2
+
+- Updated dependencies [[`d7ecc97`](https://github.com/Lakerfield/shadcn-aurelia/commit/d7ecc97ffa4b166d2cfac4b4fedaca53c0dc544f)]:
+  - @shadcn-aurelia/primitives@1.0.4
+
 ## 1.0.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "aurelia-vite-template",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "type": "module",
   "description": "Aurelia 2 + Vite + Tailwind v4 starter, ready for `shadcn-aurelia init`",
@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "@shadcn-aurelia/primitives": "workspace:*",
-    "aurelia": "2.0.0-rc.1",
+    "aurelia": "2.0.0-rc.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "@aurelia/vite-plugin": "2.0.0-rc.1",
+    "@aurelia/vite-plugin": "2.0.0-rc.2",
     "@tailwindcss/vite": "^4.1.10",
     "tailwindcss": "^4.1.10",
     "tslib": "^2.8.1",
